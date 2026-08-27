@@ -1,0 +1,218 @@
+﻿<Window x:Class="CompanyCalendar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Company Calendar"
+        Height="750"
+        Width="1200"
+        MinHeight="600"
+        MinWidth="900"
+        WindowStartupLocation="CenterScreen"
+        Background="#F4F6F8">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Grid.Column="0"
+                Background="#1F2937">
+
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Company Calendar"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Margin="0,10,0,20"/>
+
+                <Button Grid.Row="2"
+                        Content="Calendar"
+                        Height="42"
+                        Margin="0,5"
+                        Click="CalendarButton_Click"/>
+
+                <Button Grid.Row="3"
+                        Content="Users"
+                        Height="42"
+                        Margin="0,5"
+                        Click="UsersButton_Click"/>
+
+                <Button Grid.Row="4"
+                        Content="Admin"
+                        Height="42"
+                        Margin="0,5"
+                        Click="AdminButton_Click"/>
+
+                <TextBlock Grid.Row="6"
+                           Text="Version 0.1"
+                           Foreground="#9CA3AF"
+                           HorizontalAlignment="Center"
+                           Margin="0,20"/>
+            </Grid>
+        </Border>
+
+        <!-- Main content -->
+        <Grid Grid.Column="1"
+              Margin="30">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="Calendar"
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Foreground="#111827"/>
+
+                    <TextBlock Text="Employee availability overview"
+                               FontSize="14"
+                               Foreground="#6B7280"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <Button Grid.Column="1"
+                        Content="+ New Entry"
+                        Width="130"
+                        Height="40"
+                        Click="NewEntryButton_Click"/>
+            </Grid>
+
+            <!-- Calendar area -->
+            <Border Grid.Row="2"
+                    Background="White"
+                    CornerRadius="10"
+                    Padding="25">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Content="&lt;"
+                                Width="40"
+                                Height="35"
+                                Click="PreviousMonthButton_Click"/>
+
+                        <TextBlock x:Name="MonthText"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="SemiBold"/>
+
+                        <Button Grid.Column="2"
+                                Content="&gt;"
+                                Width="40"
+                                Height="35"
+                                Click="NextMonthButton_Click"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Temporary calendar -->
+                        <Calendar x:Name="MainCalendar"
+                                  Grid.Column="0"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Top"
+                                  SelectedDatesChanged="MainCalendar_SelectedDatesChanged"/>
+
+                        <!-- Entry editor -->
+                        <Border Grid.Column="1"
+                                Margin="30,0,0,0"
+                                Background="#F9FAFB"
+                                CornerRadius="8"
+                                Padding="20">
+
+                            <StackPanel>
+
+                                <TextBlock Text="Calendar Entry"
+                                           FontSize="18"
+                                           FontWeight="SemiBold"
+                                           Margin="0,0,0,20"/>
+
+                                <TextBlock Text="Selected date"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBlock x:Name="SelectedDateText"
+                                           Text="No date selected"
+                                           Margin="0,5,0,20"
+                                           Foreground="#6B7280"/>
+
+                                <TextBlock Text="Status"
+                                           FontWeight="SemiBold"/>
+
+                                <ComboBox x:Name="StatusComboBox"
+                                          Height="35"
+                                          Margin="0,5,0,20">
+
+                                    <ComboBoxItem Content="Office"/>
+                                    <ComboBoxItem Content="Absent"/>
+                                    <ComboBoxItem Content="Half Day Office / Half Day Absent"/>
+                                    <ComboBoxItem Content="Half Day Absent / Half Day Office"/>
+                                    <ComboBoxItem Content="Holiday"/>
+
+                                </ComboBox>
+
+                                <TextBlock Text="Notes"
+                                           FontWeight="SemiBold"/>
+
+                                <TextBox x:Name="NotesTextBox"
+                                         Height="80"
+                                         Margin="0,5,0,20"
+                                         TextWrapping="Wrap"
+                                         AcceptsReturn="True"/>
+
+                                <Button Content="Save Entry"
+                                        Height="40"
+                                        Click="SaveEntryButton_Click"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+                    </Grid>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
