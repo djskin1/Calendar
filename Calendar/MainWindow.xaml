@@ -1,6 +1,7 @@
 ﻿<Window x:Class="CompanyCalendar.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         Title="Central calendar 2.0"
         Width="1500"
         Height="850"
@@ -149,16 +150,16 @@
 				<!-- Logo placeholder -->
 
 				<Border Grid.Row="8"
-                        Height="70"
+                        Height="90"
                         Margin="5,10"
+						Padding="8"
                         CornerRadius="6"
                         Background="#FFFFFF">
 
-					<TextBlock Text="COMPANY LOGO"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               Foreground="#6B7280"
-                               FontSize="12"/>
+					<svgc:SvgViewbox Source="/Images/cardialysis-logo.svg"
+									 Stretch="Uniform"
+									 HorizontalAlignment="Stretch"
+									 VerticalAlignment="Stretch"/> 
 
 				</Border>
 
