@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         Title="Central calendar 2.0"
-		Icon="Images/icon.png"
+		Icon="/Images/icon.png"
         Width="1200"
         Height="600"
         MinWidth="900"

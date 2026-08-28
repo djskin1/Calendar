@@ -9,6 +9,8 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Linq;
 using System.Security.Principal;
+using Calendar.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CompanyCalendar
 {
@@ -51,6 +53,43 @@ namespace CompanyCalendar
                 canAccessAdmin
                     ? Visibility.Visible
                     : Visibility.Collapsed;
+        }
+
+        private async Task TestDatabaseConnectionAsync()
+        {
+            try
+            {
+                using CentralCalendarDbContext database =
+                    new CentralCalendarDbContext();
+
+                bool canConnect =
+                    await database.Database.CanConnectAsync();
+
+                if (canConnect)
+                {
+                    MessageBox.Show(
+                        "Connection to CentralCalendar database successful.",
+                        "Database",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Could not connect to the CentralCalendar database.",
+                        "Database",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Database error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
 
         public MainWindow()
