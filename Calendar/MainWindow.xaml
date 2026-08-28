@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         Title="Central calendar 2.0"
-        Width="1500"
-        Height="850"
-        MinWidth="1100"
-        MinHeight="650"
+		Icon="Images/icon.png"
+        Width="1200"
+        Height="600"
+        MinWidth="900"
+        MinHeight="500"
         WindowStartupLocation="CenterScreen"
         Background="#F3F4F6">
 
@@ -181,7 +182,9 @@
 		<!-- MAIN AREA -->
 		<!-- ========================= -->
 
-		<Grid Grid.Column="1">
+		<Grid 
+            x:Name="CalendarPage"
+            Grid.Column="1">
 
 			<Grid.RowDefinitions>
 				<RowDefinition Height="65"/>
@@ -448,6 +451,568 @@
 
 		</Grid>
 
-	</Grid>
+        <Grid x:Name="HelpPage"
+      Grid.Column="1"
+      Visibility="Collapsed"
+      Background="#F3F4F6">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+
+            <Border Grid.Row="0"
+            Background="White"
+            BorderBrush="#E5E7EB"
+            BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+
+                    <StackPanel VerticalAlignment="Center">
+
+                        <TextBlock Text="Help"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="#111827"/>
+
+                        <TextBlock Text="Central calendar user guide"
+                           FontSize="13"
+                           Foreground="#6B7280"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+            <!-- Scrollable help -->
+
+            <ScrollViewer Grid.Row="1"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+
+                <StackPanel Margin="30"
+                    MaxWidth="900"
+                    HorizontalAlignment="Left">
+
+                    <!-- ================================================= -->
+                    <!-- OVERVIEW -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Central calendar"
+                       FontSize="26"
+                       FontWeight="SemiBold"
+                       Foreground="#111827"/>
+
+                    <TextBlock Margin="0,5,0,25"
+                       TextWrapping="Wrap"
+                       Foreground="#6B7280"
+                       Text="Central calendar provides an overview of employee availability, office attendance, absences, holidays and company calendar events."/>
+
+                    <!-- ================================================= -->
+                    <!-- LEGEND -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Calendar legend"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,12"/>
+
+                    <Border Background="White"
+                    BorderBrush="#D1D5DB"
+                    BorderThickness="1"
+                    CornerRadius="6"
+                    Margin="0,0,0,30">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Header -->
+
+                            <Border Grid.Row="0"
+                            Grid.ColumnSpan="3"
+                            Background="#EEF2F3"/>
+
+                            <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Color"
+                               FontWeight="SemiBold"
+                               Margin="10"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="0"
+                               Grid.Column="1"
+                               Text="Code"
+                               FontWeight="SemiBold"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="0"
+                               Grid.Column="2"
+                               Text="Description"
+                               FontWeight="SemiBold"
+                               VerticalAlignment="Center"/>
+
+                            <!-- OFFI -->
+
+                            <Border Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="White"
+                            BorderBrush="#D1D5DB"
+                            BorderThickness="1"/>
+
+                            <TextBlock Grid.Row="1"
+                               Grid.Column="1"
+                               Text="OFFI"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="1"
+                               Grid.Column="2"
+                               Text="Work office"
+                               VerticalAlignment="Center"/>
+
+                            <!-- HOME -->
+
+                            <Border Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#A6FF8A"/>
+
+                            <TextBlock Grid.Row="2"
+                               Grid.Column="1"
+                               Text="HOME"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="2"
+                               Grid.Column="2"
+                               Text="Work home"
+                               VerticalAlignment="Center"/>
+
+                            <!-- HO/AB -->
+
+                            <Border Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="8,4">
+
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+
+                                        <GradientStop Color="#A6FF8A"
+                                              Offset="0"/>
+
+                                        <GradientStop Color="#A6FF8A"
+                                              Offset="0.5"/>
+
+                                        <GradientStop Color="#C00000"
+                                              Offset="0.5"/>
+
+                                        <GradientStop Color="#C00000"
+                                              Offset="1"/>
+
+                                    </LinearGradientBrush>
+                                </Border.Background>
+
+                            </Border>
+
+                            <TextBlock Grid.Row="3"
+                               Grid.Column="1"
+                               Text="HO/AB"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="3"
+                               Grid.Column="2"
+                               Text="½ day work home, ½ day absence"
+                               VerticalAlignment="Center"/>
+
+                            <!-- OF/AB -->
+
+                            <Border Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="8,4">
+
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+
+                                        <GradientStop Color="White"
+                                              Offset="0"/>
+
+                                        <GradientStop Color="White"
+                                              Offset="0.5"/>
+
+                                        <GradientStop Color="#C00000"
+                                              Offset="0.5"/>
+
+                                        <GradientStop Color="#C00000"
+                                              Offset="1"/>
+
+                                    </LinearGradientBrush>
+                                </Border.Background>
+
+                            </Border>
+
+                            <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               Text="OF/AB"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="4"
+                               Grid.Column="2"
+                               Text="½ day work office, ½ day absence"
+                               VerticalAlignment="Center"/>
+
+                            <!-- HO/OF -->
+
+                            <Border Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="8,4">
+
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+
+                                        <GradientStop Color="#A6FF8A"
+                                              Offset="0"/>
+
+                                        <GradientStop Color="#A6FF8A"
+                                              Offset="0.5"/>
+
+                                        <GradientStop Color="White"
+                                              Offset="0.5"/>
+
+                                        <GradientStop Color="White"
+                                              Offset="1"/>
+
+                                    </LinearGradientBrush>
+                                </Border.Background>
+
+                            </Border>
+
+                            <TextBlock Grid.Row="5"
+                               Grid.Column="1"
+                               Text="HO/OF"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="5"
+                               Grid.Column="2"
+                               Text="½ day work home, ½ day work office"
+                               VerticalAlignment="Center"/>
+
+                            <!-- CONG -->
+
+                            <Border Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#FF9940"/>
+
+                            <TextBlock Grid.Row="6"
+                               Grid.Column="1"
+                               Text="CONG"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="6"
+                               Grid.Column="2"
+                               Text="Congress"
+                               VerticalAlignment="Center"/>
+
+                            <!-- MEET -->
+
+                            <Border Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#FF9940"/>
+
+                            <TextBlock Grid.Row="7"
+                               Grid.Column="1"
+                               Text="MEET"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="7"
+                               Grid.Column="2"
+                               Text="External meeting"
+                               VerticalAlignment="Center"/>
+
+                            <!-- MV -->
+
+                            <Border Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#FF9940"/>
+
+                            <TextBlock Grid.Row="8"
+                               Grid.Column="1"
+                               Text="MV"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="8"
+                               Grid.Column="2"
+                               Text="Monitoring visit"
+                               VerticalAlignment="Center"/>
+
+                            <!-- OPT -->
+
+                            <Border Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#FF0000"/>
+
+                            <TextBlock Grid.Row="9"
+                               Grid.Column="1"
+                               Text="OPT"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="9"
+                               Grid.Column="2"
+                               Text="Option"
+                               VerticalAlignment="Center"/>
+
+                            <!-- ABS -->
+
+                            <Border Grid.Row="10"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#C00000"/>
+
+                            <TextBlock Grid.Row="10"
+                               Grid.Column="1"
+                               Text="ABS"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="10"
+                               Grid.Column="2"
+                               Text="Absence"
+                               VerticalAlignment="Center"/>
+
+                            <!-- Weekend -->
+
+                            <Border Grid.Row="11"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#808080"/>
+
+                            <TextBlock Grid.Row="11"
+                               Grid.Column="2"
+                               Text="Weekend"
+                               VerticalAlignment="Center"/>
+
+                            <!-- PUB -->
+
+                            <Border Grid.Row="12"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#E00000"/>
+
+                            <TextBlock Grid.Row="12"
+                               Grid.Column="1"
+                               Text="PUB"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="12"
+                               Grid.Column="2"
+                               Text="Public holiday"
+                               VerticalAlignment="Center"/>
+
+                            <!-- MF -->
+
+                            <Border Grid.Row="13"
+                            Grid.Column="0"
+                            Margin="8,4"
+                            Background="#D00000"/>
+
+                            <TextBlock Grid.Row="13"
+                               Grid.Column="1"
+                               Text="MF"
+                               VerticalAlignment="Center"/>
+
+                            <TextBlock Grid.Row="13"
+                               Grid.Column="2"
+                               Text="Mandatory day free"
+                               VerticalAlignment="Center"/>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!-- ================================================= -->
+                    <!-- CREATE ENTRY -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Creating a calendar entry"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25">
+                • Click <Bold>New Entry</Bold> in the calendar toolbar.<LineBreak/>
+                • Select the employee if you have permission to manage another employee.<LineBreak/>
+                • Select the date.<LineBreak/>
+                • Select the required calendar status.<LineBreak/>
+                • Select a recurrence option when required.<LineBreak/>
+                • Enter optional notes.<LineBreak/>
+                • Click <Bold>Save</Bold>.
+                    </TextBlock>
+
+                    <!-- ================================================= -->
+                    <!-- RECURRENCE -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Recurring entries"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25">
+                Available recurrence options can include:<LineBreak/>
+                • Once<LineBreak/>
+                • Daily<LineBreak/>
+                • Every week<LineBreak/>
+                • Every 2 weeks<LineBreak/>
+                • Every 3 weeks<LineBreak/>
+                • Every 4 weeks
+                    </TextBlock>
+
+                    <!-- ================================================= -->
+                    <!-- GROUPS -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Groups"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25">
+                • <Bold>All</Bold> contains all active employees.<LineBreak/>
+                • All does not have its own calendar status.<LineBreak/>
+                • Groups such as BHV and I&amp;T can be expanded or collapsed.<LineBreak/>
+                • Employees can appear in multiple groups.<LineBreak/>
+                • The same employee always uses the same calendar information in every group.<LineBreak/>
+                • When Microsoft Entra ID is connected, group membership is synchronized from Entra ID.
+                    </TextBlock>
+
+                    <!-- ================================================= -->
+                    <!-- WEEKENDS / HOLIDAYS -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Weekends and holidays"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25">
+                • Saturdays and Sundays are shown in grey.<LineBreak/>
+                • Weekend days cannot normally be edited.<LineBreak/>
+                • Dutch public holidays can be displayed automatically.<LineBreak/>
+                • Mandatory company-wide days off are controlled by authorized users.
+                    </TextBlock>
+
+                    <!-- ================================================= -->
+                    <!-- NAVIGATION -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Navigation"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25">
+                • Use <Bold>Previous</Bold> and <Bold>Next</Bold> to move through the calendar.<LineBreak/>
+                • Click <Bold>Today</Bold> to return to the current period.<LineBreak/>
+                • Click <Bold>Refresh</Bold> to reload the latest calendar information.<LineBreak/>
+                • Click a group header to expand or collapse that group.
+                    </TextBlock>
+
+                    <!-- ================================================= -->
+                    <!-- SEARCH -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Search"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25"
+                       Text="Use Search to find an employee or quickly locate calendar information."/>
+
+                    <!-- ================================================= -->
+                    <!-- ENTRA -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Microsoft Entra ID"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,25">
+                When Microsoft Entra ID is configured by an administrator:<LineBreak/>
+                • Users can sign in with their Microsoft account.<LineBreak/>
+                • Employees and group memberships can be synchronized automatically.<LineBreak/>
+                • The user's Microsoft profile name and profile picture can be displayed.<LineBreak/>
+                • Only groups enabled by an administrator are displayed in the calendar.
+                    </TextBlock>
+
+                    <!-- ================================================= -->
+                    <!-- TIPS -->
+                    <!-- ================================================= -->
+
+                    <TextBlock Text="Tips &amp; Tricks"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10"/>
+
+                    <TextBlock TextWrapping="Wrap"
+                       LineHeight="22"
+                       Margin="10,0,0,40">
+                • Collapse groups you do not need to keep the calendar easier to read.<LineBreak/>
+                • Use Today to quickly return to the current week.<LineBreak/>
+                • Use Refresh after synchronization or when calendar information has changed.<LineBreak/>
+                • The same employee may be shown under All and multiple groups without creating duplicate calendar entries.
+                    </TextBlock>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Grid>
+
+    </Grid>
 
 </Window>

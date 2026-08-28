@@ -264,6 +264,8 @@ namespace CompanyCalendar
             object sender,
             RoutedEventArgs e)
         {
+            HelpPage.Visibility = Visibility.Collapsed;
+            CalendarPage.Visibility = Visibility.Visible;
             LoadCalendar();
         }
 
@@ -293,24 +295,19 @@ namespace CompanyCalendar
             object sender,
             RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Central calendar Help",
-                "Help",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            CalendarPage.Visibility = Visibility.Collapsed;
+            HelpPage.Visibility = Visibility.Visible;
         }
 
         private void VersionButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Central calendar\n\n" +
-                "Version 2.0\n\n" +
-                "Modern employee availability calendar.",
-                "About Central calendar",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            AboutWindow aboutWindow = new()
+            {
+                Owner = this
+            };
+            aboutWindow.ShowDialog();
         }
 
         private void NewEntryButton_Click(
