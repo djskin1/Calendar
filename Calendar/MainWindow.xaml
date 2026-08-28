@@ -218,43 +218,61 @@
 
 					<!-- Logged in user -->
 
-					<StackPanel Grid.Column="1"
-                                Orientation="Horizontal"
-                                VerticalAlignment="Center">
+                    <Border Grid.Column="1"
+                            Background="Transparent"
+                            Cursor="Hand"
+                            Padding="6"
+                            MouseLeftButtonUp="AccountArea_MouseLeftButtonUp">
 
-						<!-- Profile image placeholder -->
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center">
 
-						<Border Width="38"
-                                Height="38"
-                                CornerRadius="19"
-                                Background="#E5E7EB"
-                                Margin="0,0,10,0">
+                            <Border Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="#E5E7EB"
+                                    Margin="0,0,10,0"
+                                    ClipToBounds="True">
 
-							<TextBlock x:Name="UserProfileIcon"
-                                       Text="&#xE77B;"
+                                <Grid>
+                                    <Image x:Name="UserProfileImage"
+                                           Stretch="UniformToFill"
+                                           Visibility="Collapsed"/>
+
+                                    <TextBlock x:Name="UserProfileIcon"
+                                               Text="&#xE77B;"
+                                               FontFamily="Segoe MDL2 Assets"
+                                               FontSize="20"
+                                               Foreground="#4B5563"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                </Grid>
+                            </Border>
+
+                            <StackPanel VerticalAlignment="Center"
+                                        Margin="0,0,8,0">
+
+                                <TextBlock x:Name="LoggedInUserText"
+                                           Text="Not signed in"
+                                           FontWeight="SemiBold"
+                                           Foreground="#111827"/>
+                                <TextBlock x:Name="LoginTypeText"
+                                           Text="Local calendar"
+                                           FontSize="11"
+                                           Foreground="#6B7280"/>
+
+                            </StackPanel>
+                            
+                            <TextBlock Text="&#xE70D;"
                                        FontFamily="Segoe MDL2 Assets"
-                                       FontSize="20"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"
-                                       Foreground="#4B5563"/>
-
-						</Border>
-
-						<StackPanel VerticalAlignment="Center">
-
-							<TextBlock x:Name="LoggedInUserText"
-                                       Text="Local user"
-                                       FontWeight="SemiBold"
-                                       Foreground="#111827"/>
-
-							<TextBlock x:Name="LoginTypeText"
-                                       Text="Local calendar"
                                        FontSize="11"
-                                       Foreground="#6B7280"/>
+                                       Foreground="#6B7280"
+                                       VerticalAlignment="Center"/>
 
-						</StackPanel>
-
-					</StackPanel>
+                        </StackPanel>
+                        
+                    </Border>
 
 				</Grid>
 

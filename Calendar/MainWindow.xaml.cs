@@ -377,6 +377,34 @@ namespace CompanyCalendar
             window.ShowDialog();
         }
 
+        private void AccountArea_MouseLeftButtonUp(
+            object sender,
+            System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ShowAccountMenu();
+        }
+
+        private void ShowAccountMenu()
+        {
+            bool entraConfigured = false; // This will be determined by the actual authentication implementation.
+            if(entraConfigured)
+            {
+                MessageBox.Show(
+           "Microsoft sign-in will be available here.",
+           "Account",
+           MessageBoxButton.OK,
+           MessageBoxImage.Information);
+
+            } else
+            {
+                MessageBox.Show(
+    "Local Administrator sign-in will be available here.",
+    "Account",
+    MessageBoxButton.OK,
+    MessageBoxImage.Information);
+            }
+        }
+
         // ============================================================
         // TEMPORARY TEST USERS
         // ============================================================
