@@ -1,105 +1,459 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
 
 namespace CompanyCalendar
 {
     public partial class MainWindow : Window
     {
-        private DateTime currentMonth = DateTime.Today;
+        private DateTime _startDate;
+
+        private const int DaysVisible = 17;
+
+        private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            StatusComboBox.SelectedIndex = 0;
+            // Start at the Monday of the current week.
+            _startDate = StartOfWeek(DateTime.Today);
 
-            UpdateMonthTitle();
+            CreateTestUsers();
+
+            LoadCalendar();
         }
 
-        private void UpdateMonthTitle()
+        // ============================================================
+        // CALENDAR
+        // ============================================================
+
+        private void LoadCalendar()
         {
-            MonthText.Text = currentMonth.ToString("MMMM yyyy");
-            MainCalendar.DisplayDate = currentMonth;
+            PeriodText.Text =
+                $"{_startDate:dd MMM yyyy} - {_startDate.AddDays(DaysVisible - 1):dd MMM yyyy}";
+
+            CreateDateColumns();
+            CreateCalendarDays();
+
+            ICollectionView view =
+                CollectionViewSource.GetDefaultView(_employees);
+
+            view.GroupDescriptions.Clear();
+
+            // Later these groups will come from the Admin Panel.
+            view.GroupDescriptions.Add(
+                new PropertyGroupDescription(nameof(EmployeeCalendarRow.Department)));
+
+            CalendarGrid.ItemsSource = view;
         }
 
-        private void PreviousMonthButton_Click(object sender, RoutedEventArgs e)
+        private void CreateDateColumns()
         {
-            currentMonth = currentMonth.AddMonths(-1);
+            // Keep Employee column.
+            while (CalendarGrid.Columns.Count > 1)
+            {
+                CalendarGrid.Columns.RemoveAt(1);
+            }
 
-            UpdateMonthTitle();
+            for (int i = 0; i < DaysVisible; i++)
+            {
+                DateTime date = _startDate.AddDays(i);
+
+                var column = new DataGridTemplateColumn
+                {
+                    Header = CreateDateHeader(date),
+                    Width = 78
+                };
+
+                var template = new DataTemplate();
+
+                var borderFactory =
+                    new FrameworkElementFactory(typeof(Border));
+
+                borderFactory.SetValue(
+                    Border.PaddingProperty,
+                    new Thickness(3));
+
+                borderFactory.SetBinding(
+                    Border.BackgroundProperty,
+                    new Binding($"Days[{i}].Background"));
+
+                var textFactory =
+                    new FrameworkElementFactory(typeof(TextBlock));
+
+                textFactory.SetValue(
+                    TextBlock.HorizontalAlignmentProperty,
+                    HorizontalAlignment.Center);
+
+                textFactory.SetValue(
+                    TextBlock.VerticalAlignmentProperty,
+                    VerticalAlignment.Center);
+
+                textFactory.SetValue(
+                    TextBlock.FontSizeProperty,
+                    11.0);
+
+                textFactory.SetBinding(
+                    TextBlock.TextProperty,
+                    new Binding($"Days[{i}].Status"));
+
+                borderFactory.AppendChild(textFactory);
+
+                template.VisualTree = borderFactory;
+
+                column.CellTemplate = template;
+
+                CalendarGrid.Columns.Add(column);
+            }
         }
 
-        private void NextMonthButton_Click(object sender, RoutedEventArgs e)
+        private object CreateDateHeader(DateTime date)
         {
-            currentMonth = currentMonth.AddMonths(1);
+            var stack = new StackPanel
+            {
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
 
-            UpdateMonthTitle();
+            stack.Children.Add(
+                new TextBlock
+                {
+                    Text = date.ToString(
+                        "dd-MMM-yy",
+                        CultureInfo.InvariantCulture),
+
+                    FontSize = 11,
+                    HorizontalAlignment = HorizontalAlignment.Center
+                });
+
+            stack.Children.Add(
+                new TextBlock
+                {
+                    Text = date.ToString(
+                        "ddd",
+                        CultureInfo.InvariantCulture),
+
+                    FontSize = 10,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Foreground = Brushes.DimGray
+                });
+
+            return stack;
         }
 
-        private void MainCalendar_SelectedDatesChanged(
+        private void CreateCalendarDays()
+        {
+            foreach (EmployeeCalendarRow employee in _employees)
+            {
+                employee.Days.Clear();
+
+                for (int i = 0; i < DaysVisible; i++)
+                {
+                    DateTime date = _startDate.AddDays(i);
+
+                    bool weekend =
+                        date.DayOfWeek == DayOfWeek.Saturday ||
+                        date.DayOfWeek == DayOfWeek.Sunday;
+
+                    employee.Days.Add(
+                        new CalendarDay
+                        {
+                            Date = date,
+                            IsWeekend = weekend,
+                            Status = ""
+                        });
+                }
+            }
+
+            // Temporary demo data.
+            // Later this comes from the database.
+
+            if (_employees.Count > 0)
+            {
+                SetDemoStatus(_employees[0], 0, "OFFICE");
+                SetDemoStatus(_employees[0], 3, "HOME");
+                SetDemoStatus(_employees[0], 4, "ABSENT");
+            }
+
+            if (_employees.Count > 1)
+            {
+                SetDemoStatus(_employees[1], 0, "HOME");
+                SetDemoStatus(_employees[1], 3, "OFFICE");
+                SetDemoStatus(_employees[1], 4, "HOLIDAY");
+            }
+        }
+
+        private void SetDemoStatus(
+            EmployeeCalendarRow employee,
+            int dayIndex,
+            string status)
+        {
+            if (dayIndex < 0 ||
+                dayIndex >= employee.Days.Count)
+            {
+                return;
+            }
+
+            if (employee.Days[dayIndex].IsWeekend)
+            {
+                return;
+            }
+
+            employee.Days[dayIndex].Status = status;
+        }
+
+        // ============================================================
+        // NAVIGATION
+        // ============================================================
+
+        private void PreviousButton_Click(
             object sender,
-            SelectionChangedEventArgs e)
+            RoutedEventArgs e)
         {
-            if (MainCalendar.SelectedDate.HasValue)
-            {
-                SelectedDateText.Text =
-                    MainCalendar.SelectedDate.Value.ToString("dddd, dd MMMM yyyy");
-            }
+            _startDate = _startDate.AddDays(-7);
+
+            LoadCalendar();
         }
 
-        private void SaveEntryButton_Click(object sender, RoutedEventArgs e)
+        private void NextButton_Click(
+            object sender,
+            RoutedEventArgs e)
         {
-            if (!MainCalendar.SelectedDate.HasValue)
-            {
-                MessageBox.Show(
-                    "Please select a date.",
-                    "Calendar",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+            _startDate = _startDate.AddDays(7);
 
-                return;
-            }
+            LoadCalendar();
+        }
 
-            if (StatusComboBox.SelectedItem is not ComboBoxItem selectedStatus)
-            {
-                return;
-            }
+        private void TodayButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            _startDate = StartOfWeek(DateTime.Today);
 
-            string status = selectedStatus.Content.ToString() ?? "";
-            string notes = NotesTextBox.Text;
+            LoadCalendar();
+        }
 
+        private void RefreshButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            LoadCalendar();
+        }
+
+        private static DateTime StartOfWeek(DateTime date)
+        {
+            int difference =
+                (7 +
+                 (date.DayOfWeek - DayOfWeek.Monday))
+                % 7;
+
+            return date.AddDays(-difference).Date;
+        }
+
+        // ============================================================
+        // BUTTONS
+        // ============================================================
+
+        private void CalendarButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            LoadCalendar();
+        }
+
+        private void AdminButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
             MessageBox.Show(
-                $"Date: {MainCalendar.SelectedDate.Value:dd-MM-yyyy}\n" +
-                $"Status: {status}\n" +
-                $"Notes: {notes}",
-                "Entry saved",
+                "The Admin Panel will be added next.",
+                "Admin",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
 
-        private void NewEntryButton_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_Click(
+            object sender,
+            RoutedEventArgs e)
         {
-            MainCalendar.SelectedDate = DateTime.Today;
-            MainCalendar.DisplayDate = DateTime.Today;
-
-            StatusComboBox.SelectedIndex = 0;
-            NotesTextBox.Clear();
+            MessageBox.Show(
+                "Search will be added to the next version.",
+                "Search",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
-        private void CalendarButton_Click(object sender, RoutedEventArgs e)
+        private void HelpButton_Click(
+            object sender,
+            RoutedEventArgs e)
         {
-            MessageBox.Show("Calendar");
+            MessageBox.Show(
+                "Central calendar Help",
+                "Help",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
-        private void UsersButton_Click(object sender, RoutedEventArgs e)
+        private void VersionButton_Click(
+            object sender,
+            RoutedEventArgs e)
         {
-            MessageBox.Show("User management will be added here.");
+            MessageBox.Show(
+                "Central calendar\n\n" +
+                "Version 2.0\n\n" +
+                "Modern employee availability calendar.",
+                "About Central calendar",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
-        private void AdminButton_Click(object sender, RoutedEventArgs e)
+        private void NewEntryButton_Click(
+            object sender,
+            RoutedEventArgs e)
         {
-            MessageBox.Show("Admin Panel will be added here.");
+            NewEntryWindow window = new()
+            {
+                Owner = this
+            };
+
+            window.ShowDialog();
+        }
+
+        // ============================================================
+        // TEMPORARY TEST USERS
+        // ============================================================
+
+        private void CreateTestUsers()
+        {
+            _employees.Add(
+                new EmployeeCalendarRow
+                {
+                    DisplayName = "All",
+                    Department = "All"
+                });
+
+            _employees.Add(
+                new EmployeeCalendarRow
+                {
+                    DisplayName = "Kevin Verweij",
+                    Department = "IT"
+                });
+
+            _employees.Add(
+                new EmployeeCalendarRow
+                {
+                    DisplayName = "John Smith",
+                    Department = "IT"
+                });
+
+            _employees.Add(
+                new EmployeeCalendarRow
+                {
+                    DisplayName = "Lisa Johnson",
+                    Department = "HR"
+                });
+
+            _employees.Add(
+                new EmployeeCalendarRow
+                {
+                    DisplayName = "Michael Brown",
+                    Department = "HR"
+                });
+
+            _employees.Add(
+                new EmployeeCalendarRow
+                {
+                    DisplayName = "Emma Wilson",
+                    Department = "Finance"
+                });
+        }
+    }
+
+    // ================================================================
+    // CALENDAR ROW
+    // ================================================================
+
+    public class EmployeeCalendarRow
+    {
+        public string DisplayName { get; set; } = "";
+
+        public string Department { get; set; } = "";
+
+        public ObservableCollection<CalendarDay> Days { get; }
+            = new();
+    }
+
+    // ================================================================
+    // CALENDAR DAY
+    // ================================================================
+
+    public class CalendarDay : INotifyPropertyChanged
+    {
+        private string _status = "";
+
+        public DateTime Date { get; set; }
+
+        public bool IsWeekend { get; set; }
+
+        public string Status
+        {
+            get => _status;
+
+            set
+            {
+                _status = value;
+
+                OnPropertyChanged(nameof(Status));
+                OnPropertyChanged(nameof(Background));
+            }
+        }
+
+        public Brush Background
+        {
+            get
+            {
+                if (IsWeekend)
+                {
+                    return new SolidColorBrush(
+                        Color.FromRgb(210, 210, 210));
+                }
+
+                return Status switch
+                {
+                    "OFFICE" =>
+                        new SolidColorBrush(
+                            Color.FromRgb(219, 234, 254)),
+
+                    "HOME" =>
+                        new SolidColorBrush(
+                            Color.FromRgb(187, 247, 208)),
+
+                    "ABSENT" =>
+                        new SolidColorBrush(
+                            Color.FromRgb(254, 202, 202)),
+
+                    "HOLIDAY" =>
+                        new SolidColorBrush(
+                            Color.FromRgb(254, 240, 138)),
+
+                    _ => Brushes.White
+                };
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(
+                this,
+                new PropertyChangedEventArgs(propertyName));
         }
     }
 }

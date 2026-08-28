@@ -1,0 +1,117 @@
+<Window x:Class="CompanyCalendar.NewEntryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="New Calendar Entry"
+        Width="480"
+        Height="590"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Background="#F3F4F6">
+
+	<Grid Margin="25">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="20"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel>
+
+			<TextBlock Text="New Calendar Entry"
+                       FontSize="24"
+                       FontWeight="SemiBold"/>
+
+			<TextBlock Text="Create a new calendar entry"
+                       Foreground="#6B7280"
+                       Margin="0,5,0,0"/>
+
+		</StackPanel>
+
+		<Border Grid.Row="2"
+                Background="White"
+                CornerRadius="8"
+                Padding="20">
+
+			<StackPanel>
+
+				<TextBlock Text="Employee"
+                           FontWeight="SemiBold"/>
+
+				<ComboBox x:Name="EmployeeComboBox"
+                          Height="36"
+                          Margin="0,5,0,18"/>
+
+				<TextBlock Text="Date"
+                           FontWeight="SemiBold"/>
+
+				<DatePicker x:Name="EntryDatePicker"
+                            Height="36"
+                            Margin="0,5,0,18"/>
+
+				<TextBlock Text="Status"
+                           FontWeight="SemiBold"/>
+
+				<ComboBox x:Name="StatusComboBox"
+                          Height="36"
+                          Margin="0,5,0,18">
+
+					<ComboBoxItem Content="Office"/>
+					<ComboBoxItem Content="Absent"/>
+					<ComboBoxItem Content="Half Day Office / Half Day Absent"/>
+					<ComboBoxItem Content="Half Day Absent / Half Day Office"/>
+					<ComboBoxItem Content="Holiday"/>
+
+				</ComboBox>
+
+				<TextBlock Text="Recurrence"
+                           FontWeight="SemiBold"/>
+
+				<ComboBox x:Name="RecurrenceComboBox"
+                          Height="36"
+                          Margin="0,5,0,18">
+
+					<ComboBoxItem Content="Once"/>
+					<ComboBoxItem Content="Daily"/>
+					<ComboBoxItem Content="Every week"/>
+					<ComboBoxItem Content="Every 2 weeks"/>
+					<ComboBoxItem Content="Every 3 weeks"/>
+					<ComboBoxItem Content="Every 4 weeks"/>
+
+				</ComboBox>
+
+				<TextBlock Text="Notes"
+                           FontWeight="SemiBold"/>
+
+				<TextBox x:Name="NotesTextBox"
+                         Height="75"
+                         Margin="0,5"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"/>
+
+			</StackPanel>
+
+		</Border>
+
+		<StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+
+			<Button Content="Cancel"
+                    Width="90"
+                    Height="38"
+                    Margin="0,0,10,0"
+                    Click="CancelButton_Click"/>
+
+			<Button Content="Save"
+                    Width="100"
+                    Height="38"
+                    Click="SaveButton_Click"/>
+
+		</StackPanel>
+
+	</Grid>
+
+</Window>
