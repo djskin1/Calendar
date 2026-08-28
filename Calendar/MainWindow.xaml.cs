@@ -7,16 +7,51 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
+using System.Linq;
+using System.Security.Principal;
 
 namespace CompanyCalendar
 {
     public partial class MainWindow : Window
     {
         private DateTime _startDate;
+        private bool _updatingDatePicker;
 
         private const int DaysVisible = 17;
 
         private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
+
+        private bool IsLocalAdministrator()
+        {
+            using WindowsIdentity identity = WindowsIdentity.GetCurrent();
+
+            SecurityIdentifier administratorsSid =
+                new SecurityIdentifier(
+                    WellKnownSidType.BuiltinAdministratorsSid,
+                    null);
+
+            return identity.Groups?
+                .Any(group => group.Equals(administratorsSid))
+                ?? false;
+        }
+
+        private void UpdateAdminAccess()
+        {
+            bool isLocalAdministrator = IsLocalAdministrator();
+
+            // Entra Global Administrator check will be added
+            // when Microsoft authentication is implemented.
+            bool isEntraGlobalAdministrator = false;
+
+            bool canAccessAdmin =
+                isLocalAdministrator ||
+                isEntraGlobalAdministrator;
+
+            AdminButton.Visibility =
+                canAccessAdmin
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+        }
 
         public MainWindow()
         {
@@ -234,7 +269,11 @@ namespace CompanyCalendar
             object sender,
             RoutedEventArgs e)
         {
-            _startDate = StartOfWeek(DateTime.Today);
+            DateTime today = DateTime.Today;
+            _startDate = StartOfWeek(today);
+            _updatingDatePicker = true;
+            GoToDatePicker.SelectedDate = today;
+            _updatingDatePicker = false;
 
             LoadCalendar();
         }
@@ -254,6 +293,22 @@ namespace CompanyCalendar
                 % 7;
 
             return date.AddDays(-difference).Date;
+        }
+
+        private void GoToDatePicker_SelectedDateChanged(
+            object sender,
+            SelectionChangedEventArgs e)
+        {
+            if (_updatingDatePicker)
+            {
+                return;
+            }
+            if (GoToDatePicker.SelectedDate.HasValue)
+            {
+                DateTime selectedDate = GoToDatePicker.SelectedDate.Value;
+                _startDate = StartOfWeek(selectedDate);
+                LoadCalendar();
+            }
         }
 
         // ============================================================

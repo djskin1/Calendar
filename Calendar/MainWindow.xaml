@@ -85,10 +85,12 @@
 
 				<!-- Admin -->
 
-				<Button Grid.Row="3"
+				<Button x:Name="AdminButton"
+                        Grid.Row="3"
                         Height="45"
                         Margin="0,4"
                         HorizontalContentAlignment="Left"
+                        Visibility="Collapsed"
                         Click="AdminButton_Click">
 
 					<StackPanel Orientation="Horizontal">
@@ -273,6 +275,7 @@
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition Width="Auto"/>
@@ -300,10 +303,21 @@
                             Height="38"
                             Margin="7,0"
                             Click="TodayButton_Click"/>
+                    
+                    <!-- Date Picker -->
 
-					<!-- Next -->
+                    <DatePicker x:Name="GoToDatePicker"
+                                Grid.Column="2"
+                                Width="145"
+                                Height="38"
+                                Margin="0,0,7,0"
+                                VerticalAlignment="Center"
+                                ToolTip="Go to date"
+                                SelectedDateChanged="GoToDatePicker_SelectedDateChanged"/>
 
-					<Button Grid.Column="2"
+                    <!-- Next -->
+
+					<Button Grid.Column="3"
                             Width="42"
                             Height="38"
                             ToolTip="Next period"
@@ -318,7 +332,7 @@
 					<!-- Period -->
 
 					<TextBlock x:Name="PeriodText"
-                               Grid.Column="3"
+                               Grid.Column="4"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontSize="18"
@@ -327,7 +341,7 @@
 
 					<!-- Refresh -->
 
-					<Button Grid.Column="4"
+					<Button Grid.Column="5"
                             Width="42"
                             Height="38"
                             Margin="0,0,10,0"
@@ -342,7 +356,7 @@
 
 					<!-- New Entry -->
 
-					<Button Grid.Column="5"
+					<Button Grid.Column="6"
                             Height="38"
                             Padding="16,0"
                             Click="NewEntryButton_Click">
