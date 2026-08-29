@@ -10,6 +10,9 @@ namespace Calendar.Data
         public DbSet<CalendarEntry> CalendarEntries =>
             Set<CalendarEntry>();
 
+        public DbSet<LocalAdministrator> LocalAdministrators =>
+            Set<LocalAdministrator>();
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,6 +38,10 @@ namespace Calendar.Data
                 .WithMany()
                 .HasForeignKey(entry => entry.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<LocalAdministrator>()
+                .HasIndex(admin => admin.Username)
+                .IsUnique();
         }
     }
 }

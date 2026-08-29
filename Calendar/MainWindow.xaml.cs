@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Calendar;
+using Calendar.Data;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
+using System.Security.Principal;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using System.Linq;
-using System.Security.Principal;
-using Calendar.Data;
-using Microsoft.EntityFrameworkCore;
 
 namespace CompanyCalendar
 {
@@ -436,11 +437,24 @@ namespace CompanyCalendar
 
             } else
             {
-                MessageBox.Show(
-    "Local Administrator sign-in will be available here.",
-    "Account",
-    MessageBoxButton.OK,
-    MessageBoxImage.Information);
+                LocalAdminLoginWindow loginWindow = new()
+                {
+                    Owner = this
+                };
+
+                bool? result = loginWindow.ShowDialog();
+
+                if(result != true)
+                {
+                    MessageBox.Show(
+                        "Login failed or canceled.",
+                        "Account",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                }
+
+                string username = loginWindow.Username;
+                string password = loginWindow.Password;
             }
         }
 
