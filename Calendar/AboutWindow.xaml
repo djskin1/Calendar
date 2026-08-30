@@ -58,10 +58,12 @@
                                FontSize="26"
                                FontWeight="SemiBold"/>
 
-                    <TextBlock Text="Version 2.0"
+                    <TextBlock x:Name="HeaderVersionText"
                                Foreground="#D6F3F5"
                                FontSize="14"
                                Margin="0,5,0,0"/>
+
+                    <TextBlock x:Name="ApplicationVersionText"/>
 
                 </StackPanel>
 
@@ -132,7 +134,7 @@
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="1"
-                               Text="2.0"
+                               x:Name="VersionText"
                                Foreground="#111827"/>
 
                     <!-- Platform -->

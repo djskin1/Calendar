@@ -1,19 +1,20 @@
 ﻿using Calendar;
 using Calendar.Data;
 using Calendar.Models;
+using Calendar.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
-using System.Windows.Threading;
 using System.Linq;
 using System.Security.Principal;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace CompanyCalendar
 {
@@ -99,11 +100,18 @@ namespace CompanyCalendar
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
+
+            VersionButton.Content =
+                $"Version {VersionService.CurrentVersion}";
         }
 
         public MainWindow()
         {
             InitializeComponent();
+
+            Title = $"Central calendar {VersionService.CurrentVersion}";
+            VersionButton.Content =
+                $"Version {VersionService.CurrentVersion}";
 
             // Start at the Monday of the current week.
             _startDate = StartOfWeek(DateTime.Today);

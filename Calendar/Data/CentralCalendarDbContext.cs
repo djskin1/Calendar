@@ -19,6 +19,12 @@ namespace Calendar.Data
         public DbSet<CompanyEvent> CompanyEvents =>
             Set<CompanyEvent>();
 
+        public DbSet<ApplicationBranding> ApplicationBranding =>
+            Set<ApplicationBranding>();
+
+        public DbSet<SystemInformation> SystemInformation =>
+            Set<SystemInformation>();
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
@@ -48,6 +54,25 @@ namespace Calendar.Data
             modelBuilder.Entity<LocalAdministrator>()
                 .HasIndex(admin => admin.Username)
                 .IsUnique();
+
+            modelBuilder.Entity<ApplicationBranding>()
+                .HasData(
+                    new ApplicationBranding
+                    {
+                        Id = 1,
+                        CompanyName = "Central calendar"
+                    }
+                );
+
+            modelBuilder.Entity<SystemInformation>()
+                .HasData(
+                    new SystemInformation
+                     {
+                        Id = 1,
+                        LatestClientVersion = "2.0.0",
+                        MinimumClientVersion = "2.0.0"
+                     }
+                );
         }
     }
 }

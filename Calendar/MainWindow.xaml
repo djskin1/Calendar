@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-        Title="Central calendar 2.0"
+        Title="Central calendar"
 		Icon="/Images/icon.png"
         Width="1200"
         Height="600"
@@ -159,17 +159,17 @@
                         CornerRadius="6"
                         Background="#FFFFFF">
 
-					<svgc:SvgViewbox Source="/Images/cardialysis-logo.svg"
-									 Stretch="Uniform"
-									 HorizontalAlignment="Stretch"
-									 VerticalAlignment="Stretch"/> 
+                    <Image x:Name="CompanyLogoImage"
+                           Source="/Images/Logo.png"
+                           Stretch="Uniform"/>
 
-				</Border>
+                </Border>
 
 				<!-- Version -->
 
-				<Button Grid.Row="9"
-                        Content="Version 2.0"
+                <Button x:Name="VersionButton"
+                        Grid.Row="9"
+                        Content="Version"
                         Background="Transparent"
                         Foreground="White"
                         BorderThickness="0"

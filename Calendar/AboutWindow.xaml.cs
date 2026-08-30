@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Calendar.Services;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Navigation;
 
@@ -9,6 +10,12 @@ namespace CompanyCalendar
         public AboutWindow()
         {
             InitializeComponent();
+
+            VersionText.Text =
+                $"Version {VersionService.CurrentVersion}";
+
+            ApplicationVersionText.Text =
+                VersionService.CurrentVersion;
         }
 
         private void CloseButton_Click(
