@@ -13,6 +13,12 @@ namespace Calendar.Data
         public DbSet<LocalAdministrator> LocalAdministrators =>
             Set<LocalAdministrator>();
 
+        public DbSet<PublicHoliday> PublicHolidays =>
+            Set<PublicHoliday>();
+
+        public DbSet<CompanyEvent> CompanyEvents =>
+            Set<CompanyEvent>();
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {

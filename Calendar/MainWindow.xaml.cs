@@ -1,11 +1,13 @@
 ﻿using Calendar;
 using Calendar.Data;
+using Calendar.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Windows.Threading;
 using System.Linq;
 using System.Security.Principal;
 using System.Windows;
@@ -23,6 +25,12 @@ namespace CompanyCalendar
         private const int DaysVisible = 17;
 
         private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
+
+        private readonly ObservableCollection<SearchResultItem>
+    _searchResults = new();
+
+        private readonly DispatcherTimer _searchTimer =
+    new DispatcherTimer();
 
         private bool IsLocalAdministrator()
         {
@@ -102,7 +110,249 @@ namespace CompanyCalendar
 
             CreateTestUsers();
 
+            SearchResultsList.ItemsSource =
+                _searchResults;
+
+            _searchTimer.Interval =
+                TimeSpan.FromMilliseconds(350);
+
+            _searchTimer.Tick +=
+                SearchTimer_Tick;
+
             LoadCalendar();
+
+        }
+
+        // Search //
+        private void SearchTextBox_TextChanged(
+    object sender,
+    TextChangedEventArgs e)
+        {
+            SearchPlaceholder.Visibility =
+                string.IsNullOrWhiteSpace(
+                    SearchTextBox.Text)
+
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+
+
+            _searchTimer.Stop();
+
+
+            if (string.IsNullOrWhiteSpace(
+                SearchTextBox.Text))
+            {
+                _searchResults.Clear();
+
+                NoSearchResultsPanel.Visibility =
+                    Visibility.Collapsed;
+
+                return;
+            }
+
+
+            _searchTimer.Start();
+        }
+
+        private async void SearchTimer_Tick(
+            object? sender,
+            EventArgs e)
+        {
+            _searchTimer.Stop();
+
+            await SearchDatabaseAsync(
+                SearchTextBox.Text.Trim());
+        }
+
+        private async Task SearchDatabaseAsync(
+    string searchText)
+        {
+            _searchResults.Clear();
+
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                NoSearchResultsPanel.Visibility =
+                    Visibility.Collapsed;
+
+                return;
+            }
+
+
+            DateTime today =
+                DateTime.Today;
+
+
+            try
+            {
+                using CentralCalendarDbContext database =
+                    new CentralCalendarDbContext();
+
+
+                // =====================================================
+                // EMPLOYEES
+                // =====================================================
+
+                var employees =
+                    await database.Users
+                        .Where(user =>
+                            user.IsActive &&
+                            user.DisplayName.Contains(searchText))
+                        .OrderBy(user =>
+                            user.DisplayName)
+                        .Take(20)
+                        .ToListAsync();
+
+
+                foreach (User employee in employees)
+                {
+                    var upcomingEntries =
+                        await database.CalendarEntries
+                            .Where(entry =>
+                                entry.UserId == employee.Id &&
+                                entry.Date >= today)
+                            .OrderBy(entry =>
+                                entry.Date)
+                            .Take(5)
+                            .ToListAsync();
+
+
+                    string description;
+
+                    if (upcomingEntries.Count == 0)
+                    {
+                        description =
+                            "No upcoming calendar entries.";
+                    }
+                    else
+                    {
+                        description =
+                            string.Join(
+                                "  •  ",
+                                upcomingEntries.Select(
+                                    entry =>
+                                        $"{entry.Date:dd-MM-yyyy}: {entry.StatusCode}"));
+                    }
+
+
+                    _searchResults.Add(
+                        new SearchResultItem
+                        {
+                            Type = "Employee",
+                            Title = employee.DisplayName,
+                            Description = description,
+
+                            Icon = "\uE77B",
+
+                            UserId = employee.Id
+                        });
+                }
+
+
+                // =====================================================
+                // PUBLIC HOLIDAYS
+                // ONLY TODAY / FUTURE
+                // =====================================================
+
+                var holidays =
+                    await database.PublicHolidays
+                        .Where(holiday =>
+                            holiday.IsActive &&
+                            holiday.Date >= today &&
+                            holiday.Name.Contains(searchText))
+                        .OrderBy(holiday =>
+                            holiday.Date)
+                        .Take(20)
+                        .ToListAsync();
+
+
+                foreach (PublicHoliday holiday in holidays)
+                {
+                    _searchResults.Add(
+                        new SearchResultItem
+                        {
+                            Type = "Public Holiday",
+                            Title = holiday.Name,
+
+                            Description =
+                                "Public holiday",
+
+                            Date = holiday.Date,
+
+                            DateText =
+                                holiday.Date.ToString(
+                                    "dd MMMM yyyy"),
+
+                            Icon = "\uE787"
+                        });
+                }
+
+
+                // =====================================================
+                // COMPANY EVENTS
+                // ONLY TODAY / FUTURE
+                // =====================================================
+
+                var events =
+                    await database.CompanyEvents
+                        .Where(companyEvent =>
+                            companyEvent.IsActive &&
+                            companyEvent.Date >= today &&
+                            (
+                                companyEvent.Title.Contains(searchText) ||
+                                (
+                                    companyEvent.Description != null &&
+                                    companyEvent.Description.Contains(searchText)
+                                )
+                            ))
+                        .OrderBy(companyEvent =>
+                            companyEvent.Date)
+                        .Take(20)
+                        .ToListAsync();
+
+
+                foreach (CompanyEvent companyEvent in events)
+                {
+                    _searchResults.Add(
+                        new SearchResultItem
+                        {
+                            Type = "Company Event",
+
+                            Title =
+                                companyEvent.Title,
+
+                            Description =
+                                companyEvent.Description
+                                ?? "Company event",
+
+                            Date =
+                                companyEvent.Date,
+
+                            DateText =
+                                companyEvent.Date.ToString(
+                                    "dd MMMM yyyy"),
+
+                            Icon = "\uECA5"
+                        });
+                }
+
+
+                // =====================================================
+                // NOTHING FOUND
+                // =====================================================
+
+                NoSearchResultsPanel.Visibility =
+                    _searchResults.Count == 0
+
+                        ? Visibility.Visible
+                        : Visibility.Collapsed;
+            }
+            catch (Exception)
+            {
+                _searchResults.Clear();
+
+                NoSearchResultsPanel.Visibility =
+                    Visibility.Visible;
+            }
         }
 
         // ============================================================
@@ -361,6 +611,7 @@ namespace CompanyCalendar
         {
             HelpPage.Visibility = Visibility.Collapsed;
             CalendarPage.Visibility = Visibility.Visible;
+            SearchPage.Visibility = Visibility.Collapsed;
             LoadCalendar();
         }
 
@@ -379,11 +630,16 @@ namespace CompanyCalendar
             object sender,
             RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Search will be added to the next version.",
-                "Search",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            CalendarPage.Visibility =
+                Visibility.Collapsed;
+
+            HelpPage.Visibility =
+                Visibility.Collapsed;
+
+            SearchPage.Visibility =
+                Visibility.Visible;
+
+            SearchTextBox.Focus();
         }
 
         private void HelpButton_Click(
@@ -392,6 +648,7 @@ namespace CompanyCalendar
         {
             CalendarPage.Visibility = Visibility.Collapsed;
             HelpPage.Visibility = Visibility.Visible;
+            SearchPage.Visibility = Visibility.Collapsed;
         }
 
         private void VersionButton_Click(

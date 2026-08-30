@@ -1045,6 +1045,200 @@
 
         </Grid>
 
+        <Grid x:Name="SearchPage"
+              Grid.Column="1"
+              Visibility="Collapsed"
+              Background="#F3F4F6">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="White"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="420"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Search"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="#111827"/>
+                        <TextBlock Text="Search employees, holidays and company events"
+                           FontSize="12"
+                           Foreground="#6B7280"/>
+                    </StackPanel>
+
+                    <Border Grid.Column="1"
+                            Height="42"
+                            Background="#F9FAFB"
+                            BorderBrush="#D1D5DB"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            VerticalAlignment="Center">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0"
+                               Text="&#xE721;"
+                               FontFamily="Segoe MDL2 Assets"
+                               FontSize="17"
+                               Foreground="#6B7280"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                            <Grid Grid.Column="1"
+                                   Margin="5,0,12,0">
+
+                                <TextBox x:Name="SearchTextBox"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 FontSize="14"
+                                 VerticalContentAlignment="Center"
+                                 TextChanged="SearchTextBox_TextChanged"/>
+
+                                <TextBlock x:Name="SearchPlaceholder"
+                                   Text="Search..."
+                                   Foreground="#9CA3AF"
+                                   VerticalAlignment="Center"
+                                   IsHitTestVisible="False"/>
+
+                            </Grid>
+                        </Grid>
+
+                    </Border>
+                    
+                </Grid>
+                
+            </Border>
+
+            <ScrollViewer Grid.Row="1"
+                  VerticalScrollBarVisibility="Auto">
+
+                <StackPanel Margin="25"
+                    MaxWidth="1000"
+                    HorizontalAlignment="Left">
+
+                    <!-- No results -->
+
+                    <Border x:Name="NoSearchResultsPanel"
+                    Width="650"
+                    Padding="30"
+                    Background="White"
+                    BorderBrush="#E5E7EB"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Visibility="Collapsed">
+
+                        <StackPanel HorizontalAlignment="Center">
+
+                            <TextBlock Text="&#xE721;"
+                               FontFamily="Segoe MDL2 Assets"
+                               FontSize="30"
+                               Foreground="#9CA3AF"
+                               HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="No items found."
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Margin="0,12,0,0"
+                               Foreground="#374151"
+                               HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Try another employee, holiday or event name."
+                               Foreground="#6B7280"
+                               Margin="0,5,0,0"/>
+                        </StackPanel>
+
+                    </Border>
+
+                    <ItemsControl x:Name="SearchResultsList">
+
+                        <ItemsControl.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <Border Width="750"
+                                Margin="0,0,0,12"
+                                Padding="18"
+                                Background="White"
+                                BorderBrush="#E5E7EB"
+                                BorderThickness="1"
+                                CornerRadius="10">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="55"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Width="42"
+                                        Height="42"
+                                        CornerRadius="21"
+                                        Background="#EEF6F7"
+                                        VerticalAlignment="Top">
+
+                                            <TextBlock Text="{Binding Icon}"
+                                               FontFamily="Segoe MDL2 Assets"
+                                               FontSize="18"
+                                               Foreground="#087F8C"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                        </Border>
+
+                                        <StackPanel Grid.Column="1">
+
+                                            <TextBlock Text="{Binding Title}"
+                                               FontSize="16"
+                                               FontWeight="SemiBold"
+                                               Foreground="#111827"/>
+
+                                            <TextBlock Text="{Binding Type}"
+                                               FontSize="11"
+                                               Foreground="#087F8C"
+                                               FontWeight="SemiBold"
+                                               Margin="0,2,0,5"/>
+
+                                            <TextBlock Text="{Binding Description}"
+                                               Foreground="#6B7280"
+                                               TextWrapping="Wrap"/>
+                                            
+                                        </StackPanel>
+
+                                        <TextBlock Grid.Column="2"
+                                           Text="{Binding DateText}"
+                                           Foreground="#374151"
+                                           FontWeight="SemiBold"
+                                           Margin="20,0,0,0"
+                                           VerticalAlignment="Top"/>
+
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+                        
+                        
+
+            </ScrollViewer>
+
+        </Grid>
+
     </Grid>
 
 </Window>
