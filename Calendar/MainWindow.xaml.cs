@@ -1,5 +1,6 @@
 ﻿using Calendar;
 using Calendar.Data;
+using Calendar.Localization;
 using Calendar.Models;
 using Calendar.Services;
 using Microsoft.EntityFrameworkCore;
@@ -109,9 +110,8 @@ namespace CompanyCalendar
         {
             InitializeComponent();
 
-            Title = $"Central calendar {VersionService.CurrentVersion}";
-            VersionButton.Content =
-                $"Version {VersionService.CurrentVersion}";
+            Title = $"{LocalizationService.Get("AppName")} " +
+                    $"{VersionService.CurrentVersion}";
 
             // Start at the Monday of the current week.
             _startDate = StartOfWeek(DateTime.Today);

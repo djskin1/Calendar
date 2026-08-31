@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Calendar.LocalAdminLoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Administrator sign in" 
+        Title="{DynamicResource LoginLoc}" 
         Height="650" 
         Width="620"
         ResizeMode="NoResize"
@@ -117,11 +117,11 @@
                             Margin="15,0,0,0"
                             VerticalAlignment="Center">
 
-                    <TextBlock Text="Central calendar" 
+                    <TextBlock Text="{DynamicResource AppName}" 
                                FontSize="23" 
                                FontWeight="SemiBold" 
                                Foreground="White"/>
-                    <TextBlock Text="Local Administrator" 
+                    <TextBlock Text="{DynamicResource Locadmin}" 
                                FontSize="13" 
                                Foreground="#D6F3F5"
                                Margin="0,4,0,0"/>
@@ -151,12 +151,12 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0"
-                            Text="Administrator sign in"
+                            Text="{DynamicResource adminsignin}"
                            FontSize="21"
                            FontWeight="SemiBold"
                            Foreground="#111827"/>
                 <TextBlock Grid.Row="1"
-                            Text="Sign in with a Central calendar Local Administrator account"
+                            Text="{DynamicResource loginsub}"
                            TextWrapping="Wrap"
                            Foreground="#6B7280"
                            FontSize="12"
@@ -164,7 +164,7 @@
 
                 <!-- Username -->
                 <TextBlock Grid.Row="2"
-                            Text="Username"
+                            Text="{DynamicResource Username}"
                            FontSize="14"
                            FontWeight="SemiBold"
                            Foreground="#374151"/>
@@ -204,7 +204,7 @@
                                      VerticalAlignment="Center"
                                      TextChanged="UsernameTextBox_TextChanged"/>
                             <TextBlock x:Name="UsernamePlaceholderText"
-                                       Text="Enter your username"
+                                       Text="{DynamicResource UserPlace}"
                                        Foreground="#9CA3AF"
                                        FontSize="14"
                                        VerticalAlignment="Center"
@@ -216,7 +216,7 @@
 
                 <!-- Password -->
                 <TextBlock Grid.Row="4"
-                           Text="Password"
+                           Text="{DynamicResource Password}"
                            FontSize="14"
                            FontWeight="SemiBold"
                            Foreground="#374151"/>
@@ -265,7 +265,7 @@
                                      KeyDown="VisiblePasswordTextBox_KeyDown"/>
 
                             <TextBlock x:Name="PasswordPlaceholderText"
-                                       Text="Enter your password"
+                                       Text="{DynamicResource PassPlace}"
                                        Foreground="#9CA3AF"
                                        FontSize="14"
                                        VerticalAlignment="Center"
@@ -277,7 +277,7 @@
                                 BorderBrush="#E5E7EB"
                                 BorderThickness="1,0,0,0">
                             <Button x:Name="ShowPasswordButton"
-                                    Content="Show"
+                                    Content="{DynamicResource Show}"
                                     Width="58"
                                     Height="32"
                                     HorizontalAlignment="Center"
@@ -312,14 +312,14 @@
 
 
                     <Button Grid.Column="1"
-                            Content="Cancel"
+                            Content="{DynamicResource Cancel}"
                             Height="40"
                             Style="{StaticResource SecondaryButtonStyle}"
                             Click="CancelButton_Click"/>
 
                     <Button x:Name="SignInButton"
                             Grid.Column="3"
-                            Content="Sign in"
+                            Content="{DynamicResource Signin}"
                             Height="40"
                             Style="{StaticResource PrimaryButtonStyle}"
                             Click="SignInButton_Click"/>

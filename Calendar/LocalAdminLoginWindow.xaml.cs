@@ -1,4 +1,5 @@
 ﻿using Calendar.Data;
+using Calendar.Localization;
 using Calendar.Models;
 using Calendar.Services;
 using Microsoft.EntityFrameworkCore;
@@ -89,7 +90,7 @@ namespace Calendar
                 PasswordTextBox.Visibility =
                     Visibility.Visible;
 
-                ShowPasswordButton.Content = "Show";
+                ShowPasswordButton.Content = LocalizationService.Get("Show");
 
                 _isPasswordVisible = false;
 
@@ -106,7 +107,7 @@ namespace Calendar
                 VisiblePasswordTextBox.Visibility =
                     Visibility.Visible;
 
-                ShowPasswordButton.Content = "Hide";
+                ShowPasswordButton.Content = LocalizationService.Get("Hide");
 
                 _isPasswordVisible = true;
 
@@ -205,8 +206,7 @@ namespace Calendar
             if (usernameMissing &&
                 passwordMissing)
             {
-                ShowError(
-                    "Please enter a username and password.");
+                ShowError(LocalizationService.Get("Erroruserpass"));
 
                 UsernameTextBox.Focus();
 
@@ -218,8 +218,7 @@ namespace Calendar
 
             if (usernameMissing)
             {
-                ShowError(
-                    "Please enter a username.");
+                ShowError(LocalizationService.Get("Erroruser"));
 
                 UsernameTextBox.Focus();
 
@@ -231,8 +230,7 @@ namespace Calendar
 
             if (passwordMissing)
             {
-                ShowError(
-                    "Please enter a password.");
+                ShowError(LocalizationService.Get("Errorpass"));
 
                 FocusPassword();
 
@@ -305,8 +303,7 @@ namespace Calendar
             }
             catch (Exception)
             {
-                ShowError(
-                    "Unable to connect to the Central calendar database.");
+                ShowError(LocalizationService.Get("DBerror"));
             }
             finally
             {
@@ -327,8 +324,7 @@ namespace Calendar
              * was incorrect.
              */
 
-            ShowError(
-                "The username or password is incorrect.");
+            ShowError(LocalizationService.Get("Incoruserpass"));
 
             PasswordTextBox.Clear();
 
@@ -342,7 +338,7 @@ namespace Calendar
             PasswordTextBox.Visibility =
                 Visibility.Visible;
 
-            ShowPasswordButton.Content = "Show";
+            ShowPasswordButton.Content = LocalizationService.Get("Show");
 
             UpdatePlaceholders();
 

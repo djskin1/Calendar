@@ -1,0 +1,525 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <!-- Calendar Area -->
+    <!-- Application -->
+
+    <sys:String x:Key="AppName">
+        Central Calendar
+    </sys:String>
+
+    <sys:String x:Key="Version">
+        Version
+    </sys:String>
+
+    <!-- Navigation -->
+
+    <sys:String x:Key="NavCalendar">
+        Calandar
+    </sys:String>
+
+    <sys:String x:Key="NavAdmin">
+        Admin
+    </sys:String>
+
+    <sys:String x:Key="NavSearch">
+        Search
+    </sys:String>
+
+    <sys:String x:Key="NavHelp">
+        Help
+    </sys:String>
+
+    <!-- Calendar -->
+
+    <sys:String x:Key="Today">
+        Today
+    </sys:String>
+    
+    <sys:String x:Key="NewEntry">
+        New Entry
+    </sys:String>
+    
+    <sys:String x:Key="Refresh">
+        Refresh
+    </sys:String>
+    
+    <sys:String x:Key="Employee">
+        Employee
+    </sys:String>
+
+    <!-- Account -->
+    <sys:String x:Key="NotSignedIn">
+        Not signed in
+    </sys:String>
+
+    <sys:String x:Key="SignIn">
+        Sign in
+    </sys:String>
+
+    <sys:String x:Key="SignOut">
+        Sign out
+    </sys:String>
+
+    <sys:String x:Key="Localcalendar">
+        Local calendar
+    </sys:String>
+
+    <!-- Common -->
+
+    <sys:String x:Key="Save">
+        Save
+    </sys:String>
+
+    <sys:String x:Key="Cancel">
+        Cancel
+    </sys:String>
+
+    <sys:String x:Key="Close">
+        Close
+    </sys:String>
+
+    <sys:String x:Key="Settings">
+        Settings
+    </sys:String>
+
+    <sys:String x:Key="Language">
+        Language
+    </sys:String>
+    
+    <!-- About Aera -->
+
+    <sys:String x:Key="Aboutwindow">
+        About Central calendar
+    </sys:String>
+
+    <sys:String x:Key="Subtitleabout">
+        Employee availability and planning
+    </sys:String>
+
+    <sys:String x:Key="Application">
+        Application
+    </sys:String>
+
+    <sys:String x:Key="Platform">
+        Platform
+    </sys:String>
+
+    <sys:String x:Key="Author">
+        Author
+    </sys:String>
+
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+
+    <sys:String x:Key="Copy">
+        Copyright
+    </sys:String>
+
+    <sys:String x:Key="Copy2">
+        © 2026 by Djskinproductions
+    </sys:String>
+
+    <sys:String x:Key="Email">
+        Email
+    </sys:String>
+
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    
+    <!-- Search Area -->
+
+    <sys:String x:Key="Search">
+        Search
+    </sys:String>
+
+    <sys:String x:Key="SutitleSearch">
+        Search employees, holidays and company events
+    </sys:String>
+
+    <sys:String x:Key="Searchplace">
+        Search...
+    </sys:String>
+
+    <sys:String x:Key="notfound">
+        Item is not Found
+    </sys:String>
+
+    <sys:String x:Key="notfound2">
+        Try another employee, holiday or event name.
+    </sys:String>
+    
+    <!-- Help Area -->
+    <sys:String x:Key="Help">
+        Help
+    </sys:String>
+
+    <sys:String x:Key="subtitleHelp">
+        Central calendar user guide
+    </sys:String>
+
+    <sys:String x:Key="subtitleHelp2">
+        Central calendar provides an overview of employee availability, office attendance, absences, holidays and company calendar events.
+    </sys:String>
+
+    <sys:String x:Key="CalendarLegend">
+        Calendar Legend
+    </sys:String>
+
+    <sys:String x:Key="Color">
+        Color
+    </sys:String>
+
+    <sys:String x:Key="Code">
+        Code
+    </sys:String>
+
+    <sys:String x:Key="Description">
+        Description
+    </sys:String>
+
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+
+    <sys:String x:Key="Home">
+        Home
+    </sys:String>
+
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+
+    <sys:String x:Key="WorkOffice">
+        Work Office
+    </sys:String>
+
+    <sys:String x:Key="WorkHome">
+        Work Home
+    </sys:String>
+
+    <sys:String x:Key="HomeAbs">
+        ½ day work home, ½ day absence
+    </sys:String>
+
+    <sys:String x:Key="OfficeAbs">
+        ½ day office home, ½ day absence
+    </sys:String>
+
+    <sys:String x:Key="HomeOffice">
+        ½ day work home, ½ day work office
+    </sys:String>
+
+    <sys:String x:Key="Congress">
+        Congress
+    </sys:String>
+
+    <sys:String x:Key="Externalmeet">
+        External Meeting
+    </sys:String>
+
+    <sys:String x:Key="Monvis">
+        Monitoring Visit
+    </sys:String>
+
+    <sys:String x:Key="Option">
+        Option
+    </sys:String>
+
+    <sys:String x:Key="Absence">
+        Absence
+    </sys:String>
+
+    <sys:String x:Key="Weekend">
+        Weekend
+    </sys:String>
+
+    <sys:String x:Key="Public holiday">
+        Public holiday
+    </sys:String>
+
+    <sys:String x:Key="Mandatory">
+        Mandatory day free
+    </sys:String>
+
+    <sys:String x:Key="Create">
+        Create a calandar entry
+    </sys:String>
+
+    <sys:String x:Key="Helpcreate1">
+        • Click New Entry in the calendar toolbar.
+    </sys:String>
+    <sys:String x:Key="Helpcreate2">
+        • Select the employee if you have permission to manage another employee.
+    </sys:String>
+    <sys:String x:Key="Helpcreate3">
+        • Select the date.
+    </sys:String>
+    <sys:String x:Key="Helpcreate4">
+        • Select the required calendar status.
+    </sys:String>
+    <sys:String x:Key="Helpcreate5">
+        • Select a recurrence option when required.
+    </sys:String>
+    <sys:String x:Key="Helpcreate6">
+        • Enter optional notes.
+    </sys:String>
+    <sys:String x:Key="Helpcreate7">
+        • Click Save.
+    </sys:String>
+
+    <sys:String x:Key="Recurringentries">
+        Recurring entries
+    </sys:String>
+
+    <sys:String x:Key="Re1">
+        Available recurrence options can include:
+    </sys:String>
+    <sys:String x:Key="Re2">
+        • Once
+    </sys:String>
+    <sys:String x:Key="Re3">
+        • Daily
+    </sys:String>
+    <sys:String x:Key="Re4">
+        • Every week
+    </sys:String>
+    <sys:String x:Key="Re5">
+        • Every 2 weeks
+    </sys:String>
+    <sys:String x:Key="Re6">
+        • Every 3 weeks
+    </sys:String>
+    <sys:String x:Key="Re7">
+        • Every 4 weeks
+    </sys:String>
+
+    <sys:String x:Key="Groups">
+        Groups
+    </sys:String>
+    <sys:String x:Key="Groups1">
+        All contains all active employees.
+    </sys:String>
+    <sys:String x:Key="Groups2">
+        • All does not have its own calendar status.
+    </sys:String>
+    <sys:String x:Key="Groups3">
+        • Groups such as BHV and I&amp;T can be expanded or collapsed.
+    </sys:String>
+    <sys:String x:Key="Groups4">
+        • Employees can appear in multiple groups.
+    </sys:String>
+    <sys:String x:Key="Groups5">
+        • The same employee always uses the same calendar information in every group.
+    </sys:String>
+    <sys:String x:Key="Groups6">
+        • When Microsoft Entra ID is connected, group membership is synchronized from Entra ID.
+    </sys:String>
+
+    <sys:String x:Key="Weekhol">
+        Weekends and holidays
+    </sys:String>
+    <sys:String x:Key="Weekhol1">
+        • Saturdays and Sundays are shown in grey.
+    </sys:String>
+    <sys:String x:Key="Weekhol2">
+        • Weekend days cannot normally be edited.
+    </sys:String>
+    <sys:String x:Key="Weekhol3">
+        • Dutch public holidays can be displayed automatically.
+    </sys:String>
+    <sys:String x:Key="Weekhol4">
+        • Mandatory company-wide days off are controlled by authorized users.
+    </sys:String>
+
+    <sys:String x:Key="Nav">
+        Navigation
+    </sys:String>
+    <sys:String x:Key="Nav1">
+        Use Previous and Next to move through the calendar.
+    </sys:String>
+    <sys:String x:Key="Nav2">
+        • Click to return to the current period.
+    </sys:String>
+    <sys:String x:Key="Nav3">
+        • Click Refresh to reload the latest calendar information.
+    </sys:String>
+    <sys:String x:Key="Nav4">
+        • Click a group header to expand or collapse that group.
+    </sys:String>
+
+    <sys:String x:Key="Search1">
+        Use Search to find an employee or quickly locate calendar information.
+    </sys:String>
+
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">
+        When Microsoft Entra ID is configured by an administrator:
+    </sys:String>
+    <sys:String x:Key="MsEID2">
+        • Users can sign in with their Microsoft account.
+    </sys:String>
+    <sys:String x:Key="MsEID3">
+        • Employees and group memberships can be synchronized automatically.
+    </sys:String>
+    <sys:String x:Key="MsEID4">
+        • The user's Microsoft profile name and profile picture can be displayed.
+    </sys:String>
+    <sys:String x:Key="MsEID5">
+        • Only groups enabled by an administrator are displayed in the calendar.
+    </sys:String>
+
+    <sys:String x:Key="Hint">
+        Tips &amp; Tricks
+    </sys:String>
+    <sys:String x:Key="Hint1">
+        • Collapse groups you do not need to keep the calendar easier to read.
+    </sys:String>
+    <sys:String x:Key="Hint2">
+        • Use Today to quickly return to the current week.
+    </sys:String>
+    <sys:String x:Key="Hint3">
+        • Use Refresh after synchronization or when calendar information has changed.
+    </sys:String>
+    <sys:String x:Key="Hint4">
+        • The same employee may be shown under All and multiple groups without creating duplicate calendar entries.
+    </sys:String>
+    
+    <!-- New Entry -->
+    <sys:String x:Key="NewTitle">
+        New Calendar Entry
+    </sys:String>
+
+    <sys:String x:Key="NewSubtitle">
+        Create a new calendar entry
+    </sys:String>
+
+    <sys:String x:Key="Date">
+        Date
+    </sys:String>
+
+    <sys:String x:Key="Status">
+        Status
+    </sys:String>
+
+    <sys:String x:Key="Recurrence">
+        Recurrence
+    </sys:String>
+
+    <sys:String x:Key="Notes">
+        Notes
+    </sys:String>
+    
+    <!-- Login -->
+    <sys:String x:Key="LoginLoc">
+        Administrator sign in
+    </sys:String>
+
+    <sys:String x:Key="Locadmin">
+        Local Administrator
+    </sys:String>
+
+    <sys:String x:Key="adminsignin">
+        Administrator sign in
+    </sys:String>
+
+    <sys:String x:Key="loginsub">
+        Sign in with a Central calendar Local Administrator account
+    </sys:String>
+
+    <sys:String x:Key="Username">
+        Username
+    </sys:String>
+
+    <sys:String x:Key="UserPlace">
+        Enter your username
+    </sys:String>
+
+    <sys:String x:Key="Password">
+        Password
+    </sys:String>
+
+    <sys:String x:Key="PassPlace">
+        Enter your Password
+    </sys:String>
+
+    <sys:String x:Key="Show">
+        Show
+    </sys:String>
+
+    <sys:String x:Key="Hide">
+        Hide
+    </sys:String>
+
+    <sys:String x:Key="Signin">
+        Sign in
+    </sys:String>
+    
+    <!-- Main stream -->
+    <!-- Error -->
+    <sys:String x:Key="Erroruserpass">
+        Please enter a username and password.
+    </sys:String>
+
+    <sys:String x:Key="Erroruser">
+        Please enter a username.
+    </sys:String>
+
+    <sys:String x:Key="Errorpass">
+        Please enter a password.
+    </sys:String>
+
+    <sys:String x:Key="DBerror">
+        Unable to connect to the Central calendar database.
+    </sys:String>
+
+    <sys:String x:Key="Incoruserpass">
+        The username or password is incorrect.
+    </sys:String>
+    
+</ResourceDictionary>

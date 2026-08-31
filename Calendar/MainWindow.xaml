@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-        Title="Central calendar"
+        Title="{DynamicResource AppName}"
 		Icon="/Images/icon.png"
         Width="1200"
         Height="600"
@@ -49,16 +49,12 @@
 
 				<StackPanel>
 
-					<TextBlock Text="Central"
+                    <TextBlock Text="{DynamicResource AppName}"
                                Foreground="White"
                                FontSize="23"
                                FontWeight="SemiBold"/>
 
-					<TextBlock Text="calendar"
-                               Foreground="#DFF6F7"
-                               FontSize="17"/>
-
-				</StackPanel>
+                </StackPanel>
 
 				<!-- Calendar -->
 
@@ -76,7 +72,7 @@
                                    FontSize="18"
                                    Margin="8,0,12,0"/>
 
-						<TextBlock Text="Calendar"
+                        <TextBlock Text="{DynamicResource NavCalendar}"
                                    VerticalAlignment="Center"/>
 
 					</StackPanel>
@@ -101,7 +97,7 @@
                                    FontSize="18"
                                    Margin="8,0,12,0"/>
 
-						<TextBlock Text="Admin"
+                        <TextBlock Text="{DynamicResource NavAdmin}"
                                    VerticalAlignment="Center"/>
 
 					</StackPanel>
@@ -123,7 +119,7 @@
                                    FontSize="17"
                                    Margin="8,0,12,0"/>
 
-						<TextBlock Text="Search"/>
+                        <TextBlock Text="{DynamicResource NavSearch}"/>
 
 					</StackPanel>
 
@@ -144,7 +140,7 @@
                                    FontSize="17"
                                    Margin="8,0,12,0"/>
 
-						<TextBlock Text="Help"/>
+                        <TextBlock Text="{DynamicResource NavHelp}"/>
 
 					</StackPanel>
 
@@ -169,7 +165,7 @@
 
                 <Button x:Name="VersionButton"
                         Grid.Row="9"
-                        Content="Version"
+                        Content="{DynamicResource Version}"
                         Background="Transparent"
                         Foreground="White"
                         BorderThickness="0"
@@ -210,7 +206,7 @@
 						<ColumnDefinition Width="Auto"/>
 					</Grid.ColumnDefinitions>
 
-					<TextBlock Text="Central calendar"
+                    <TextBlock Text="{DynamicResource AppName}"
                                FontSize="20"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"
@@ -254,11 +250,11 @@
                                         Margin="0,0,8,0">
 
                                 <TextBlock x:Name="LoggedInUserText"
-                                           Text="Not signed in"
+                                           Text="{DynamicResource NotSignedIn}"
                                            FontWeight="SemiBold"
                                            Foreground="#111827"/>
                                 <TextBlock x:Name="LoginTypeText"
-                                           Text="Local calendar"
+                                           Text="{DynamicResource Localcalendar}"
                                            FontSize="11"
                                            Foreground="#6B7280"/>
 
@@ -316,7 +312,7 @@
 					<!-- Today -->
 
 					<Button Grid.Column="1"
-                            Content="Today"
+                            Content="{DynamicResource Today}"
                             Width="75"
                             Height="38"
                             Margin="7,0"
@@ -386,7 +382,7 @@
                                        FontSize="15"
                                        Margin="0,0,8,0"/>
 
-							<TextBlock Text="New Entry"/>
+                            <TextBlock Text="{DynamicResource NewEntry}"/>
 
 						</StackPanel>
 
@@ -470,7 +466,7 @@
 
 					<DataGrid.Columns>
 
-						<DataGridTextColumn Header="Employee"
+                        <DataGridTextColumn Header="{DynamicResource Employee}"
                                             Binding="{Binding DisplayName}"
                                             Width="190"
                                             MinWidth="160"/>
@@ -504,12 +500,12 @@
 
                     <StackPanel VerticalAlignment="Center">
 
-                        <TextBlock Text="Help"
+                        <TextBlock Text="{DynamicResource Help}"
                            FontSize="24"
                            FontWeight="SemiBold"
                            Foreground="#111827"/>
 
-                        <TextBlock Text="Central calendar user guide"
+                        <TextBlock Text="{DynamicResource subtitleHelp}"
                            FontSize="13"
                            Foreground="#6B7280"/>
 
@@ -533,7 +529,7 @@
                     <!-- OVERVIEW -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Central calendar"
+                    <TextBlock Text="{DynamicResource AppName}"
                        FontSize="26"
                        FontWeight="SemiBold"
                        Foreground="#111827"/>
@@ -541,13 +537,13 @@
                     <TextBlock Margin="0,5,0,25"
                        TextWrapping="Wrap"
                        Foreground="#6B7280"
-                       Text="Central calendar provides an overview of employee availability, office attendance, absences, holidays and company calendar events."/>
+                       Text="{DynamicResource subtitleHelp2}"/>
 
                     <!-- ================================================= -->
                     <!-- LEGEND -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Calendar legend"
+                    <TextBlock Text="{DynamicResource CalendarLegend}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,12"/>
@@ -591,20 +587,20 @@
 
                             <TextBlock Grid.Row="0"
                                Grid.Column="0"
-                               Text="Color"
+                               Text="{DynamicResource Color}"
                                FontWeight="SemiBold"
                                Margin="10"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="0"
                                Grid.Column="1"
-                               Text="Code"
+                               Text="{DynamicResource Code}"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="0"
                                Grid.Column="2"
-                               Text="Description"
+                               Text="{DynamicResource Description}"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"/>
 
@@ -619,12 +615,12 @@
 
                             <TextBlock Grid.Row="1"
                                Grid.Column="1"
-                               Text="OFFI"
+                               Text="{DynamicResource OFFI}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="1"
                                Grid.Column="2"
-                               Text="Work office"
+                               Text="{DynamicResource WorkOffice}"
                                VerticalAlignment="Center"/>
 
                             <!-- HOME -->
@@ -636,12 +632,12 @@
 
                             <TextBlock Grid.Row="2"
                                Grid.Column="1"
-                               Text="HOME"
+                               Text="{DynamicResource Home}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="2"
                                Grid.Column="2"
-                               Text="Work home"
+                               Text="{DynamicResource WorkHome}"
                                VerticalAlignment="Center"/>
 
                             <!-- HO/AB -->
@@ -673,12 +669,12 @@
 
                             <TextBlock Grid.Row="3"
                                Grid.Column="1"
-                               Text="HO/AB"
+                               Text="{DynamicResource HO/AB}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="3"
                                Grid.Column="2"
-                               Text="½ day work home, ½ day absence"
+                               Text="{DynamicResource HomeAbs}"
                                VerticalAlignment="Center"/>
 
                             <!-- OF/AB -->
@@ -710,12 +706,12 @@
 
                             <TextBlock Grid.Row="4"
                                Grid.Column="1"
-                               Text="OF/AB"
+                               Text="{DynamicResource OF/AB}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="4"
                                Grid.Column="2"
-                               Text="½ day work office, ½ day absence"
+                               Text="{DynamicResource OfficeAbs}"
                                VerticalAlignment="Center"/>
 
                             <!-- HO/OF -->
@@ -747,12 +743,12 @@
 
                             <TextBlock Grid.Row="5"
                                Grid.Column="1"
-                               Text="HO/OF"
+                               Text="{DynamicResource HO/OF}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="5"
                                Grid.Column="2"
-                               Text="½ day work home, ½ day work office"
+                               Text="{DynamicResource HomeOffice}"
                                VerticalAlignment="Center"/>
 
                             <!-- CONG -->
@@ -764,12 +760,12 @@
 
                             <TextBlock Grid.Row="6"
                                Grid.Column="1"
-                               Text="CONG"
+                               Text="{DynamicResource CONG}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="6"
                                Grid.Column="2"
-                               Text="Congress"
+                               Text="{DynamicResource Congress}"
                                VerticalAlignment="Center"/>
 
                             <!-- MEET -->
@@ -781,12 +777,12 @@
 
                             <TextBlock Grid.Row="7"
                                Grid.Column="1"
-                               Text="MEET"
+                               Text="{DynamicResource MEET}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="7"
                                Grid.Column="2"
-                               Text="External meeting"
+                               Text="{DynamicResource Externalmeet}"
                                VerticalAlignment="Center"/>
 
                             <!-- MV -->
@@ -798,12 +794,12 @@
 
                             <TextBlock Grid.Row="8"
                                Grid.Column="1"
-                               Text="MV"
+                               Text="{DynamicResource MF}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="8"
                                Grid.Column="2"
-                               Text="Monitoring visit"
+                               Text="{DynamicResource Monvis}"
                                VerticalAlignment="Center"/>
 
                             <!-- OPT -->
@@ -815,12 +811,12 @@
 
                             <TextBlock Grid.Row="9"
                                Grid.Column="1"
-                               Text="OPT"
+                               Text="{DynamicResource OPT}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="9"
                                Grid.Column="2"
-                               Text="Option"
+                               Text="{DynamicResource Option}"
                                VerticalAlignment="Center"/>
 
                             <!-- ABS -->
@@ -832,12 +828,12 @@
 
                             <TextBlock Grid.Row="10"
                                Grid.Column="1"
-                               Text="ABS"
+                               Text="{DynamicResource ABS}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="10"
                                Grid.Column="2"
-                               Text="Absence"
+                               Text="{DynamicResource Absence}"
                                VerticalAlignment="Center"/>
 
                             <!-- Weekend -->
@@ -849,7 +845,7 @@
 
                             <TextBlock Grid.Row="11"
                                Grid.Column="2"
-                               Text="Weekend"
+                               Text="{DynamicResource Weekend}"
                                VerticalAlignment="Center"/>
 
                             <!-- PUB -->
@@ -861,12 +857,12 @@
 
                             <TextBlock Grid.Row="12"
                                Grid.Column="1"
-                               Text="PUB"
+                               Text="{DynamicResource PUB}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="12"
                                Grid.Column="2"
-                               Text="Public holiday"
+                               Text="{DynamicResource Public holiday}"
                                VerticalAlignment="Center"/>
 
                             <!-- MF -->
@@ -878,12 +874,12 @@
 
                             <TextBlock Grid.Row="13"
                                Grid.Column="1"
-                               Text="MF"
+                               Text="{DynamicResource MF}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="13"
                                Grid.Column="2"
-                               Text="Mandatory day free"
+                               Text="{DynamicResource Mandatory}"
                                VerticalAlignment="Center"/>
 
                         </Grid>
@@ -894,105 +890,180 @@
                     <!-- CREATE ENTRY -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Creating a calendar entry"
+                    <TextBlock Text="{DynamicResource Create}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,25">
-                • Click <Bold>New Entry</Bold> in the calendar toolbar.<LineBreak/>
-                • Select the employee if you have permission to manage another employee.<LineBreak/>
-                • Select the date.<LineBreak/>
-                • Select the required calendar status.<LineBreak/>
-                • Select a recurrence option when required.<LineBreak/>
-                • Enter optional notes.<LineBreak/>
-                • Click <Bold>Save</Bold>.
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,25">
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate1}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate2}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate3}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate4}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate5}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate6}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Helpcreate7}"/>
+                        </TextBlock>
+                    </StackPanel>
 
                     <!-- ================================================= -->
                     <!-- RECURRENCE -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Recurring entries"
+                    <TextBlock Text="{DynamicResource Recurringentries}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,25">
-                Available recurrence options can include:<LineBreak/>
-                • Once<LineBreak/>
-                • Daily<LineBreak/>
-                • Every week<LineBreak/>
-                • Every 2 weeks<LineBreak/>
-                • Every 3 weeks<LineBreak/>
-                • Every 4 weeks
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,25">
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re1}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re2}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re3}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re4}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re5}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re6}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Re7}" />
+                        </TextBlock>
+                    </StackPanel>
 
                     <!-- ================================================= -->
                     <!-- GROUPS -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Groups"
+                    <TextBlock Text="{DynamicResource Groups}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,25">
-                • <Bold>All</Bold> contains all active employees.<LineBreak/>
-                • All does not have its own calendar status.<LineBreak/>
-                • Groups such as BHV and I&amp;T can be expanded or collapsed.<LineBreak/>
-                • Employees can appear in multiple groups.<LineBreak/>
-                • The same employee always uses the same calendar information in every group.<LineBreak/>
-                • When Microsoft Entra ID is connected, group membership is synchronized from Entra ID.
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,25">
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Groups1}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Groups2}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Groups3}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Groups4}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Groups5}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Groups6}"/>
+                        </TextBlock>
+
+                    </StackPanel>
 
                     <!-- ================================================= -->
                     <!-- WEEKENDS / HOLIDAYS -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Weekends and holidays"
+                    <TextBlock Text="{DynamicResource Weekhol}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,25">
-                • Saturdays and Sundays are shown in grey.<LineBreak/>
-                • Weekend days cannot normally be edited.<LineBreak/>
-                • Dutch public holidays can be displayed automatically.<LineBreak/>
-                • Mandatory company-wide days off are controlled by authorized users.
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,25">
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Weekhol1}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Weekhol2}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Weekhol3}" />
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Weekhol4}" />
+                        </TextBlock>
+                    </StackPanel>
 
                     <!-- ================================================= -->
                     <!-- NAVIGATION -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Navigation"
+                    <TextBlock Text="{DynamicResource Nav}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,25">
-                • Use <Bold>Previous</Bold> and <Bold>Next</Bold> to move through the calendar.<LineBreak/>
-                • Click <Bold>Today</Bold> to return to the current period.<LineBreak/>
-                • Click <Bold>Refresh</Bold> to reload the latest calendar information.<LineBreak/>
-                • Click a group header to expand or collapse that group.
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,25">
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Nav1}"/> 
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Nav2}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Nav3}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                    Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Nav4}"/>
+                        </TextBlock>
+                    </StackPanel>
 
                     <!-- ================================================= -->
                     <!-- SEARCH -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Search"
+                    <TextBlock Text="{DynamicResource Search}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
@@ -1000,44 +1071,67 @@
                     <TextBlock TextWrapping="Wrap"
                        LineHeight="22"
                        Margin="10,0,0,25"
-                       Text="Use Search to find an employee or quickly locate calendar information."/>
+                       Text="{DynamicResource Search1}"/>
 
                     <!-- ================================================= -->
                     <!-- ENTRA -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Microsoft Entra ID"
+                    <TextBlock Text="{DynamicResource MsEID}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,25">
-                When Microsoft Entra ID is configured by an administrator:<LineBreak/>
-                • Users can sign in with their Microsoft account.<LineBreak/>
-                • Employees and group memberships can be synchronized automatically.<LineBreak/>
-                • The user's Microsoft profile name and profile picture can be displayed.<LineBreak/>
-                • Only groups enabled by an administrator are displayed in the calendar.
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,25">
+                        <TextBlock TextWrapping="Wrap"                                    
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource MsEID1}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"                                    
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource MsEID2}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"                                    
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource MsEID3}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"                                    
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource MsEID4}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"                                    
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource MsEID5}"/>
+                        </TextBlock>
+                    </StackPanel>
 
                     <!-- ================================================= -->
                     <!-- TIPS -->
                     <!-- ================================================= -->
 
-                    <TextBlock Text="Tips &amp; Tricks"
+                    <TextBlock Text="{DynamicResource Hint}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
-                    <TextBlock TextWrapping="Wrap"
-                       LineHeight="22"
-                       Margin="10,0,0,40">
-                • Collapse groups you do not need to keep the calendar easier to read.<LineBreak/>
-                • Use Today to quickly return to the current week.<LineBreak/>
-                • Use Refresh after synchronization or when calendar information has changed.<LineBreak/>
-                • The same employee may be shown under All and multiple groups without creating duplicate calendar entries.
-                    </TextBlock>
+                    <StackPanel Margin="10,0,0,40">
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            "<Run Text="{DynamicResource Hint1}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Hint2}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Hint3}"/>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap"
+                                   Margin="0,0,0,6">
+                            <Run Text="{DynamicResource Hint4}"/>
+                        </TextBlock>
+                    </StackPanel>
 
                 </StackPanel>
 
@@ -1067,11 +1161,11 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="Search"
+                        <TextBlock Text="{DynamicResource Search}"
                            FontSize="24"
                            FontWeight="SemiBold"
                            Foreground="#111827"/>
-                        <TextBlock Text="Search employees, holidays and company events"
+                        <TextBlock Text="{DynamicResource SutitleSearch}"
                            FontSize="12"
                            Foreground="#6B7280"/>
                     </StackPanel>
@@ -1109,7 +1203,7 @@
                                  TextChanged="SearchTextBox_TextChanged"/>
 
                                 <TextBlock x:Name="SearchPlaceholder"
-                                   Text="Search..."
+                                   Text="{DynamicResource Searchplace}"
                                    Foreground="#9CA3AF"
                                    VerticalAlignment="Center"
                                    IsHitTestVisible="False"/>
@@ -1149,14 +1243,14 @@
                                Foreground="#9CA3AF"
                                HorizontalAlignment="Center"/>
 
-                            <TextBlock Text="No items found."
+                            <TextBlock Text="{DynamicResource notfound}"
                                FontSize="16"
                                FontWeight="SemiBold"
                                Margin="0,12,0,0"
                                Foreground="#374151"
                                HorizontalAlignment="Center"/>
 
-                            <TextBlock Text="Try another employee, holiday or event name."
+                            <TextBlock Text="{DynamicResource notfound2}"
                                Foreground="#6B7280"
                                Margin="0,5,0,0"/>
                         </StackPanel>
