@@ -113,6 +113,12 @@ namespace CompanyCalendar
             Title = $"{LocalizationService.Get("AppName")} " +
                     $"{VersionService.CurrentVersion}";
 
+            SettingsVersionText.Text = VersionService.CurrentVersion;
+
+            LanguageComboBox.ItemsSource = LocalizationService.Languages;
+
+            LanguageComboBox.SelectedValue = LocalizationService.CurrentLanguagesCode;
+
             // Start at the Monday of the current week.
             _startDate = StartOfWeek(DateTime.Today);
 
@@ -129,6 +135,20 @@ namespace CompanyCalendar
 
             LoadCalendar();
 
+        }
+
+        //language //
+
+        private void LanguageComboBox_SelectionChanged(
+            object sender,
+            SelectionChangedEventArgs e)
+        {
+            if (LanguageComboBox.SelectedValue is not string languageCode)
+            {
+                return;
+            }
+
+            LocalizationService.SetLanguage(languageCode);
         }
 
         // Search //

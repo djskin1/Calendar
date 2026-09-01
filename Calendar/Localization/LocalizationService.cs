@@ -140,6 +140,13 @@ namespace Calendar.Localization
                     CultureName = "ar-SA",
                     ResourcePath = "/Languages/Strings.ar.xaml",
                     isRightToLeft = true
+                },
+                new()
+                {
+                    Code = "pl",
+                    DisplayName = "Polski",
+                    CultureName = "pl-PL",
+                    ResourcePath = "/Languages/Strings.pl.xaml"
                 }
             };
 

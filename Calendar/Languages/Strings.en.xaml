@@ -511,7 +511,41 @@
 	<sys:String x:Key="SettingsSubtitle">
 		Change your personal Central calendar preferences.
 	</sys:String>
-    
+
+    <sys:String x:Key="SettingsLanguageTitle">
+        Language settings
+    </sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">
+        Choose the language you want to use in Central calendar
+    </sys:String>
+
+    <sys:String x:Key="SettingsAppearanceTitle">
+        Appearance
+    </sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">
+        Choose how central calendar should look
+    </sys:String>
+
+    <sys:String x:Key="AppearanceSystem">
+        Use windows settings
+    </sys:String>
+    <sys:String x:Key="AppearanceLight">
+        Light
+    </sys:String>
+    <sys:String x:Key="AppearanceDark">
+        Dark
+    </sys:String>
+    <sys:String x:Key="ComingSoon">
+        This option will be available in a future version
+    </sys:String>
+
+    <sys:String x:Key="ApplicationVersion">
+        Application Version
+    </sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">
+        The Curremt;y installed version of Central calendar
+    </sys:String>
+
     <!-- Main stream -->
     <!-- Error -->
     <sys:String x:Key="Erroruserpass">
