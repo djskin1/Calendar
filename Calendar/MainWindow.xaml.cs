@@ -29,10 +29,10 @@ namespace CompanyCalendar
         private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
 
         private readonly ObservableCollection<SearchResultItem>
-    _searchResults = new();
+            _searchResults = new();
 
         private readonly DispatcherTimer _searchTimer =
-    new DispatcherTimer();
+            new DispatcherTimer();
 
         private bool IsLocalAdministrator()
         {
@@ -79,16 +79,16 @@ namespace CompanyCalendar
                 if (canConnect)
                 {
                     MessageBox.Show(
-                        "Connection to CentralCalendar database successful.",
-                        "Database",
+                        LocalizationService.Get("Connected"),
+                        "Calendar",
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
                 }
                 else
                 {
                     MessageBox.Show(
-                        "Could not connect to the CentralCalendar database.",
-                        "Database",
+                        LocalizationService.Get("NotConnected"),
+                        "Calendar",
                         MessageBoxButton.OK,
                         MessageBoxImage.Error);
                 }
@@ -97,7 +97,7 @@ namespace CompanyCalendar
             {
                 MessageBox.Show(
                     ex.Message,
-                    "Database error",
+                    LocalizationService.Get("DBError1"),
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
@@ -133,8 +133,8 @@ namespace CompanyCalendar
 
         // Search //
         private void SearchTextBox_TextChanged(
-    object sender,
-    TextChangedEventArgs e)
+            object sender,
+            TextChangedEventArgs e)
         {
             SearchPlaceholder.Visibility =
                 string.IsNullOrWhiteSpace(
@@ -173,7 +173,7 @@ namespace CompanyCalendar
         }
 
         private async Task SearchDatabaseAsync(
-    string searchText)
+        string searchText)
         {
             _searchResults.Clear();
 
@@ -613,13 +613,20 @@ namespace CompanyCalendar
         // BUTTONS
         // ============================================================
 
+        private void HideAllPages()
+        {
+            CalendarPage.Visibility = Visibility.Collapsed;
+            HelpPage.Visibility = Visibility.Collapsed;
+            SearchPage.Visibility = Visibility.Collapsed;
+            SettingsPage.Visibility = Visibility.Collapsed;
+        }
+
         private void CalendarButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            HelpPage.Visibility = Visibility.Collapsed;
+            HideAllPages();
             CalendarPage.Visibility = Visibility.Visible;
-            SearchPage.Visibility = Visibility.Collapsed;
             LoadCalendar();
         }
 
@@ -634,29 +641,28 @@ namespace CompanyCalendar
                 MessageBoxImage.Information);
         }
 
+        private void SettingsButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            HideAllPages();
+            SettingsPage.Visibility = Visibility.Visible;
+        }
+
         private void SearchButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            CalendarPage.Visibility =
-                Visibility.Collapsed;
-
-            HelpPage.Visibility =
-                Visibility.Collapsed;
-
-            SearchPage.Visibility =
-                Visibility.Visible;
-
-            SearchTextBox.Focus();
+            HideAllPages();
+            SearchPage.Visibility = Visibility.Visible;
         }
 
         private void HelpButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            CalendarPage.Visibility = Visibility.Collapsed;
+            HideAllPages();
             HelpPage.Visibility = Visibility.Visible;
-            SearchPage.Visibility = Visibility.Collapsed;
         }
 
         private void VersionButton_Click(
@@ -771,6 +777,26 @@ namespace CompanyCalendar
                     Department = "Finance"
                 });
         }
+
+        #if DEBUG
+            private async void Mainwindow_Loaded(
+                object sender,
+                RoutedEventArgs e)
+            {
+                try
+                {
+                    await DevelopmentAdminSeeder.EnsureTestAdminAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"Unable to create the development administrator.\n\n{ex.Message}",
+                        "Central calendar",
+                         MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
+            }
+        #endif
     }
 
     // ================================================================

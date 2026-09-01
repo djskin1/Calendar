@@ -37,7 +37,7 @@
 					<RowDefinition Height="25"/>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="20"/>
+					<RowDefinition Height="auto"/>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="*"/>
@@ -86,7 +86,7 @@
                         Height="45"
                         Margin="0,4"
                         HorizontalContentAlignment="Left"
-                        Visibility="Collapsed"
+                        Visibility="Visible"
                         Click="AdminButton_Click">
 
 					<StackPanel Orientation="Horizontal">
@@ -102,6 +102,23 @@
 
 					</StackPanel>
 
+				</Button>
+				
+				<!-- Settings -->
+				<Button Grid.Row="4"
+						Height="45"
+						Margin="0,4"
+						HorizontalContentAlignment="Left"
+						Click="SettingsButton_Click">
+					<StackPanel Orientation="horizontal">
+						<TextBlock Text="&#xE713;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18"
+                                   Margin="8,0,12,0"/>
+
+                        <TextBlock Text="{DynamicResource NavSettings}"
+                                   VerticalAlignment="Center"/>
+					</StackPanel>
 				</Button>
 
 				<!-- Search -->
@@ -1332,6 +1349,42 @@
             </ScrollViewer>
 
         </Grid>
+
+		<Grid x:Name="SettingsPage"
+			  Grid.Column="1"
+			  Visibility="Collapsed"
+			  Background="#F3F4F6">
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="76"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Border Grid.Row="0"
+					Background="White"
+					BorderBrush="#E5E7EB"
+					BorderThickness="0,0,0,1">
+
+				<StackPanel Margin="20,0"
+							VerticalAlignment="Center">
+					<TextBlock Text="{DynamicResource SettingsTitle}"
+							   FontSize="24"
+							   FontWeight="SemiBold"
+							   Foreground="#111827"/>
+					<TextBlock Text="{DynamicResource SettingsSubtitle}"
+							   Margin="0,3,0,0"
+							   FontSize="12"
+							   Foreground="#6B7280"/>
+				</StackPanel>
+				
+			</Border>
+
+			<ScrollViewer Grid.Row="1"
+						  v>
+				
+			</ScrollViewer>
+			
+		</Grid>
 
     </Grid>
 

@@ -23,6 +23,10 @@
         Admin
     </sys:String>
 
+	<sys:String x:Key="NavSettings">
+		Settings
+	</sys:String>
+
     <sys:String x:Key="NavSearch">
         Search
     </sys:String>
@@ -499,6 +503,14 @@
     <sys:String x:Key="Signin">
         Sign in
     </sys:String>
+	
+	<!-- Settings Area-->
+	<sys:String x:Key="SettingsTitle">
+		Settings
+	</sys:String>
+	<sys:String x:Key="SettingsSubtitle">
+		Change your personal Central calendar preferences.
+	</sys:String>
     
     <!-- Main stream -->
     <!-- Error -->
@@ -521,5 +533,19 @@
     <sys:String x:Key="Incoruserpass">
         The username or password is incorrect.
     </sys:String>
-    
-</ResourceDictionary>
+	
+	<sys:String x:Key="Connected">
+		Connection to CentralCalendar database successful.",
+		"Database"
+	</sys:String>
+
+	<sys:String x:Key="NotConnected">
+		Connection to CentralCalendar database failed.",
+		"Database"
+	</sys:String>
+
+	<sys:String x:Key="DBError1">
+		Database Error
+	</sys:String>
+
+	</ResourceDictionary>
