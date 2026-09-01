@@ -15,6 +15,16 @@
     <None Remove="Images\cardialysis-logo.svg" />
     <None Remove="Images\Logo.png" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Languages\Strings.fy.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Languages\Strings.fy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
 	
 
   <ItemGroup>
