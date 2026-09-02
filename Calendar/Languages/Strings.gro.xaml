@@ -1,0 +1,193 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=System.Runtime" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppName">Centrale Kèlender</sys:String>
+    <sys:String x:Key="Version">Versie</sys:String>
+    <sys:String x:Key="NavCalendar">Kèlender</sys:String>
+    <sys:String x:Key="NavAdmin">Beheer</sys:String>
+    <sys:String x:Key="NavSettings">Instellens</sys:String>
+    <sys:String x:Key="NavSearch">Zuiken</sys:String>
+    <sys:String x:Key="NavHelp">Hulp</sys:String>
+    <sys:String x:Key="Today">Vandoag</sys:String>
+    <sys:String x:Key="NewEntry">Nij item</sys:String>
+    <sys:String x:Key="Refresh">Kèlender verneien</sys:String>
+    <sys:String x:Key="Employee">Medeaarbaider</sys:String>
+    <sys:String x:Key="ToolPerv">Veurige periode</sys:String>
+    <sys:String x:Key="ToolDate">Goa noar datum</sys:String>
+    <sys:String x:Key="ToolNext">Volgende periode</sys:String>
+    <sys:String x:Key="NotSignedIn">Nait inlogd</sys:String>
+    <sys:String x:Key="SignIn">Inloggen</sys:String>
+    <sys:String x:Key="SignOut">Oetloggen</sys:String>
+    <sys:String x:Key="Localcalendar">Lokale kèlender</sys:String>
+    <sys:String x:Key="Save">Opsloan</sys:String>
+    <sys:String x:Key="Cancel">Ofbreken</sys:String>
+    <sys:String x:Key="Close">Sluten</sys:String>
+    <sys:String x:Key="Settings">Instellens</sys:String>
+    <sys:String x:Key="Language">Toal</sys:String>
+    <sys:String x:Key="Aboutwindow">Over Centrale Kèlender</sys:String>
+    <sys:String x:Key="Subtitleabout">Beschikboarhaid en planning van medewarkers</sys:String>
+    <sys:String x:Key="Application">Applikoatie</sys:String>
+    <sys:String x:Key="Platform">Platform</sys:String>
+    <sys:String x:Key="Author">Auteur</sys:String>
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+    <sys:String x:Key="Copy">Auteursrecht</sys:String>
+    <sys:String x:Key="Copy2">© 2026 bie Djskinproductions</sys:String>
+    <sys:String x:Key="Email">
+        E-mail
+    </sys:String>
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    <sys:String x:Key="Search">Zuiken</sys:String>
+    <sys:String x:Key="SutitleSearch">Zuik noar medewarkers, feestdoagen en bedriefsevenementen</sys:String>
+    <sys:String x:Key="Searchplace">Zuik...</sys:String>
+    <sys:String x:Key="notfound">Der is niks vonden</sys:String>
+    <sys:String x:Key="notfound2">Prebeer n aander noam veur n medewarker, feestdag of evenement.</sys:String>
+    <sys:String x:Key="Help">
+        Help
+    </sys:String>
+    <sys:String x:Key="subtitleHelp">Gebrukershandlaaiden veur Centrale Kèlender</sys:String>
+    <sys:String x:Key="subtitleHelp2">N centrale kèlender geft n overzicht van beschikbaarhaid van medewarkers, anwaizighaid op kantoor, ofwaizighaid, vekansies en evenementen op bedriefskèlender.</sys:String>
+    <sys:String x:Key="CalendarLegend">Legenda van kèlender</sys:String>
+    <sys:String x:Key="Color">Klör</sys:String>
+    <sys:String x:Key="Code">Kode</sys:String>
+    <sys:String x:Key="Description">Omschrievens</sys:String>
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+    <sys:String x:Key="Home">Thoes</sys:String>
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+    <sys:String x:Key="WorkOffice">Warken op kantoor</sys:String>
+    <sys:String x:Key="WorkHome">Thoeswarken</sys:String>
+    <sys:String x:Key="HomeAbs">½ dag thoeswarken, ½ dag ofwaizig</sys:String>
+    <sys:String x:Key="OfficeAbs">½ dag op kantoor warken, ½ dag ofwaizig</sys:String>
+    <sys:String x:Key="HomeOffice">½ dag thoeswarken, ½ dag op kantoor warken</sys:String>
+    <sys:String x:Key="Congress">Kongres</sys:String>
+    <sys:String x:Key="Externalmeet">Externe vergoadern</sys:String>
+    <sys:String x:Key="Monvis">Monitoringbezuik</sys:String>
+    <sys:String x:Key="Option">Opties</sys:String>
+    <sys:String x:Key="Absence">Ofwaizig</sys:String>
+    <sys:String x:Key="Weekend">Wekeinde</sys:String>
+    <sys:String x:Key="Public holiday">Feestdag</sys:String>
+    <sys:String x:Key="Mandatory">Verplichte vrieje dag</sys:String>
+    <sys:String x:Key="Create">Moak n kèlenderpunt aan</sys:String>
+    <sys:String x:Key="Helpcreate1">• Klik op 'Nij item' in waarkbalk van kèlender.</sys:String>
+    <sys:String x:Key="Helpcreate2">• Selecteer medewarker as joe toestemming hebben om n aander medewarker te beheren.</sys:String>
+    <sys:String x:Key="Helpcreate3">• Selecteer datum.</sys:String>
+    <sys:String x:Key="Helpcreate4">• Selecteer gewenste kèlenderstatus.</sys:String>
+    <sys:String x:Key="Helpcreate5">• Selecteer zo neudeg n herhoaloptie.</sys:String>
+    <sys:String x:Key="Helpcreate6">• Veur eventuele opmerkingen in.</sys:String>
+    <sys:String x:Key="Helpcreate7">• Klik op Opsloan.</sys:String>
+    <sys:String x:Key="Recurringentries">Periodeke boukings</sys:String>
+    <sys:String x:Key="Re1">Beschikbore opties veur herhoalen binnen:</sys:String>
+    <sys:String x:Key="Re2">• Ainmoal</sys:String>
+    <sys:String x:Key="Re3">• Doagelijks</sys:String>
+    <sys:String x:Key="Re4">• Elke week</sys:String>
+    <sys:String x:Key="Re5">• Elke 2 weken</sys:String>
+    <sys:String x:Key="Re6">• Elke 3 weken</sys:String>
+    <sys:String x:Key="Re7">• Elke 4 weken</sys:String>
+    <sys:String x:Key="Groups">Gruppen</sys:String>
+    <sys:String x:Key="Groups1">Alle medewarkers valen in grupp Elkenain.</sys:String>
+    <sys:String x:Key="Groups2">• Grupp Elkenain het gain aigen kèlenderstatus.</sys:String>
+    <sys:String x:Key="Groups3">• Gruppen zoas BHV en I&amp;T kinnen oetklapt of inklapt worden.</sys:String>
+    <sys:String x:Key="Groups4">• Medewarkers kinnen in meerdere gruppen veurkommen.</sys:String>
+    <sys:String x:Key="Groups5">• Dezelfde medewarker bruukt in elke grupp altied dezelfde kèlendergegevens.</sys:String>
+    <sys:String x:Key="Groups6">• As Microsoft Entra ID verbonden is, wordt groepslidmoatschap oet Entra ID synchroniseerd.</sys:String>
+    <sys:String x:Key="Weekhol">Wekeinden en feestdoagen</sys:String>
+    <sys:String x:Key="Weekhol1">• Zoaterdoagen en zundagen worden in gries weergeven.</sys:String>
+    <sys:String x:Key="Weekhol2">• Wekeinddoagen kinnen normoal nait wiezigd worden.</sys:String>
+    <sys:String x:Key="Weekhol3">• Feestdoagen kinnen automatisch weergeven worden.</sys:String>
+    <sys:String x:Key="Weekhol4">• Verplichte vrieje doagen veur haile bedrief worden deur bevoegde gebrukers beheerd.</sys:String>
+    <sys:String x:Key="Nav">Navigoatie</sys:String>
+    <sys:String x:Key="Nav1">Gebruuk 'Veurige' en 'Volgende' om deur kèlender te blouzen.</sys:String>
+    <sys:String x:Key="Nav2">• Klik op Vandoag om weerom te goan noar huidige periode.</sys:String>
+    <sys:String x:Key="Nav3">• Klik op Verneien om leste kèlenderinformatie opnij te loagen.</sys:String>
+    <sys:String x:Key="Nav4">• Klik op n groepskop om dij grupp oet of in te klappen.</sys:String>
+    <sys:String x:Key="Search1">Gebruuk zuikfunctie om n medewarker te vinden of vlog kèlendergegevens op te zuiken.</sys:String>
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">As Microsoft Entra ID deur n beheerder insteld wordt:</sys:String>
+    <sys:String x:Key="MsEID2">• Gebrukers kinnen heur anmelden mit heur Microsoft-account.</sys:String>
+    <sys:String x:Key="MsEID3">• Medewarkers en groepslidmoatschappen kinnen automatisch synchroniseerd worden.</sys:String>
+    <sys:String x:Key="MsEID4">• Microsoft-profielnoam en -profielfoto van gebruker kinnen weergeven worden.</sys:String>
+    <sys:String x:Key="MsEID5">• Allain gruppen dij deur n beheerder aanzet binnen, worden in kèlender weergeven.</sys:String>
+    <sys:String x:Key="Hint">Tips &amp; trucks</sys:String>
+    <sys:String x:Key="Hint1">• Klap gruppen dij joe nait neudeg hebben in om kèlender overzichtelk te holden.</sys:String>
+    <sys:String x:Key="Hint2">• Gebruuk 'Vandoag' om vlog weerom te goan noar dizze week.</sys:String>
+    <sys:String x:Key="Hint3">• Gebruuk Verneien noa synchronisoatie of as kèlendergegevens wiezigd binnen.</sys:String>
+    <sys:String x:Key="Hint4">• Dezelfde medewarker kin onder 'Elkenain' en in meerdere gruppen stoan, zunder dat dubbele kèlenderitems aanmoakt worden.</sys:String>
+    <sys:String x:Key="NewTitle">Nij kèlenderpunt</sys:String>
+    <sys:String x:Key="NewSubtitle">Moak n nij kèlenderitem aan</sys:String>
+    <sys:String x:Key="Date">Datum</sys:String>
+    <sys:String x:Key="Status">Status</sys:String>
+    <sys:String x:Key="Recurrence">Herhoalen</sys:String>
+    <sys:String x:Key="Notes">Opmerkingen</sys:String>
+    <sys:String x:Key="LoginLoc">Inloggen as beheerder</sys:String>
+    <sys:String x:Key="Locadmin">Lokale beheerder</sys:String>
+    <sys:String x:Key="adminsignin">Inloggen as beheerder</sys:String>
+    <sys:String x:Key="loginsub">Meld joe aan mit n lokaal beheerdersaccount veur centrale kèlender.</sys:String>
+    <sys:String x:Key="Username">Gebrukersnoam</sys:String>
+    <sys:String x:Key="UserPlace">Veur joen gebrukersnoam in</sys:String>
+    <sys:String x:Key="Password">Woachtwoord</sys:String>
+    <sys:String x:Key="PassPlace">Veur joen woachtwoord in</sys:String>
+    <sys:String x:Key="Show">Tonen</sys:String>
+    <sys:String x:Key="Hide">Verbargen</sys:String>
+    <sys:String x:Key="Signin">Inloggen</sys:String>
+    <sys:String x:Key="SettingsTitle">Instellens</sys:String>
+    <sys:String x:Key="SettingsSubtitle">Wiezeg joen persoonlijke veurkeuren veur Centrale Kèlender.</sys:String>
+    <sys:String x:Key="SettingsLanguageTitle">Toalinstellens</sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">Kies toal dij joe in centrale kèlender gebruken willen.</sys:String>
+    <sys:String x:Key="SettingsAppearanceTitle">Oetliek</sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">Kies hou centrale kèlender deroet zain mout.</sys:String>
+    <sys:String x:Key="AppearanceSystem">Windows-instellens gebruken</sys:String>
+    <sys:String x:Key="AppearanceLight">Licht</sys:String>
+    <sys:String x:Key="AppearanceDark">Doonker</sys:String>
+    <sys:String x:Key="ComingSoon">Dizze optie komt in n toukomstige versie beschikbaar.</sys:String>
+    <sys:String x:Key="ApplicationVersion">Applikoatieversie</sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">Op t ogenblik installeerde versie van Central Calendar</sys:String>
+    <sys:String x:Key="Erroruserpass">Veur n gebrukersnoam en woachtwoord in.</sys:String>
+    <sys:String x:Key="Erroruser">Veur n gebrukersnoam in.</sys:String>
+    <sys:String x:Key="Errorpass">Veur n woachtwoord in.</sys:String>
+    <sys:String x:Key="DBerror">Kin gain verbinnen moaken mit centrale kèlenderdatabase.</sys:String>
+    <sys:String x:Key="Incoruserpass">Gebrukersnoam of woachtwoord is verkeerd.</sys:String>
+    <sys:String x:Key="Connected">Verbinden mit CentralCalendar-database lukt.",
+		"Database"</sys:String>
+    <sys:String x:Key="NotConnected">Verbinden mit CentralCalendar-database is mislukt.",
+		"Database"</sys:String>
+    <sys:String x:Key="DBError1">Databasefout</sys:String>
+    <sys:String x:Key="LoginFail">Inloggen mislukt of ofbroken.</sys:String>
+</ResourceDictionary>
