@@ -128,7 +128,7 @@
                     <!-- Version -->
 
                     <TextBlock Grid.Row="1"
-                               Text="{DynamicResource version}"
+                               Text="{DynamicResource Version}"
                                FontWeight="SemiBold"
                                Foreground="#374151"/>
 

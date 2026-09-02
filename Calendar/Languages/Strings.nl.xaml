@@ -1,4 +1,600 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+	
+	<!-- Start Kalender -->
+	<!-- Applicatie -->
+
+	<sys:String x:Key="AppName">
+		Centrale Kalender
+	</sys:String>
+
+	<sys:String x:Key="Version">
+		Versie
+	</sys:String>
+	
+	<!-- Navigatie -->
+	<sys:String x:Key="NavCalendar">
+		Kalender
+	</sys:String>
+
+	<sys:String x:Key="NavAdmin">
+		Beheer
+	</sys:String>
+
+	<sys:String x:Key="NavSettings">
+		Instellingen
+	</sys:String>
+
+	<sys:String x:Key="NavSearch">
+		Zoeken
+	</sys:String>
+
+	<sys:String x:Key="NavHelp">
+		Help
+	</sys:String>
+	
+	<!-- Kalender -->
+
+	<sys:String x:Key="Today">
+		Vandaag
+	</sys:String>
+
+	<sys:String x:Key="NewEntry">
+		Nieuwe item
+	</sys:String>
+
+	<sys:String x:Key="Refresh">
+		Vernieuw Kalender
+	</sys:String>
+
+	<sys:String x:Key="Employee">
+		Medewerker
+	</sys:String>
+
+	<sys:String x:Key="ToolPerv">
+		Vorige periode
+	</sys:String>
+
+	<sys:String x:Key="ToolDate">
+		Ga naar Datum
+	</sys:String>
+
+	<sys:String x:Key="ToolNext">
+		Volgende Periode
+	</sys:String>
+
+	<!-- Account -->
+	<sys:String x:Key="NotSignedIn">
+		Niet ingelogt
+	</sys:String>
+
+	<sys:String x:Key="SignIn">
+		Inloggen
+	</sys:String>
+
+	<sys:String x:Key="SignOut">
+		uitloggen
+	</sys:String>
+
+	<sys:String x:Key="Localcalendar">
+		Lokale Kalender
+	</sys:String>
+
+	<!-- Common -->
+
+	<sys:String x:Key="Save">
+		Oplsaan
+	</sys:String>
+
+	<sys:String x:Key="Cancel">
+		Annuleren
+	</sys:String>
+
+	<sys:String x:Key="Close">
+		Sluiten
+	</sys:String>
+
+	<sys:String x:Key="Settings">
+		Instellingen
+	</sys:String>
+
+	<sys:String x:Key="Language">
+		Taal
+	</sys:String>
+
+	<!-- About Aera -->
+
+	<sys:String x:Key="Aboutwindow">
+		Over Centrale Kalender
+	</sys:String>
+
+	<sys:String x:Key="Subtitleabout">
+		Beschikbaarheid en planning van medewerkers
+	</sys:String>
+
+	<sys:String x:Key="Application">
+		Applicatie
+	</sys:String>
+
+	<sys:String x:Key="Platform">
+		Platform
+	</sys:String>
+
+	<sys:String x:Key="Author">
+		Auteur
+	</sys:String>
+
+	<sys:String x:Key="MSwin">
+		Microsoft Windows
+	</sys:String>
+
+	<sys:String x:Key="KV">
+		Kevin Verweij
+	</sys:String>
+
+	<sys:String x:Key="Copy">
+		Auteursrecht
+	</sys:String>
+
+	<sys:String x:Key="Copy2">
+		© 2026 bij Djskinproductions
+	</sys:String>
+
+	<sys:String x:Key="Email">
+		E-mail
+	</sys:String>
+
+	<sys:String x:Key="Info">
+		info@djskinproductions.nl
+	</sys:String>
+
+	<!-- Search Area -->
+
+	<sys:String x:Key="Search">
+		Zoeken
+	</sys:String>
+
+	<sys:String x:Key="SutitleSearch">
+		Zoek naar medewerkers, feestdagen en bedrijfsevenementen
+	</sys:String>
+
+	<sys:String x:Key="Searchplace">
+		Zoek...
+	</sys:String>
+
+	<sys:String x:Key="notfound">
+		Er is niets gevonden
+	</sys:String>
+
+	<sys:String x:Key="notfound2">
+		Probeer een andere naam voor een medewerker, feestdag of evenement.
+	</sys:String>
+
+	<!-- Help Area -->
+	<sys:String x:Key="Help">
+		Help
+	</sys:String>
+
+	<sys:String x:Key="subtitleHelp">
+		Centrale kalender gebruikers handleiding
+	</sys:String>
+
+	<sys:String x:Key="subtitleHelp2">
+		Een centrale kalender biedt een overzicht van de beschikbaarheid van medewerkers, aanwezigheid op kantoor, afwezigheid, vakanties en evenementen op de bedrijfskalender.
+	</sys:String>
+
+	<sys:String x:Key="CalendarLegend">
+		Legenda van de kalender
+	</sys:String>
+
+	<sys:String x:Key="Color">
+		Kleur
+	</sys:String>
+
+	<sys:String x:Key="Code">
+		Code
+	</sys:String>
+
+	<sys:String x:Key="Description">
+		Omschrijving
+	</sys:String>
+
+	<sys:String x:Key="OFFI">
+		OFFI
+	</sys:String>
+
+	<sys:String x:Key="Home">
+		Home
+	</sys:String>
+
+	<sys:String x:Key="HO/AB">
+		HO/AB
+	</sys:String>
+
+	<sys:String x:Key="OF/AB">
+		OF/AB
+	</sys:String>
+
+	<sys:String x:Key="HO/OF">
+		HO/OF
+	</sys:String>
+
+	<sys:String x:Key="CONG">
+		CONG
+	</sys:String>
+
+	<sys:String x:Key="MEET">
+		MEET
+	</sys:String>
+
+	<sys:String x:Key="MV">
+		MV
+	</sys:String>
+
+	<sys:String x:Key="OPT">
+		OPT
+	</sys:String>
+
+	<sys:String x:Key="ABS">
+		ABS
+	</sys:String>
+
+	<sys:String x:Key="PUB">
+		PUB
+	</sys:String>
+
+	<sys:String x:Key="MF">
+		MF
+	</sys:String>
+
+	<sys:String x:Key="WorkOffice">
+		Werken op Kantoor
+	</sys:String>
+
+	<sys:String x:Key="WorkHome">
+		Thuiswerken
+	</sys:String>
+
+	<sys:String x:Key="HomeAbs">
+		½ dag thuiswerken, ½ dag Afwezig
+	</sys:String>
+
+	<sys:String x:Key="OfficeAbs">
+		½ dag werken op kantoor, ½ dag Afwezig
+	</sys:String>
+
+	<sys:String x:Key="HomeOffice">
+		½ dag thuiswerken, ½ dag op kantoor werken
+	</sys:String>
+
+	<sys:String x:Key="Congress">
+		Congres
+	</sys:String>
+
+	<sys:String x:Key="Externalmeet">
+		Externe vergadering
+	</sys:String>
+
+	<sys:String x:Key="Monvis">
+		Monitoringbezoek
+	</sys:String>
+
+	<sys:String x:Key="Option">
+		opties
+	</sys:String>
+
+	<sys:String x:Key="Absence">
+		Afwezig
+	</sys:String>
+
+	<sys:String x:Key="Weekend">
+		Weekend
+	</sys:String>
+
+	<sys:String x:Key="Public holiday">
+		Feestdag
+	</sys:String>
+
+	<sys:String x:Key="Mandatory">
+		Verplichte vrije dag
+	</sys:String>
+
+	<sys:String x:Key="Create">
+		Maak een agenda punt aan
+	</sys:String>
+
+	<sys:String x:Key="Helpcreate1">
+		• Klik op 'Nieuw item' in de werkbalk van de agenda.
+	</sys:String>
+	<sys:String x:Key="Helpcreate2">
+		• Selecteer de werknemer als u toestemming heeft om een ​​andere werknemer te beheren.
+	</sys:String>
+	<sys:String x:Key="Helpcreate3">
+		• Selecteer de datum
+	</sys:String>
+	<sys:String x:Key="Helpcreate4">
+		• Selecteer de gewenste kalenderstatus.
+	</sys:String>
+	<sys:String x:Key="Helpcreate5">
+		• Selecteer indien nodig een herhalingsoptie.
+	</sys:String>
+	<sys:String x:Key="Helpcreate6">
+		• Voer optionele opmerkingen in.
+	</sys:String>
+	<sys:String x:Key="Helpcreate7">
+		• Klik op Opslaan.
+	</sys:String>
+
+	<sys:String x:Key="Recurringentries">
+		Periodieke boekingen
+	</sys:String>
+
+	<sys:String x:Key="Re1">
+		Beschikbare opties voor herhaling kunnen zijn:
+	</sys:String>
+	<sys:String x:Key="Re2">
+		• Eenmaal
+	</sys:String>
+	<sys:String x:Key="Re3">
+		• Dagenlijks
+	</sys:String>
+	<sys:String x:Key="Re4">
+		• Elke Week
+	</sys:String>
+	<sys:String x:Key="Re5">
+		• Elke 2 weken
+	</sys:String>
+	<sys:String x:Key="Re6">
+		• Elke 3 weken
+	</sys:String>
+	<sys:String x:Key="Re7">
+		• Elke 4 weken
+	</sys:String>
+
+	<sys:String x:Key="Groups">
+		Groepen
+	</sys:String>
+	<sys:String x:Key="Groups1">
+		Alle Medewerkes Vallen in groep iedereen.
+	</sys:String>
+	<sys:String x:Key="Groups2">
+		• Groep Iedereen heeft geen eigen Kalenderstatus.
+	</sys:String>
+	<sys:String x:Key="Groups3">
+		• Groepen zoals BHV en I&amp;T kunnen worden uitgevouwen of samengevouwen.
+	</sys:String>
+	<sys:String x:Key="Groups4">
+		• Medewerkers kunnen in meerdere groepen voorkomen.
+	</sys:String>
+	<sys:String x:Key="Groups5">
+		• Dezelfde medewerker gebruikt in elke groep altijd dezelfde agendagegevens.
+	</sys:String>
+	<sys:String x:Key="Groups6">
+		• Wanneer Microsoft Entra ID is verbonden, wordt het groepslidmaatschap vanuit Entra ID gesynchroniseerd.
+	</sys:String>
+
+	<sys:String x:Key="Weekhol">
+		Weekenden en feestdagen
+	</sys:String>
+	<sys:String x:Key="Weekhol1">
+		• Zaterdagen en zondagen worden in het grijs weergegeven.
+	</sys:String>
+	<sys:String x:Key="Weekhol2">
+		• Weekenddagen kunnen doorgaans niet worden gewijzigd.
+	</sys:String>
+	<sys:String x:Key="Weekhol3">
+		• feestdagen kunnen automatisch worden weergegeven.
+	</sys:String>
+	<sys:String x:Key="Weekhol4">
+		• Verplichte vrije dagen voor het hele bedrijf worden beheerd door geautoriseerde gebruikers.
+	</sys:String>
+
+	<sys:String x:Key="Nav">
+		Navigatie
+	</sys:String>
+	<sys:String x:Key="Nav1">
+		Gebruik 'Vorige' en 'Volgende' om door de kalender te bladeren.
+	</sys:String>
+	<sys:String x:Key="Nav2">
+		• Klik op vandaag om terug te keren naar de huidige periode.
+	</sys:String>
+	<sys:String x:Key="Nav3">
+		• Klik op Vernieuwen om de meest recente kalenderinformatie opnieuw te laden.
+	</sys:String>
+	<sys:String x:Key="Nav4">
+		• Klik op een groepskop om die groep uit te vouwen of samen te vouwen.
+	</sys:String>
+
+	<sys:String x:Key="Search1">
+		Gebruik de zoekfunctie om een ​​medewerker te vinden of snel agendagegevens op te zoeken.
+	</sys:String>
+
+	<sys:String x:Key="MsEID">
+		Microsoft Entra ID
+	</sys:String>
+	<sys:String x:Key="MsEID1">
+		Wanneer Microsoft Entra ID door een beheerder wordt geconfigureerd:
+	</sys:String>
+	<sys:String x:Key="MsEID2">
+		•Gebruikers kunnen zich aanmelden met hun Microsoft-account.
+	</sys:String>
+	<sys:String x:Key="MsEID3">
+		• Werknemers en groepslidmaatschappen kunnen automatisch worden gesynchroniseerd.
+	</sys:String>
+	<sys:String x:Key="MsEID4">
+		• De Microsoft-profielnaam en -profielfoto van de gebruiker kunnen worden weergegeven.
+	</sys:String>
+	<sys:String x:Key="MsEID5">
+		• Alleen groepen die door een beheerder zijn ingeschakeld, worden in de agenda weergegeven.
+	</sys:String>
+
+	<sys:String x:Key="Hint">
+		Tips &amp; trucs
+	</sys:String>
+	<sys:String x:Key="Hint1">
+		• Vouw groepen die je niet nodig hebt samen om de agenda overzichtelijk te houden.
+	</sys:String>
+	<sys:String x:Key="Hint2">
+		• Gebruik 'Vandaag' om snel terug te keren naar de huidige week.
+	</sys:String>
+	<sys:String x:Key="Hint3">
+		• Gebruik Vernieuwen na synchronisatie of wanneer de agendagegevens zijn gewijzigd.
+	</sys:String>
+	<sys:String x:Key="Hint4">
+		• Dezelfde medewerker kan worden weergegeven onder 'Alle' en in meerdere groepen, zonder dat er dubbele agenda-items worden aangemaakt.
+	</sys:String>
+
+	<!-- New Entry -->
+	<sys:String x:Key="NewTitle">
+		Nieuw agendapunt
+	</sys:String>
+
+	<sys:String x:Key="NewSubtitle">
+		Maak een nieuw agenda-item aan
+	</sys:String>
+
+	<sys:String x:Key="Date">
+		Datum
+	</sys:String>
+
+	<sys:String x:Key="Status">
+		Status
+	</sys:String>
+
+	<sys:String x:Key="Recurrence">
+		Herhaling
+	</sys:String>
+
+	<sys:String x:Key="Notes">
+		Opmerkingen
+	</sys:String>
+
+	<!-- Login -->
+	<sys:String x:Key="LoginLoc">
+		Inloggen als beheerder
+	</sys:String>
+
+	<sys:String x:Key="Locadmin">
+		Lokale beheerder
+	</sys:String>
+
+	<sys:String x:Key="adminsignin">
+		Inloggen als beheerder
+	</sys:String>
+
+	<sys:String x:Key="loginsub">
+		Meld u aan met een lokaal beheerdersaccount voor de centrale agenda.
+	</sys:String>
+
+	<sys:String x:Key="Username">
+		Gebruikersnaam
+	</sys:String>
+
+	<sys:String x:Key="UserPlace">
+		Vul je gevruikersnaam in
+	</sys:String>
+
+	<sys:String x:Key="Password">
+		Wachtwoord
+	</sys:String>
+
+	<sys:String x:Key="PassPlace">
+		Vul je Wachtwoord in
+	</sys:String>
+
+	<sys:String x:Key="Show">
+		Tonen
+	</sys:String>
+
+	<sys:String x:Key="Hide">
+		verbergen
+	</sys:String>
+
+	<sys:String x:Key="Signin">
+		Inloggen
+	</sys:String>
+
+	<!-- Settings Area-->
+	<sys:String x:Key="SettingsTitle">
+		Instellingen
+	</sys:String>
+	<sys:String x:Key="SettingsSubtitle">
+		Wijzig uw persoonlijke voorkeuren voor de Central-agenda.
+	</sys:String>
+
+	<sys:String x:Key="SettingsLanguageTitle">
+		Taal Instellingen
+	</sys:String>
+	<sys:String x:Key="SettingsLanguageDescription">
+		Kies de taal die u in de centrale agenda wilt gebruiken.
+	</sys:String>
+
+	<sys:String x:Key="SettingsAppearanceTitle">
+		Uiterlijk
+	</sys:String>
+	<sys:String x:Key="SettingsAppearanceDescription">
+		Kies hoe de centrale agenda eruit moet zien
+	</sys:String>
+
+	<sys:String x:Key="AppearanceSystem">
+		Gebruik Windows-instellingen
+	</sys:String>
+	<sys:String x:Key="AppearanceLight">
+		Licht
+	</sys:String>
+	<sys:String x:Key="AppearanceDark">
+		Donker
+	</sys:String>
+	<sys:String x:Key="ComingSoon">
+		Deze optie zal beschikbaar zijn in een toekomstige versie.
+	</sys:String>
+
+	<sys:String x:Key="ApplicationVersion">
+		Applicatieversie
+	</sys:String>
+	<sys:String x:Key="ApplicationVersionDescription">
+		De momenteel geïnstalleerde versie van Central Calendar
+	</sys:String>
+
+	<!-- Main stream -->
+	<!-- Error -->
+	<sys:String x:Key="Erroruserpass">
+		Voer een gebruikersnaam en wachtwoord in.
+	</sys:String>
+
+	<sys:String x:Key="Erroruser">
+		Voer een gebruikersnaam in.
+	</sys:String>
+
+	<sys:String x:Key="Errorpass">
+		Voer een wachtwoord in.
+	</sys:String>
+
+	<sys:String x:Key="DBerror">
+		Kan geen verbinding maken met de centrale agendadatabase.
+	</sys:String>
+
+	<sys:String x:Key="Incoruserpass">
+		De gebruikersnaam of het wachtwoord is onjuist.
+	</sys:String>
+
+	<sys:String x:Key="Connected">
+		Verbinding met de CentralCalendar-database geslaagd.",
+		"Database"
+	</sys:String>
+
+	<sys:String x:Key="NotConnected">
+		Verbinding met de CentralCalendar-database mislukt.",
+		"Database"
+	</sys:String>
+
+	<sys:String x:Key="DBError1">
+		Databasefout
+	</sys:String>
+
+	<sys:String x:Key="LoginFail">
+		Inloggen mislukt of geannuleerd.
+	</sys:String>
+
 </ResourceDictionary>

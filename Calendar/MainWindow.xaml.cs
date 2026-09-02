@@ -738,7 +738,7 @@ namespace CompanyCalendar
                 if(result != true)
                 {
                     MessageBox.Show(
-                        "Login failed or canceled.",
+                        LocalizationService.Get("LoginFail"),
                         "Account",
                         MessageBoxButton.OK,
                         MessageBoxImage.Warning);

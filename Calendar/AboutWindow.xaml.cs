@@ -12,7 +12,7 @@ namespace CompanyCalendar
             InitializeComponent();
 
             VersionText.Text =
-                $"Version {VersionService.CurrentVersion}";
+                $"V {VersionService.CurrentVersion}";
 
             ApplicationVersionText.Text =
                 VersionService.CurrentVersion;

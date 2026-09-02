@@ -51,7 +51,7 @@
 
                     <TextBlock Text="{DynamicResource AppName}"
                                Foreground="White"
-                               FontSize="23"
+                               FontSize="20"
                                FontWeight="SemiBold"/>
 
                 </StackPanel>
@@ -317,7 +317,7 @@
 					<Button Grid.Column="0"
                             Width="42"
                             Height="38"
-                            ToolTip="Previous period"
+                            ToolTip="{DynamicResource ToolPerv}"
                             Click="PreviousButton_Click">
 
 						<TextBlock Text="&#xE76B;"
@@ -343,7 +343,7 @@
                                 Height="38"
                                 Margin="0,0,7,0"
                                 VerticalAlignment="Center"
-                                ToolTip="Go to date"
+                                ToolTip="{DynamicResource ToolDate}"
                                 SelectedDateChanged="GoToDatePicker_SelectedDateChanged"/>
 
                     <!-- Next -->
@@ -351,7 +351,7 @@
 					<Button Grid.Column="3"
                             Width="42"
                             Height="38"
-                            ToolTip="Next period"
+                            ToolTip="{DynamicResource ToolNext}"
                             Click="NextButton_Click">
 
 						<TextBlock Text="&#xE76C;"
@@ -376,7 +376,7 @@
                             Width="42"
                             Height="38"
                             Margin="0,0,10,0"
-                            ToolTip="Refresh calendar"
+                            ToolTip="{DynamicResource Refresh}"
                             Click="RefreshButton_Click">
 
 						<TextBlock Text="&#xE72C;"

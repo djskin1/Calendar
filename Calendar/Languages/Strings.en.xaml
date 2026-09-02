@@ -46,12 +46,24 @@
     </sys:String>
     
     <sys:String x:Key="Refresh">
-        Refresh
+        Refresh Calendar
     </sys:String>
     
     <sys:String x:Key="Employee">
         Employee
     </sys:String>
+
+	<sys:String x:Key="ToolPerv">
+		Previous Period
+	</sys:String>
+
+	<sys:String x:Key="ToolDate">
+		Go to date
+	</sys:String>
+
+	<sys:String x:Key="ToolNext">
+		Next Period
+	</sys:String>
 
     <!-- Account -->
     <sys:String x:Key="NotSignedIn">
@@ -543,7 +555,7 @@
         Application Version
     </sys:String>
     <sys:String x:Key="ApplicationVersionDescription">
-        The Curremt;y installed version of Central calendar
+        The Currently installed version of Central calendar
     </sys:String>
 
     <!-- Main stream -->
@@ -580,6 +592,10 @@
 
 	<sys:String x:Key="DBError1">
 		Database Error
+	</sys:String>
+
+	<sys:String x:Key="LoginFail">
+		Login failed or canceled.
 	</sys:String>
 
 	</ResourceDictionary>
