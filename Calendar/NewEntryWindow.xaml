@@ -4,10 +4,10 @@
         Title="{DynamicResource NewTitle}"
         Icon="/Images/Icon.png"
         Width="480"
-        Height="590"
+        Height="650"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
-        Background="#F3F4F6">
+        Background="{DynamicResource AppBackgroundBrush}">
 
 	<Grid Margin="25">
 
@@ -25,13 +25,13 @@
                        FontWeight="SemiBold"/>
 
 			<TextBlock Text="{DynamicResource NewSubtitle}"
-                       Foreground="#6B7280"
+                       Foreground="{DynamicResource SecondaryTextBrush}"
                        Margin="0,5,0,0"/>
 
 		</StackPanel>
 
 		<Border Grid.Row="2"
-                Background="White"
+                Background="{DynamicResource SurfaceBrush}"
                 CornerRadius="8"
                 Padding="20">
 

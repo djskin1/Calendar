@@ -6,7 +6,7 @@
         Height="590"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
-        Background="#F3F4F6"
+        Background="{DynamicResource AppBackgroundBrush}"
         Icon="Images/Icon.png">
 
     <Grid>
@@ -22,7 +22,7 @@
         <!-- ===================================================== -->
 
         <Border Grid.Row="0"
-                Background="#087F8C">
+                Background="{DynamicResource SidebarBrush}">
 
             <Grid Margin="25,15">
 
@@ -35,7 +35,7 @@
 
                 <Border Width="90"
                         Height="90"
-                        Background="White"
+                        Background="{DynamicResource SurfaceBrush}"
                         CornerRadius="10"
                         Padding="8"
                         VerticalAlignment="Center">
@@ -54,12 +54,12 @@
                             VerticalAlignment="Center">
 
                     <TextBlock Text="{DynamicResource AppName}"
-                               Foreground="White"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                                FontSize="26"
                                FontWeight="SemiBold"/>
 
                     <TextBlock x:Name="HeaderVersionText"
-                               Foreground="#D6F3F5"
+                               Foreground="{DynamicResource SecondaryTextBrush}"
                                FontSize="14"
                                Margin="0,5,0,0"/>
 
@@ -77,7 +77,7 @@
 
         <Border Grid.Row="1"
                 Margin="22"
-                Background="White"
+                Background="{DynamicResource SurfaceBrush}"
                 CornerRadius="10"
                 Padding="24">
 
@@ -86,11 +86,11 @@
                 <TextBlock Text="{DynamicResource Aboutwindow}"
                            FontSize="21"
                            FontWeight="SemiBold"
-                           Foreground="#111827"/>
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                 <TextBlock Text="{DynamicResource Subtitleabout}"
                            Margin="0,4,0,15"
-                           Foreground="#6B7280"
+                           Foreground="{DynamicResource SecondaryTextBrush}"
                            FontSize="13"/>
 
                 <Separator Margin="0,0,0,12"/>
@@ -118,67 +118,67 @@
                     <TextBlock Grid.Row="0"
                                Text="{DynamicResource Application}"
                                FontWeight="SemiBold"
-                               Foreground="#374151"/>
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                     <TextBlock Grid.Row="0"
                                Grid.Column="1"
                                Text="{DynamicResource AppName}"
-                               Foreground="#111827"/>
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                     <!-- Version -->
 
                     <TextBlock Grid.Row="1"
                                Text="{DynamicResource Version}"
                                FontWeight="SemiBold"
-                               Foreground="#374151"/>
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="1"
                                x:Name="VersionText"
-                               Foreground="#111827"/>
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                     <!-- Platform -->
 
                     <TextBlock Grid.Row="2"
                                Text="{DynamicResource Platform}"
                                FontWeight="SemiBold"
-                               Foreground="#374151"/>
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                     <TextBlock Grid.Row="2"
                                Grid.Column="1"
                                Text="{DynamicResource MSwin}"
-                               Foreground="#111827"/>
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                     <!-- Author -->
 
                     <TextBlock Grid.Row="3"
                                Text="{DynamicResource Author}"
                                FontWeight="SemiBold"
-                               Foreground="#374151"/>
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                     <TextBlock Grid.Row="3"
                                Grid.Column="1"
                                Text="{DynamicResource KV}"
-                               Foreground="#111827"/>
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                     <!-- Copyright -->
 
                     <TextBlock Grid.Row="4"
                                Text="{DynamicResource Copy}"
                                FontWeight="SemiBold"
-                               Foreground="#374151"/>
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                     <TextBlock Grid.Row="4"
                                Grid.Column="1"
                                Text="{DynamicResource Copy2}"
-                               Foreground="#111827"/>
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                     <!-- Email -->
 
                     <TextBlock Grid.Row="5"
                                Text="{DynamicResource Email}"
                                FontWeight="SemiBold"
-                               Foreground="#374151"/>
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                     <TextBlock Grid.Row="5"
                                Grid.Column="1">
@@ -195,7 +195,7 @@
                 <Separator Margin="0,20,0,18"/>
 
                 <TextBlock TextWrapping="Wrap"
-                           Foreground="#6B7280"
+                           Foreground="{DynamicResource SecondaryTextBrush}"
                            LineHeight="20"
                            Text="Central calendar provides a modern overview of employee availability, office attendance, absences, holidays and company calendar events."/>
 
@@ -208,8 +208,8 @@
         <!-- ===================================================== -->
 
         <Border Grid.Row="2"
-                Background="#FAFAFA"
-                BorderBrush="#E5E7EB"
+                Background="{DynamicResource SurfaceBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
                 BorderThickness="0,1,0,0">
 
             <Button Content="{DynamicResource Close}"

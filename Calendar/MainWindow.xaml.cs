@@ -170,6 +170,8 @@ namespace CompanyCalendar
             _searchTimer.Tick +=
                 SearchTimer_Tick;
 
+            AppearanceComboBox.SelectedIndex = 0;
+
             LoadCalendar();
 
         }
@@ -186,6 +188,25 @@ namespace CompanyCalendar
             }
 
             LocalizationService.SetLanguage(languageCode);
+        }
+
+        private void AppearanceComboBox_SelectionChanged(
+            object sender,
+            SelectionChangedEventArgs e)
+        {
+            if (AppearanceComboBox.SelectedItem
+                is not ComboBoxItem selectedItem)
+            {
+                return;
+            }
+
+            if (selectedItem.Tag
+                is not string theme)
+            {
+                return;
+            }
+
+            ThemeService.SetTheme(theme);
         }
 
         // Search //
