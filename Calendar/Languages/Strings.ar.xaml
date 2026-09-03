@@ -1,0 +1,188 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=System.Runtime" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppName">التقويم المركزي</sys:String>
+    <sys:String x:Key="Version">الإصدار</sys:String>
+    <sys:String x:Key="NavCalendar">التقويم</sys:String>
+    <sys:String x:Key="NavAdmin">الإدارة</sys:String>
+    <sys:String x:Key="NavSettings">الإعدادات</sys:String>
+    <sys:String x:Key="NavSearch">بحث</sys:String>
+    <sys:String x:Key="NavHelp">المساعدة</sys:String>
+    <sys:String x:Key="Today">اليوم</sys:String>
+    <sys:String x:Key="NewEntry">عنصر جديد</sys:String>
+    <sys:String x:Key="Refresh">تحديث التقويم</sys:String>
+    <sys:String x:Key="Employee">الموظف</sys:String>
+    <sys:String x:Key="ToolPerv">الفترة السابقة</sys:String>
+    <sys:String x:Key="ToolDate">الانتقال إلى تاريخ</sys:String>
+    <sys:String x:Key="ToolNext">الفترة التالية</sys:String>
+    <sys:String x:Key="NotSignedIn">لم يتم تسجيل الدخول</sys:String>
+    <sys:String x:Key="SignIn">تسجيل الدخول</sys:String>
+    <sys:String x:Key="SignOut">تسجيل الخروج</sys:String>
+    <sys:String x:Key="Localcalendar">التقويم المحلي</sys:String>
+    <sys:String x:Key="Save">حفظ</sys:String>
+    <sys:String x:Key="Cancel">إلغاء</sys:String>
+    <sys:String x:Key="Close">إغلاق</sys:String>
+    <sys:String x:Key="Settings">الإعدادات</sys:String>
+    <sys:String x:Key="Language">اللغة</sys:String>
+    <sys:String x:Key="Aboutwindow">حول التقويم المركزي</sys:String>
+    <sys:String x:Key="Subtitleabout">توفر الموظفين وتخطيطهم</sys:String>
+    <sys:String x:Key="Application">التطبيق</sys:String>
+    <sys:String x:Key="Platform">النظام الأساسي</sys:String>
+    <sys:String x:Key="Author">المؤلف</sys:String>
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+    <sys:String x:Key="Copy">حقوق النشر</sys:String>
+    <sys:String x:Key="Copy2">© 2026 بواسطة Djskinproductions</sys:String>
+    <sys:String x:Key="Email">البريد الإلكتروني</sys:String>
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    <sys:String x:Key="Search">بحث</sys:String>
+    <sys:String x:Key="SutitleSearch">البحث عن الموظفين والعطلات الرسمية وفعاليات الشركة</sys:String>
+    <sys:String x:Key="Searchplace">بحث...</sys:String>
+    <sys:String x:Key="notfound">لم يتم العثور على نتائج</sys:String>
+    <sys:String x:Key="notfound2">جرّب اسمًا آخر لموظف أو عطلة رسمية أو فعالية.</sys:String>
+    <sys:String x:Key="Help">المساعدة</sys:String>
+    <sys:String x:Key="subtitleHelp">دليل مستخدم التقويم المركزي</sys:String>
+    <sys:String x:Key="subtitleHelp2">يوفر التقويم المركزي نظرة عامة على توفر الموظفين وحضورهم في المكتب وغيابهم وإجازاتهم وفعاليات تقويم الشركة.</sys:String>
+    <sys:String x:Key="CalendarLegend">وسيلة إيضاح التقويم</sys:String>
+    <sys:String x:Key="Color">اللون</sys:String>
+    <sys:String x:Key="Code">الرمز</sys:String>
+    <sys:String x:Key="Description">الوصف</sys:String>
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+    <sys:String x:Key="Home">المنزل</sys:String>
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+    <sys:String x:Key="WorkOffice">العمل في المكتب</sys:String>
+    <sys:String x:Key="WorkHome">العمل من المنزل</sys:String>
+    <sys:String x:Key="HomeAbs">½ يوم عمل من المنزل، ½ يوم غياب</sys:String>
+    <sys:String x:Key="OfficeAbs">½ يوم عمل في المكتب، ½ يوم غياب</sys:String>
+    <sys:String x:Key="HomeOffice">½ يوم عمل من المنزل، ½ يوم عمل في المكتب</sys:String>
+    <sys:String x:Key="Congress">مؤتمر</sys:String>
+    <sys:String x:Key="Externalmeet">اجتماع خارجي</sys:String>
+    <sys:String x:Key="Monvis">زيارة مراقبة</sys:String>
+    <sys:String x:Key="Option">الخيارات</sys:String>
+    <sys:String x:Key="Absence">غائب</sys:String>
+    <sys:String x:Key="Weekend">عطلة نهاية الأسبوع</sys:String>
+    <sys:String x:Key="Public holiday">عطلة رسمية</sys:String>
+    <sys:String x:Key="Mandatory">يوم إجازة إلزامي</sys:String>
+    <sys:String x:Key="Create">إنشاء إدخال في التقويم</sys:String>
+    <sys:String x:Key="Helpcreate1">• انقر على «عنصر جديد» في شريط أدوات التقويم.</sys:String>
+    <sys:String x:Key="Helpcreate2">• حدد الموظف إذا كان لديك إذن بإدارة موظف آخر.</sys:String>
+    <sys:String x:Key="Helpcreate3">• حدد التاريخ.</sys:String>
+    <sys:String x:Key="Helpcreate4">• حدد حالة التقويم المطلوبة.</sys:String>
+    <sys:String x:Key="Helpcreate5">• حدد خيار تكرار إذا لزم الأمر.</sys:String>
+    <sys:String x:Key="Helpcreate6">• أدخل ملاحظات اختيارية.</sys:String>
+    <sys:String x:Key="Helpcreate7">• انقر على حفظ.</sys:String>
+    <sys:String x:Key="Recurringentries">الإدخالات المتكررة</sys:String>
+    <sys:String x:Key="Re1">قد تتضمن خيارات التكرار المتاحة ما يلي:</sys:String>
+    <sys:String x:Key="Re2">• مرة واحدة</sys:String>
+    <sys:String x:Key="Re3">• يوميًا</sys:String>
+    <sys:String x:Key="Re4">• كل أسبوع</sys:String>
+    <sys:String x:Key="Re5">• كل أسبوعين</sys:String>
+    <sys:String x:Key="Re6">• كل 3 أسابيع</sys:String>
+    <sys:String x:Key="Re7">• كل 4 أسابيع</sys:String>
+    <sys:String x:Key="Groups">المجموعات</sys:String>
+    <sys:String x:Key="Groups1">ينتمي جميع الموظفين إلى مجموعة «الجميع».</sys:String>
+    <sys:String x:Key="Groups2">• ليس لمجموعة «الجميع» حالة تقويم خاصة بها.</sys:String>
+    <sys:String x:Key="Groups3">• يمكن توسيع مجموعات مثل BHV وI&amp;T أو طيّها.</sys:String>
+    <sys:String x:Key="Groups4">• يمكن أن ينتمي الموظفون إلى عدة مجموعات.</sys:String>
+    <sys:String x:Key="Groups5">• يستخدم الموظف نفسه دائمًا بيانات التقويم نفسها في كل مجموعة.</sys:String>
+    <sys:String x:Key="Groups6">• عند الاتصال بـ Microsoft Entra ID، تتم مزامنة عضوية المجموعة من Entra ID.</sys:String>
+    <sys:String x:Key="Weekhol">عطلات نهاية الأسبوع والعطلات الرسمية</sys:String>
+    <sys:String x:Key="Weekhol1">• يظهر يومَا السبت والأحد باللون الرمادي.</sys:String>
+    <sys:String x:Key="Weekhol2">• لا يمكن عادةً تعديل أيام عطلة نهاية الأسبوع.</sys:String>
+    <sys:String x:Key="Weekhol3">• يمكن عرض العطلات الرسمية تلقائيًا.</sys:String>
+    <sys:String x:Key="Weekhol4">• يدير المستخدمون المخولون أيام الإجازة الإلزامية للشركة بأكملها.</sys:String>
+    <sys:String x:Key="Nav">التنقل</sys:String>
+    <sys:String x:Key="Nav1">استخدم «السابق» و«التالي» للتنقل في التقويم.</sys:String>
+    <sys:String x:Key="Nav2">• انقر على اليوم للعودة إلى الفترة الحالية.</sys:String>
+    <sys:String x:Key="Nav3">• انقر على تحديث لإعادة تحميل أحدث معلومات التقويم.</sys:String>
+    <sys:String x:Key="Nav4">• انقر على عنوان مجموعة لتوسيعها أو طيّها.</sys:String>
+    <sys:String x:Key="Search1">استخدم وظيفة البحث للعثور على موظف أو البحث بسرعة عن بيانات التقويم.</sys:String>
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">عندما يقوم مسؤول بتكوين Microsoft Entra ID:</sys:String>
+    <sys:String x:Key="MsEID2">• يمكن للمستخدمين تسجيل الدخول باستخدام حساب Microsoft الخاص بهم.</sys:String>
+    <sys:String x:Key="MsEID3">• يمكن مزامنة الموظفين وعضويات المجموعات تلقائيًا.</sys:String>
+    <sys:String x:Key="MsEID4">• يمكن عرض اسم ملف تعريف Microsoft للمستخدم وصورته.</sys:String>
+    <sys:String x:Key="MsEID5">• تظهر في التقويم فقط المجموعات التي فعّلها المسؤول.</sys:String>
+    <sys:String x:Key="Hint">تلميحات ونصائح</sys:String>
+    <sys:String x:Key="Hint1">• اطوِ المجموعات التي لا تحتاج إليها للحفاظ على تنظيم التقويم.</sys:String>
+    <sys:String x:Key="Hint2">• استخدم «اليوم» للعودة بسرعة إلى الأسبوع الحالي.</sys:String>
+    <sys:String x:Key="Hint3">• استخدم تحديث بعد المزامنة أو عند تغيير بيانات التقويم.</sys:String>
+    <sys:String x:Key="Hint4">• يمكن عرض الموظف نفسه ضمن «الجميع» وفي عدة مجموعات دون إنشاء إدخالات تقويم مكررة.</sys:String>
+    <sys:String x:Key="NewTitle">إدخال تقويم جديد</sys:String>
+    <sys:String x:Key="NewSubtitle">إنشاء إدخال جديد في التقويم</sys:String>
+    <sys:String x:Key="Date">التاريخ</sys:String>
+    <sys:String x:Key="Status">الحالة</sys:String>
+    <sys:String x:Key="Recurrence">التكرار</sys:String>
+    <sys:String x:Key="Notes">الملاحظات</sys:String>
+    <sys:String x:Key="LoginLoc">تسجيل الدخول كمسؤول</sys:String>
+    <sys:String x:Key="Locadmin">المسؤول المحلي</sys:String>
+    <sys:String x:Key="adminsignin">تسجيل الدخول كمسؤول</sys:String>
+    <sys:String x:Key="loginsub">سجّل الدخول باستخدام حساب مسؤول محلي للتقويم المركزي.</sys:String>
+    <sys:String x:Key="Username">اسم المستخدم</sys:String>
+    <sys:String x:Key="UserPlace">أدخل اسم المستخدم</sys:String>
+    <sys:String x:Key="Password">كلمة المرور</sys:String>
+    <sys:String x:Key="PassPlace">أدخل كلمة المرور</sys:String>
+    <sys:String x:Key="Show">إظهار</sys:String>
+    <sys:String x:Key="Hide">إخفاء</sys:String>
+    <sys:String x:Key="Signin">تسجيل الدخول</sys:String>
+    <sys:String x:Key="SettingsTitle">الإعدادات</sys:String>
+    <sys:String x:Key="SettingsSubtitle">غيّر تفضيلاتك الشخصية للتقويم المركزي.</sys:String>
+    <sys:String x:Key="SettingsLanguageTitle">إعدادات اللغة</sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">اختر اللغة التي تريد استخدامها في التقويم المركزي.</sys:String>
+    <sys:String x:Key="SettingsAppearanceTitle">المظهر</sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">اختر الشكل الذي تريد أن يظهر به التقويم المركزي.</sys:String>
+    <sys:String x:Key="AppearanceSystem">استخدام إعدادات Windows</sys:String>
+    <sys:String x:Key="AppearanceLight">فاتح</sys:String>
+    <sys:String x:Key="AppearanceDark">داكن</sys:String>
+    <sys:String x:Key="ComingSoon">سيتوفر هذا الخيار في إصدار مستقبلي.</sys:String>
+    <sys:String x:Key="ApplicationVersion">إصدار التطبيق</sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">الإصدار المثبت حاليًا من Central Calendar</sys:String>
+    <sys:String x:Key="Erroruserpass">أدخل اسم المستخدم وكلمة المرور.</sys:String>
+    <sys:String x:Key="Erroruser">أدخل اسم المستخدم.</sys:String>
+    <sys:String x:Key="Errorpass">أدخل كلمة المرور.</sys:String>
+    <sys:String x:Key="DBerror">تعذر الاتصال بقاعدة بيانات التقويم المركزي.</sys:String>
+    <sys:String x:Key="Incoruserpass">اسم المستخدم أو كلمة المرور غير صحيحة.</sys:String>
+    <sys:String x:Key="Connected">تم الاتصال بقاعدة بيانات CentralCalendar بنجاح.",
+		"قاعدة البيانات"</sys:String>
+    <sys:String x:Key="NotConnected">فشل الاتصال بقاعدة بيانات CentralCalendar.",
+		"قاعدة البيانات"</sys:String>
+    <sys:String x:Key="DBError1">خطأ في قاعدة البيانات</sys:String>
+    <sys:String x:Key="LoginFail">فشل تسجيل الدخول أو تم إلغاؤه.</sys:String>
+</ResourceDictionary>

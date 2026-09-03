@@ -21,6 +21,10 @@ namespace CompanyCalendar
 {
     public partial class MainWindow : Window
     {
+        private bool _isAuthenticated = false;
+        private bool _isLocalAdministrator = false;
+        private bool _isEntraGlobalAdministrator = false;
+        private string? _currentUserName;
         private DateTime _startDate;
         private bool _updatingDatePicker;
 
@@ -48,22 +52,53 @@ namespace CompanyCalendar
                 ?? false;
         }
 
-        private void UpdateAdminAccess()
+        private void UpdateAccountAccess()
         {
             bool isLocalAdministrator = IsLocalAdministrator();
 
             // Entra Global Administrator check will be added
             // when Microsoft authentication is implemented.
-            bool isEntraGlobalAdministrator = false;
-
-            bool canAccessAdmin =
-                isLocalAdministrator ||
-                isEntraGlobalAdministrator;
+            bool isAdministrator =
+                _isLocalAdministrator ||
+                _isEntraGlobalAdministrator;
 
             AdminButton.Visibility =
-                canAccessAdmin
+                isAdministrator
                     ? Visibility.Visible
                     : Visibility.Collapsed;
+
+            SettingsButton.Visibility =
+                _isAuthenticated
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+
+            if(!_isAuthenticated)
+            {
+                LoggedInUserText.Text = LocalizationService.Get("NotLoggedIn");
+
+                LoginTypeText.Text = LocalizationService.Get("localCalendar");
+
+                UserProfileImage.Visibility = Visibility.Collapsed;
+
+                UserProfileIcon.Visibility = Visibility.Visible;
+
+                return;
+            }
+
+            LoggedInUserText.Text = _currentUserName ?? "User";
+
+            if(_isLocalAdministrator)
+            {
+                LoginTypeText.Text = LocalizationService.Get("localAdmin");
+            }
+            else if (_isEntraGlobalAdministrator)
+            {
+                LoginTypeText.Text = LocalizationService.Get("entraAdmin");
+            }
+            else
+            {
+                LoginTypeText.Text = LocalizationService.Get("regularUser");
+            }
         }
 
         private async Task TestDatabaseConnectionAsync()
@@ -109,6 +144,8 @@ namespace CompanyCalendar
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += Mainwindow_Loaded;
 
             Title = $"{LocalizationService.Get("AppName")} " +
                     $"{VersionService.CurrentVersion}";
@@ -717,35 +754,85 @@ namespace CompanyCalendar
 
         private void ShowAccountMenu()
         {
-            bool entraConfigured = false; // This will be determined by the actual authentication implementation.
-            if(entraConfigured)
+            bool entraConfigured = false;
+
+            if (entraConfigured)
             {
                 MessageBox.Show(
-           "Microsoft sign-in will be available here.",
-           "Account",
-           MessageBoxButton.OK,
-           MessageBoxImage.Information);
+                    "Microsoft sign-in will be available here.",
+                    "Account",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
 
-            } else
+                return;
+            }
+
+            LocalAdminLoginWindow loginWindow = new()
             {
-                LocalAdminLoginWindow loginWindow = new()
-                {
-                    Owner = this
-                };
+                Owner = this
+            };
 
-                bool? result = loginWindow.ShowDialog();
+            bool? result = loginWindow.ShowDialog();
 
-                if(result != true)
-                {
-                    MessageBox.Show(
-                        LocalizationService.Get("LoginFail"),
-                        "Account",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-                }
+            // Niet succesvol ingelogd / Cancel
+            if (result != true)
+            {
+                return;
+            }
 
-                string username = loginWindow.Username;
-                string password = loginWindow.Password;
+            // SUCCESVOL INGelogd
+            _isAuthenticated = true;
+            _isLocalAdministrator = true;
+            _isEntraGlobalAdministrator = false;
+
+            _currentUserName =
+                loginWindow.AuthenticatedAdminDisplayName
+                ?? loginWindow.Username;
+
+            // Jouw bestaande methode gebruiken
+            UpdateAdminAccess();
+        }
+
+        private void UpdateAdminAccess()
+        {
+            bool isAdministrator =
+                _isLocalAdministrator ||
+                _isEntraGlobalAdministrator;
+
+            // Admin alleen zichtbaar voor administrators
+            AdminButton.Visibility =
+                isAdministrator
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+
+            // Voor onze huidige test:
+            // Settings pas zichtbaar nadat iemand is ingelogd
+            SettingsButton.Visibility =
+                _isAuthenticated
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+
+            if (!_isAuthenticated)
+            {
+                LoggedInUserText.Text =
+                    LocalizationService.Get("NotSignedIn");
+
+                LoginTypeText.Text =
+                    LocalizationService.Get("Localcalendar");
+
+                return;
+            }
+
+            LoggedInUserText.Text =
+                _currentUserName ?? "Local Administrator";
+
+            if (_isLocalAdministrator)
+            {
+                LoginTypeText.Text = "Local Administrator";
+            }
+            else if (_isEntraGlobalAdministrator)
+            {
+                LoginTypeText.Text = "Microsoft Entra ID";
             }
         }
 

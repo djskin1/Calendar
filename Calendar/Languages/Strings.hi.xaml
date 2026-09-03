@@ -1,0 +1,188 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=System.Runtime" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppName">केंद्रीय कैलेंडर</sys:String>
+    <sys:String x:Key="Version">संस्करण</sys:String>
+    <sys:String x:Key="NavCalendar">कैलेंडर</sys:String>
+    <sys:String x:Key="NavAdmin">प्रशासन</sys:String>
+    <sys:String x:Key="NavSettings">सेटिंग्स</sys:String>
+    <sys:String x:Key="NavSearch">खोजें</sys:String>
+    <sys:String x:Key="NavHelp">सहायता</sys:String>
+    <sys:String x:Key="Today">आज</sys:String>
+    <sys:String x:Key="NewEntry">नई प्रविष्टि</sys:String>
+    <sys:String x:Key="Refresh">कैलेंडर रीफ़्रेश करें</sys:String>
+    <sys:String x:Key="Employee">कर्मचारी</sys:String>
+    <sys:String x:Key="ToolPerv">पिछली अवधि</sys:String>
+    <sys:String x:Key="ToolDate">तारीख़ पर जाएँ</sys:String>
+    <sys:String x:Key="ToolNext">अगली अवधि</sys:String>
+    <sys:String x:Key="NotSignedIn">साइन इन नहीं है</sys:String>
+    <sys:String x:Key="SignIn">साइन इन करें</sys:String>
+    <sys:String x:Key="SignOut">साइन आउट करें</sys:String>
+    <sys:String x:Key="Localcalendar">स्थानीय कैलेंडर</sys:String>
+    <sys:String x:Key="Save">सहेजें</sys:String>
+    <sys:String x:Key="Cancel">रद्द करें</sys:String>
+    <sys:String x:Key="Close">बंद करें</sys:String>
+    <sys:String x:Key="Settings">सेटिंग्स</sys:String>
+    <sys:String x:Key="Language">भाषा</sys:String>
+    <sys:String x:Key="Aboutwindow">केंद्रीय कैलेंडर के बारे में</sys:String>
+    <sys:String x:Key="Subtitleabout">कर्मचारियों की उपलब्धता और योजना</sys:String>
+    <sys:String x:Key="Application">एप्लिकेशन</sys:String>
+    <sys:String x:Key="Platform">प्लेटफ़ॉर्म</sys:String>
+    <sys:String x:Key="Author">लेखक</sys:String>
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+    <sys:String x:Key="Copy">कॉपीराइट</sys:String>
+    <sys:String x:Key="Copy2">© 2026 Djskinproductions द्वारा</sys:String>
+    <sys:String x:Key="Email">ई-मेल</sys:String>
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    <sys:String x:Key="Search">खोजें</sys:String>
+    <sys:String x:Key="SutitleSearch">कर्मचारी, सार्वजनिक अवकाश और कंपनी कार्यक्रम खोजें</sys:String>
+    <sys:String x:Key="Searchplace">खोजें...</sys:String>
+    <sys:String x:Key="notfound">कोई परिणाम नहीं मिला</sys:String>
+    <sys:String x:Key="notfound2">किसी अन्य कर्मचारी का नाम, सार्वजनिक अवकाश या कार्यक्रम आज़माएँ।</sys:String>
+    <sys:String x:Key="Help">सहायता</sys:String>
+    <sys:String x:Key="subtitleHelp">केंद्रीय कैलेंडर उपयोगकर्ता मार्गदर्शिका</sys:String>
+    <sys:String x:Key="subtitleHelp2">केंद्रीय कैलेंडर कर्मचारियों की उपलब्धता, कार्यालय में उपस्थिति, अनुपस्थिति, छुट्टियों और कंपनी कैलेंडर कार्यक्रमों का अवलोकन देता है।</sys:String>
+    <sys:String x:Key="CalendarLegend">कैलेंडर संकेत</sys:String>
+    <sys:String x:Key="Color">रंग</sys:String>
+    <sys:String x:Key="Code">कोड</sys:String>
+    <sys:String x:Key="Description">विवरण</sys:String>
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+    <sys:String x:Key="Home">घर</sys:String>
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+    <sys:String x:Key="WorkOffice">कार्यालय में काम</sys:String>
+    <sys:String x:Key="WorkHome">घर से काम</sys:String>
+    <sys:String x:Key="HomeAbs">½ दिन घर से काम, ½ दिन अनुपस्थित</sys:String>
+    <sys:String x:Key="OfficeAbs">½ दिन कार्यालय में काम, ½ दिन अनुपस्थित</sys:String>
+    <sys:String x:Key="HomeOffice">½ दिन घर से काम, ½ दिन कार्यालय में काम</sys:String>
+    <sys:String x:Key="Congress">सम्मेलन</sys:String>
+    <sys:String x:Key="Externalmeet">बाहरी बैठक</sys:String>
+    <sys:String x:Key="Monvis">निगरानी दौरा</sys:String>
+    <sys:String x:Key="Option">विकल्प</sys:String>
+    <sys:String x:Key="Absence">अनुपस्थित</sys:String>
+    <sys:String x:Key="Weekend">सप्ताहांत</sys:String>
+    <sys:String x:Key="Public holiday">सार्वजनिक अवकाश</sys:String>
+    <sys:String x:Key="Mandatory">अनिवार्य अवकाश</sys:String>
+    <sys:String x:Key="Create">कैलेंडर प्रविष्टि बनाएँ</sys:String>
+    <sys:String x:Key="Helpcreate1">• कैलेंडर टूलबार में ‘नई प्रविष्टि’ पर क्लिक करें।</sys:String>
+    <sys:String x:Key="Helpcreate2">• यदि आपको किसी अन्य कर्मचारी को प्रबंधित करने की अनुमति है, तो कर्मचारी चुनें।</sys:String>
+    <sys:String x:Key="Helpcreate3">• तारीख़ चुनें।</sys:String>
+    <sys:String x:Key="Helpcreate4">• वांछित कैलेंडर स्थिति चुनें।</sys:String>
+    <sys:String x:Key="Helpcreate5">• आवश्यकता होने पर दोहराव विकल्प चुनें।</sys:String>
+    <sys:String x:Key="Helpcreate6">• वैकल्पिक टिप्पणियाँ दर्ज करें।</sys:String>
+    <sys:String x:Key="Helpcreate7">• सहेजें पर क्लिक करें।</sys:String>
+    <sys:String x:Key="Recurringentries">आवर्ती प्रविष्टियाँ</sys:String>
+    <sys:String x:Key="Re1">उपलब्ध दोहराव विकल्प ये हो सकते हैं:</sys:String>
+    <sys:String x:Key="Re2">• एक बार</sys:String>
+    <sys:String x:Key="Re3">• प्रतिदिन</sys:String>
+    <sys:String x:Key="Re4">• हर सप्ताह</sys:String>
+    <sys:String x:Key="Re5">• हर 2 सप्ताह</sys:String>
+    <sys:String x:Key="Re6">• हर 3 सप्ताह</sys:String>
+    <sys:String x:Key="Re7">• हर 4 सप्ताह</sys:String>
+    <sys:String x:Key="Groups">समूह</sys:String>
+    <sys:String x:Key="Groups1">सभी कर्मचारी ‘सभी’ समूह में आते हैं।</sys:String>
+    <sys:String x:Key="Groups2">• ‘सभी’ समूह की अपनी कैलेंडर स्थिति नहीं है।</sys:String>
+    <sys:String x:Key="Groups3">• BHV और I&amp;T जैसे समूहों को फैलाया या समेटा जा सकता है।</sys:String>
+    <sys:String x:Key="Groups4">• कर्मचारी कई समूहों में शामिल हो सकते हैं।</sys:String>
+    <sys:String x:Key="Groups5">• वही कर्मचारी प्रत्येक समूह में हमेशा समान कैलेंडर डेटा का उपयोग करता है।</sys:String>
+    <sys:String x:Key="Groups6">• Microsoft Entra ID कनेक्ट होने पर समूह सदस्यता Entra ID से सिंक्रनाइज़ होती है।</sys:String>
+    <sys:String x:Key="Weekhol">सप्ताहांत और सार्वजनिक अवकाश</sys:String>
+    <sys:String x:Key="Weekhol1">• शनिवार और रविवार धूसर रंग में दिखाए जाते हैं।</sys:String>
+    <sys:String x:Key="Weekhol2">• सप्ताहांत के दिन आमतौर पर बदले नहीं जा सकते।</sys:String>
+    <sys:String x:Key="Weekhol3">• सार्वजनिक अवकाश अपने आप दिखाए जा सकते हैं।</sys:String>
+    <sys:String x:Key="Weekhol4">• पूरी कंपनी के अनिवार्य अवकाश अधिकृत उपयोगकर्ताओं द्वारा प्रबंधित किए जाते हैं।</sys:String>
+    <sys:String x:Key="Nav">नेविगेशन</sys:String>
+    <sys:String x:Key="Nav1">कैलेंडर में जाने के लिए ‘पिछला’ और ‘अगला’ उपयोग करें।</sys:String>
+    <sys:String x:Key="Nav2">• वर्तमान अवधि पर लौटने के लिए आज पर क्लिक करें।</sys:String>
+    <sys:String x:Key="Nav3">• नवीनतम कैलेंडर जानकारी पुनः लोड करने के लिए रीफ़्रेश पर क्लिक करें।</sys:String>
+    <sys:String x:Key="Nav4">• किसी समूह को फैलाने या समेटने के लिए उसके शीर्षक पर क्लिक करें।</sys:String>
+    <sys:String x:Key="Search1">कर्मचारी खोजने या कैलेंडर डेटा जल्दी देखने के लिए खोज सुविधा का उपयोग करें।</sys:String>
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">जब Microsoft Entra ID को व्यवस्थापक द्वारा कॉन्फ़िगर किया जाता है:</sys:String>
+    <sys:String x:Key="MsEID2">• उपयोगकर्ता अपने Microsoft खाते से साइन इन कर सकते हैं।</sys:String>
+    <sys:String x:Key="MsEID3">• कर्मचारी और समूह सदस्यताएँ अपने आप सिंक्रनाइज़ हो सकती हैं।</sys:String>
+    <sys:String x:Key="MsEID4">• उपयोगकर्ता का Microsoft प्रोफ़ाइल नाम और चित्र दिखाया जा सकता है।</sys:String>
+    <sys:String x:Key="MsEID5">• कैलेंडर में केवल व्यवस्थापक द्वारा सक्षम समूह दिखाए जाते हैं।</sys:String>
+    <sys:String x:Key="Hint">सुझाव और युक्तियाँ</sys:String>
+    <sys:String x:Key="Hint1">• कैलेंडर को सुव्यवस्थित रखने के लिए अनावश्यक समूह समेटें।</sys:String>
+    <sys:String x:Key="Hint2">• वर्तमान सप्ताह पर जल्दी लौटने के लिए ‘आज’ उपयोग करें।</sys:String>
+    <sys:String x:Key="Hint3">• सिंक्रनाइज़ेशन के बाद या कैलेंडर डेटा बदलने पर रीफ़्रेश उपयोग करें।</sys:String>
+    <sys:String x:Key="Hint4">• वही कर्मचारी ‘सभी’ और कई समूहों में दिख सकता है, बिना डुप्लिकेट कैलेंडर प्रविष्टियाँ बनाए।</sys:String>
+    <sys:String x:Key="NewTitle">नई कैलेंडर प्रविष्टि</sys:String>
+    <sys:String x:Key="NewSubtitle">नई कैलेंडर प्रविष्टि बनाएँ</sys:String>
+    <sys:String x:Key="Date">तारीख़</sys:String>
+    <sys:String x:Key="Status">स्थिति</sys:String>
+    <sys:String x:Key="Recurrence">दोहराव</sys:String>
+    <sys:String x:Key="Notes">टिप्पणियाँ</sys:String>
+    <sys:String x:Key="LoginLoc">व्यवस्थापक के रूप में साइन इन करें</sys:String>
+    <sys:String x:Key="Locadmin">स्थानीय व्यवस्थापक</sys:String>
+    <sys:String x:Key="adminsignin">व्यवस्थापक के रूप में साइन इन करें</sys:String>
+    <sys:String x:Key="loginsub">केंद्रीय कैलेंडर के स्थानीय व्यवस्थापक खाते से साइन इन करें।</sys:String>
+    <sys:String x:Key="Username">उपयोगकर्ता नाम</sys:String>
+    <sys:String x:Key="UserPlace">अपना उपयोगकर्ता नाम दर्ज करें</sys:String>
+    <sys:String x:Key="Password">पासवर्ड</sys:String>
+    <sys:String x:Key="PassPlace">अपना पासवर्ड दर्ज करें</sys:String>
+    <sys:String x:Key="Show">दिखाएँ</sys:String>
+    <sys:String x:Key="Hide">छिपाएँ</sys:String>
+    <sys:String x:Key="Signin">साइन इन करें</sys:String>
+    <sys:String x:Key="SettingsTitle">सेटिंग्स</sys:String>
+    <sys:String x:Key="SettingsSubtitle">केंद्रीय कैलेंडर के लिए अपनी व्यक्तिगत प्राथमिकताएँ बदलें।</sys:String>
+    <sys:String x:Key="SettingsLanguageTitle">भाषा सेटिंग्स</sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">केंद्रीय कैलेंडर में उपयोग की जाने वाली भाषा चुनें।</sys:String>
+    <sys:String x:Key="SettingsAppearanceTitle">दिखावट</sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">चुनें कि केंद्रीय कैलेंडर कैसा दिखे।</sys:String>
+    <sys:String x:Key="AppearanceSystem">Windows सेटिंग्स का उपयोग करें</sys:String>
+    <sys:String x:Key="AppearanceLight">हल्का</sys:String>
+    <sys:String x:Key="AppearanceDark">गहरा</sys:String>
+    <sys:String x:Key="ComingSoon">यह विकल्प भविष्य के संस्करण में उपलब्ध होगा।</sys:String>
+    <sys:String x:Key="ApplicationVersion">एप्लिकेशन संस्करण</sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">Central Calendar का वर्तमान स्थापित संस्करण</sys:String>
+    <sys:String x:Key="Erroruserpass">उपयोगकर्ता नाम और पासवर्ड दर्ज करें।</sys:String>
+    <sys:String x:Key="Erroruser">उपयोगकर्ता नाम दर्ज करें।</sys:String>
+    <sys:String x:Key="Errorpass">पासवर्ड दर्ज करें।</sys:String>
+    <sys:String x:Key="DBerror">केंद्रीय कैलेंडर डेटाबेस से कनेक्ट नहीं किया जा सकता।</sys:String>
+    <sys:String x:Key="Incoruserpass">उपयोगकर्ता नाम या पासवर्ड गलत है।</sys:String>
+    <sys:String x:Key="Connected">CentralCalendar डेटाबेस से कनेक्शन सफल रहा।",
+		"डेटाबेस"</sys:String>
+    <sys:String x:Key="NotConnected">CentralCalendar डेटाबेस से कनेक्शन विफल रहा।",
+		"डेटाबेस"</sys:String>
+    <sys:String x:Key="DBError1">डेटाबेस त्रुटि</sys:String>
+    <sys:String x:Key="LoginFail">साइन इन विफल हुआ या रद्द कर दिया गया।</sys:String>
+</ResourceDictionary>

@@ -1,0 +1,188 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=System.Runtime" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppName">中央カレンダー</sys:String>
+    <sys:String x:Key="Version">バージョン</sys:String>
+    <sys:String x:Key="NavCalendar">カレンダー</sys:String>
+    <sys:String x:Key="NavAdmin">管理</sys:String>
+    <sys:String x:Key="NavSettings">設定</sys:String>
+    <sys:String x:Key="NavSearch">検索</sys:String>
+    <sys:String x:Key="NavHelp">ヘルプ</sys:String>
+    <sys:String x:Key="Today">今日</sys:String>
+    <sys:String x:Key="NewEntry">新規項目</sys:String>
+    <sys:String x:Key="Refresh">カレンダーを更新</sys:String>
+    <sys:String x:Key="Employee">従業員</sys:String>
+    <sys:String x:Key="ToolPerv">前の期間</sys:String>
+    <sys:String x:Key="ToolDate">日付へ移動</sys:String>
+    <sys:String x:Key="ToolNext">次の期間</sys:String>
+    <sys:String x:Key="NotSignedIn">サインインしていません</sys:String>
+    <sys:String x:Key="SignIn">サインイン</sys:String>
+    <sys:String x:Key="SignOut">サインアウト</sys:String>
+    <sys:String x:Key="Localcalendar">ローカルカレンダー</sys:String>
+    <sys:String x:Key="Save">保存</sys:String>
+    <sys:String x:Key="Cancel">キャンセル</sys:String>
+    <sys:String x:Key="Close">閉じる</sys:String>
+    <sys:String x:Key="Settings">設定</sys:String>
+    <sys:String x:Key="Language">言語</sys:String>
+    <sys:String x:Key="Aboutwindow">中央カレンダーについて</sys:String>
+    <sys:String x:Key="Subtitleabout">従業員の空き状況とスケジュール</sys:String>
+    <sys:String x:Key="Application">アプリケーション</sys:String>
+    <sys:String x:Key="Platform">プラットフォーム</sys:String>
+    <sys:String x:Key="Author">作成者</sys:String>
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+    <sys:String x:Key="Copy">著作権</sys:String>
+    <sys:String x:Key="Copy2">© 2026 Djskinproductions</sys:String>
+    <sys:String x:Key="Email">メール</sys:String>
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    <sys:String x:Key="Search">検索</sys:String>
+    <sys:String x:Key="SutitleSearch">従業員、祝日、社内イベントを検索</sys:String>
+    <sys:String x:Key="Searchplace">検索...</sys:String>
+    <sys:String x:Key="notfound">何も見つかりませんでした</sys:String>
+    <sys:String x:Key="notfound2">別の従業員名、祝日、またはイベント名をお試しください。</sys:String>
+    <sys:String x:Key="Help">ヘルプ</sys:String>
+    <sys:String x:Key="subtitleHelp">中央カレンダー ユーザーガイド</sys:String>
+    <sys:String x:Key="subtitleHelp2">中央カレンダーでは、従業員の空き状況、出社、欠勤、休暇、社内カレンダーのイベントを一覧できます。</sys:String>
+    <sys:String x:Key="CalendarLegend">カレンダーの凡例</sys:String>
+    <sys:String x:Key="Color">色</sys:String>
+    <sys:String x:Key="Code">コード</sys:String>
+    <sys:String x:Key="Description">説明</sys:String>
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+    <sys:String x:Key="Home">在宅</sys:String>
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+    <sys:String x:Key="WorkOffice">オフィス勤務</sys:String>
+    <sys:String x:Key="WorkHome">在宅勤務</sys:String>
+    <sys:String x:Key="HomeAbs">½日在宅勤務、½日欠勤</sys:String>
+    <sys:String x:Key="OfficeAbs">½日オフィス勤務、½日欠勤</sys:String>
+    <sys:String x:Key="HomeOffice">½日在宅勤務、½日オフィス勤務</sys:String>
+    <sys:String x:Key="Congress">学会</sys:String>
+    <sys:String x:Key="Externalmeet">外部会議</sys:String>
+    <sys:String x:Key="Monvis">モニタリング訪問</sys:String>
+    <sys:String x:Key="Option">オプション</sys:String>
+    <sys:String x:Key="Absence">欠勤</sys:String>
+    <sys:String x:Key="Weekend">週末</sys:String>
+    <sys:String x:Key="Public holiday">祝日</sys:String>
+    <sys:String x:Key="Mandatory">全社指定休日</sys:String>
+    <sys:String x:Key="Create">カレンダー項目を作成</sys:String>
+    <sys:String x:Key="Helpcreate1">• カレンダーのツールバーで「新規項目」をクリックします。</sys:String>
+    <sys:String x:Key="Helpcreate2">• 別の従業員を管理する権限がある場合は、その従業員を選択します。</sys:String>
+    <sys:String x:Key="Helpcreate3">• 日付を選択します。</sys:String>
+    <sys:String x:Key="Helpcreate4">• 目的のカレンダーステータスを選択します。</sys:String>
+    <sys:String x:Key="Helpcreate5">• 必要に応じて繰り返しオプションを選択します。</sys:String>
+    <sys:String x:Key="Helpcreate6">• 必要に応じてメモを入力します。</sys:String>
+    <sys:String x:Key="Helpcreate7">• 「保存」をクリックします。</sys:String>
+    <sys:String x:Key="Recurringentries">定期的な登録</sys:String>
+    <sys:String x:Key="Re1">利用できる繰り返しオプション：</sys:String>
+    <sys:String x:Key="Re2">• 1回のみ</sys:String>
+    <sys:String x:Key="Re3">• 毎日</sys:String>
+    <sys:String x:Key="Re4">• 毎週</sys:String>
+    <sys:String x:Key="Re5">• 2週間ごと</sys:String>
+    <sys:String x:Key="Re6">• 3週間ごと</sys:String>
+    <sys:String x:Key="Re7">• 4週間ごと</sys:String>
+    <sys:String x:Key="Groups">グループ</sys:String>
+    <sys:String x:Key="Groups1">すべての従業員は「全員」グループに属します。</sys:String>
+    <sys:String x:Key="Groups2">• 「全員」グループには独自のカレンダーステータスがありません。</sys:String>
+    <sys:String x:Key="Groups3">• BHVやI&amp;Tなどのグループは展開または折りたたむことができます。</sys:String>
+    <sys:String x:Key="Groups4">• 従業員は複数のグループに所属できます。</sys:String>
+    <sys:String x:Key="Groups5">• 同じ従業員は、どのグループでも常に同じカレンダーデータを使用します。</sys:String>
+    <sys:String x:Key="Groups6">• Microsoft Entra IDに接続すると、グループメンバーシップがEntra IDから同期されます。</sys:String>
+    <sys:String x:Key="Weekhol">週末と祝日</sys:String>
+    <sys:String x:Key="Weekhol1">• 土曜日と日曜日は灰色で表示されます。</sys:String>
+    <sys:String x:Key="Weekhol2">• 通常、週末の日付は変更できません。</sys:String>
+    <sys:String x:Key="Weekhol3">• 祝日は自動的に表示できます。</sys:String>
+    <sys:String x:Key="Weekhol4">• 全社指定休日は、権限を持つユーザーが管理します。</sys:String>
+    <sys:String x:Key="Nav">ナビゲーション</sys:String>
+    <sys:String x:Key="Nav1">「前へ」と「次へ」を使用してカレンダーを移動します。</sys:String>
+    <sys:String x:Key="Nav2">• 「今日」をクリックすると、現在の期間に戻ります。</sys:String>
+    <sys:String x:Key="Nav3">• 「更新」をクリックすると、最新のカレンダー情報が再読み込みされます。</sys:String>
+    <sys:String x:Key="Nav4">• グループ見出しをクリックすると、そのグループを展開または折りたためます。</sys:String>
+    <sys:String x:Key="Search1">検索機能を使用して従業員を探したり、カレンダーデータをすばやく確認したりできます。</sys:String>
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">管理者がMicrosoft Entra IDを構成すると：</sys:String>
+    <sys:String x:Key="MsEID2">• ユーザーはMicrosoftアカウントでサインインできます。</sys:String>
+    <sys:String x:Key="MsEID3">• 従業員とグループメンバーシップを自動的に同期できます。</sys:String>
+    <sys:String x:Key="MsEID4">• ユーザーのMicrosoftプロフィール名とプロフィール画像を表示できます。</sys:String>
+    <sys:String x:Key="MsEID5">• 管理者が有効にしたグループのみがカレンダーに表示されます。</sys:String>
+    <sys:String x:Key="Hint">ヒントとコツ</sys:String>
+    <sys:String x:Key="Hint1">• 不要なグループを折りたたむと、カレンダーを見やすく保てます。</sys:String>
+    <sys:String x:Key="Hint2">• 「今日」を使用すると、現在の週にすばやく戻れます。</sys:String>
+    <sys:String x:Key="Hint3">• 同期後、またはカレンダーデータが変更された場合は「更新」を使用します。</sys:String>
+    <sys:String x:Key="Hint4">• 同じ従業員を「全員」および複数のグループに表示しても、重複するカレンダー項目は作成されません。</sys:String>
+    <sys:String x:Key="NewTitle">新しいカレンダー項目</sys:String>
+    <sys:String x:Key="NewSubtitle">新しいカレンダー項目を作成</sys:String>
+    <sys:String x:Key="Date">日付</sys:String>
+    <sys:String x:Key="Status">ステータス</sys:String>
+    <sys:String x:Key="Recurrence">繰り返し</sys:String>
+    <sys:String x:Key="Notes">メモ</sys:String>
+    <sys:String x:Key="LoginLoc">管理者としてサインイン</sys:String>
+    <sys:String x:Key="Locadmin">ローカル管理者</sys:String>
+    <sys:String x:Key="adminsignin">管理者としてサインイン</sys:String>
+    <sys:String x:Key="loginsub">中央カレンダーのローカル管理者アカウントでサインインします。</sys:String>
+    <sys:String x:Key="Username">ユーザー名</sys:String>
+    <sys:String x:Key="UserPlace">ユーザー名を入力</sys:String>
+    <sys:String x:Key="Password">パスワード</sys:String>
+    <sys:String x:Key="PassPlace">パスワードを入力</sys:String>
+    <sys:String x:Key="Show">表示</sys:String>
+    <sys:String x:Key="Hide">非表示</sys:String>
+    <sys:String x:Key="Signin">サインイン</sys:String>
+    <sys:String x:Key="SettingsTitle">設定</sys:String>
+    <sys:String x:Key="SettingsSubtitle">中央カレンダーの個人設定を変更します。</sys:String>
+    <sys:String x:Key="SettingsLanguageTitle">言語設定</sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">中央カレンダーで使用する言語を選択します。</sys:String>
+    <sys:String x:Key="SettingsAppearanceTitle">外観</sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">中央カレンダーの表示方法を選択します。</sys:String>
+    <sys:String x:Key="AppearanceSystem">Windowsの設定を使用</sys:String>
+    <sys:String x:Key="AppearanceLight">ライト</sys:String>
+    <sys:String x:Key="AppearanceDark">ダーク</sys:String>
+    <sys:String x:Key="ComingSoon">このオプションは今後のバージョンで利用可能になります。</sys:String>
+    <sys:String x:Key="ApplicationVersion">アプリケーションのバージョン</sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">現在インストールされているCentral Calendarのバージョン</sys:String>
+    <sys:String x:Key="Erroruserpass">ユーザー名とパスワードを入力してください。</sys:String>
+    <sys:String x:Key="Erroruser">ユーザー名を入力してください。</sys:String>
+    <sys:String x:Key="Errorpass">パスワードを入力してください。</sys:String>
+    <sys:String x:Key="DBerror">中央カレンダーのデータベースに接続できません。</sys:String>
+    <sys:String x:Key="Incoruserpass">ユーザー名またはパスワードが正しくありません。</sys:String>
+    <sys:String x:Key="Connected">CentralCalendarデータベースへの接続に成功しました。",
+		"データベース"</sys:String>
+    <sys:String x:Key="NotConnected">CentralCalendarデータベースへの接続に失敗しました。",
+		"データベース"</sys:String>
+    <sys:String x:Key="DBError1">データベースエラー</sys:String>
+    <sys:String x:Key="LoginFail">サインインに失敗したか、キャンセルされました。</sys:String>
+</ResourceDictionary>

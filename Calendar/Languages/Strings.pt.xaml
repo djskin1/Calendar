@@ -1,0 +1,192 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=System.Runtime" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppName">Calendário central</sys:String>
+    <sys:String x:Key="Version">Versão</sys:String>
+    <sys:String x:Key="NavCalendar">Calendário</sys:String>
+    <sys:String x:Key="NavAdmin">Administração</sys:String>
+    <sys:String x:Key="NavSettings">Definições</sys:String>
+    <sys:String x:Key="NavSearch">Pesquisar</sys:String>
+    <sys:String x:Key="NavHelp">Ajuda</sys:String>
+    <sys:String x:Key="Today">Hoje</sys:String>
+    <sys:String x:Key="NewEntry">Novo item</sys:String>
+    <sys:String x:Key="Refresh">Atualizar calendário</sys:String>
+    <sys:String x:Key="Employee">Colaborador</sys:String>
+    <sys:String x:Key="ToolPerv">Período anterior</sys:String>
+    <sys:String x:Key="ToolDate">Ir para a data</sys:String>
+    <sys:String x:Key="ToolNext">Período seguinte</sys:String>
+    <sys:String x:Key="NotSignedIn">Sessão não iniciada</sys:String>
+    <sys:String x:Key="SignIn">Iniciar sessão</sys:String>
+    <sys:String x:Key="SignOut">Terminar sessão</sys:String>
+    <sys:String x:Key="Localcalendar">Calendário local</sys:String>
+    <sys:String x:Key="Save">Guardar</sys:String>
+    <sys:String x:Key="Cancel">Cancelar</sys:String>
+    <sys:String x:Key="Close">Fechar</sys:String>
+    <sys:String x:Key="Settings">Definições</sys:String>
+    <sys:String x:Key="Language">Idioma</sys:String>
+    <sys:String x:Key="Aboutwindow">Acerca do Calendário central</sys:String>
+    <sys:String x:Key="Subtitleabout">Disponibilidade e planeamento dos colaboradores</sys:String>
+    <sys:String x:Key="Application">Aplicação</sys:String>
+    <sys:String x:Key="Platform">Plataforma</sys:String>
+    <sys:String x:Key="Author">Autor</sys:String>
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+    <sys:String x:Key="Copy">Direitos de autor</sys:String>
+    <sys:String x:Key="Copy2">© 2026 por Djskinproductions</sys:String>
+    <sys:String x:Key="Email">
+        E-mail
+    </sys:String>
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    <sys:String x:Key="Search">Pesquisar</sys:String>
+    <sys:String x:Key="SutitleSearch">Pesquisar colaboradores, feriados e eventos da empresa</sys:String>
+    <sys:String x:Key="Searchplace">Pesquisar...</sys:String>
+    <sys:String x:Key="notfound">Não foi encontrado nenhum resultado</sys:String>
+    <sys:String x:Key="notfound2">Tente outro nome de colaborador, feriado ou evento.</sys:String>
+    <sys:String x:Key="Help">
+        Help
+    </sys:String>
+    <sys:String x:Key="subtitleHelp">Manual do utilizador do Calendário central</sys:String>
+    <sys:String x:Key="subtitleHelp2">Um calendário central apresenta uma visão geral da disponibilidade dos colaboradores, da presença no escritório, das ausências, das férias e dos eventos do calendário da empresa.</sys:String>
+    <sys:String x:Key="CalendarLegend">Legenda do calendário</sys:String>
+    <sys:String x:Key="Color">Cor</sys:String>
+    <sys:String x:Key="Code">Código</sys:String>
+    <sys:String x:Key="Description">Descrição</sys:String>
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+    <sys:String x:Key="Home">Casa</sys:String>
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+    <sys:String x:Key="WorkOffice">Trabalhar no escritório</sys:String>
+    <sys:String x:Key="WorkHome">Trabalhar a partir de casa</sys:String>
+    <sys:String x:Key="HomeAbs">½ dia a trabalhar a partir de casa, ½ dia ausente</sys:String>
+    <sys:String x:Key="OfficeAbs">½ dia a trabalhar no escritório, ½ dia ausente</sys:String>
+    <sys:String x:Key="HomeOffice">½ dia a trabalhar a partir de casa, ½ dia no escritório</sys:String>
+    <sys:String x:Key="Congress">Congresso</sys:String>
+    <sys:String x:Key="Externalmeet">Reunião externa</sys:String>
+    <sys:String x:Key="Monvis">Visita de monitorização</sys:String>
+    <sys:String x:Key="Option">Opções</sys:String>
+    <sys:String x:Key="Absence">Ausente</sys:String>
+    <sys:String x:Key="Weekend">Fim de semana</sys:String>
+    <sys:String x:Key="Public holiday">Feriado</sys:String>
+    <sys:String x:Key="Mandatory">Dia de folga obrigatório</sys:String>
+    <sys:String x:Key="Create">Criar uma entrada no calendário</sys:String>
+    <sys:String x:Key="Helpcreate1">• Clique em «Novo item» na barra de ferramentas do calendário.</sys:String>
+    <sys:String x:Key="Helpcreate2">• Selecione o colaborador se tiver permissão para gerir outro colaborador.</sys:String>
+    <sys:String x:Key="Helpcreate3">• Selecione a data.</sys:String>
+    <sys:String x:Key="Helpcreate4">• Selecione o estado de calendário pretendido.</sys:String>
+    <sys:String x:Key="Helpcreate5">• Se necessário, selecione uma opção de repetição.</sys:String>
+    <sys:String x:Key="Helpcreate6">• Introduza observações opcionais.</sys:String>
+    <sys:String x:Key="Helpcreate7">• Clique em Guardar.</sys:String>
+    <sys:String x:Key="Recurringentries">Registos recorrentes</sys:String>
+    <sys:String x:Key="Re1">As opções de repetição disponíveis podem ser:</sys:String>
+    <sys:String x:Key="Re2">• Uma vez</sys:String>
+    <sys:String x:Key="Re3">• Diariamente</sys:String>
+    <sys:String x:Key="Re4">• Todas as semanas</sys:String>
+    <sys:String x:Key="Re5">• A cada 2 semanas</sys:String>
+    <sys:String x:Key="Re6">• A cada 3 semanas</sys:String>
+    <sys:String x:Key="Re7">• A cada 4 semanas</sys:String>
+    <sys:String x:Key="Groups">Grupos</sys:String>
+    <sys:String x:Key="Groups1">Todos os colaboradores pertencem ao grupo Todos.</sys:String>
+    <sys:String x:Key="Groups2">• O grupo Todos não tem um estado de calendário próprio.</sys:String>
+    <sys:String x:Key="Groups3">• Os grupos como BHV e I&amp;T podem ser expandidos ou recolhidos.</sys:String>
+    <sys:String x:Key="Groups4">• Os colaboradores podem pertencer a vários grupos.</sys:String>
+    <sys:String x:Key="Groups5">• O mesmo colaborador utiliza sempre os mesmos dados de calendário em cada grupo.</sys:String>
+    <sys:String x:Key="Groups6">• Quando o Microsoft Entra ID está ligado, a associação aos grupos é sincronizada a partir do Entra ID.</sys:String>
+    <sys:String x:Key="Weekhol">Fins de semana e feriados</sys:String>
+    <sys:String x:Key="Weekhol1">• Os sábados e domingos são apresentados a cinzento.</sys:String>
+    <sys:String x:Key="Weekhol2">• Normalmente, os dias de fim de semana não podem ser alterados.</sys:String>
+    <sys:String x:Key="Weekhol3">• Os feriados podem ser apresentados automaticamente.</sys:String>
+    <sys:String x:Key="Weekhol4">• Os dias de folga obrigatórios para toda a empresa são geridos por utilizadores autorizados.</sys:String>
+    <sys:String x:Key="Nav">Navegação</sys:String>
+    <sys:String x:Key="Nav1">Utilize «Anterior» e «Seguinte» para navegar no calendário.</sys:String>
+    <sys:String x:Key="Nav2">• Clique em Hoje para regressar ao período atual.</sys:String>
+    <sys:String x:Key="Nav3">• Clique em Atualizar para recarregar as informações mais recentes do calendário.</sys:String>
+    <sys:String x:Key="Nav4">• Clique no cabeçalho de um grupo para o expandir ou recolher.</sys:String>
+    <sys:String x:Key="Search1">Utilize a função de pesquisa para encontrar um colaborador ou consultar rapidamente os dados do calendário.</sys:String>
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">Quando o Microsoft Entra ID é configurado por um administrador:</sys:String>
+    <sys:String x:Key="MsEID2">• Os utilizadores podem iniciar sessão com a respetiva conta Microsoft.</sys:String>
+    <sys:String x:Key="MsEID3">• Os colaboradores e as associações aos grupos podem ser sincronizados automaticamente.</sys:String>
+    <sys:String x:Key="MsEID4">• O nome e a fotografia do perfil Microsoft do utilizador podem ser apresentados.</sys:String>
+    <sys:String x:Key="MsEID5">• Apenas os grupos ativados por um administrador são apresentados no calendário.</sys:String>
+    <sys:String x:Key="Hint">Sugestões e truques</sys:String>
+    <sys:String x:Key="Hint1">• Recolha os grupos de que não necessita para manter o calendário organizado.</sys:String>
+    <sys:String x:Key="Hint2">• Utilize «Hoje» para regressar rapidamente à semana atual.</sys:String>
+    <sys:String x:Key="Hint3">• Utilize Atualizar após a sincronização ou quando os dados do calendário tiverem sido alterados.</sys:String>
+    <sys:String x:Key="Hint4">• O mesmo colaborador pode ser apresentado em «Todos» e em vários grupos sem que sejam criadas entradas de calendário duplicadas.</sys:String>
+    <sys:String x:Key="NewTitle">Nova entrada no calendário</sys:String>
+    <sys:String x:Key="NewSubtitle">Criar uma nova entrada no calendário</sys:String>
+    <sys:String x:Key="Date">Data</sys:String>
+    <sys:String x:Key="Status">Estado</sys:String>
+    <sys:String x:Key="Recurrence">Repetição</sys:String>
+    <sys:String x:Key="Notes">Observações</sys:String>
+    <sys:String x:Key="LoginLoc">Iniciar sessão como administrador</sys:String>
+    <sys:String x:Key="Locadmin">Administrador local</sys:String>
+    <sys:String x:Key="adminsignin">Iniciar sessão como administrador</sys:String>
+    <sys:String x:Key="loginsub">Inicie sessão com uma conta de administrador local para o calendário central.</sys:String>
+    <sys:String x:Key="Username">Nome de utilizador</sys:String>
+    <sys:String x:Key="UserPlace">Introduza o seu nome de utilizador</sys:String>
+    <sys:String x:Key="Password">Palavra-passe</sys:String>
+    <sys:String x:Key="PassPlace">Introduza a sua palavra-passe</sys:String>
+    <sys:String x:Key="Show">Mostrar</sys:String>
+    <sys:String x:Key="Hide">Ocultar</sys:String>
+    <sys:String x:Key="Signin">Iniciar sessão</sys:String>
+    <sys:String x:Key="SettingsTitle">Definições</sys:String>
+    <sys:String x:Key="SettingsSubtitle">Altere as suas preferências pessoais para o Calendário central.</sys:String>
+    <sys:String x:Key="SettingsLanguageTitle">Definições de idioma</sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">Escolha o idioma que pretende utilizar no calendário central.</sys:String>
+    <sys:String x:Key="SettingsAppearanceTitle">Aspeto</sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">Escolha o aspeto do calendário central.</sys:String>
+    <sys:String x:Key="AppearanceSystem">Utilizar as definições do Windows</sys:String>
+    <sys:String x:Key="AppearanceLight">Claro</sys:String>
+    <sys:String x:Key="AppearanceDark">Escuro</sys:String>
+    <sys:String x:Key="ComingSoon">Esta opção estará disponível numa versão futura.</sys:String>
+    <sys:String x:Key="ApplicationVersion">Versão da aplicação</sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">A versão do Central Calendar atualmente instalada</sys:String>
+    <sys:String x:Key="Erroruserpass">Introduza um nome de utilizador e uma palavra-passe.</sys:String>
+    <sys:String x:Key="Erroruser">Introduza um nome de utilizador.</sys:String>
+    <sys:String x:Key="Errorpass">Introduza uma palavra-passe.</sys:String>
+    <sys:String x:Key="DBerror">Não é possível estabelecer ligação à base de dados do calendário central.</sys:String>
+    <sys:String x:Key="Incoruserpass">O nome de utilizador ou a palavra-passe estão incorretos.</sys:String>
+    <sys:String x:Key="Connected">Ligação à base de dados do CentralCalendar efetuada com êxito.",
+		"Base de dados"</sys:String>
+    <sys:String x:Key="NotConnected">Falha na ligação à base de dados do CentralCalendar.",
+		"Base de dados"</sys:String>
+    <sys:String x:Key="DBError1">Erro da base de dados</sys:String>
+    <sys:String x:Key="LoginFail">O início de sessão falhou ou foi cancelado.</sys:String>
+</ResourceDictionary>

@@ -55,12 +55,19 @@ namespace Calendar.Data
                 .HasIndex(admin => admin.Username)
                 .IsUnique();
 
+            DateTime seedDate =
+                new DateTime(
+                    2026,1,1, 
+                    0, 0, 0,
+                    DateTimeKind.Utc);
+
             modelBuilder.Entity<ApplicationBranding>()
                 .HasData(
                     new ApplicationBranding
                     {
                         Id = 1,
-                        CompanyName = "Central calendar"
+                        CompanyName = "Central calendar",
+                        ModifiedAt = seedDate
                     }
                 );
 
@@ -70,8 +77,9 @@ namespace Calendar.Data
                      {
                         Id = 1,
                         LatestClientVersion = "2.0.0",
-                        MinimumClientVersion = "2.0.0"
-                     }
+                        MinimumClientVersion = "2.0.0",
+                        ModifiedAt = seedDate
+                    }
                 );
         }
     }

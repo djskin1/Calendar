@@ -86,7 +86,7 @@
                         Height="45"
                         Margin="0,4"
                         HorizontalContentAlignment="Left"
-                        Visibility="Visible"
+                        Visibility="Collapsed"
                         Click="AdminButton_Click">
 
 					<StackPanel Orientation="Horizontal">
@@ -105,10 +105,12 @@
 				</Button>
 				
 				<!-- Settings -->
-				<Button Grid.Row="4"
+				<Button x:Name="SettingsButton"
+                        Grid.Row="4"
 						Height="45"
 						Margin="0,4"
 						HorizontalContentAlignment="Left"
+                        Visibility="Collapsed"
 						Click="SettingsButton_Click">
 					<StackPanel Orientation="horizontal">
 						<TextBlock Text="&#xE713;"

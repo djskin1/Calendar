@@ -1,0 +1,188 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:sys="clr-namespace:System;assembly=System.Runtime" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppName">Calendarium Centrale</sys:String>
+    <sys:String x:Key="Version">Versio</sys:String>
+    <sys:String x:Key="NavCalendar">Calendarium</sys:String>
+    <sys:String x:Key="NavAdmin">Administratio</sys:String>
+    <sys:String x:Key="NavSettings">Configurationes</sys:String>
+    <sys:String x:Key="NavSearch">Quaerere</sys:String>
+    <sys:String x:Key="NavHelp">Auxilium</sys:String>
+    <sys:String x:Key="Today">Hodie</sys:String>
+    <sys:String x:Key="NewEntry">Nova res</sys:String>
+    <sys:String x:Key="Refresh">Calendarium renovare</sys:String>
+    <sys:String x:Key="Employee">Operarius</sys:String>
+    <sys:String x:Key="ToolPerv">Tempus prius</sys:String>
+    <sys:String x:Key="ToolDate">Ad diem ire</sys:String>
+    <sys:String x:Key="ToolNext">Tempus sequens</sys:String>
+    <sys:String x:Key="NotSignedIn">Non initium fecisti</sys:String>
+    <sys:String x:Key="SignIn">Sessionem inire</sys:String>
+    <sys:String x:Key="SignOut">Sessionem finire</sys:String>
+    <sys:String x:Key="Localcalendar">Calendarium locale</sys:String>
+    <sys:String x:Key="Save">Servare</sys:String>
+    <sys:String x:Key="Cancel">Interrumpere</sys:String>
+    <sys:String x:Key="Close">Claudere</sys:String>
+    <sys:String x:Key="Settings">Configurationes</sys:String>
+    <sys:String x:Key="Language">Lingua</sys:String>
+    <sys:String x:Key="Aboutwindow">De Calendario Centrali</sys:String>
+    <sys:String x:Key="Subtitleabout">Disponibilitas et ordinatio operariorum</sys:String>
+    <sys:String x:Key="Application">Applicatio</sys:String>
+    <sys:String x:Key="Platform">Suggestus</sys:String>
+    <sys:String x:Key="Author">Auctor</sys:String>
+    <sys:String x:Key="MSwin">
+        Microsoft Windows
+    </sys:String>
+    <sys:String x:Key="KV">
+        Kevin Verweij
+    </sys:String>
+    <sys:String x:Key="Copy">Ius auctoris</sys:String>
+    <sys:String x:Key="Copy2">© 2026 a Djskinproductions</sys:String>
+    <sys:String x:Key="Email">Epistula electronica</sys:String>
+    <sys:String x:Key="Info">
+        info@djskinproductions.nl
+    </sys:String>
+    <sys:String x:Key="Search">Quaerere</sys:String>
+    <sys:String x:Key="SutitleSearch">Operarios, dies festos et eventus societatis quaerere</sys:String>
+    <sys:String x:Key="Searchplace">Quaerere...</sys:String>
+    <sys:String x:Key="notfound">Nihil inventum est</sys:String>
+    <sys:String x:Key="notfound2">Aliud nomen operarii, diei festi aut eventus tempta.</sys:String>
+    <sys:String x:Key="Help">Auxilium</sys:String>
+    <sys:String x:Key="subtitleHelp">Praecepta usoris Calendarii Centralis</sys:String>
+    <sys:String x:Key="subtitleHelp2">Calendarium centrale conspectum disponibilitatis operariorum, praesentiae in officio, absentiae, feriarum et eventuum societatis praebet.</sys:String>
+    <sys:String x:Key="CalendarLegend">Clavis calendarii</sys:String>
+    <sys:String x:Key="Color">Color</sys:String>
+    <sys:String x:Key="Code">Codex</sys:String>
+    <sys:String x:Key="Description">Descriptio</sys:String>
+    <sys:String x:Key="OFFI">
+        OFFI
+    </sys:String>
+    <sys:String x:Key="Home">Domus</sys:String>
+    <sys:String x:Key="HO/AB">
+        HO/AB
+    </sys:String>
+    <sys:String x:Key="OF/AB">
+        OF/AB
+    </sys:String>
+    <sys:String x:Key="HO/OF">
+        HO/OF
+    </sys:String>
+    <sys:String x:Key="CONG">
+        CONG
+    </sys:String>
+    <sys:String x:Key="MEET">
+        MEET
+    </sys:String>
+    <sys:String x:Key="MV">
+        MV
+    </sys:String>
+    <sys:String x:Key="OPT">
+        OPT
+    </sys:String>
+    <sys:String x:Key="ABS">
+        ABS
+    </sys:String>
+    <sys:String x:Key="PUB">
+        PUB
+    </sys:String>
+    <sys:String x:Key="MF">
+        MF
+    </sys:String>
+    <sys:String x:Key="WorkOffice">In officio laborare</sys:String>
+    <sys:String x:Key="WorkHome">Domi laborare</sys:String>
+    <sys:String x:Key="HomeAbs">½ dies domi laborans, ½ dies absens</sys:String>
+    <sys:String x:Key="OfficeAbs">½ dies in officio laborans, ½ dies absens</sys:String>
+    <sys:String x:Key="HomeOffice">½ dies domi laborans, ½ dies in officio</sys:String>
+    <sys:String x:Key="Congress">Congressus</sys:String>
+    <sys:String x:Key="Externalmeet">Conventus externus</sys:String>
+    <sys:String x:Key="Monvis">Visitatio inspectionis</sys:String>
+    <sys:String x:Key="Option">Optiones</sys:String>
+    <sys:String x:Key="Absence">Absens</sys:String>
+    <sys:String x:Key="Weekend">Finis hebdomadis</sys:String>
+    <sys:String x:Key="Public holiday">Dies festus</sys:String>
+    <sys:String x:Key="Mandatory">Dies feriatus obligatorius</sys:String>
+    <sys:String x:Key="Create">Rem calendarii creare</sys:String>
+    <sys:String x:Key="Helpcreate1">• Preme «Nova res» in instrumentis calendarii.</sys:String>
+    <sys:String x:Key="Helpcreate2">• Operarium elige, si alium operarium administrare licet.</sys:String>
+    <sys:String x:Key="Helpcreate3">• Diem elige.</sys:String>
+    <sys:String x:Key="Helpcreate4">• Statum calendarii desideratum elige.</sys:String>
+    <sys:String x:Key="Helpcreate5">• Optionem repetitionis, si necesse est, elige.</sys:String>
+    <sys:String x:Key="Helpcreate6">• Annotationes ad libitum insere.</sys:String>
+    <sys:String x:Key="Helpcreate7">• Preme Servare.</sys:String>
+    <sys:String x:Key="Recurringentries">Inscriptiones recurrentes</sys:String>
+    <sys:String x:Key="Re1">Optiones repetitionis praesto esse possunt:</sys:String>
+    <sys:String x:Key="Re2">• Semel</sys:String>
+    <sys:String x:Key="Re3">• Cotidie</sys:String>
+    <sys:String x:Key="Re4">• Singulis hebdomadibus</sys:String>
+    <sys:String x:Key="Re5">• Quisque 2 hebdomades</sys:String>
+    <sys:String x:Key="Re6">• Quisque 3 hebdomades</sys:String>
+    <sys:String x:Key="Re7">• Quisque 4 hebdomades</sys:String>
+    <sys:String x:Key="Groups">Greges</sys:String>
+    <sys:String x:Key="Groups1">Omnes operarii ad gregem Omnes pertinent.</sys:String>
+    <sys:String x:Key="Groups2">• Grex Omnes statum calendarii proprium non habet.</sys:String>
+    <sys:String x:Key="Groups3">• Greges sicut BHV et I&amp;T expandi vel contrahi possunt.</sys:String>
+    <sys:String x:Key="Groups4">• Operarii pluribus gregibus interesse possunt.</sys:String>
+    <sys:String x:Key="Groups5">• Idem operarius in omni grege eisdem calendarii datis semper utitur.</sys:String>
+    <sys:String x:Key="Groups6">• Cum Microsoft Entra ID conectitur, sodalitas gregum ex Entra ID congruitur.</sys:String>
+    <sys:String x:Key="Weekhol">Fines hebdomadis et dies festi</sys:String>
+    <sys:String x:Key="Weekhol1">• Dies Saturni et Solis colore cinereo monstrantur.</sys:String>
+    <sys:String x:Key="Weekhol2">• Dies finis hebdomadis plerumque mutari non possunt.</sys:String>
+    <sys:String x:Key="Weekhol3">• Dies festi automatice monstrari possunt.</sys:String>
+    <sys:String x:Key="Weekhol4">• Dies feriati obligatorii totius societatis ab usoribus auctoritate praeditis administrantur.</sys:String>
+    <sys:String x:Key="Nav">Navigatio</sys:String>
+    <sys:String x:Key="Nav1">Utere «Priore» et «Sequente» ut per calendarium naviges.</sys:String>
+    <sys:String x:Key="Nav2">• Preme Hodie ut ad tempus praesens redeas.</sys:String>
+    <sys:String x:Key="Nav3">• Preme Renovare ut recentissima calendarii indicia denuo onerentur.</sys:String>
+    <sys:String x:Key="Nav4">• Preme titulum gregis ut gregem expandas vel contrahas.</sys:String>
+    <sys:String x:Key="Search1">Munere quaerendi utere ut operarium invenias aut calendarii data celeriter reperias.</sys:String>
+    <sys:String x:Key="MsEID">
+        Microsoft Entra ID
+    </sys:String>
+    <sys:String x:Key="MsEID1">Cum Microsoft Entra ID ab administratore configuratur:</sys:String>
+    <sys:String x:Key="MsEID2">• Usores ratione Microsoft sessionem inire possunt.</sys:String>
+    <sys:String x:Key="MsEID3">• Operarii et sodalitates gregum automatice congrui possunt.</sys:String>
+    <sys:String x:Key="MsEID4">• Nomen et imago formae Microsoft usoris monstrari possunt.</sys:String>
+    <sys:String x:Key="MsEID5">• Soli greges ab administratore activati in calendario monstrantur.</sys:String>
+    <sys:String x:Key="Hint">Consilia et artes</sys:String>
+    <sys:String x:Key="Hint1">• Greges non necessarios contrahe ut calendarium perspicuum maneat.</sys:String>
+    <sys:String x:Key="Hint2">• Utere «Hodie» ut celeriter ad hebdomadem praesentem redeas.</sys:String>
+    <sys:String x:Key="Hint3">• Utere Renovare post congruentiam aut cum calendarii data mutata sunt.</sys:String>
+    <sys:String x:Key="Hint4">• Idem operarius sub «Omnes» et in pluribus gregibus monstrari potest sine duplicibus calendarii rebus.</sys:String>
+    <sys:String x:Key="NewTitle">Nova res calendarii</sys:String>
+    <sys:String x:Key="NewSubtitle">Novam rem calendarii creare</sys:String>
+    <sys:String x:Key="Date">Dies</sys:String>
+    <sys:String x:Key="Status">Status</sys:String>
+    <sys:String x:Key="Recurrence">Repetitio</sys:String>
+    <sys:String x:Key="Notes">Annotationes</sys:String>
+    <sys:String x:Key="LoginLoc">Ut administrator sessionem inire</sys:String>
+    <sys:String x:Key="Locadmin">Administrator localis</sys:String>
+    <sys:String x:Key="adminsignin">Ut administrator sessionem inire</sys:String>
+    <sys:String x:Key="loginsub">Ratione administratoris locali Calendarii Centralis sessionem ini.</sys:String>
+    <sys:String x:Key="Username">Nomen usoris</sys:String>
+    <sys:String x:Key="UserPlace">Nomen usoris insere</sys:String>
+    <sys:String x:Key="Password">Tessera</sys:String>
+    <sys:String x:Key="PassPlace">Tesseram insere</sys:String>
+    <sys:String x:Key="Show">Monstrare</sys:String>
+    <sys:String x:Key="Hide">Celare</sys:String>
+    <sys:String x:Key="Signin">Sessionem inire</sys:String>
+    <sys:String x:Key="SettingsTitle">Configurationes</sys:String>
+    <sys:String x:Key="SettingsSubtitle">Praeferentias personales Calendarii Centralis muta.</sys:String>
+    <sys:String x:Key="SettingsLanguageTitle">Configurationes linguae</sys:String>
+    <sys:String x:Key="SettingsLanguageDescription">Linguam elige qua in calendario centrali uti vis.</sys:String>
+    <sys:String x:Key="SettingsAppearanceTitle">Species</sys:String>
+    <sys:String x:Key="SettingsAppearanceDescription">Elige quomodo calendarium centrale appareat.</sys:String>
+    <sys:String x:Key="AppearanceSystem">Configurationibus Windows uti</sys:String>
+    <sys:String x:Key="AppearanceLight">Clarus</sys:String>
+    <sys:String x:Key="AppearanceDark">Obscurus</sys:String>
+    <sys:String x:Key="ComingSoon">Haec optio in versione futura praesto erit.</sys:String>
+    <sys:String x:Key="ApplicationVersion">Versio applicationis</sys:String>
+    <sys:String x:Key="ApplicationVersionDescription">Versio Central Calendar nunc instituta</sys:String>
+    <sys:String x:Key="Erroruserpass">Nomen usoris et tesseram insere.</sys:String>
+    <sys:String x:Key="Erroruser">Nomen usoris insere.</sys:String>
+    <sys:String x:Key="Errorpass">Tesseram insere.</sys:String>
+    <sys:String x:Key="DBerror">Cum basi datorum Calendarii Centralis conecti non potest.</sys:String>
+    <sys:String x:Key="Incoruserpass">Nomen usoris aut tessera falsa est.</sys:String>
+    <sys:String x:Key="Connected">Conexio cum basi datorum CentralCalendar successit.",
+		"Basis datorum"</sys:String>
+    <sys:String x:Key="NotConnected">Conexio cum basi datorum CentralCalendar defecit.",
+		"Basis datorum"</sys:String>
+    <sys:String x:Key="DBError1">Error basis datorum</sys:String>
+    <sys:String x:Key="LoginFail">Initium sessionis defecit aut intermissum est.</sys:String>
+</ResourceDictionary>
