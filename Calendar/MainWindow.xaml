@@ -563,9 +563,10 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource CalendarLegend}"
-                       FontSize="20"
-                       FontWeight="SemiBold"
-                       Margin="0,0,0,12"/>
+                               FontSize="20"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,12"/>
 
                     <Border Background="{DynamicResource SurfaceBrush}"
                     BorderBrush="{DynamicResource BorderBrush}"
@@ -607,6 +608,7 @@
                             <TextBlock Grid.Row="0"
                                Grid.Column="0"
                                Text="{DynamicResource Color}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                FontWeight="SemiBold"
                                Margin="10"
                                VerticalAlignment="Center"/>
@@ -614,12 +616,14 @@
                             <TextBlock Grid.Row="0"
                                Grid.Column="1"
                                Text="{DynamicResource Code}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="0"
                                Grid.Column="2"
                                Text="{DynamicResource Description}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"/>
 
@@ -635,11 +639,13 @@
                             <TextBlock Grid.Row="1"
                                Grid.Column="1"
                                Text="{DynamicResource OFFI}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="1"
                                Grid.Column="2"
                                Text="{DynamicResource WorkOffice}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- HOME -->
@@ -652,11 +658,13 @@
                             <TextBlock Grid.Row="2"
                                Grid.Column="1"
                                Text="{DynamicResource Home}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="2"
                                Grid.Column="2"
                                Text="{DynamicResource WorkHome}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- HO/AB -->
@@ -689,11 +697,13 @@
                             <TextBlock Grid.Row="3"
                                Grid.Column="1"
                                Text="{DynamicResource HO/AB}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="3"
                                Grid.Column="2"
                                Text="{DynamicResource HomeAbs}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- OF/AB -->
@@ -726,11 +736,13 @@
                             <TextBlock Grid.Row="4"
                                Grid.Column="1"
                                Text="{DynamicResource OF/AB}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="4"
                                Grid.Column="2"
                                Text="{DynamicResource OfficeAbs}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- HO/OF -->
@@ -763,11 +775,13 @@
                             <TextBlock Grid.Row="5"
                                Grid.Column="1"
                                Text="{DynamicResource HO/OF}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="5"
                                Grid.Column="2"
                                Text="{DynamicResource HomeOffice}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- CONG -->
@@ -780,11 +794,13 @@
                             <TextBlock Grid.Row="6"
                                Grid.Column="1"
                                Text="{DynamicResource CONG}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="6"
                                Grid.Column="2"
                                Text="{DynamicResource Congress}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- MEET -->
@@ -797,11 +813,13 @@
                             <TextBlock Grid.Row="7"
                                Grid.Column="1"
                                Text="{DynamicResource MEET}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="7"
                                Grid.Column="2"
                                Text="{DynamicResource Externalmeet}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- MV -->
@@ -814,11 +832,13 @@
                             <TextBlock Grid.Row="8"
                                Grid.Column="1"
                                Text="{DynamicResource MF}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="8"
                                Grid.Column="2"
                                Text="{DynamicResource Monvis}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- OPT -->
@@ -831,11 +851,13 @@
                             <TextBlock Grid.Row="9"
                                Grid.Column="1"
                                Text="{DynamicResource OPT}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="9"
                                Grid.Column="2"
                                Text="{DynamicResource Option}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- ABS -->
@@ -848,11 +870,13 @@
                             <TextBlock Grid.Row="10"
                                Grid.Column="1"
                                Text="{DynamicResource ABS}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="10"
                                Grid.Column="2"
                                Text="{DynamicResource Absence}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- Weekend -->
@@ -865,6 +889,7 @@
                             <TextBlock Grid.Row="11"
                                Grid.Column="2"
                                Text="{DynamicResource Weekend}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- PUB -->
@@ -877,11 +902,13 @@
                             <TextBlock Grid.Row="12"
                                Grid.Column="1"
                                Text="{DynamicResource PUB}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="12"
                                Grid.Column="2"
                                Text="{DynamicResource Public holiday}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <!-- MF -->
@@ -894,11 +921,13 @@
                             <TextBlock Grid.Row="13"
                                Grid.Column="1"
                                Text="{DynamicResource MF}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                             <TextBlock Grid.Row="13"
                                Grid.Column="2"
                                Text="{DynamicResource Mandatory}"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
                                VerticalAlignment="Center"/>
 
                         </Grid>
@@ -910,37 +939,45 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Create}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,25">
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate1}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate2}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate3}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate4}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate5}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate6}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Helpcreate7}"/>
                         </TextBlock>
                     </StackPanel>
@@ -950,37 +987,45 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Recurringentries}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,25">
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re1}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re2}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re3}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re4}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re5}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re6}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Re7}" />
                         </TextBlock>
                     </StackPanel>
@@ -990,33 +1035,40 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Groups}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,25">
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Groups1}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Groups2}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Groups3}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Groups4}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Groups5}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Groups6}"/>
                         </TextBlock>
 
@@ -1027,25 +1079,30 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Weekhol}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,25">
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Weekhol1}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Weekhol2}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Weekhol3}" />
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Weekhol4}" />
                         </TextBlock>
                     </StackPanel>
@@ -1055,25 +1112,30 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Nav}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,25">
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Nav1}"/> 
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Nav2}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Nav3}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                    Margin="0,0,0,6">
+                                    Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Nav4}"/>
                         </TextBlock>
                     </StackPanel>
@@ -1083,6 +1145,7 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Search}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
@@ -1090,36 +1153,43 @@
                     <TextBlock TextWrapping="Wrap"
                        LineHeight="22"
                        Margin="10,0,0,25"
-                       Text="{DynamicResource Search1}"/>
+                       Text="{DynamicResource Search1}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
 
                     <!-- ================================================= -->
                     <!-- ENTRA -->
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource MsEID}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,25">
                         <TextBlock TextWrapping="Wrap"                                    
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource MsEID1}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"                                    
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource MsEID2}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"                                    
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource MsEID3}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"                                    
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource MsEID4}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"                                    
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource MsEID5}"/>
                         </TextBlock>
                     </StackPanel>
@@ -1129,25 +1199,30 @@
                     <!-- ================================================= -->
 
                     <TextBlock Text="{DynamicResource Hint}"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
                        FontSize="20"
                        FontWeight="SemiBold"
                        Margin="0,0,0,10"/>
 
                     <StackPanel Margin="10,0,0,40">
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             "<Run Text="{DynamicResource Hint1}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Hint2}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Hint3}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
-                                   Margin="0,0,0,6">
+                                   Margin="0,0,0,6"
+                                   Foreground="{DynamicResource PrimaryTextBrush}">
                             <Run Text="{DynamicResource Hint4}"/>
                         </TextBlock>
                     </StackPanel>
@@ -1216,6 +1291,7 @@
 
                                 <TextBox x:Name="SearchTextBox"
                                  Background="{DynamicResource TransparentBrush}"
+                                         Foreground="{DynamicResource PrimaryTextBrush}"
                                  BorderThickness="0"
                                  FontSize="14"
                                  VerticalContentAlignment="Center"
