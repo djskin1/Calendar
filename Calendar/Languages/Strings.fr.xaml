@@ -185,4 +185,91 @@
 		"Base de données"</sys:String>
     <sys:String x:Key="DBError1">Erreur de base de données</sys:String>
     <sys:String x:Key="LoginFail">Échec ou annulation de la connexion.</sys:String>
+    <sys:String x:Key="AdminTitle">
+        Administration
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Gérez la configuration et les services de Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        CONFIGURATION
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        Identité visuelle
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Gérez le nom de l’entreprise, le logo et les couleurs de l’application.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        Utilisateurs et administrateurs
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Gérez les utilisateurs, les administrateurs locaux, les rôles et les autorisations.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        Groupes
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Gérez les groupes de collaborateurs visibles dans le calendrier.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        États du calendrier
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Gérez les codes d’état, les descriptions, les couleurs et la disponibilité.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        Jours fériés
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Sélectionnez les pays et gérez les jours fériés officiels et les jours de congé de l’entreprise.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        Événements d’entreprise
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Gérez les événements d’entreprise et les autorisations de leurs administrateurs.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Configurez la connexion Microsoft, les utilisateurs, les groupes et l’intégration du calendrier.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        Sauvegarde et restauration
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Exportez, importez et restaurez la base de données de Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        Mises à jour
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Gérez les versions de l’application et les paramètres de mise à jour.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        Cette section est prête. Les fonctionnalités de la base de données seront connectées ultérieurement.
+    </sys:String>
 </ResourceDictionary>

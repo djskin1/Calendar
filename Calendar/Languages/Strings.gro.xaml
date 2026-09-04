@@ -190,4 +190,91 @@
 		"Database"</sys:String>
     <sys:String x:Key="DBError1">Databasefout</sys:String>
     <sys:String x:Key="LoginFail">Inloggen mislukt of ofbroken.</sys:String>
+    <sys:String x:Key="AdminTitle">
+        Beheer
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Beheer de instellens en diensten van Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        INSTELLENS
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        Hoestiel
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Beheer de bedriefsnoam, t logo en de kleuren van de toepassing.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        Gebrukers &amp; beheerders
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Beheer gebrukers, lokale beheerders, rollen en rechten.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        Gruppen
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Beheer welke medewarkersgruppen in de kèlender te zain binnen.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        Kèlenderstatussen
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Beheer statuscodes, omschrievens, kleuren en beschikboarhaid.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        Feestdoagen
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Kies landen en beheer officiële feestdoagen en vrieje doagen van t bedrief.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        Bedriefsevenementen
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Beheer bedriefsevenementen en rechten veur evenementenbeheerders.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Stel Microsoft-aanmelden, gebrukers, gruppen en kèlenderintegratie in.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        Reservekopie &amp; herstel
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Exporteer, importeer en herstel de Central calendar-database.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        Updates
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Beheer versies van de toepassing en update-instellens.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        Dit onderdail is veurbereid. De databasefunctionaliteit wordt loater koppeld.
+    </sys:String>
 </ResourceDictionary>

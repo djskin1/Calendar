@@ -185,4 +185,92 @@
 		"Basis datorum"</sys:String>
     <sys:String x:Key="DBError1">Error basis datorum</sys:String>
     <sys:String x:Key="LoginFail">Initium sessionis defecit aut intermissum est.</sys:String>
+    <sys:String x:Key="AdminTitle">
+        Administratio
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Configurationem et ministeria programmatis Central calendar administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        CONFIGURATIO
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        Identitas visualis societatis
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Nomen societatis, insigne et colores applicationis administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        Usores &amp; administratores
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Usores, administratores locales, munera et facultates administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        Greges
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Elige qui greges operariorum in calendario appareant.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        Status calendarii
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Codices statuum, descriptiones, colores et disponibilitatem administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        Dies festi
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Regiones elige atque dies festos publicos et dies feriatos societatis administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        Eventus societatis
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Eventus societatis et facultates administratorum eventuum administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Accessum per Microsoft, usores, greges et integrationem calendarii configura.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        Exemplar subsidiarium &amp; restitutio
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Basim datorum programmatis Central calendar exporta, importa et restitue.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        Renovationes
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Versiones applicationis et configurationes renovationum administra.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        Haec pars parata est. Munera basis datorum postea conectentur.
+    </sys:String>
+
 </ResourceDictionary>

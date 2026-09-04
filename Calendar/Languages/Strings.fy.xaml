@@ -194,5 +194,94 @@
 	</sys:String>
 	<sys:String x:Key="DBError1">Databankflater</sys:String>
 	<sys:String x:Key="LoginFail">Oanmelden mislearre of annulearre.</sys:String>
+    
+    <!--admin -->
+    <sys:String x:Key="AdminTitle">
+        Behear
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Behear de konfiguraasje en tsjinsten fan Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        KONFIGURAASJE
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        Hûsstyl
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Behear de bedriuwsnamme, it logo en de applikaasjekleuren.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        Brûkers &amp; behearders
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Behear brûkers, lokale behearders, rollen en rjochten.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        Groepen
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Behear hokker meiwurkersgroepen yn de kalinder sichtber binne.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        Kalinderstatussen
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Behear statuskoades, omskriuwingen, kleuren en beskikberens.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        Feestdagen
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Selektearje lannen en behear offisjele feestdagen en bedriuwsfrije dagen.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        Bedriuwseveneminten
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Behear bedriuwseveneminten en rjochten foar evenemintebehearders.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Konfigurearje Microsoft-oanmelding, brûkers, groepen en aginda-yntegraasje.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        Reservekopy &amp; weromsette
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Eksportearje, ymportearje en set de Central calendar-databank werom.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        Updates
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Behear applikaasjeferzjes en update-ynstellingen.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        Dit ûnderdiel is taret. De databankfunksjonaliteit wurdt letter keppele.
+    </sys:String>
 
 </ResourceDictionary>

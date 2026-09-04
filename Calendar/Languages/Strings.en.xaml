@@ -597,5 +597,104 @@
 	<sys:String x:Key="LoginFail">
 		Login failed or canceled.
 	</sys:String>
+    
+    <!-- Admin -->
+    <sys:String x:Key="AdminTitle">
+        Administration
+    </sys:String>
 
-	</ResourceDictionary>
+    <sys:String x:Key="AdminDescription">
+        Manage Central calendar configuration and services.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        CONFIGURATION
+    </sys:String>
+
+
+    <sys:String x:Key="AdminBranding">
+        Branding
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Manage the company name, logo and application colors.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminUsers">
+        Users &amp; Administrators
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Manage users, local administrators, roles and permissions.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminGroups">
+        Groups
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Configure which employee groups are displayed in the calendar.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminStatuses">
+        Calendar statuses
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Manage status codes, descriptions, colors and availability.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminHolidays">
+        Public holidays
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Select countries and manage official and company holidays.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminEvents">
+        Company events
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Manage company events and Event Manager permissions.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Configure Microsoft sign-in, users, groups and calendar integration.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminBackup">
+        Backup &amp; Restore
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Export, import and restore the Central calendar database.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminUpdates">
+        Updates
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Manage application versions and update configuration.
+    </sys:String>
+
+
+    <sys:String x:Key="AdminComingSoon">
+        This section is ready for configuration. Database functionality will be connected later.
+    </sys:String>
+
+</ResourceDictionary>

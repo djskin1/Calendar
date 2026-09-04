@@ -189,4 +189,92 @@
 		"Base de dados"</sys:String>
     <sys:String x:Key="DBError1">Erro da base de dados</sys:String>
     <sys:String x:Key="LoginFail">O início de sessão falhou ou foi cancelado.</sys:String>
+    <sys:String x:Key="AdminTitle">
+        Administração
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Gira a configuração e os serviços do Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        CONFIGURAÇÃO
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        Identidade visual
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Gira o nome da empresa, o logótipo e as cores da aplicação.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        Utilizadores e administradores
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Gira utilizadores, administradores locais, funções e permissões.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        Grupos
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Gira os grupos de colaboradores visíveis no calendário.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        Estados do calendário
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Gira códigos de estado, descrições, cores e disponibilidade.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        Feriados
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Selecione países e gira os feriados oficiais e os dias de folga da empresa.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        Eventos da empresa
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Gira os eventos da empresa e as permissões dos administradores de eventos.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Configure o início de sessão Microsoft, os utilizadores, os grupos e a integração do calendário.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        Cópia de segurança e restauro
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Exporte, importe e restaure a base de dados do Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        Atualizações
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Gira as versões da aplicação e as definições de atualização.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        Esta secção está preparada. As funcionalidades da base de dados serão ligadas mais tarde.
+    </sys:String>
+
 </ResourceDictionary>

@@ -185,4 +185,91 @@
 		"Datenbank"</sys:String>
     <sys:String x:Key="DBError1">Datenbankfehler</sys:String>
     <sys:String x:Key="LoginFail">Anmeldung fehlgeschlagen oder abgebrochen.</sys:String>
+    <sys:String x:Key="AdminTitle">
+        Verwaltung
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Verwalten Sie die Konfiguration und Dienste von Central calendar.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        KONFIGURATION
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        Unternehmensdesign
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        Verwalten Sie den Firmennamen, das Logo und die Anwendungsfarben.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        Benutzer &amp; Administratoren
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        Verwalten Sie Benutzer, lokale Administratoren, Rollen und Berechtigungen.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        Gruppen
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        Verwalten Sie, welche Mitarbeitergruppen im Kalender sichtbar sind.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        Kalenderstatus
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        Verwalten Sie Statuscodes, Beschreibungen, Farben und Verfügbarkeit.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        Feiertage
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        Wählen Sie Länder aus und verwalten Sie gesetzliche Feiertage und betriebliche freie Tage.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        Firmenveranstaltungen
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        Verwalten Sie Firmenveranstaltungen und Berechtigungen für Veranstaltungsadministratoren.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Konfigurieren Sie die Microsoft-Anmeldung, Benutzer, Gruppen und Kalenderintegration.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        Sicherung &amp; Wiederherstellung
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Exportieren, importieren und stellen Sie die Datenbank von Central calendar wieder her.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        Updates
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        Verwalten Sie Anwendungsversionen und Update-Einstellungen.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        Dieser Bereich ist vorbereitet. Die Datenbankfunktionen werden später angebunden.
+    </sys:String>
 </ResourceDictionary>

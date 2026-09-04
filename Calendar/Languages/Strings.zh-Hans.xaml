@@ -185,4 +185,92 @@
 		"数据库"</sys:String>
     <sys:String x:Key="DBError1">数据库错误</sys:String>
     <sys:String x:Key="LoginFail">登录失败或已取消。</sys:String>
+    <sys:String x:Key="AdminTitle">
+        管理
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        管理 Central calendar 的配置和服务。
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        配置
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        品牌标识
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        管理公司名称、标志和应用程序颜色。
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        用户与管理员
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        管理用户、本地管理员、角色和权限。
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        组
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        管理哪些员工组在日历中可见。
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        日历状态
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        管理状态代码、说明、颜色和可用性。
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        节假日
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        选择国家并管理法定节假日和公司休息日。
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        公司活动
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        管理公司活动以及活动管理员的权限。
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        配置 Microsoft 登录、用户、组和日历集成。
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        备份与还原
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        导出、导入和还原 Central calendar 数据库。
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        更新
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        管理应用程序版本和更新设置。
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        此部分已准备就绪。数据库功能将在稍后接入。
+    </sys:String>
+
 </ResourceDictionary>

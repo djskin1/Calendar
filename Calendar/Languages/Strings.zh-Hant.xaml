@@ -185,4 +185,92 @@
 		"數據庫"</sys:String>
     <sys:String x:Key="DBError1">數據庫錯誤</sys:String>
     <sys:String x:Key="LoginFail">登錄失败或已取消。</sys:String>
+    <sys:String x:Key="AdminTitle">
+        管理
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        管理 Central calendar 的設定與服務。
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        設定
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        品牌識別
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        管理公司名稱、標誌與應用程式色彩。
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        使用者與管理員
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        管理使用者、本機管理員、角色與權限。
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        群組
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        管理哪些員工群組會顯示在行事曆中。
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        行事曆狀態
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        管理狀態代碼、說明、色彩與可用性。
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        假日
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        選取國家並管理法定假日與公司休假日。
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        公司活動
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        管理公司活動及活動管理員的權限。
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        設定 Microsoft 登入、使用者、群組與行事曆整合。
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        備份與還原
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        匯出、匯入及還原 Central calendar 資料庫。
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        更新
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        管理應用程式版本與更新設定。
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        此區塊已準備就緒。資料庫功能將於稍後串接。
+    </sys:String>
+
 </ResourceDictionary>

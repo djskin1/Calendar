@@ -525,6 +525,150 @@ namespace CompanyCalendar
             }
         }
 
+        // ============================================================
+        // Admin Panel
+        // ============================================================
+
+        private void ShowAdminHome()
+        {
+            AdminDetailPanel.Visibility =
+                 Visibility.Collapsed;
+
+            AdminHomePanel.Visibility =
+                Visibility.Visible;
+        }
+
+        private void ShowAdminDetail(
+                string titleKey,
+                string descriptionKey,
+                string icon)
+        {
+            AdminHomePanel.Visibility =
+                Visibility.Collapsed;
+
+            AdminDetailPanel.Visibility =
+                Visibility.Visible;
+
+            AdminDetailTitle.Text =
+                LocalizationService.Get(titleKey);
+
+            AdminDetailDescription.Text =
+                LocalizationService.Get(descriptionKey);
+
+            AdminDetailHeading.Text =
+                LocalizationService.Get(titleKey);
+
+            AdminDetailIcon.Text =
+                icon;
+
+            AdminDetailMessage.Text =
+                LocalizationService.Get(
+                    "AdminComingSoon");
+        }
+
+        // admin buttons //
+
+        private void AdminBackButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            ShowAdminHome();
+        }
+
+        private void AdminBrandingButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminBranding",
+                "AdminBrandingDescription",
+                "\uE790");
+        }
+
+        private void AdminUsersButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminUsers",
+                "AdminUsersDescription",
+                "\uE716");
+        }
+
+        private void AdminGroupsButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminGroups",
+                "AdminGroupsDescription",
+                "\uE902");
+        }
+
+        private void AdminStatusesButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminStatuses",
+                "AdminStatusesDescription",
+                "\uE8FB");
+        }
+
+        private void AdminHolidaysButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminHolidays",
+                "AdminHolidaysDescription",
+                "\uE787");
+        }
+
+        private void AdminEventsButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminEvents",
+                "AdminEventsDescription",
+                "\uECA5");
+        }
+
+        private void AdminEntraButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminEntra",
+                "AdminEntraDescription",
+                "\uE77B");
+        }
+
+        private void AdminBackupButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminBackup",
+                "AdminBackupDescription",
+                "\uE74E");
+        }
+
+        private void AdminUpdatesButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowAdminDetail(
+                "AdminUpdates",
+                "AdminUpdatesDescription",
+                "\uE895");
+        }
+
+        // ============================================================
+        // CALENDAR DAYS
+        // ===========================================================
+
         private object CreateDateHeader(DateTime date)
         {
             var stack = new StackPanel
@@ -715,6 +859,7 @@ namespace CompanyCalendar
         {
             HideAllPages();
             AdminPage.Visibility = Visibility.Visible;
+            ShowAdminHome();
         }
 
         private void SettingsButton_Click(

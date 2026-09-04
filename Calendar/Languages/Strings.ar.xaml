@@ -185,4 +185,91 @@
 		"قاعدة البيانات"</sys:String>
     <sys:String x:Key="DBError1">خطأ في قاعدة البيانات</sys:String>
     <sys:String x:Key="LoginFail">فشل تسجيل الدخول أو تم إلغاؤه.</sys:String>
+    <sys:String x:Key="AdminTitle">
+        الإدارة
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        إدارة إعدادات Central calendar وخدماته.
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        الإعدادات
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        الهوية البصرية
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        إدارة اسم الشركة وشعارها وألوان التطبيق.
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        المستخدمون والمسؤولون
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        إدارة المستخدمين والمسؤولين المحليين والأدوار والصلاحيات.
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        المجموعات
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        إدارة مجموعات الموظفين التي تظهر في التقويم.
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        حالات التقويم
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        إدارة رموز الحالات والأوصاف والألوان والتوفر.
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        العطلات الرسمية
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        تحديد البلدان وإدارة العطلات الرسمية وأيام إجازة الشركة.
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        فعاليات الشركة
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        إدارة فعاليات الشركة وصلاحيات مسؤولي الفعاليات.
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        تكوين تسجيل الدخول باستخدام Microsoft والمستخدمين والمجموعات وتكامل التقويم.
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        النسخ الاحتياطي والاستعادة
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        تصدير قاعدة بيانات Central calendar واستيرادها واستعادتها.
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        التحديثات
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        إدارة إصدارات التطبيق وإعدادات التحديث.
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        هذا القسم جاهز. سيتم ربط وظائف قاعدة البيانات لاحقًا.
+    </sys:String>
 </ResourceDictionary>

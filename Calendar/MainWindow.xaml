@@ -16,38 +16,38 @@
         This gives us native Minimize, Maximize/Restore and Close buttons.
     -->
 
-	<Grid>
+    <Grid>
 
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="210"/>
-			<ColumnDefinition Width="*"/>
-		</Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-		<!-- ========================= -->
-		<!-- LEFT SIDEBAR -->
-		<!-- ========================= -->
+        <!-- ========================= -->
+        <!-- LEFT SIDEBAR -->
+        <!-- ========================= -->
 
-		<Border Grid.Column="0"
+        <Border Grid.Column="0"
                 Background="{DynamicResource SidebarBrush}">
 
-			<Grid Margin="14">
+            <Grid Margin="14">
 
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="25"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="auto"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="Auto"/>
-				</Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-				<!-- Application name -->
+                <!-- Application name -->
 
-				<StackPanel>
+                <StackPanel>
 
                     <TextBlock Text="{DynamicResource AppName}"
                                Foreground="{DynamicResource PrimaryTextBrush}"
@@ -56,18 +56,18 @@
 
                 </StackPanel>
 
-				<!-- Calendar -->
+                <!-- Calendar -->
 
-				<Button Grid.Row="2"
+                <Button Grid.Row="2"
                         Height="45"
                         Margin="0,4"
                         HorizontalContentAlignment="Left"
                         Click="CalendarButton_Click">
 
-					<StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
 
-						<!-- Calendar icon -->
-						<TextBlock Text="&#xE787;"
+                        <!-- Calendar icon -->
+                        <TextBlock Text="&#xE787;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="18"
                                    Margin="8,0,12,0"/>
@@ -75,13 +75,13 @@
                         <TextBlock Text="{DynamicResource NavCalendar}"
                                    VerticalAlignment="Center"/>
 
-					</StackPanel>
+                    </StackPanel>
 
-				</Button>
+                </Button>
 
-				<!-- Admin -->
+                <!-- Admin -->
 
-				<Button x:Name="AdminButton"
+                <Button x:Name="AdminButton"
                         Grid.Row="3"
                         Height="45"
                         Margin="0,4"
@@ -89,10 +89,10 @@
                         Visibility="Collapsed"
                         Click="AdminButton_Click">
 
-					<StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
 
-						<!-- Settings icon -->
-						<TextBlock Text="&#xE713;"
+                        <!-- Settings icon -->
+                        <TextBlock Text="&#xE713;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="18"
                                    Margin="8,0,12,0"/>
@@ -100,74 +100,74 @@
                         <TextBlock Text="{DynamicResource NavAdmin}"
                                    VerticalAlignment="Center"/>
 
-					</StackPanel>
+                    </StackPanel>
 
-				</Button>
-				
-				<!-- Settings -->
-				<Button x:Name="SettingsButton"
+                </Button>
+
+                <!-- Settings -->
+                <Button x:Name="SettingsButton"
                         Grid.Row="4"
 						Height="45"
 						Margin="0,4"
 						HorizontalContentAlignment="Left"
                         Visibility="Collapsed"
 						Click="SettingsButton_Click">
-					<StackPanel Orientation="horizontal">
-						<TextBlock Text="&#xE713;"
+                    <StackPanel Orientation="horizontal">
+                        <TextBlock Text="&#xE713;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="18"
                                    Margin="8,0,12,0"/>
 
                         <TextBlock Text="{DynamicResource NavSettings}"
                                    VerticalAlignment="Center"/>
-					</StackPanel>
-				</Button>
+                    </StackPanel>
+                </Button>
 
-				<!-- Search -->
+                <!-- Search -->
 
-				<Button Grid.Row="5"
+                <Button Grid.Row="5"
                         Height="42"
                         Margin="0,4"
                         HorizontalContentAlignment="Left"
                         Click="SearchButton_Click">
 
-					<StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
 
-						<TextBlock Text="&#xE721;"
+                        <TextBlock Text="&#xE721;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="17"
                                    Margin="8,0,12,0"/>
 
                         <TextBlock Text="{DynamicResource NavSearch}"/>
 
-					</StackPanel>
+                    </StackPanel>
 
-				</Button>
+                </Button>
 
-				<!-- Help -->
+                <!-- Help -->
 
-				<Button Grid.Row="6"
+                <Button Grid.Row="6"
                         Height="42"
                         Margin="0,4"
                         HorizontalContentAlignment="Left"
                         Click="HelpButton_Click">
 
-					<StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
 
-						<TextBlock Text="&#xE897;"
+                        <TextBlock Text="&#xE897;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="17"
                                    Margin="8,0,12,0"/>
 
                         <TextBlock Text="{DynamicResource NavHelp}"/>
 
-					</StackPanel>
+                    </StackPanel>
 
-				</Button>
+                </Button>
 
-				<!-- Logo placeholder -->
+                <!-- Logo placeholder -->
 
-				<Border Grid.Row="8"
+                <Border Grid.Row="8"
                         Height="90"
                         Margin="5,10"
 						Padding="8"
@@ -180,7 +180,7 @@
 
                 </Border>
 
-				<!-- Version -->
+                <!-- Version -->
 
                 <Button x:Name="VersionButton"
                         Grid.Row="9"
@@ -191,39 +191,39 @@
                         Cursor="Hand"
                         Click="VersionButton_Click"/>
 
-			</Grid>
+            </Grid>
 
-		</Border>
+        </Border>
 
-		<!-- ========================= -->
-		<!-- MAIN AREA -->
-		<!-- ========================= -->
+        <!-- ========================= -->
+        <!-- MAIN AREA -->
+        <!-- ========================= -->
 
-		<Grid 
+        <Grid 
             x:Name="CalendarPage"
             Grid.Column="1">
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="65"/>
-				<RowDefinition Height="72"/>
-				<RowDefinition Height="*"/>
-			</Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="72"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-			<!-- ========================= -->
-			<!-- TOP USER BAR -->
-			<!-- ========================= -->
+            <!-- ========================= -->
+            <!-- TOP USER BAR -->
+            <!-- ========================= -->
 
-			<Border Grid.Row="0"
+            <Border Grid.Row="0"
                     Background="{DynamicResource SurfaceBrush}"
                     BorderBrush="{DynamicResource BorderBrush}"
                     BorderThickness="0,0,0,1">
 
-				<Grid Margin="20,0">
+                <Grid Margin="20,0">
 
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="Auto"/>
-					</Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
                     <TextBlock Text="{DynamicResource AppName}"
                                FontSize="20"
@@ -231,7 +231,7 @@
                                VerticalAlignment="Center"
                                Foreground="{DynamicResource PrimaryTextBrush}"/>
 
-					<!-- Logged in user -->
+                    <!-- Logged in user -->
 
                     <Border Grid.Column="1"
                             Background="{DynamicResource TransparentBrush}"
@@ -278,7 +278,7 @@
                                            Foreground="{DynamicResource SecondaryTextBrush}"/>
 
                             </StackPanel>
-                            
+
                             <TextBlock Text="&#xE70D;"
                                        FontFamily="Segoe MDL2 Assets"
                                        FontSize="11"
@@ -286,57 +286,57 @@
                                        VerticalAlignment="Center"/>
 
                         </StackPanel>
-                        
+
                     </Border>
 
-				</Grid>
+                </Grid>
 
-			</Border>
+            </Border>
 
-			<!-- ========================= -->
-			<!-- CALENDAR TOOLBAR -->
-			<!-- ========================= -->
+            <!-- ========================= -->
+            <!-- CALENDAR TOOLBAR -->
+            <!-- ========================= -->
 
-			<Border Grid.Row="1"
+            <Border Grid.Row="1"
                     Background="{DynamicResource SurfaceBrush}"
                     BorderBrush="{DynamicResource BorderBrush}"
                     BorderThickness="0,0,0,1">
 
-				<Grid Margin="20,12">
+                <Grid Margin="20,12">
 
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="Auto"/>
-						<ColumnDefinition Width="Auto"/>
-						<ColumnDefinition Width="Auto"/>
+                    <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="Auto"/>
-						<ColumnDefinition Width="Auto"/>
-					</Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-					<!-- Previous -->
+                    <!-- Previous -->
 
-					<Button Grid.Column="0"
+                    <Button Grid.Column="0"
                             Width="42"
                             Height="38"
                             ToolTip="{DynamicResource ToolPerv}"
                             Click="PreviousButton_Click">
 
-						<TextBlock Text="&#xE76B;"
+                        <TextBlock Text="&#xE76B;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="16"/>
 
-					</Button>
+                    </Button>
 
-					<!-- Today -->
+                    <!-- Today -->
 
-					<Button Grid.Column="1"
+                    <Button Grid.Column="1"
                             Content="{DynamicResource Today}"
                             Width="75"
                             Height="38"
                             Margin="7,0"
                             Click="TodayButton_Click"/>
-                    
+
                     <!-- Date Picker -->
 
                     <DatePicker x:Name="GoToDatePicker"
@@ -350,21 +350,21 @@
 
                     <!-- Next -->
 
-					<Button Grid.Column="3"
+                    <Button Grid.Column="3"
                             Width="42"
                             Height="38"
                             ToolTip="{DynamicResource ToolNext}"
                             Click="NextButton_Click">
 
-						<TextBlock Text="&#xE76C;"
+                        <TextBlock Text="&#xE76C;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="16"/>
 
-					</Button>
+                    </Button>
 
-					<!-- Period -->
+                    <!-- Period -->
 
-					<TextBlock x:Name="PeriodText"
+                    <TextBlock x:Name="PeriodText"
                                Grid.Column="4"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
@@ -372,57 +372,57 @@
                                FontWeight="SemiBold"
                                Foreground="{DynamicResource PrimaryTextBrush}"/>
 
-					<!-- Refresh -->
+                    <!-- Refresh -->
 
-					<Button Grid.Column="5"
+                    <Button Grid.Column="5"
                             Width="42"
                             Height="38"
                             Margin="0,0,10,0"
                             ToolTip="{DynamicResource Refresh}"
                             Click="RefreshButton_Click">
 
-						<TextBlock Text="&#xE72C;"
+                        <TextBlock Text="&#xE72C;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="18"/>
 
-					</Button>
+                    </Button>
 
-					<!-- New Entry -->
+                    <!-- New Entry -->
 
-					<Button Grid.Column="6"
+                    <Button Grid.Column="6"
                             Height="38"
                             Padding="16,0"
                             Click="NewEntryButton_Click">
 
-						<StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal">
 
-							<TextBlock Text="&#xE710;"
+                            <TextBlock Text="&#xE710;"
                                        FontFamily="Segoe MDL2 Assets"
                                        FontSize="15"
                                        Margin="0,0,8,0"/>
 
                             <TextBlock Text="{DynamicResource NewEntry}"/>
 
-						</StackPanel>
+                        </StackPanel>
 
-					</Button>
+                    </Button>
 
-				</Grid>
+                </Grid>
 
-			</Border>
+            </Border>
 
-			<!-- ========================= -->
-			<!-- EMPLOYEE CALENDAR -->
-			<!-- ========================= -->
+            <!-- ========================= -->
+            <!-- EMPLOYEE CALENDAR -->
+            <!-- ========================= -->
 
-			<Border Grid.Row="2"
+            <Border Grid.Row="2"
                     Margin="18"
                     Background="{DynamicResource SurfaceBrush}"
                     BorderBrush="{DynamicResource BorderBrush}"
                     BorderThickness="1"
                     CornerRadius="7">
 
-				<DataGrid x:Name="CalendarGrid"
+                <DataGrid x:Name="CalendarGrid"
                           AutoGenerateColumns="False"
                           CanUserAddRows="False"
                           CanUserDeleteRows="False"
@@ -440,63 +440,63 @@
                           FontSize="12"
                           IsReadOnly="True">
 
-					<DataGrid.Resources>
+                    <DataGrid.Resources>
 
-						<!-- Department / function group -->
+                        <!-- Department / function group -->
 
-						<Style TargetType="{x:Type GroupItem}">
+                        <Style TargetType="{x:Type GroupItem}">
 
-							<Setter Property="Template">
+                            <Setter Property="Template">
 
-								<Setter.Value>
+                                <Setter.Value>
 
-									<ControlTemplate TargetType="{x:Type GroupItem}">
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
 
-										<StackPanel>
+                                        <StackPanel>
 
-											<Border Background="#EEF2F3"
+                                            <Border Background="#EEF2F3"
                                                     BorderBrush="#D1D5DB"
                                                     BorderThickness="0,1,0,1"
                                                     Padding="8,5">
 
-												<TextBlock Text="{Binding Name}"
+                                                <TextBlock Text="{Binding Name}"
                                                            FontWeight="Bold"
                                                            FontSize="13"
                                                            Foreground="#111827"/>
 
-											</Border>
+                                            </Border>
 
-											<ItemsPresenter/>
+                                            <ItemsPresenter/>
 
-										</StackPanel>
+                                        </StackPanel>
 
-									</ControlTemplate>
+                                    </ControlTemplate>
 
-								</Setter.Value>
+                                </Setter.Value>
 
-							</Setter>
+                            </Setter>
 
-						</Style>
+                        </Style>
 
-					</DataGrid.Resources>
+                    </DataGrid.Resources>
 
-					<!-- Employee is the only static column.
+                    <!-- Employee is the only static column.
                          Date columns are generated from C#. -->
 
-					<DataGrid.Columns>
+                    <DataGrid.Columns>
 
                         <DataGridTextColumn Header="{DynamicResource Employee}"
                                             Binding="{Binding DisplayName}"
                                             Width="190"
                                             MinWidth="160"/>
 
-					</DataGrid.Columns>
+                    </DataGrid.Columns>
 
-				</DataGrid>
+                </DataGrid>
 
-			</Border>
+            </Border>
 
-		</Grid>
+        </Grid>
 
         <Grid x:Name="HelpPage"
       Grid.Column="1"
@@ -1121,7 +1121,7 @@
                         <TextBlock TextWrapping="Wrap"
                                     Margin="0,0,0,6"
                                    Foreground="{DynamicResource PrimaryTextBrush}">
-                            <Run Text="{DynamicResource Nav1}"/> 
+                            <Run Text="{DynamicResource Nav1}"/>
                         </TextBlock>
                         <TextBlock TextWrapping="Wrap"
                                     Margin="0,0,0,6"
@@ -1307,9 +1307,9 @@
                         </Grid>
 
                     </Border>
-                    
+
                 </Grid>
-                
+
             </Border>
 
             <ScrollViewer Grid.Row="1"
@@ -1404,7 +1404,7 @@
                                             <TextBlock Text="{Binding Description}"
                                                Foreground="{DynamicResource SecondaryTextBrush}"
                                                TextWrapping="Wrap"/>
-                                            
+
                                         </StackPanel>
 
                                         <TextBlock Grid.Column="2"
@@ -1421,45 +1421,45 @@
                     </ItemsControl>
 
                 </StackPanel>
-                        
-                        
+
+
 
             </ScrollViewer>
 
         </Grid>
-        
+
         <!-- Settings Page-->
 
-		<Grid x:Name="SettingsPage"
+        <Grid x:Name="SettingsPage"
 			  Grid.Column="1"
 			  Visibility="Collapsed"
-			  Background="{DynamicResource SurfaceBrush}">
+			  Background="{DynamicResource AppBackgroundBrush}">
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="76"/>
-				<RowDefinition Height="*"/>
-			</Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-			<Border Grid.Row="0"
+            <Border Grid.Row="0"
 					Background="{DynamicResource SurfaceBrush}"
 					BorderBrush="{DynamicResource BorderBrush}"
 					BorderThickness="0,0,0,1">
 
-				<StackPanel Margin="20,0"
+                <StackPanel Margin="20,0"
 							VerticalAlignment="Center">
-					<TextBlock Text="{DynamicResource SettingsTitle}"
+                    <TextBlock Text="{DynamicResource SettingsTitle}"
 							   FontSize="24"
 							   FontWeight="SemiBold"
 							   Foreground="{DynamicResource PrimaryTextBrush}"/>
-					<TextBlock Text="{DynamicResource SettingsSubtitle}"
+                    <TextBlock Text="{DynamicResource SettingsSubtitle}"
 							   Margin="0,3,0,0"
 							   FontSize="12"
 							   Foreground="{DynamicResource SecondaryTextBrush}"/>
-				</StackPanel>
-				
-			</Border>
+                </StackPanel>
 
-			<ScrollViewer Grid.Row="1"
+            </Border>
+
+            <ScrollViewer Grid.Row="1"
                           VerticalScrollBarVisibility="Auto">
 
                 <StackPanel Margin="25"
@@ -1549,23 +1549,481 @@
                                        VerticalAlignment="Center"
                                        Margin="20,0,0,0"/>
                         </Grid>
-                        
+
                     </Border>
-                    
+
                 </StackPanel>
-				
-			</ScrollViewer>
-			
-		</Grid>
-        
+
+            </ScrollViewer>
+
+        </Grid>
+
         <!-- Admin Page -->
         <Grid x:Name="AdminPage"
               Grid.Column="1"
               Visibility="Collapsed"
-              Background="{DynamicResource SurfaceBrush}">
-            
-        </Grid>
+              Background="{DynamicResource AppBackgroundBrush}">
 
+            <Grid.Resources>
+                <!-- Admin Title Style -->
+                <Style x:Key="AdminTileStyle"
+                       TargetType="Button">
+
+                    <Setter Property="Width"
+                    Value="290"/>
+
+                    <Setter Property="Height"
+                    Value="145"/>
+
+                    <Setter Property="Padding"
+                    Value="20"/>
+
+                    <Setter Property="Background"
+                    Value="{DynamicResource SurfaceBrush}"/>
+
+                    <Setter Property="Foreground"
+                    Value="{DynamicResource PrimaryTextBrush}"/>
+
+                    <Setter Property="BorderBrush"
+                    Value="{DynamicResource BorderBrush}"/>
+
+                    <Setter Property="BorderThickness"
+                    Value="1"/>
+
+                    <Setter Property="HorizontalContentAlignment"
+                    Value="Stretch"/>
+
+                    <Setter Property="VerticalContentAlignment"
+                    Value="Stretch"/>
+
+                    <Setter Property="Cursor"
+                    Value="Hand"/>
+
+                    <Setter Property="Template">
+
+                        <Setter.Value>
+
+                            <ControlTemplate TargetType="Button">
+
+                                <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10"
+                                Padding="{TemplateBinding Padding}">
+
+                                    <ContentPresenter/>
+
+                                </Border>
+
+                            </ControlTemplate>
+
+                        </Setter.Value>
+
+                    </Setter>
+
+                </Style>
+                <!-- Back button -->
+                <Style x:Key="AdminBackButtonStyle"
+               TargetType="Button">
+
+                    <Setter Property="Height"
+                    Value="36"/>
+
+                    <Setter Property="Padding"
+                    Value="12,0"/>
+
+                    <Setter Property="Background"
+                    Value="{DynamicResource SurfaceBrush}"/>
+
+                    <Setter Property="Foreground"
+                    Value="{DynamicResource PrimaryTextBrush}"/>
+
+                    <Setter Property="BorderBrush"
+                    Value="{DynamicResource BorderBrush}"/>
+
+                    <Setter Property="BorderThickness"
+                    Value="1"/>
+
+                    <Setter Property="Cursor"
+                    Value="Hand"/>
+
+                </Style>
+
+            </Grid.Resources>
+
+            <Grid x:Name="AdminHomePanel">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="76"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Background="{DynamicResource SurfaceBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="0,0,0,1">
+
+                    <StackPanel Margin="28,0"
+                                VerticalAlignment="Center">
+
+                        <TextBlock Text="{DynamicResource AdminTitle}"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <TextBlock Text="{DynamicResource AdminDescription}"
+                                   Margin="0,3,0,0"
+                                   FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <ScrollViewer Grid.Row="1"
+                                  VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="28">
+
+                        <TextBlock Text="{DynamicResource AdminConfiguration}"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   Margin="2,0,0,10"/>
+
+                        <WrapPanel>
+
+                            <!-- Branding -->
+
+                            <Button Style="{StaticResource AdminBackButtonStyle}"
+                                    Margin="0,0,15,15"
+                                    Click="AdminBrandingButton_Click">
+
+                                <StackPanel>
+                                    <TextBlock Text="&#xE790;"
+                                               FontFamily="Segoe MDL2 Assets"
+                                               FontSize="26"
+                                               Foreground="{DynamicResource SidebarBrush}"/>
+                                    <TextBlock Text="{DynamicResource AdminBranding}"
+                                               FontSize="16"
+                                               FontWeight="SemiBold"
+                                               Margin="0,12,0,3"/>
+                                    <TextBlock Text="{DynamicResource AdminBrandingDescription}"
+                                               FontSize="12"
+                                               Foreground="{DynamicResource SecondaryTextBrush}"
+                                               TextWrapping="Wrap"/>
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Users / Administrators -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                            Margin="0,0,15,15"
+                            Click="AdminUsersButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE716;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminUsers}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminUsersDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Groups -->
+
+                            <Button Style="{StaticResource AdminTileStyle}"
+                            Margin="0,0,15,15"
+                            Click="AdminGroupsButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE902;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminGroups}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminGroupsDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Statuses -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                                    Margin="0,0,15,15"
+                                    Click="AdminStatusesButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE8FB;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminStatuses}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminStatusesDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Public Holidays -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                            Margin="0,0,15,15"
+                            Click="AdminHolidaysButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE787;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminHolidays}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminHolidaysDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Company Events -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                                    Margin="0,0,15,15"
+                                    Click="AdminEventsButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xECA5;"
+                                               FontFamily="Segoe MDL2 Assets"
+                                               FontSize="26"
+                                               Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminEvents}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminEventsDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Microsoft Entra -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                            Margin="0,0,15,15"
+                            Click="AdminEntraButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE77B;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminEntra}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminEntraDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Backup / Restore -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                            Margin="0,0,15,15"
+                            Click="AdminBackupButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE74E;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminBackup}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminBackupDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                            <!-- Updates -->
+                            <Button Style="{StaticResource AdminTileStyle}"
+                                    Margin="0,0,15,15"
+                                    Click="AdminUpdatesButton_Click">
+
+                                <StackPanel>
+
+                                    <TextBlock Text="&#xE895;"
+                                       FontFamily="Segoe MDL2 Assets"
+                                       FontSize="26"
+                                       Foreground="#087F8C"/>
+
+                                    <TextBlock Text="{DynamicResource AdminUpdates}"
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Margin="0,12,0,3"/>
+
+                                    <TextBlock Text="{DynamicResource AdminUpdatesDescription}"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+
+                                </StackPanel>
+                            </Button>
+
+                        </WrapPanel>
+
+                    </StackPanel>
+
+                </ScrollViewer>
+
+            </Grid>
+
+            <!-- Admin Detailed Page -->
+
+            <Grid x:Name="AdminDetailPanel"
+                  Visibility="Collapsed">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="76"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Detail header -->
+
+                <Border Grid.Row="0"
+                Background="{DynamicResource SurfaceBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="0,0,0,1">
+
+                    <Grid Margin="28,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button Grid.Column="0"
+                        Width="42"
+                        Height="36"
+                        Margin="0,0,15,0"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource AdminBackButtonStyle}"
+                        Click="AdminBackButton_Click">
+
+                            <TextBlock Text="&#xE72B;"
+                               FontFamily="Segoe MDL2 Assets"
+                               FontSize="16"/>
+
+                        </Button>
+
+
+                        <StackPanel Grid.Column="1"
+                            VerticalAlignment="Center">
+
+                            <TextBlock x:Name="AdminDetailTitle"
+                               FontSize="24"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <TextBlock x:Name="AdminDetailDescription"
+                               FontSize="12"
+                               Margin="0,3,0,0"
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </Border>
+
+
+                <!-- Placeholder content -->
+
+                <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto">
+
+                    <StackPanel Margin="28"
+                        MaxWidth="900"
+                        HorizontalAlignment="Left">
+
+                        <Border Background="{DynamicResource SurfaceBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="25">
+
+                            <StackPanel>
+
+                                <TextBlock x:Name="AdminDetailIcon"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="30"
+                                   Foreground="#087F8C"/>
+
+                                <TextBlock x:Name="AdminDetailHeading"
+                                   FontSize="19"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"
+                                   Margin="0,15,0,5"/>
+
+                                <TextBlock x:Name="AdminDetailMessage"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"
+                                   TextWrapping="Wrap"
+                                   FontSize="13"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+                    </StackPanel>
+
+                </ScrollViewer>
+
+            </Grid>
+        </Grid>
     </Grid>
 
 </Window>

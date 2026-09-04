@@ -185,4 +185,91 @@
 		"डेटाबेस"</sys:String>
     <sys:String x:Key="DBError1">डेटाबेस त्रुटि</sys:String>
     <sys:String x:Key="LoginFail">साइन इन विफल हुआ या रद्द कर दिया गया।</sys:String>
+    <sys:String x:Key="AdminTitle">
+        प्रशासन
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Central calendar का कॉन्फ़िगरेशन और सेवाएँ प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        कॉन्फ़िगरेशन
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        ब्रांड पहचान
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        कंपनी का नाम, लोगो और एप्लिकेशन के रंग प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        उपयोगकर्ता और व्यवस्थापक
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        उपयोगकर्ता, स्थानीय व्यवस्थापक, भूमिकाएँ और अनुमतियाँ प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        समूह
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        प्रबंधित करें कि कैलेंडर में कौन-से कर्मचारी समूह दिखाई दें।
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        कैलेंडर स्थितियाँ
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        स्थिति कोड, विवरण, रंग और उपलब्धता प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        सार्वजनिक अवकाश
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        देश चुनें और आधिकारिक अवकाश तथा कंपनी के छुट्टी के दिन प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        कंपनी कार्यक्रम
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        कंपनी कार्यक्रम और कार्यक्रम व्यवस्थापकों की अनुमतियाँ प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Microsoft साइन-इन, उपयोगकर्ता, समूह और कैलेंडर एकीकरण कॉन्फ़िगर करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        बैकअप और पुनर्स्थापना
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Central calendar डेटाबेस निर्यात, आयात और पुनर्स्थापित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        अपडेट
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        एप्लिकेशन संस्करण और अपडेट सेटिंग्स प्रबंधित करें।
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        यह अनुभाग तैयार है। डेटाबेस की कार्यक्षमता बाद में जोड़ी जाएगी।
+    </sys:String>
 </ResourceDictionary>

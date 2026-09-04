@@ -185,4 +185,92 @@
 		"データベース"</sys:String>
     <sys:String x:Key="DBError1">データベースエラー</sys:String>
     <sys:String x:Key="LoginFail">サインインに失敗したか、キャンセルされました。</sys:String>
+    <sys:String x:Key="AdminTitle">
+        管理
+    </sys:String>
+
+    <sys:String x:Key="AdminDescription">
+        Central calendar の構成とサービスを管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminConfiguration">
+        構成
+    </sys:String>
+
+    <sys:String x:Key="AdminBranding">
+        ブランド設定
+    </sys:String>
+
+    <sys:String x:Key="AdminBrandingDescription">
+        会社名、ロゴ、アプリケーションの配色を管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminUsers">
+        ユーザーと管理者
+    </sys:String>
+
+    <sys:String x:Key="AdminUsersDescription">
+        ユーザー、ローカル管理者、ロール、権限を管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminGroups">
+        グループ
+    </sys:String>
+
+    <sys:String x:Key="AdminGroupsDescription">
+        カレンダーに表示する従業員グループを管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminStatuses">
+        カレンダーステータス
+    </sys:String>
+
+    <sys:String x:Key="AdminStatusesDescription">
+        ステータスコード、説明、色、空き状況を管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidays">
+        祝日
+    </sys:String>
+
+    <sys:String x:Key="AdminHolidaysDescription">
+        国を選択し、祝日と会社指定休日を管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminEvents">
+        社内イベント
+    </sys:String>
+
+    <sys:String x:Key="AdminEventsDescription">
+        社内イベントとイベント管理者の権限を管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminEntra">
+        Microsoft Entra ID
+    </sys:String>
+
+    <sys:String x:Key="AdminEntraDescription">
+        Microsoft サインイン、ユーザー、グループ、カレンダー連携を構成します。
+    </sys:String>
+
+    <sys:String x:Key="AdminBackup">
+        バックアップと復元
+    </sys:String>
+
+    <sys:String x:Key="AdminBackupDescription">
+        Central calendar データベースのエクスポート、インポート、復元を行います。
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdates">
+        更新
+    </sys:String>
+
+    <sys:String x:Key="AdminUpdatesDescription">
+        アプリケーションのバージョンと更新設定を管理します。
+    </sys:String>
+
+    <sys:String x:Key="AdminComingSoon">
+        このセクションは準備済みです。データベース機能は後日接続されます。
+    </sys:String>
+
 </ResourceDictionary>
