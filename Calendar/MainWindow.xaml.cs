@@ -697,6 +697,7 @@ namespace CompanyCalendar
             HelpPage.Visibility = Visibility.Collapsed;
             SearchPage.Visibility = Visibility.Collapsed;
             SettingsPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Collapsed;
         }
 
         private void CalendarButton_Click(
@@ -712,11 +713,8 @@ namespace CompanyCalendar
             object sender,
             RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "The Admin Panel will be added next.",
-                "Admin",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            HideAllPages();
+            AdminPage.Visibility = Visibility.Visible;
         }
 
         private void SettingsButton_Click(

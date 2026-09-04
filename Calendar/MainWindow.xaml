@@ -1427,6 +1427,8 @@
             </ScrollViewer>
 
         </Grid>
+        
+        <!-- Settings Page-->
 
 		<Grid x:Name="SettingsPage"
 			  Grid.Column="1"
@@ -1555,6 +1557,14 @@
 			</ScrollViewer>
 			
 		</Grid>
+        
+        <!-- Admin Page -->
+        <Grid x:Name="AdminPage"
+              Grid.Column="1"
+              Visibility="Collapsed"
+              Background="{DynamicResource SurfaceBrush}">
+            
+        </Grid>
 
     </Grid>
 
