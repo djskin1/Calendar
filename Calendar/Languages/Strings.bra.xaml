@@ -277,4 +277,73 @@
     <sys:String x:Key="AdminComingSoon">
         Dit onderdeel is voorbereid. De databasefunctionaliteit wordt laoter gekoppeld.
     </sys:String>
+
+    <sys:String x:Key="Company">
+        Bedrijf
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        De naam van oew bedrijf.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        Bedrijfsnaam
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        Bedrijfslogo
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        PNG-, JPG-, JPEG- en SVG-formate worre ondersteund.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Logo kieze...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Standaard
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Applicatiekleur
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        De primaire kleur die in de applicatie gebruikt wordt.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Primaire kleur
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Accentkleur
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Standaardwaardes herstelle
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Kleurkiezer
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        Kies 'n kleur vur de applicatie.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Hex-kleurcode
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        OK
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        Kleur kieze
+    </sys:String>
+
 </ResourceDictionary>

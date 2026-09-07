@@ -272,4 +272,72 @@
     <sys:String x:Key="AdminComingSoon">
         هذا القسم جاهز. سيتم ربط وظائف قاعدة البيانات لاحقًا.
     </sys:String>
+    <sys:String x:Key="Company">
+        الشركة
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        اسم شركتك.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        اسم الشركة
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        شعار الشركة
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        تنسيقات PNG وJPG وJPEG وSVG مدعومة.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        اختيار شعار...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        افتراضي
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        لون التطبيق
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        اللون الأساسي المستخدم في التطبيق.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        اللون الأساسي
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        لون التمييز
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        استعادة الإعدادات الافتراضية
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        منتقي الألوان
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        حدد لونًا للتطبيق.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        رمز اللون السداسي العشري
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        موافق
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        اختيار لون
+    </sys:String>
+
 </ResourceDictionary>

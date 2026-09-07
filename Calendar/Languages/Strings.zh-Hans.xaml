@@ -273,4 +273,73 @@
         此部分已准备就绪。数据库功能将在稍后接入。
     </sys:String>
 
+    <sys:String x:Key="Company">
+        公司
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        您的公司名称。
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        公司名称
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        公司徽标
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        支持 PNG、JPG、JPEG 和 SVG 格式。
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        选择徽标...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        默认
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        应用程序颜色
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        应用程序中使用的主色。
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        主色
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        强调色
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        恢复默认设置
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        颜色选择器
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        为应用程序选择一种颜色。
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        十六进制颜色代码
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        确定
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        选择颜色
+    </sys:String>
+
+
 </ResourceDictionary>

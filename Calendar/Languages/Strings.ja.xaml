@@ -273,4 +273,73 @@
         このセクションは準備済みです。データベース機能は後日接続されます。
     </sys:String>
 
+    <sys:String x:Key="Company">
+        会社
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        会社名です。
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        会社名
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        会社ロゴ
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        PNG、JPG、JPEG、SVG形式に対応しています。
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        ロゴを選択...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        既定
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        アプリケーションの色
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        アプリケーションで使用するプライマリカラーです。
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        プライマリカラー
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        アクセントカラー
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        既定値に戻す
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        カラーピッカー
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        アプリケーションの色を選択します。
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        16進カラーコード
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        OK
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        色を選択
+    </sys:String>
+
+
 </ResourceDictionary>

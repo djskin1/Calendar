@@ -273,4 +273,73 @@
         Ta sekcja jest przygotowana. Funkcje bazy danych zostaną podłączone później.
     </sys:String>
 
+    <sys:String x:Key="Company">
+        Firma
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        Nazwa Twojej firmy.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        Nazwa firmy
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        Logo firmy
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        Obsługiwane są formaty PNG, JPG, JPEG i SVG.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Wybierz logo...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Domyślne
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Kolor aplikacji
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        Podstawowy kolor używany w aplikacji.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Kolor podstawowy
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Kolor akcentu
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Przywróć ustawienia domyślne
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Selektor kolorów
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        Wybierz kolor aplikacji.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Szesnastkowy kod koloru
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        OK
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        Wybierz kolor
+    </sys:String>
+
+
 </ResourceDictionary>

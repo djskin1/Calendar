@@ -273,4 +273,73 @@
         Haec pars parata est. Munera basis datorum postea conectentur.
     </sys:String>
 
+    <sys:String x:Key="Company">
+        Societas
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        Nomen societatis tuae.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        Nomen societatis
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        Insigne societatis
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        Formae PNG, JPG, JPEG et SVG sustinentur.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Insigne eligere...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Praedefinitum
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Color applicationis
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        Color primarius in applicatione adhibitus.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Color primarius
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Color accentus
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Praedefinita restituere
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Selector coloris
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        Colorem applicationis elige.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Codex coloris hexadecimalis
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        Bene
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        Colorem eligere
+    </sys:String>
+
+
 </ResourceDictionary>

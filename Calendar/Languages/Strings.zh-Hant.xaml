@@ -273,4 +273,73 @@
         此區塊已準備就緒。資料庫功能將於稍後串接。
     </sys:String>
 
+    <sys:String x:Key="Company">
+        公司
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        您的公司名稱。
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        公司名稱
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        公司標誌
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        支援 PNG、JPG、JPEG 與 SVG 格式。
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        選擇標誌...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        預設
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        應用程式色彩
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        應用程式使用的主要色彩。
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        主要色彩
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        強調色
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        還原預設值
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        色彩選擇器
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        為應用程式選擇色彩。
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        十六進位色彩代碼
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        確定
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        選擇色彩
+    </sys:String>
+
+
 </ResourceDictionary>

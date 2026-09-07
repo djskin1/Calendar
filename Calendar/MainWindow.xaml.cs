@@ -4,7 +4,11 @@ using Calendar.Localization;
 using Calendar.Models;
 using Calendar.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
+using SharpVectors.Converters;
+using SharpVectors.Renderers.Wpf;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -15,7 +19,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.Windows.Input;
+using System.Linq.Expressions;
 
 namespace CompanyCalendar
 {
@@ -24,6 +31,9 @@ namespace CompanyCalendar
         private bool _isAuthenticated = false;
         private bool _isLocalAdministrator = false;
         private bool _isEntraGlobalAdministrator = false;
+        private byte[]? _brandingLogoData;
+        private string? _brandingLogoFileName;
+        private string? _brandingLogoContentType;
         private string? _currentUserName;
         private DateTime _startDate;
         private bool _updatingDatePicker;
@@ -139,6 +149,59 @@ namespace CompanyCalendar
 
             VersionButton.Content =
                 $"Version {VersionService.CurrentVersion}";
+        }
+
+        private async Task LoadBrandingEditorAsync()
+        {
+            try
+            {
+                ApplicationBranding branding =
+                    await BrandingService.GetAsync();
+
+                BrandingCompanyNameTextBox.Text =
+                    branding.CompanyName;
+
+                BrandingPrimaryColorTextBox.Text =
+                    branding.PrimaryColor;
+
+                BrandingAccentColorTextBox.Text =
+                    branding.AccentColor;
+
+                _brandingLogoData =
+                    branding.LogoData;
+
+                _brandingLogoFileName =
+                    branding.LogoFileName;
+
+                _brandingLogoContentType =
+                    branding.LogoContentType;
+
+                BrandingLogoFileNameText.Text =
+                    _brandingLogoFileName ?? "Default Logo";
+
+                if (branding.LogoData != null &&
+                    branding.LogoData.Length >0)
+                {
+                    BrandingLogoPreview.Source =
+                        CreateLogoImageSource(
+                            branding.LogoData,
+                            branding.LogoContentType);
+                } else
+                {
+                    BrandingLogoPreview.Source =
+                        CreateDefaultLogoImageSource();
+                }
+
+                UpdateBrandingColorPreviews();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("BrandingLoadError"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
 
         public MainWindow()
@@ -575,14 +638,137 @@ namespace CompanyCalendar
             ShowAdminHome();
         }
 
-        private void AdminBrandingButton_Click(
+        private async void AdminBrandingButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminBranding",
-                "AdminBrandingDescription",
-                "\uE790");
+            await LoadBrandingEditorAsync();
+
+            AdminPage.Visibility = Visibility.Collapsed;
+            AdminBrandingPage.Visibility = Visibility.Visible;
+        }
+
+        private void AdminBrandingBackButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            AdminBrandingPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private void BrandingColorTextBox_TextChanged(
+    object sender,
+    System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (BrandingPrimaryColorTextBox == null ||
+                BrandingAccentColorTextBox == null)
+            {
+                return;
+            }
+
+            UpdateBrandingColorPreviews();
+        }
+
+        private void BrandingChooseLogoButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new()
+            {
+                Title = LocalizationService.Get("ChooseLogo"),
+
+                Filter =
+                "Supported Image Files (*.jpg;*.jpeg;*.png;*.svg)|*.jpg;*.jpeg;*.png;*.svg|" +
+                "PNG files |*.png" +
+                "JPEG files |*.jpg;*.jpeg|" +
+                "SVG files |*.svg|",
+
+                CheckFileExists = true,
+                Multiselect = false
+            };
+
+            if (dialog.ShowDialog(this) != true)
+            {
+                return;
+            }
+
+            try
+            {
+                byte[] data =
+                    File.ReadAllBytes(dialog.FileName);
+
+                string fileName =
+                    Path.GetFileName(dialog.FileName);
+
+                _brandingLogoData = data;
+                _brandingLogoFileName = fileName;
+                _brandingLogoContentType =
+                    GetLogoContentType(fileName);
+
+                BrandingLogoPreview.Source =
+                    CreateLogoImageSource(
+                        _brandingLogoData,
+                        _brandingLogoContentType);
+
+                BrandingLogoFileNameText.Text =
+                    fileName;
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("LogoLoadError") + "\n\n" + ex.Message,
+                    "Central calendar",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error                    );
+            }
+        }
+
+        private void BrandingDefaultLogoButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            _brandingLogoData = null;
+            _brandingLogoFileName = null;
+            _brandingLogoContentType = null;
+            BrandingLogoPreview.Source =
+                CreateDefaultLogoImageSource();
+            BrandingLogoFileNameText.Text =
+                LocalizationService.Get("DefaultLogo");
+        }
+
+        private void BrandingPrimaryColorButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            ColorPickerWindow colorPicker =
+                new(
+                    BrandingPrimaryColorTextBox.Text)
+                {
+                    Owner = this
+                };
+
+            if (colorPicker.ShowDialog() == true)
+            {
+                BrandingPrimaryColorTextBox.Text =
+                    colorPicker.SelectedColorHex;
+            }
+        }
+
+        private void BrandingAccentColorButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            ColorPickerWindow colorPicker =
+                new(
+                    BrandingAccentColorTextBox.Text)
+                {
+                    Owner = this
+                };
+            if (colorPicker.ShowDialog() == true)
+            {
+                BrandingAccentColorTextBox.Text =
+                    colorPicker.SelectedColorHex;
+            }
         }
 
         private void AdminUsersButton_Click(
@@ -999,6 +1185,320 @@ namespace CompanyCalendar
                 LoginTypeText.Text = "Microsoft Entra ID";
             }
         }
+
+        private static ImageSource CreateLogoImageSource(
+                byte[] data,
+                string? fileName)
+        {
+            string extension =
+                Path.GetExtension(fileName ?? "")
+                    .ToLowerInvariant();
+
+
+            if (extension == ".svg")
+            {
+                return CreateSvgImageSource(data);
+            }
+
+
+            using MemoryStream stream =
+                new(data);
+
+            BitmapImage bitmap =
+                new();
+
+            bitmap.BeginInit();
+
+            bitmap.CacheOption =
+                BitmapCacheOption.OnLoad;
+
+            bitmap.StreamSource =
+                stream;
+
+            bitmap.EndInit();
+
+            bitmap.Freeze();
+
+            return bitmap;
+        }
+
+        private static ImageSource CreateSvgImageSource(
+    byte[] data)
+        {
+            string temporaryFile =
+                Path.Combine(
+                    Path.GetTempPath(),
+                    $"CentralCalendar_{Guid.NewGuid():N}.svg");
+
+
+            try
+            {
+                File.WriteAllBytes(
+                    temporaryFile,
+                    data);
+
+
+                WpfDrawingSettings settings =
+                    new();
+
+
+                FileSvgReader reader =
+                    new(settings);
+
+
+                DrawingGroup drawing =
+                    reader.Read(temporaryFile);
+
+
+                DrawingImage image =
+                    new(drawing);
+
+                image.Freeze();
+
+                return image;
+            }
+            finally
+            {
+                if (File.Exists(temporaryFile))
+                {
+                    try
+                    {
+                        File.Delete(temporaryFile);
+                    }
+                    catch
+                    {
+                        // Temporary file cleanup is non-critical.
+                    }
+                }
+            }
+        }
+
+        private static ImageSource CreateDefaultLogoImageSource()
+        {
+            BitmapImage bitmap =
+                new(
+                    new Uri(
+                        "pack://application:,,,/Images/Logo.png",
+                        UriKind.Absolute));
+
+            bitmap.Freeze();
+
+            return bitmap;
+        }
+
+        private static string GetLogoContentType(
+    string fileName)
+        {
+            return Path.GetExtension(fileName)
+                .ToLowerInvariant() switch
+            {
+                ".png" => "image/png",
+                ".jpg" => "image/jpeg",
+                ".jpeg" => "image/jpeg",
+                ".svg" => "image/svg+xml",
+
+                _ => "application/octet-stream"
+            };
+        }
+
+        private void UpdateBrandingColorPreviews()
+        {
+            if (TryParseColor(
+                BrandingPrimaryColorTextBox.Text,
+                out Color primaryColor))
+            {
+                BrandingPrimaryColorPreview.Background =
+                    new SolidColorBrush(primaryColor);
+            }
+
+
+            if (TryParseColor(
+                BrandingAccentColorTextBox.Text,
+                out Color accentColor))
+            {
+                BrandingAccentColorPreview.Background =
+                    new SolidColorBrush(accentColor);
+            }
+        }
+
+        private static bool TryParseColor(
+    string value,
+    out Color color)
+        {
+            color = Colors.Transparent;
+
+            try
+            {
+                object? converted =
+                    ColorConverter.ConvertFromString(
+                        value.Trim());
+
+                if (converted is Color result)
+                {
+                    color = result;
+                    return true;
+                }
+            }
+            catch
+            {
+            }
+
+            return false;
+        }
+
+        private void BrandingRestoreDefaultsButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            BrandingCompanyNameTextBox.Text = "Central calendar";
+
+            BrandingPrimaryColorTextBox.Text = "#0B856D";
+            BrandingAccentColorTextBox.Text = "#0097A7";
+
+            // Gebruik dezelfde functionaliteit als de bestaande
+            // "Use default logo"-knop.
+            BrandingDefaultLogoButton_Click(sender, e);
+
+            UpdateBrandingColorPreviews();
+        }
+
+        private async void BrandingSaveButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            string companyName =
+                BrandingCompanyNameTextBox.Text.Trim();
+
+            string primaryColor =
+                BrandingPrimaryColorTextBox.Text.Trim();
+
+            string accentColor =
+                BrandingAccentColorTextBox.Text.Trim();
+
+
+            if (string.IsNullOrWhiteSpace(companyName))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("CompanyNameRequired"),
+                    LocalizationService.Get("CentralCalendar"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (!TryParseColor(
+                primaryColor,
+                out _))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("PrimaryColorInvalid"),
+                    LocalizationService.Get("CentralCalendar"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (!TryParseColor(
+                accentColor,
+                out _))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("AccentColorInvalid"),
+                    LocalizationService.Get("CentralCalendar"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            try
+            {
+                ApplicationBranding branding =
+                    new()
+                    {
+                        Id = 1,
+
+                        CompanyName = companyName,
+
+                        LogoData = _brandingLogoData,
+                        LogoFileName = _brandingLogoFileName,
+                        LogoContentType = _brandingLogoContentType,
+
+                        PrimaryColor = primaryColor,
+                        AccentColor = accentColor
+                    };
+
+
+                await BrandingService.SaveAsync(
+                    branding);
+
+
+                ApplyBranding(
+                    branding);
+
+
+                MessageBox.Show(
+                    LocalizationService.Get("BrandingSaved"),
+                    LocalizationService.Get("CentralCalendar"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("BrandingSaveFailed"),
+                    LocalizationService.Get("CentralCalendar"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private void ApplyBranding(
+    ApplicationBranding branding)
+        {
+            if (TryParseColor(
+                branding.PrimaryColor,
+                out Color primaryColor))
+            {
+                Application.Current.Resources["SidebarBrush"] =
+                    new SolidColorBrush(primaryColor);
+            }
+
+
+            if (TryParseColor(
+                branding.AccentColor,
+                out Color accentColor))
+            {
+                Application.Current.Resources["AccentBrush"] =
+                    new SolidColorBrush(accentColor);
+            }
+
+
+            if (branding.LogoData != null &&
+                branding.LogoData.Length > 0)
+            {
+                CompanyLogoImage.Source =
+                    CreateLogoImageSource(
+                        branding.LogoData,
+                        branding.LogoFileName);
+            }
+            else
+            {
+                CompanyLogoImage.Source =
+                    CreateDefaultLogoImageSource();
+            }
+
+
+            Title =
+                $"{branding.CompanyName} {VersionService.CurrentVersion}";
+        }
+
+
 
         // ============================================================
         // TEMPORARY TEST USERS

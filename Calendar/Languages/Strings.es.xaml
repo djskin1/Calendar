@@ -276,4 +276,72 @@
     <sys:String x:Key="AdminComingSoon">
         Esta sección está preparada. Las funciones de base de datos se conectarán más adelante.
     </sys:String>
+    <sys:String x:Key="Company">
+        Empresa
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        El nombre de su empresa.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        Nombre de la empresa
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        Logotipo de la empresa
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        Se admiten los formatos PNG, JPG, JPEG y SVG.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Elegir logotipo...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Predeterminado
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Color de la aplicación
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        El color principal utilizado en la aplicación.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Color principal
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Color de acento
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Restaurar valores predeterminados
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Selector de color
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        Seleccione un color para la aplicación.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Código de color hexadecimal
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        Aceptar
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        Elegir color
+    </sys:String>
+
 </ResourceDictionary>

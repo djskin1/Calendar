@@ -611,7 +611,6 @@
         CONFIGURATION
     </sys:String>
 
-
     <sys:String x:Key="AdminBranding">
         Branding
     </sys:String>
@@ -695,6 +694,73 @@
 
     <sys:String x:Key="AdminComingSoon">
         This section is ready for configuration. Database functionality will be connected later.
+    </sys:String>
+    
+    <!-- Branding -->
+    <sys:String x:Key="Company">
+        Company
+    </sys:String>
+    <sys:String x:Key="CompanyDescription">
+        The name of your company.
+    </sys:String>
+    <sys:String x:Key="CompanyName">
+        Company Name
+    </sys:String>
+    
+    <sys:String x:Key="CompanyLogo">
+        Company Logo
+    </sys:String>
+    
+    <sys:String x:Key="Supported">
+        PNG, JPG, JPEG and SVG Formats are supported.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Choose Logo...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Default
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Application Color
+    </sys:String>
+    
+    <sys:String x:Key="AppColorDescription">
+        The primary color used in the application.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Primary Color
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Accent Color
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Restore Defaults
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Color Picker
+    </sys:String>
+    
+    <sys:String x:Key="ColorPickerDescription">
+        Select a color for the application. 
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Hex Color Code
+    </sys:String>
+    
+    <sys:String x:Key="OK">
+        Ok
+    </sys:String>
+    
+    <sys:String x:Key="BrandingChooseColor">
+        Choose Color
     </sys:String>
 
 </ResourceDictionary>

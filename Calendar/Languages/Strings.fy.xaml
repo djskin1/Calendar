@@ -283,5 +283,75 @@
     <sys:String x:Key="AdminComingSoon">
         Dit ûnderdiel is taret. De databankfunksjonaliteit wurdt letter keppele.
     </sys:String>
+    
+    <!-- Branding -->
+    <sys:String x:Key="Company">
+        Bedriuw
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        De namme fan jo bedriuw.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        Bedriuwsnamme
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        Bedriuwslogo
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        PNG-, JPG-, JPEG- en SVG-formaten wurde stipe.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Logo kieze...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Standert
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Applikaasjekleur
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        De primêre kleur dy't yn de applikaasje brûkt wurdt.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Primêre kleur
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Aksintkleur
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Standertwearden weromsette
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Kleurkiezer
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        Selektearje in kleur foar de applikaasje.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Heksadesimale kleurkoade
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        OK
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        Kleur kieze
+    </sys:String>
+
 
 </ResourceDictionary>

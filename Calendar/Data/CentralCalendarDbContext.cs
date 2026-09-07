@@ -67,7 +67,9 @@ namespace Calendar.Data
                     {
                         Id = 1,
                         CompanyName = "Central calendar",
-                        ModifiedAt = seedDate
+                        PrimaryColor = "#0B856D",
+                        AccentColor = "#0097A7",
+                        ModifiedAt = new DateTime (2026,1,1)
                     }
                 );
 

@@ -277,4 +277,72 @@
     <sys:String x:Key="AdminComingSoon">
         Dit onderdail is veurbereid. De databasefunctionaliteit wordt loater koppeld.
     </sys:String>
+    <sys:String x:Key="Company">
+        Bedrief
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        Noam van joen bedrief.
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        Bedriefsnoam
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        Bedriefslogo
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        PNG-, JPG-, JPEG- en SVG-formaten worden ondersteund.
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        Logo kiezen...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        Standoard
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        Kleur van toepassing
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        Veurste kleur dij in toepassing bruukt wordt.
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        Veurste kleur
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        Accentkleur
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        Standoardweerden herstellen
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        Kleurkiezer
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        Kies n kleur veur toepassing.
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        Hex-kleurcode
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        OK
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        Kleur kiezen
+    </sys:String>
+
 </ResourceDictionary>

@@ -272,4 +272,72 @@
     <sys:String x:Key="AdminComingSoon">
         यह अनुभाग तैयार है। डेटाबेस की कार्यक्षमता बाद में जोड़ी जाएगी।
     </sys:String>
+    <sys:String x:Key="Company">
+        कंपनी
+    </sys:String>
+
+    <sys:String x:Key="CompanyDescription">
+        आपकी कंपनी का नाम।
+    </sys:String>
+
+    <sys:String x:Key="CompanyName">
+        कंपनी का नाम
+    </sys:String>
+
+    <sys:String x:Key="CompanyLogo">
+        कंपनी का लोगो
+    </sys:String>
+
+    <sys:String x:Key="Supported">
+        PNG, JPG, JPEG और SVG प्रारूप समर्थित हैं।
+    </sys:String>
+
+    <sys:String x:Key="Choose">
+        लोगो चुनें...
+    </sys:String>
+
+    <sys:String x:Key="Default">
+        डिफ़ॉल्ट
+    </sys:String>
+
+    <sys:String x:Key="AppColor">
+        एप्लिकेशन का रंग
+    </sys:String>
+
+    <sys:String x:Key="AppColorDescription">
+        एप्लिकेशन में उपयोग किया जाने वाला प्राथमिक रंग।
+    </sys:String>
+
+    <sys:String x:Key="PrimColor">
+        प्राथमिक रंग
+    </sys:String>
+
+    <sys:String x:Key="AccColor">
+        एक्सेंट रंग
+    </sys:String>
+
+    <sys:String x:Key="Restore">
+        डिफ़ॉल्ट पुनर्स्थापित करें
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerTitle">
+        रंग चयनकर्ता
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerDescription">
+        एप्लिकेशन के लिए एक रंग चुनें।
+    </sys:String>
+
+    <sys:String x:Key="ColorPickerHex">
+        हेक्स रंग कोड
+    </sys:String>
+
+    <sys:String x:Key="OK">
+        ठीक है
+    </sys:String>
+
+    <sys:String x:Key="BrandingChooseColor">
+        रंग चुनें
+    </sys:String>
+
 </ResourceDictionary>

@@ -12,6 +12,9 @@
 
         public string? LogoContentType { get; set; }
 
+        public string PrimaryColor { get; set; } = "#0B856D";
+        public string AccentColor { get; set; } = "#0097A7";
+
         public DateTime ModifiedAt { get; set; } = DateTime.UtcNow;
     }
 }
