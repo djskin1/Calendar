@@ -19,5 +19,8 @@
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public DateTime? LastLoginAt { get; set; }
+
+        public ICollection<LocalAdministratorRole> LocalAdministratorRoles { get; set; }
+            = new List<LocalAdministratorRole>();
     }
 }

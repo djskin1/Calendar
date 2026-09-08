@@ -341,5 +341,41 @@
         選擇色彩
     </sys:String>
 
+    <!-- Users and administrators -->
+
+    <sys:String x:Key="LocalAdministrators">本機管理員</sys:String>
+    <sys:String x:Key="Users">使用者</sys:String>
+    <sys:String x:Key="DisplayName">顯示名稱</sys:String>
+    <sys:String x:Key="Enabled">已啟用</sys:String>
+    <sys:String x:Key="LastLogin">上次登入</sys:String>
+    <sys:String x:Key="Active">作用中</sys:String>
+    <sys:String x:Key="UsersLoadError">無法載入使用者與管理員。</sys:String>
+    <sys:String x:Key="Roles">角色</sys:String>
+    <sys:String x:Key="RolesAndPermissions">角色與權限</sys:String>
+    <sys:String x:Key="Permissions">權限</sys:String>
+    <sys:String x:Key="AddRole">新增角色</sys:String>
+    <sys:String x:Key="AssignRole">指派角色</sys:String>
+    <sys:String x:Key="SavePermissions">儲存權限</sys:String>
+    <sys:String x:Key="RoleNameRequired">請輸入角色名稱。</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">已有相同名稱的角色。</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">無法修改系統角色。</sys:String>
+    <sys:String x:Key="PermissionsSaved">權限已儲存。</sys:String>
+    <sys:String x:Key="SelectUserFirst">請先選擇使用者。</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">請先選擇管理員。</sys:String>
+    <sys:String x:Key="PermissionViewCalendar">檢視行事曆</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">編輯自己的行事曆項目</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">編輯所有行事曆項目</sys:String>
+    <sys:String x:Key="PermissionManageBranding">管理品牌識別</sys:String>
+    <sys:String x:Key="PermissionManageUsers">管理使用者</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">管理本機管理員</sys:String>
+    <sys:String x:Key="PermissionManageRoles">管理角色與權限</sys:String>
+    <sys:String x:Key="PermissionManageGroups">管理群組</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">管理行事曆狀態</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">管理假日</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">管理公司活動</sys:String>
+    <sys:String x:Key="PermissionManageEntra">管理 Microsoft Entra ID</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">管理應用程式更新</sys:String>
+
+
 
 </ResourceDictionary>

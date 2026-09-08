@@ -353,5 +353,42 @@
         Kleur kieze
     </sys:String>
 
+    <!-- Users and administrators -->
+
+    <sys:String x:Key="LocalAdministrators">Lokale behearders</sys:String>
+    <sys:String x:Key="Users">Brûkers</sys:String>
+    <sys:String x:Key="DisplayName">Werjeftenamme</sys:String>
+    <sys:String x:Key="Enabled">Ynskeakele</sys:String>
+    <sys:String x:Key="LastLogin">Lêste oanmelding</sys:String>
+    <sys:String x:Key="Active">Aktyf</sys:String>
+    <sys:String x:Key="UsersLoadError">Kin brûkers en behearders net lade.</sys:String>
+    <sys:String x:Key="Roles">Rollen</sys:String>
+    <sys:String x:Key="RolesAndPermissions">Rollen &amp; rjochten</sys:String>
+    <sys:String x:Key="Permissions">Rjochten</sys:String>
+    <sys:String x:Key="AddRole">Rol tafoegje</sys:String>
+    <sys:String x:Key="AssignRole">Rol tawize</sys:String>
+    <sys:String x:Key="SavePermissions">Rjochten bewarje</sys:String>
+    <sys:String x:Key="RoleNameRequired">Fier in rolnamme yn.</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">Der bestiet al in rol mei dizze namme.</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">Systeemrollen kinne net wizige wurde.</sys:String>
+    <sys:String x:Key="PermissionsSaved">De rjochten binne bewarre.</sys:String>
+    <sys:String x:Key="SelectUserFirst">Selektearje earst in brûker.</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">Selektearje earst in behearder.</sys:String>
+    <sys:String x:Key="PermissionViewCalendar">Kalinder besjen</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">Eigen kalinderitems bewurkje</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">Alle kalinderitems bewurkje</sys:String>
+    <sys:String x:Key="PermissionManageBranding">Hûsstyl beheare</sys:String>
+    <sys:String x:Key="PermissionManageUsers">Brûkers beheare</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">Lokale behearders beheare</sys:String>
+    <sys:String x:Key="PermissionManageRoles">Rollen en rjochten beheare</sys:String>
+    <sys:String x:Key="PermissionManageGroups">Groepen beheare</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">Kalinderstatussen beheare</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">Feestdagen beheare</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">Bedriuwseveneminten beheare</sys:String>
+    <sys:String x:Key="PermissionManageEntra">Microsoft Entra ID beheare</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">Applikaasje-updates beheare</sys:String>
+
+
+
 
 </ResourceDictionary>

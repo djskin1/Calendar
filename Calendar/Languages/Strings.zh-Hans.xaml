@@ -341,5 +341,42 @@
         选择颜色
     </sys:String>
 
+    <!-- Users and administrators -->
+
+    <sys:String x:Key="LocalAdministrators">本地管理员</sys:String>
+    <sys:String x:Key="Users">用户</sys:String>
+    <sys:String x:Key="DisplayName">显示名称</sys:String>
+    <sys:String x:Key="Enabled">已启用</sys:String>
+    <sys:String x:Key="LastLogin">上次登录</sys:String>
+    <sys:String x:Key="Active">活动</sys:String>
+    <sys:String x:Key="UsersLoadError">无法加载用户和管理员。</sys:String>
+    <sys:String x:Key="Roles">角色</sys:String>
+    <sys:String x:Key="RolesAndPermissions">角色与权限</sys:String>
+    <sys:String x:Key="Permissions">权限</sys:String>
+    <sys:String x:Key="AddRole">添加角色</sys:String>
+    <sys:String x:Key="AssignRole">分配角色</sys:String>
+    <sys:String x:Key="SavePermissions">保存权限</sys:String>
+    <sys:String x:Key="RoleNameRequired">请输入角色名称。</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">已存在同名角色。</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">无法修改系统角色。</sys:String>
+    <sys:String x:Key="PermissionsSaved">权限已保存。</sys:String>
+    <sys:String x:Key="SelectUserFirst">请先选择用户。</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">请先选择管理员。</sys:String>
+    <sys:String x:Key="PermissionViewCalendar">查看日历</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">编辑自己的日历条目</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">编辑所有日历条目</sys:String>
+    <sys:String x:Key="PermissionManageBranding">管理品牌标识</sys:String>
+    <sys:String x:Key="PermissionManageUsers">管理用户</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">管理本地管理员</sys:String>
+    <sys:String x:Key="PermissionManageRoles">管理角色和权限</sys:String>
+    <sys:String x:Key="PermissionManageGroups">管理组</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">管理日历状态</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">管理节假日</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">管理公司活动</sys:String>
+    <sys:String x:Key="PermissionManageEntra">管理 Microsoft Entra ID</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">管理应用程序更新</sys:String>
+
+
+
 
 </ResourceDictionary>

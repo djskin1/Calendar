@@ -2,6 +2,7 @@
 using Calendar.Data;
 using Calendar.Localization;
 using Calendar.Models;
+using Calendar.ViewModels;
 using Calendar.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
@@ -202,6 +203,305 @@ namespace CompanyCalendar
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
+        }
+
+        private async Task LoadUsersAndAdministratorsAsync()
+        {
+            try
+            {
+                AdminUsersDataGrid.ItemsSource =
+                    await RoleService.GetUsersAsync();
+
+                LocalAdministratorsDataGrid.ItemsSource =
+                    await RoleService.GetLocalAdministratorsAsync();
+
+
+                List<Role> roles =
+                    await RoleService.GetRolesAsync();
+
+
+                RolesListBox.ItemsSource = roles;
+
+                UserRoleComboBox.ItemsSource = roles;
+                AdministratorRoleComboBox.ItemsSource = roles;
+
+
+                if (roles.Count > 0)
+                {
+                    RolesListBox.SelectedIndex = 0;
+
+                    UserRoleComboBox.SelectedIndex = 0;
+                    AdministratorRoleComboBox.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{LocalizationService.Get("UsersLoadError")}\n\n{ex.Message}",
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private async void RolesListBox_SelectionChanged(
+            object sender,
+            SelectionChangedEventArgs e)
+        {
+            if (RolesListBox.SelectedItem is not Role role)
+            {
+                return;
+            }
+
+            SelectedRoleNameText.Text =
+                role.Name;
+            List<Permission> permissions =
+                await RoleService.GetPermissionsAsync();
+            HashSet<int> selectedPermissionIds =
+                await RoleService.GetRolePermissionIdsAsync(
+                    role.Id);
+            RolePermissionsPanel.Children.Clear();
+
+            foreach (Permission permission in permissions)
+            {
+                CheckBox checkBox =
+                    new()
+                    {
+                        Content =
+                            LocalizationService.Get(
+                                permission.NameResourceKey),
+                        Tag = permission.Id,
+                        IsChecked =
+                            selectedPermissionIds.Contains(
+                                permission.Id),
+                        Margin =
+                            new Thickness(0, 4, 0, 4),
+                        IsEnabled =
+                            !role.IsSystemRole
+                    };
+
+                RolePermissionsPanel.Children.Add(checkBox);
+            }
+
+            SaveRolePermissionsButton.IsEnabled =
+                !role.IsSystemRole;
+        }
+
+        private async void AddRoleButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            string name =
+                NewRoleNameTextBox.Text.Trim();
+
+            if(string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "RoleNameRequired"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            try
+            {
+                Role newRole =
+                    await RoleService.CreateRoleAsync(
+                        name,
+                        null);
+
+                NewRoleNameTextBox.Clear();
+
+                await LoadUsersAndAdministratorsAsync();
+
+                RolesListBox.SelectedItem =
+                    ((IEnumerable<Role>)RolesListBox.ItemsSource)
+                        .FirstOrDefault(
+                            role => role.Id == newRole.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+        }
+
+        private async void SaveRolePermissionsButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            if (RolesListBox.SelectedItem
+                is not Role role)
+            {
+                return;
+            }
+
+
+            List<int> selectedPermissionIds =
+                RolePermissionsPanel.Children
+                    .OfType<CheckBox>()
+                    .Where(checkBox =>
+                        checkBox.IsChecked == true)
+                    .Select(checkBox =>
+                        (int)checkBox.Tag)
+                    .ToList();
+
+
+            try
+            {
+                await RoleService.SaveRolePermissionsAsync(
+                    role.Id,
+                    selectedPermissionIds);
+
+
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "PermissionsSaved"),
+
+                    LocalizationService.Get("AppName"),
+
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+        }
+
+        private async void AssignUserRoleButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            if (AdminUsersDataGrid.SelectedItem
+                is not AdminUserRow user)
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "SelectUserFirst"),
+
+                    LocalizationService.Get("AppName"),
+
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (UserRoleComboBox.SelectedItem
+                is not Role role)
+            {
+                return;
+            }
+
+
+            await RoleService.AssignRoleToUserAsync(
+                user.Id,
+                role.Id);
+
+
+            await LoadUsersAndAdministratorsAsync();
+        }
+
+        private void AdminUsersSectionButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ShowUsersAdminSection("Users");
+        }
+
+
+        private void AdminAdministratorsSectionButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            ShowUsersAdminSection("Administrators");
+        }
+
+
+        private void AdminRolesSectionButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            ShowUsersAdminSection("Roles");
+        }
+
+
+        private void ShowUsersAdminSection(string section)
+        {
+            AdminUsersSection.Visibility =
+                Visibility.Collapsed;
+
+            AdminAdministratorsSection.Visibility =
+                Visibility.Collapsed;
+
+            AdminRolesSection.Visibility =
+                Visibility.Collapsed;
+
+
+            switch (section)
+            {
+                case "Users":
+                    AdminUsersSection.Visibility =
+                        Visibility.Visible;
+                    break;
+
+                case "Administrators":
+                    AdminAdministratorsSection.Visibility =
+                        Visibility.Visible;
+                    break;
+
+                case "Roles":
+                    AdminRolesSection.Visibility =
+                        Visibility.Visible;
+                    break;
+            }
+        }
+
+        private async void AssignAdministratorRoleButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            if (LocalAdministratorsDataGrid.SelectedItem
+                is not AdminLocalAdministratorRow administrator)
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "SelectAdministratorFirst"),
+
+                    LocalizationService.Get("AppName"),
+
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (AdministratorRoleComboBox.SelectedItem
+                is not Role role)
+            {
+                return;
+            }
+
+
+            await RoleService.AssignRoleToAdministratorAsync(
+                administrator.Id,
+                role.Id);
+
+
+            await LoadUsersAndAdministratorsAsync();
         }
 
         public MainWindow()
@@ -771,14 +1071,22 @@ namespace CompanyCalendar
             }
         }
 
-        private void AdminUsersButton_Click(
-    object sender,
-    RoutedEventArgs e)
+        private async void AdminUsersButton_Click(
+            object sender,
+            RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminUsers",
-                "AdminUsersDescription",
-                "\uE716");
+            await LoadUsersAndAdministratorsAsync();
+
+            AdminPage.Visibility = Visibility.Collapsed;
+            AdminUserPage.Visibility = Visibility.Visible;
+        }
+
+        private void AdminUsersBackButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            AdminUserPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
         }
 
         private void AdminGroupsButton_Click(

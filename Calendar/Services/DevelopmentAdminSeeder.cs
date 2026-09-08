@@ -12,47 +12,61 @@ namespace Calendar.Services
             const string displayName = "Local Administrator";
             const string password = "Test-Calendar-2026!";
 
-            using CentralCalendarDbContext database =
-                new CentralCalendarDbContext();
+            using CentralCalendarDbContext database = new();
 
-            bool adminAlreadyExists =
+            LocalAdministrator? administrator =
                 await database.LocalAdministrators
-                    .AnyAsync(admin =>
-                        admin.Username == username);
+                    .FirstOrDefaultAsync(
+                        admin => admin.Username == username);
 
-            if (adminAlreadyExists)
+            if (administrator == null)
             {
-                return;
-            }
+                PasswordHashResult passwordData =
+                    PasswordSecurity.HashPassword(password);
 
-            PasswordHashResult passwordData =
-                PasswordSecurity.HashPassword(password);
-
-            LocalAdministrator administrator =
-                new LocalAdministrator
+                administrator = new LocalAdministrator
                 {
                     Username = username,
                     DisplayName = displayName,
-
-                    PasswordHash =
-                        passwordData.Hash,
-
-                    PasswordSalt =
-                        passwordData.Salt,
-
-                    PasswordIterations =
-                        passwordData.Iterations,
-
+                    PasswordHash = passwordData.Hash,
+                    PasswordSalt = passwordData.Salt,
+                    PasswordIterations = passwordData.Iterations,
                     IsEnabled = true,
-
-                    CreatedAt =
-                        DateTime.UtcNow
+                    CreatedAt = DateTime.UtcNow
                 };
 
-            database.LocalAdministrators.Add(
-                administrator);
+                database.LocalAdministrators.Add(administrator);
 
-            await database.SaveChangesAsync();
+                await database.SaveChangesAsync();
+            }
+
+
+            Role? administratorRole =
+                await database.Roles
+                    .FirstOrDefaultAsync(
+                        role => role.Code == "administrator");
+
+
+            if (administratorRole != null)
+            {
+                bool roleExists =
+                    await database.LocalAdministratorRoles
+                        .AnyAsync(item =>
+                            item.LocalAdministratorId == administrator.Id &&
+                            item.RoleId == administratorRole.Id);
+
+                if (!roleExists)
+                {
+                    database.LocalAdministratorRoles.Add(
+                        new LocalAdministratorRole
+                        {
+                            LocalAdministratorId = administrator.Id,
+                            RoleId = administratorRole.Id
+                        });
+
+                    await database.SaveChangesAsync();
+                }
+            }
         }
     }
 }

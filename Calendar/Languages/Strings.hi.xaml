@@ -340,4 +340,40 @@
         रंग चुनें
     </sys:String>
 
+    <!-- Users and administrators -->
+
+    <sys:String x:Key="LocalAdministrators">स्थानीय व्यवस्थापक</sys:String>
+    <sys:String x:Key="Users">उपयोगकर्ता</sys:String>
+    <sys:String x:Key="DisplayName">प्रदर्शन नाम</sys:String>
+    <sys:String x:Key="Enabled">सक्षम</sys:String>
+    <sys:String x:Key="LastLogin">अंतिम साइन-इन</sys:String>
+    <sys:String x:Key="Active">सक्रिय</sys:String>
+    <sys:String x:Key="UsersLoadError">उपयोगकर्ताओं और व्यवस्थापकों को लोड नहीं किया जा सका।</sys:String>
+    <sys:String x:Key="Roles">भूमिकाएँ</sys:String>
+    <sys:String x:Key="RolesAndPermissions">भूमिकाएँ और अनुमतियाँ</sys:String>
+    <sys:String x:Key="Permissions">अनुमतियाँ</sys:String>
+    <sys:String x:Key="AddRole">भूमिका जोड़ें</sys:String>
+    <sys:String x:Key="AssignRole">भूमिका असाइन करें</sys:String>
+    <sys:String x:Key="SavePermissions">अनुमतियाँ सहेजें</sys:String>
+    <sys:String x:Key="RoleNameRequired">भूमिका का नाम दर्ज करें।</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">इस नाम की भूमिका पहले से मौजूद है।</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">सिस्टम भूमिकाएँ बदली नहीं जा सकतीं।</sys:String>
+    <sys:String x:Key="PermissionsSaved">अनुमतियाँ सहेज दी गई हैं।</sys:String>
+    <sys:String x:Key="SelectUserFirst">पहले किसी उपयोगकर्ता को चुनें।</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">पहले किसी व्यवस्थापक को चुनें।</sys:String>
+    <sys:String x:Key="PermissionViewCalendar">कैलेंडर देखें</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">अपनी कैलेंडर प्रविष्टियाँ संपादित करें</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">सभी कैलेंडर प्रविष्टियाँ संपादित करें</sys:String>
+    <sys:String x:Key="PermissionManageBranding">ब्रांड पहचान प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageUsers">उपयोगकर्ता प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">स्थानीय व्यवस्थापक प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageRoles">भूमिकाएँ और अनुमतियाँ प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageGroups">समूह प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">कैलेंडर स्थितियाँ प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">सार्वजनिक अवकाश प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">कंपनी कार्यक्रम प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageEntra">Microsoft Entra ID प्रबंधित करें</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">एप्लिकेशन अपडेट प्रबंधित करें</sys:String>
+
+
 </ResourceDictionary>

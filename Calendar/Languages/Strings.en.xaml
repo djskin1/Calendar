@@ -762,5 +762,45 @@
     <sys:String x:Key="BrandingChooseColor">
         Choose Color
     </sys:String>
+    
+    <!-- users and Admin -->
+
+    <sys:String x:Key="LocalAdministrators">Local administrators</sys:String>
+    <sys:String x:Key="Users">Users</sys:String>
+    <sys:String x:Key="DisplayName">Display name</sys:String>
+    <sys:String x:Key="Enabled">Enabled</sys:String>
+    <sys:String x:Key="LastLogin">Last login</sys:String>
+    <sys:String x:Key="Active">Active</sys:String>
+    <sys:String x:Key="UsersLoadError">Unable to load users and administrators.</sys:String>
+    <sys:String x:Key="Roles">Roles</sys:String>
+    <sys:String x:Key="RolesAndPermissions">Roles &amp; Permissions</sys:String>
+    <sys:String x:Key="Permissions">Permissions</sys:String>
+
+    <sys:String x:Key="AddRole">Add role</sys:String>
+    <sys:String x:Key="AssignRole">Assign role</sys:String>
+    <sys:String x:Key="SavePermissions">Save permissions</sys:String>
+
+    <sys:String x:Key="RoleNameRequired">Enter a role name.</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">A role with this name already exists.</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">System roles cannot be modified.</sys:String>
+
+    <sys:String x:Key="PermissionsSaved">Permissions have been saved.</sys:String>
+    <sys:String x:Key="SelectUserFirst">Select a user first.</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">Select an administrator first.</sys:String>
+
+    <sys:String x:Key="PermissionViewCalendar">View calendar</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">Edit own calendar entries</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">Edit all calendar entries</sys:String>
+
+    <sys:String x:Key="PermissionManageBranding">Manage branding</sys:String>
+    <sys:String x:Key="PermissionManageUsers">Manage users</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">Manage local administrators</sys:String>
+    <sys:String x:Key="PermissionManageRoles">Manage roles and permissions</sys:String>
+    <sys:String x:Key="PermissionManageGroups">Manage groups</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">Manage calendar statuses</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">Manage public holidays</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">Manage company events</sys:String>
+    <sys:String x:Key="PermissionManageEntra">Manage Microsoft Entra ID</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">Manage application updates</sys:String>
 
 </ResourceDictionary>

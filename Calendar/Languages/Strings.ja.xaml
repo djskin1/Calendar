@@ -341,5 +341,41 @@
         色を選択
     </sys:String>
 
+    <!-- Users and administrators -->
+
+    <sys:String x:Key="LocalAdministrators">ローカル管理者</sys:String>
+    <sys:String x:Key="Users">ユーザー</sys:String>
+    <sys:String x:Key="DisplayName">表示名</sys:String>
+    <sys:String x:Key="Enabled">有効</sys:String>
+    <sys:String x:Key="LastLogin">最終ログイン</sys:String>
+    <sys:String x:Key="Active">アクティブ</sys:String>
+    <sys:String x:Key="UsersLoadError">ユーザーと管理者を読み込めません。</sys:String>
+    <sys:String x:Key="Roles">ロール</sys:String>
+    <sys:String x:Key="RolesAndPermissions">ロールとアクセス許可</sys:String>
+    <sys:String x:Key="Permissions">アクセス許可</sys:String>
+    <sys:String x:Key="AddRole">ロールを追加</sys:String>
+    <sys:String x:Key="AssignRole">ロールを割り当て</sys:String>
+    <sys:String x:Key="SavePermissions">アクセス許可を保存</sys:String>
+    <sys:String x:Key="RoleNameRequired">ロール名を入力してください。</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">この名前のロールは既に存在します。</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">システムロールは変更できません。</sys:String>
+    <sys:String x:Key="PermissionsSaved">アクセス許可を保存しました。</sys:String>
+    <sys:String x:Key="SelectUserFirst">先にユーザーを選択してください。</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">先に管理者を選択してください。</sys:String>
+    <sys:String x:Key="PermissionViewCalendar">カレンダーを表示</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">自分のカレンダー項目を編集</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">すべてのカレンダー項目を編集</sys:String>
+    <sys:String x:Key="PermissionManageBranding">ブランド設定を管理</sys:String>
+    <sys:String x:Key="PermissionManageUsers">ユーザーを管理</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">ローカル管理者を管理</sys:String>
+    <sys:String x:Key="PermissionManageRoles">ロールとアクセス許可を管理</sys:String>
+    <sys:String x:Key="PermissionManageGroups">グループを管理</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">カレンダーステータスを管理</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">祝日を管理</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">社内イベントを管理</sys:String>
+    <sys:String x:Key="PermissionManageEntra">Microsoft Entra IDを管理</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">アプリケーションの更新を管理</sys:String>
+
+
 
 </ResourceDictionary>

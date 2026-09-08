@@ -340,4 +340,41 @@
         Choisir une couleur
     </sys:String>
 
+    <!-- Users and administrators -->
+
+    <sys:String x:Key="LocalAdministrators">Administrateurs locaux</sys:String>
+    <sys:String x:Key="Users">Utilisateurs</sys:String>
+    <sys:String x:Key="DisplayName">Nom d’affichage</sys:String>
+    <sys:String x:Key="Enabled">Activé</sys:String>
+    <sys:String x:Key="LastLogin">Dernière connexion</sys:String>
+    <sys:String x:Key="Active">Actif</sys:String>
+    <sys:String x:Key="UsersLoadError">Impossible de charger les utilisateurs et les administrateurs.</sys:String>
+    <sys:String x:Key="Roles">Rôles</sys:String>
+    <sys:String x:Key="RolesAndPermissions">Rôles et autorisations</sys:String>
+    <sys:String x:Key="Permissions">Autorisations</sys:String>
+    <sys:String x:Key="AddRole">Ajouter un rôle</sys:String>
+    <sys:String x:Key="AssignRole">Attribuer un rôle</sys:String>
+    <sys:String x:Key="SavePermissions">Enregistrer les autorisations</sys:String>
+    <sys:String x:Key="RoleNameRequired">Saisissez un nom de rôle.</sys:String>
+    <sys:String x:Key="RoleAlreadyExists">Un rôle portant ce nom existe déjà.</sys:String>
+    <sys:String x:Key="SystemRoleCannotBeModified">Les rôles système ne peuvent pas être modifiés.</sys:String>
+    <sys:String x:Key="PermissionsSaved">Les autorisations ont été enregistrées.</sys:String>
+    <sys:String x:Key="SelectUserFirst">Sélectionnez d’abord un utilisateur.</sys:String>
+    <sys:String x:Key="SelectAdministratorFirst">Sélectionnez d’abord un administrateur.</sys:String>
+    <sys:String x:Key="PermissionViewCalendar">Afficher le calendrier</sys:String>
+    <sys:String x:Key="PermissionEditOwnCalendar">Modifier ses propres entrées de calendrier</sys:String>
+    <sys:String x:Key="PermissionEditAllCalendar">Modifier toutes les entrées de calendrier</sys:String>
+    <sys:String x:Key="PermissionManageBranding">Gérer l’identité visuelle</sys:String>
+    <sys:String x:Key="PermissionManageUsers">Gérer les utilisateurs</sys:String>
+    <sys:String x:Key="PermissionManageAdministrators">Gérer les administrateurs locaux</sys:String>
+    <sys:String x:Key="PermissionManageRoles">Gérer les rôles et les autorisations</sys:String>
+    <sys:String x:Key="PermissionManageGroups">Gérer les groupes</sys:String>
+    <sys:String x:Key="PermissionManageStatuses">Gérer les états du calendrier</sys:String>
+    <sys:String x:Key="PermissionManageHolidays">Gérer les jours fériés</sys:String>
+    <sys:String x:Key="PermissionManageCompanyEvents">Gérer les événements d’entreprise</sys:String>
+    <sys:String x:Key="PermissionManageEntra">Gérer Microsoft Entra ID</sys:String>
+    <sys:String x:Key="PermissionManageUpdates">Gérer les mises à jour de l’application</sys:String>
+
+
+
 </ResourceDictionary>
