@@ -391,5 +391,20 @@
     <sys:String x:Key="EntraNotConfigured">Microsoft Entra IDが構成されていません。</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">Microsoft Entra IDの構成が不完全です。</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">ステータスを追加</sys:String>
+    <sys:String x:Key="StatusDetails">ステータスの詳細</sys:String>
+    <sys:String x:Key="Selectable">選択可能</sys:String>
+    <sys:String x:Key="SortOrder">並べ替え順</sys:String>
+    <sys:String x:Key="BackgroundColor">背景色</sys:String>
+    <sys:String x:Key="ForegroundColor">文字色</sys:String>
+    <sys:String x:Key="Preview">プレビュー</sys:String>
+    <sys:String x:Key="NewStatus">新しいステータス</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">ステータスコードと名前は必須です。</sys:String>
+    <sys:String x:Key="InvalidStatusColor">1つ以上のステータス色が無効です。</sys:String>
+    <sys:String x:Key="InvalidSortOrder">有効な並べ替え順を入力してください。</sys:String>
+
+
 
 </ResourceDictionary>

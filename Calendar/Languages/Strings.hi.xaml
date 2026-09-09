@@ -390,6 +390,19 @@
     <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID कॉन्फ़िगर नहीं है।</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">Microsoft Entra ID कॉन्फ़िगरेशन अधूरा है।</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">स्थिति जोड़ें</sys:String>
+    <sys:String x:Key="StatusDetails">स्थिति विवरण</sys:String>
+    <sys:String x:Key="Selectable">चयन योग्य</sys:String>
+    <sys:String x:Key="SortOrder">सॉर्ट क्रम</sys:String>
+    <sys:String x:Key="BackgroundColor">पृष्ठभूमि रंग</sys:String>
+    <sys:String x:Key="ForegroundColor">टेक्स्ट का रंग</sys:String>
+    <sys:String x:Key="Preview">पूर्वावलोकन</sys:String>
+    <sys:String x:Key="NewStatus">नई स्थिति</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">स्थिति कोड और नाम आवश्यक हैं।</sys:String>
+    <sys:String x:Key="InvalidStatusColor">स्थिति के एक या अधिक रंग अमान्य हैं।</sys:String>
+    <sys:String x:Key="InvalidSortOrder">मान्य सॉर्ट क्रम दर्ज करें।</sys:String>
 
 
 </ResourceDictionary>

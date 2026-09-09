@@ -391,5 +391,19 @@
     <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID configuratum non est.</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">Configuratio Microsoft Entra ID imperfecta est.</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">Statum addere</sys:String>
+    <sys:String x:Key="StatusDetails">Particularia status</sys:String>
+    <sys:String x:Key="Selectable">Selectabilis</sys:String>
+    <sys:String x:Key="SortOrder">Ordo dispositionis</sys:String>
+    <sys:String x:Key="BackgroundColor">Color fundi</sys:String>
+    <sys:String x:Key="ForegroundColor">Color textus</sys:String>
+    <sys:String x:Key="Preview">Praevisio</sys:String>
+    <sys:String x:Key="NewStatus">Novus status</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">Codex et nomen status requiruntur.</sys:String>
+    <sys:String x:Key="InvalidStatusColor">Unus vel plures colores status invalidi sunt.</sys:String>
+    <sys:String x:Key="InvalidSortOrder">Ordinem dispositionis validum insere.</sys:String>
+
 
 </ResourceDictionary>

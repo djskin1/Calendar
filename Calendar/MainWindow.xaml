@@ -2801,7 +2801,249 @@
 
         </Grid>
         
-        <!-- Next -->
+        <!-- Statuses -->
+
+        <Grid x:Name="AdminStatusesPage"
+              Grid.Column="1"
+              Visibility="Collapsed"
+              Background="{DynamicResource AppBackgroundBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Width="42"
+                            Height="42"
+                            Margin="0,0,15,0"
+                            Click="AdminStatusesBackButton_Click">
+                        <TextBlock Text="&#xE72B;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18"/>
+                    </Button>
+
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource AdminStatuses}"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+                        <TextBlock Text="{DynamicResource AdminStatusesDescription}"
+                                   FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="2"
+                            Content="{DynamicResource AddStatus}"
+                            Width="130"
+                            Height="40"
+                            Click="AddStatusButton_Click"/>
+
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" Margin="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="360"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                        Background="{DynamicResource SurfaceBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="20">
+
+                    <DataGrid x:Name="CalendarStatusesDataGrid"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="False"
+                              IsReadOnly="True"
+                              SelectionChanged="CalendarStatusesDataGrid_SelectionChanged">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{DynamicResource Code}"
+                                                Binding="{Binding Code}"
+                                                Width="100"/>
+                            <DataGridTextColumn Header="{DynamicResource DisplayName}"
+                                                Binding="{Binding DisplayName}"
+                                                Width="*"/>
+                            <DataGridCheckBoxColumn Header="{DynamicResource Active}"
+                                                    Binding="{Binding IsActive}"
+                                                    Width="75"/>
+                            <DataGridCheckBoxColumn Header="{DynamicResource Selectable}"
+                                                    Binding="{Binding IsSelectable}"
+                                                    Width="90"/>
+                            <DataGridTextColumn Header="{DynamicResource SortOrder}"
+                                                Binding="{Binding SortOrder}"
+                                                Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+
+                <Border Grid.Column="2"
+                        Background="{DynamicResource SurfaceBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="20">
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource StatusDetails}"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
+                                       Margin="0,0,0,20"/>
+                            <TextBlock Text="{DynamicResource Code}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBox x:Name="StatusCodeTextBox"
+                                     Height="36"
+                                     Margin="0,5,0,12"
+                                     VerticalContentAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource DisplayName}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBox x:Name="StatusDisplayNameTextBox"
+                                     Height="36"
+                                     Margin="0,5,0,12"
+                                     VerticalContentAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource Description}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBox x:Name="StatusDescriptionTextBox"
+                                     Height="70"
+                                     Margin="0,5,0,12"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"/>
+                            <TextBlock Text="{DynamicResource BackgroundColor}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <Grid Margin="0,5,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                            
+
+                                <TextBox x:Name="StatusBackgroundColorTextBox"
+                                     Height="36"
+                                     VerticalContentAlignment="Center"
+                                     TextChanged="StatusColorTextBox_TextChanged"/>
+                                
+                                <Grid Grid.Column="1"
+                                    Width="40"
+                                    Height="36"
+                                    Margin="8,0,0,0">
+
+                                    <Border x:Name="StatusbackgroundColorPreview"
+                                        CornerRadius="5"
+                                        BorderBrush="{DynamicResource BorderBrush}"
+                                        BorderThickness="1" />
+
+                                    <Button Background="Transparent"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Click="StatusBackgroundColorButton_Click"/>
+                                </Grid>
+                            </Grid>
+
+                            <TextBlock Text="{DynamicResource ForegroundColor}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <Grid Margin="0,5,0,12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBox x:Name="StatusForegroundColorTextBox"
+                                         Height="36"
+                                         VerticalContentAlignment="Center"
+                                         TextChanged="StatusColorTextBox_TextChanged"/>
+
+                                <Grid Grid.Column="1"
+                                      Width="40"
+                                      Height="36"
+                                      Margin="8,0,0,0">
+
+                                    <Border x:Name="StatusForegroundColorPreview"
+                                            CornerRadius="5"
+                                            BorderBrush="{DynamicResource BorderBrush}"
+                                            BorderThickness="1"/>
+
+                                    <Button Background="Transparent"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Click="StatusForegroundColorButton_Click"/>
+
+                                </Grid>
+                            </Grid>
+
+                            <TextBlock Text="{DynamicResource Preview}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <Border x:Name="StatusPreview"
+                                    Height="45"
+                                    Margin="0,5,0,15"
+                                    CornerRadius="5"
+                                    BorderBrush="{DynamicResource BorderBrush}"
+                                    BorderThickness="1">
+
+                                <TextBlock x:Name="StatusPreviewText"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           FontWeight="SemiBold"/>
+
+                            </Border>
+                            
+                            <CheckBox x:Name="StatusActiveCheckBox"
+                                      Content="{DynamicResource Active}"
+                                      Margin="0,5"
+                                      Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <CheckBox x:Name="StatusSelectableCheckBox"
+                                      Content="{DynamicResource Selectable}"
+                                      Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBlock Text="{DynamicResource SortOrder}"
+                                       FontWeight="SemiBold"
+                                       Margin="0,10,0,0"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBox x:Name="StatusSortOrderTextBox"
+                                     Height="36"
+                                     Margin="0,5,0,15"/>
+                            <Button Content="{DynamicResource Save}"
+                                    Height="40"
+                                    Background="{DynamicResource SidebarBrush}"
+                                    Click="SaveStatusButton_Click"/>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                    
+                </Border>
+                
+            </Grid>
+            
+        </Grid>
+        
+        <!-- next -->
 
     </Grid>
 </Window>

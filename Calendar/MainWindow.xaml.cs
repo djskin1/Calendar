@@ -1217,14 +1217,305 @@ namespace CompanyCalendar
                 MessageBoxImage.Information);
         }
 
-        private void AdminStatusesButton_Click(
+        private async void AdminStatusesButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminStatuses",
-                "AdminStatusesDescription",
-                "\uE8FB");
+            try
+            {
+                await LoadCalendarStatusesAsync();
+                AdminPage.Visibility = Visibility.Collapsed;
+                AdminStatusesPage.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+            }
+        }
+
+        private void AdminStatusesBackButton_Click(
+            object sender, RoutedEventArgs e)
+        {
+            AdminStatusesPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async Task LoadCalendarStatusesAsync()
+        {
+            using CentralCalendarDbContext database = new();
+
+            CalendarStatusesDataGrid.ItemsSource =
+                await database.CalendarStatuses
+                    .AsNoTracking()
+                    .OrderBy(status => status.SortOrder)
+                    .ThenBy(status => status.Code)
+                    .ToListAsync();
+        }
+
+        private void CalendarStatusesDataGrid_SelectionChanged(
+    object sender,
+    SelectionChangedEventArgs e)
+        {
+            if (CalendarStatusesDataGrid.SelectedItem
+                is not CalendarStatus status)
+            {
+                return;
+            }
+
+            StatusCodeTextBox.Text =
+                status.Code;
+
+            StatusDisplayNameTextBox.Text =
+                status.DisplayName;
+
+            StatusDescriptionTextBox.Text =
+                status.Description ?? "";
+
+            StatusBackgroundColorTextBox.Text =
+                status.BackgroundColor;
+
+            StatusForegroundColorTextBox.Text =
+                status.ForegroundColor;
+
+            StatusActiveCheckBox.IsChecked =
+                status.IsActive;
+
+            StatusSelectableCheckBox.IsChecked =
+                status.IsSelectable;
+
+            StatusSortOrderTextBox.Text =
+                status.SortOrder.ToString();
+
+            // Systeemstatuscode beschermen.
+            StatusCodeTextBox.IsReadOnly =
+                status.IsSystemStatus;
+
+            UpdateStatusPreview();
+        }
+
+        private void StatusBackgroundColorButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ColorPickerWindow picker =
+                new(
+                    StatusBackgroundColorTextBox.Text)
+                {
+                    Owner = this
+                };
+
+            if (picker.ShowDialog() == true)
+            {
+                StatusBackgroundColorTextBox.Text =
+                    picker.SelectedColorHex;
+
+                UpdateStatusPreview();
+            }
+        }
+
+        private void StatusForegroundColorButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            ColorPickerWindow picker =
+                new(
+                    StatusForegroundColorTextBox.Text)
+                {
+                    Owner = this
+                };
+
+            if (picker.ShowDialog() == true)
+            {
+                StatusForegroundColorTextBox.Text =
+                    picker.SelectedColorHex;
+
+                UpdateStatusPreview();
+            }
+        }
+
+        private void StatusColorTextBox_TextChanged(
+    object sender,
+    TextChangedEventArgs e)
+        {
+            UpdateStatusPreview();
+        }
+
+        private void UpdateStatusPreview()
+        {
+            if (StatusPreview == null ||
+                StatusPreviewText == null)
+            {
+                return;
+            }
+
+            if (TryParseColor(
+                StatusBackgroundColorTextBox.Text,
+                out Color backgroundColor))
+            {
+                StatusPreview.Background =
+                    new SolidColorBrush(backgroundColor);
+            }
+
+            if (TryParseColor(
+                StatusForegroundColorTextBox.Text,
+                out Color foregroundColor))
+            {
+                StatusPreviewText.Foreground =
+                    new SolidColorBrush(foregroundColor);
+            }
+
+            StatusPreviewText.Text =
+                string.IsNullOrWhiteSpace(
+                    StatusCodeTextBox.Text)
+                    ? "STATUS"
+                    : StatusCodeTextBox.Text.Trim();
+        }
+
+        private async void SaveStatusButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            if (CalendarStatusesDataGrid.SelectedItem
+                is not CalendarStatus selectedStatus)
+            {
+                return;
+            }
+
+            string code =
+                StatusCodeTextBox.Text.Trim();
+
+            string name =
+                StatusDisplayNameTextBox.Text.Trim();
+
+            string background =
+                StatusBackgroundColorTextBox.Text.Trim();
+
+            string foreground =
+                StatusForegroundColorTextBox.Text.Trim();
+
+
+            if (string.IsNullOrWhiteSpace(code) ||
+                string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "StatusCodeAndNameRequired"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (!TryParseColor(background, out _) ||
+                !TryParseColor(foreground, out _))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "InvalidStatusColor"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (!int.TryParse(
+                StatusSortOrderTextBox.Text,
+                out int sortOrder))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "InvalidSortOrder"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            using CentralCalendarDbContext database = new();
+
+            CalendarStatus? status =
+                await database.CalendarStatuses
+                    .FirstOrDefaultAsync(
+                        item => item.Id ==
+                            selectedStatus.Id);
+
+            if (status == null)
+            {
+                return;
+            }
+
+
+            if (!status.IsSystemStatus)
+            {
+                status.Code = code;
+            }
+
+            status.DisplayName = name;
+            status.Description =
+                StatusDescriptionTextBox.Text.Trim();
+
+            status.BackgroundColor = background;
+            status.ForegroundColor = foreground;
+
+            status.IsActive =
+                StatusActiveCheckBox.IsChecked == true;
+
+            status.IsSelectable =
+                StatusSelectableCheckBox.IsChecked == true;
+
+            status.SortOrder = sortOrder;
+            status.ModifiedAt = DateTime.UtcNow;
+
+
+            await database.SaveChangesAsync();
+
+            await LoadCalendarStatusesAsync();
+        }
+
+        private async void AddStatusButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            using CentralCalendarDbContext database = new();
+
+            int nextSortOrder =
+                await database.CalendarStatuses
+                    .AnyAsync()
+                    ? await database.CalendarStatuses
+                        .MaxAsync(status => status.SortOrder) + 10
+                    : 10;
+
+            CalendarStatus status =
+                new()
+                {
+                    Code = $"NEW{nextSortOrder}",
+                    DisplayName =
+                        LocalizationService.Get("NewStatus"),
+                    BackgroundColor = "#E5E7EB",
+                    ForegroundColor = "#111827",
+                    IsActive = true,
+                    IsSelectable = true,
+                    IsSystemStatus = false,
+                    SortOrder = nextSortOrder,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+            database.CalendarStatuses.Add(status);
+
+            await database.SaveChangesAsync();
+
+            await LoadCalendarStatusesAsync();
         }
 
         private void AdminHolidaysButton_Click(

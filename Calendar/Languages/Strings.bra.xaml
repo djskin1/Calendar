@@ -396,6 +396,21 @@
     <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID is nie ingesteld.</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">De configuratie van Microsoft Entra ID is nie compleet.</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">Status toevoege</sys:String>
+    <sys:String x:Key="StatusDetails">Statusdetails</sys:String>
+    <sys:String x:Key="Selectable">Selecteerbaar</sys:String>
+    <sys:String x:Key="SortOrder">Sorteervolgorde</sys:String>
+    <sys:String x:Key="BackgroundColor">Achtergrondkleur</sys:String>
+    <sys:String x:Key="ForegroundColor">Tekstkleur</sys:String>
+    <sys:String x:Key="Preview">Vurbeeld</sys:String>
+    <sys:String x:Key="NewStatus">Nieuwe status</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">'n Statuscode en naam zijn verplicht.</sys:String>
+    <sys:String x:Key="InvalidStatusColor">Een of meer statuskleure zijn ongeldig.</sys:String>
+    <sys:String x:Key="InvalidSortOrder">Vul 'n geldige sorteervolgorde in.</sys:String>
+
+
 
 
 </ResourceDictionary>

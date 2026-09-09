@@ -39,6 +39,8 @@ namespace Calendar.Data
 
         public DbSet<EntraConfiguration> entraConfigurations => Set<EntraConfiguration>();
 
+        public DbSet<CalendarStatus> CalendarStatuses => Set<CalendarStatus>();
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
@@ -310,6 +312,192 @@ namespace Calendar.Data
                         ModifiedAt = new DateTime(2026, 1, 1)
                     }
                 );
+
+            modelBuilder.Entity<CalendarStatus>()
+                .HasIndex(status => status.Code)
+                .IsUnique();
+
+            DateTime statusSeedDate =
+                new DateTime(2026, 1, 1);
+
+            modelBuilder.Entity<CalendarStatus>().HasData(
+
+                new CalendarStatus
+                {
+                    Id = 1,
+                    Code = "OFFI",
+                    DisplayName = "Office",
+                    Description = "Working at the office.",
+                    BackgroundColor = "#D1FAE5",
+                    ForegroundColor = "#065F46",
+                    IsActive = true,
+                    IsSelectable = true,
+                    IsSystemStatus = false,
+                    SortOrder = 10,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 2,
+                    Code = "HOME",
+                    DisplayName = "Home",
+                    Description = "Working from home.",
+                    BackgroundColor = "#DBEAFE",
+                    ForegroundColor = "#1E40AF",
+                    IsActive = true,
+                    IsSelectable = true,
+                    IsSystemStatus = false,
+                    SortOrder = 20,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 3,
+                    Code = "HO/AB",
+                    DisplayName = "Home / Absent",
+                    BackgroundColor = "#EDE9FE",
+                    ForegroundColor = "#5B21B6",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 30,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 4,
+                    Code = "OF/AB",
+                    DisplayName = "Office / Absent",
+                    BackgroundColor = "#FEE2E2",
+                    ForegroundColor = "#991B1B",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 40,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 5,
+                    Code = "HO/OF",
+                    DisplayName = "Home / Office",
+                    BackgroundColor = "#E0F2FE",
+                    ForegroundColor = "#075985",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 50,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 6,
+                    Code = "CONG",
+                    DisplayName = "Congress",
+                    BackgroundColor = "#FEF3C7",
+                    ForegroundColor = "#92400E",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 60,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 7,
+                    Code = "MEET",
+                    DisplayName = "Meeting",
+                    BackgroundColor = "#CFFAFE",
+                    ForegroundColor = "#155E75",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 70,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 8,
+                    Code = "MV",
+                    DisplayName = "Leave",
+                    BackgroundColor = "#FCE7F3",
+                    ForegroundColor = "#9D174D",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 80,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 9,
+                    Code = "OPT",
+                    DisplayName = "Optional",
+                    BackgroundColor = "#F3F4F6",
+                    ForegroundColor = "#374151",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 90,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 10,
+                    Code = "ABS",
+                    DisplayName = "Absent",
+                    BackgroundColor = "#FECACA",
+                    ForegroundColor = "#7F1D1D",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 100,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 11,
+                    Code = "Weekend",
+                    DisplayName = "Weekend",
+                    BackgroundColor = "#D1D5DB",
+                    ForegroundColor = "#4B5563",
+                    IsActive = true,
+                    IsSelectable = false,
+                    IsSystemStatus = true,
+                    SortOrder = 110,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 12,
+                    Code = "PUB",
+                    DisplayName = "Public holiday",
+                    BackgroundColor = "#FDE68A",
+                    ForegroundColor = "#78350F",
+                    IsActive = true,
+                    IsSelectable = false,
+                    IsSystemStatus = true,
+                    SortOrder = 120,
+                    CreatedAt = statusSeedDate
+                },
+
+                new CalendarStatus
+                {
+                    Id = 13,
+                    Code = "MF",
+                    DisplayName = "Medical / Family",
+                    BackgroundColor = "#DDD6FE",
+                    ForegroundColor = "#4C1D95",
+                    IsActive = true,
+                    IsSelectable = true,
+                    SortOrder = 130,
+                    CreatedAt = statusSeedDate
+                }
+            );
+
         }
     }
 }

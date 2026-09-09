@@ -391,6 +391,19 @@
     <sys:String x:Key="EntraNotConfigured">未配置 Microsoft Entra ID。</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">Microsoft Entra ID 配置不完整。</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">添加状态</sys:String>
+    <sys:String x:Key="StatusDetails">状态详细信息</sys:String>
+    <sys:String x:Key="Selectable">可选择</sys:String>
+    <sys:String x:Key="SortOrder">排序顺序</sys:String>
+    <sys:String x:Key="BackgroundColor">背景色</sys:String>
+    <sys:String x:Key="ForegroundColor">文本颜色</sys:String>
+    <sys:String x:Key="Preview">预览</sys:String>
+    <sys:String x:Key="NewStatus">新状态</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">状态代码和名称为必填项。</sys:String>
+    <sys:String x:Key="InvalidStatusColor">一个或多个状态颜色无效。</sys:String>
+    <sys:String x:Key="InvalidSortOrder">请输入有效的排序顺序。</sys:String>
 
 
 

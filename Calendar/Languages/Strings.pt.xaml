@@ -395,6 +395,19 @@
     <sys:String x:Key="EntraNotConfigured">O Microsoft Entra ID não está configurado.</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">A configuração do Microsoft Entra ID está incompleta.</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">Adicionar estado</sys:String>
+    <sys:String x:Key="StatusDetails">Detalhes do estado</sys:String>
+    <sys:String x:Key="Selectable">Selecionável</sys:String>
+    <sys:String x:Key="SortOrder">Ordem de ordenação</sys:String>
+    <sys:String x:Key="BackgroundColor">Cor de fundo</sys:String>
+    <sys:String x:Key="ForegroundColor">Cor do texto</sys:String>
+    <sys:String x:Key="Preview">Pré-visualização</sys:String>
+    <sys:String x:Key="NewStatus">Novo estado</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">É necessário indicar um código e um nome para o estado.</sys:String>
+    <sys:String x:Key="InvalidStatusColor">Uma ou mais cores do estado são inválidas.</sys:String>
+    <sys:String x:Key="InvalidSortOrder">Introduza uma ordem de ordenação válida.</sys:String>
 
 
 </ResourceDictionary>

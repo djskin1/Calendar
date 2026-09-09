@@ -390,6 +390,19 @@
     <sys:String x:Key="EntraNotConfigured">لم يتم تكوين Microsoft Entra ID.</sys:String>
     <sys:String x:Key="EntraConfigurationIncomplete">تكوين Microsoft Entra ID غير مكتمل.</sys:String>
 
+    <!-- Statuses -->
+
+    <sys:String x:Key="AddStatus">إضافة حالة</sys:String>
+    <sys:String x:Key="StatusDetails">تفاصيل الحالة</sys:String>
+    <sys:String x:Key="Selectable">قابل للتحديد</sys:String>
+    <sys:String x:Key="SortOrder">ترتيب الفرز</sys:String>
+    <sys:String x:Key="BackgroundColor">لون الخلفية</sys:String>
+    <sys:String x:Key="ForegroundColor">لون النص</sys:String>
+    <sys:String x:Key="Preview">معاينة</sys:String>
+    <sys:String x:Key="NewStatus">حالة جديدة</sys:String>
+    <sys:String x:Key="StatusCodeAndNameRequired">يلزم إدخال رمز للحالة واسم لها.</sys:String>
+    <sys:String x:Key="InvalidStatusColor">لون واحد أو أكثر من ألوان الحالة غير صالح.</sys:String>
+    <sys:String x:Key="InvalidSortOrder">أدخل ترتيب فرز صالحًا.</sys:String>
 
 
 </ResourceDictionary>
