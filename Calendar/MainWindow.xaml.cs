@@ -1089,14 +1089,132 @@ namespace CompanyCalendar
             AdminPage.Visibility = Visibility.Visible;
         }
 
-        private void AdminGroupsButton_Click(
+        private async void AdminGroupsButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminGroups",
-                "AdminGroupsDescription",
-                "\uE902");
+            try
+            {
+                AdminPage.Visibility =
+                    Visibility.Collapsed;
+
+                AdminGroupsPage.Visibility =
+                    Visibility.Visible;
+
+                await LoadAdminGroupsAsync();
+            }
+            catch (Exception ex)
+            {
+                AdminGroupsPage.Visibility =
+                    Visibility.Collapsed;
+
+                AdminPage.Visibility =
+                    Visibility.Visible;
+
+                string message =
+                    $"{ex.GetType().Name}\n\n" +
+                    $"{ex.Message}";
+
+                if (ex.InnerException != null)
+                {
+                    message +=
+                        $"\n\nInner exception:\n" +
+                        $"{ex.InnerException.Message}";
+                }
+
+                MessageBox.Show(
+                    message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private void AdminGroupsBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminGroupsPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async Task LoadAdminGroupsAsync()
+        {
+            using CentralCalendarDbContext database = new();
+
+            List<CalendarGroup> groups =
+                await database.calendarGroups
+                    .AsNoTracking()
+                    .OrderByDescending(group => group.IsActive)
+                    .ThenBy(group => group.DisplayName)
+                    .ToListAsync();
+
+            AdminGroupsDataGrid.ItemsSource =
+                groups;
+
+
+            EntraConfiguration? configuration =
+                await database.entraConfigurations
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(
+                        item => item.Id == 1);
+
+
+            if (configuration?.LastGroupSyncAt == null)
+            {
+                GroupsLastSyncText.Text =
+                    LocalizationService.Get("NeverSynced");
+            }
+            else
+            {
+                GroupsLastSyncText.Text =
+                    $"{LocalizationService.Get("LastSync")}: " +
+                    $"{configuration.LastGroupSyncAt.Value.ToLocalTime():g}";
+            }
+        }
+
+        private async void SaveGroupsButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            if (AdminGroupsDataGrid.ItemsSource
+                is not IEnumerable<CalendarGroup> groups)
+            {
+                return;
+            }
+
+
+            using CentralCalendarDbContext database = new();
+
+
+            foreach (CalendarGroup row in groups)
+            {
+                CalendarGroup? databaseGroup =
+                    await database.calendarGroups
+                        .FirstOrDefaultAsync(
+                            group => group.Id == row.Id);
+
+
+                if (databaseGroup == null)
+                {
+                    continue;
+                }
+
+
+                databaseGroup.IsVisibleInCalendar =
+                    row.IsVisibleInCalendar;
+
+                databaseGroup.ModifiedAt =
+                    DateTime.UtcNow;
+            }
+
+
+            await database.SaveChangesAsync();
+
+
+            MessageBox.Show(
+                LocalizationService.Get("GroupsSaved"),
+                LocalizationService.Get("AppName"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
         private void AdminStatusesButton_Click(

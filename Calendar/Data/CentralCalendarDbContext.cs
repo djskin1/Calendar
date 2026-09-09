@@ -35,6 +35,10 @@ namespace Calendar.Data
 
         public DbSet<LocalAdministratorRole> LocalAdministratorRoles => Set<LocalAdministratorRole>();
 
+        public DbSet<CalendarGroup> calendarGroups => Set<CalendarGroup>();
+
+        public DbSet<EntraConfiguration> entraConfigurations => Set<EntraConfiguration>();
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
@@ -290,6 +294,22 @@ namespace Calendar.Data
                 new RolePermission { RoleId = 2, PermissionId = 1 },
                 new RolePermission { RoleId = 2, PermissionId = 2 }
             );
+
+            modelBuilder.Entity<CalendarGroup>()
+                .HasIndex(group => group.EntraObjectId)
+                .IsUnique();
+
+            modelBuilder.Entity<EntraConfiguration>()
+                .HasData(
+                    new EntraConfiguration
+                    {
+                        Id = 1,
+                        IsEnabled = false,
+                        TenantId = "",
+                        ClientId = "",
+                        ModifiedAt = new DateTime(2026, 1, 1)
+                    }
+                );
         }
     }
 }

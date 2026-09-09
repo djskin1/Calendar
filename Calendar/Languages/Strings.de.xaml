@@ -376,6 +376,21 @@
     <sys:String x:Key="PermissionManageEntra">Microsoft Entra ID verwalten</sys:String>
     <sys:String x:Key="PermissionManageUpdates">Anwendungsupdates verwalten</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">Mit Microsoft Entra ID synchronisieren</sys:String>
+    <sys:String x:Key="EntraGroups">Microsoft Entra-Gruppen</sys:String>
+    <sys:String x:Key="GroupName">Gruppenname</sys:String>
+    <sys:String x:Key="VisibleInCalendar">Im Kalender sichtbar</sys:String>
+    <sys:String x:Key="EntraObjectId">Entra-Objekt-ID</sys:String>
+    <sys:String x:Key="NeverSynced">Noch nicht synchronisiert.</sys:String>
+    <sys:String x:Key="LastSync">Letzte Synchronisierung</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">Synchronisierte Gruppen:</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">Microsoft Entra-Gruppen konnten nicht synchronisiert werden.</sys:String>
+    <sys:String x:Key="GroupsSaved">Die Gruppeneinstellungen wurden gespeichert.</sys:String>
+    <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID ist nicht konfiguriert.</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">Die Konfiguration von Microsoft Entra ID ist unvollständig.</sys:String>
+
 
 
 </ResourceDictionary>

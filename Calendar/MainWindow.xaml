@@ -2656,6 +2656,152 @@
         </Grid>
 
         <!-- Groups -->
+
+        <Grid x:Name="AdminGroupsPage"
+      Grid.Column="1"
+      Visibility="Collapsed"
+      Background="{DynamicResource AppBackgroundBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <!-- HEADER -->
+
+            <Border Grid.Row="0"
+            Background="{DynamicResource SurfaceBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button Width="42"
+                    Height="42"
+                    Margin="0,0,15,0"
+                    Click="AdminGroupsBackButton_Click">
+
+                        <TextBlock Text="&#xE72B;"
+                           FontFamily="Segoe MDL2 Assets"
+                           FontSize="18"/>
+
+                    </Button>
+
+
+                    <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center">
+
+                        <TextBlock Text="{DynamicResource AdminGroups}"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <TextBlock Text="{DynamicResource AdminGroupsDescription}"
+                           FontSize="12"
+                           Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                    </StackPanel>
+
+
+                    <Button Grid.Column="2"
+                    Content="{DynamicResource SyncEntraGroups}"
+                    Width="180"
+                    Height="40"
+                    Click="SaveGroupsButton_Click"/>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- CONTENT -->
+
+            <ScrollViewer Grid.Row="1"
+                  VerticalScrollBarVisibility="Auto">
+
+                <StackPanel Margin="25">
+
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Padding="20">
+
+                        <StackPanel>
+
+                            <TextBlock Text="{DynamicResource EntraGroups}"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <TextBlock x:Name="GroupsLastSyncText"
+                               Margin="0,4,0,15"
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+
+                            <DataGrid x:Name="AdminGroupsDataGrid"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="False"
+                              SelectionMode="Single"
+                              MinHeight="350">
+
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn Header="{DynamicResource GroupName}"
+                                                Binding="{Binding DisplayName}"
+                                                IsReadOnly="True"
+                                                Width="*"/>
+
+                                    <DataGridTextColumn Header="{DynamicResource Description}"
+                                                Binding="{Binding Description}"
+                                                IsReadOnly="True"
+                                                Width="300"/>
+
+                                    <DataGridCheckBoxColumn Header="{DynamicResource VisibleInCalendar}"
+                                                    Binding="{Binding IsVisibleInCalendar}"
+                                                    Width="130"/>
+
+                                    <DataGridCheckBoxColumn Header="{DynamicResource Active}"
+                                                    Binding="{Binding IsActive}"
+                                                    IsReadOnly="True"
+                                                    Width="80"/>
+
+                                    <DataGridTextColumn Header="{DynamicResource EntraObjectId}"
+                                                Binding="{Binding EntraObjectId}"
+                                                IsReadOnly="True"
+                                                Width="260"/>
+
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+
+                            <Button Content="{DynamicResource Save}"
+                            Width="130"
+                            Height="38"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Right"
+                            Click="SaveGroupsButton_Click"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Grid>
         
+        <!-- Next -->
+
     </Grid>
 </Window>

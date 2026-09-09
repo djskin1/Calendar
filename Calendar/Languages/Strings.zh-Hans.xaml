@@ -376,6 +376,21 @@
     <sys:String x:Key="PermissionManageEntra">管理 Microsoft Entra ID</sys:String>
     <sys:String x:Key="PermissionManageUpdates">管理应用程序更新</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">与 Microsoft Entra ID 同步</sys:String>
+    <sys:String x:Key="EntraGroups">Microsoft Entra 组</sys:String>
+    <sys:String x:Key="GroupName">组名</sys:String>
+    <sys:String x:Key="VisibleInCalendar">在日历中可见</sys:String>
+    <sys:String x:Key="EntraObjectId">Entra 对象 ID</sys:String>
+    <sys:String x:Key="NeverSynced">尚未同步。</sys:String>
+    <sys:String x:Key="LastSync">上次同步</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">已同步的组：</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">无法同步 Microsoft Entra 组。</sys:String>
+    <sys:String x:Key="GroupsSaved">组设置已保存。</sys:String>
+    <sys:String x:Key="EntraNotConfigured">未配置 Microsoft Entra ID。</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">Microsoft Entra ID 配置不完整。</sys:String>
+
 
 
 

@@ -375,5 +375,21 @@
     <sys:String x:Key="PermissionManageEntra">Microsoft Entra ID प्रबंधित करें</sys:String>
     <sys:String x:Key="PermissionManageUpdates">एप्लिकेशन अपडेट प्रबंधित करें</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">Microsoft Entra ID के साथ सिंक्रनाइज़ करें</sys:String>
+    <sys:String x:Key="EntraGroups">Microsoft Entra समूह</sys:String>
+    <sys:String x:Key="GroupName">समूह का नाम</sys:String>
+    <sys:String x:Key="VisibleInCalendar">कैलेंडर में दिखाई दे</sys:String>
+    <sys:String x:Key="EntraObjectId">Entra ऑब्जेक्ट ID</sys:String>
+    <sys:String x:Key="NeverSynced">अभी तक सिंक्रनाइज़ नहीं हुआ।</sys:String>
+    <sys:String x:Key="LastSync">अंतिम सिंक्रनाइज़ेशन</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">सिंक्रनाइज़ किए गए समूह:</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">Microsoft Entra समूहों को सिंक्रनाइज़ नहीं किया जा सका।</sys:String>
+    <sys:String x:Key="GroupsSaved">समूह सेटिंग्स सहेज दी गई हैं।</sys:String>
+    <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID कॉन्फ़िगर नहीं है।</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">Microsoft Entra ID कॉन्फ़िगरेशन अधूरा है।</sys:String>
+
+
 
 </ResourceDictionary>

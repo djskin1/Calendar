@@ -388,6 +388,20 @@
     <sys:String x:Key="PermissionManageEntra">Microsoft Entra ID beheare</sys:String>
     <sys:String x:Key="PermissionManageUpdates">Applikaasje-updates beheare</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">Syngronisearje mei Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraGroups">Microsoft Entra-groepen</sys:String>
+    <sys:String x:Key="GroupName">Groepsnamme</sys:String>
+    <sys:String x:Key="VisibleInCalendar">Sichtber yn kalinder</sys:String>
+    <sys:String x:Key="EntraObjectId">Entra-objekt-id</sys:String>
+    <sys:String x:Key="NeverSynced">Noch net syngronisearre.</sys:String>
+    <sys:String x:Key="LastSync">Lêste syngronisaasje</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">Syngronisearre groepen:</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">Kin Microsoft Entra-groepen net syngronisearje.</sys:String>
+    <sys:String x:Key="GroupsSaved">De groepsynstellingen binne bewarre.</sys:String>
+    <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID is net konfigurearre.</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">De konfiguraasje fan Microsoft Entra ID is net folslein.</sys:String>
 
 
 

@@ -376,6 +376,20 @@
     <sys:String x:Key="PermissionManageEntra">Microsoft Entra ID administrare</sys:String>
     <sys:String x:Key="PermissionManageUpdates">Renovationes applicationis administrare</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">Cum Microsoft Entra ID congruere</sys:String>
+    <sys:String x:Key="EntraGroups">Greges Microsoft Entra</sys:String>
+    <sys:String x:Key="GroupName">Nomen gregis</sys:String>
+    <sys:String x:Key="VisibleInCalendar">In calendario visibilis</sys:String>
+    <sys:String x:Key="EntraObjectId">ID obiecti Entra</sys:String>
+    <sys:String x:Key="NeverSynced">Nondum congruit.</sys:String>
+    <sys:String x:Key="LastSync">Novissima congruentia</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">Greges congruentes:</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">Greges Microsoft Entra congrui non possunt.</sys:String>
+    <sys:String x:Key="GroupsSaved">Configurationes gregum servatae sunt.</sys:String>
+    <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID configuratum non est.</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">Configuratio Microsoft Entra ID imperfecta est.</sys:String>
 
 
 </ResourceDictionary>

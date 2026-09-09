@@ -376,6 +376,20 @@
     <sys:String x:Key="PermissionManageEntra">Microsoft Entra IDを管理</sys:String>
     <sys:String x:Key="PermissionManageUpdates">アプリケーションの更新を管理</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">Microsoft Entra IDと同期</sys:String>
+    <sys:String x:Key="EntraGroups">Microsoft Entraグループ</sys:String>
+    <sys:String x:Key="GroupName">グループ名</sys:String>
+    <sys:String x:Key="VisibleInCalendar">カレンダーに表示</sys:String>
+    <sys:String x:Key="EntraObjectId">EntraオブジェクトID</sys:String>
+    <sys:String x:Key="NeverSynced">まだ同期されていません。</sys:String>
+    <sys:String x:Key="LastSync">最終同期</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">同期されたグループ：</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">Microsoft Entraグループを同期できません。</sys:String>
+    <sys:String x:Key="GroupsSaved">グループ設定を保存しました。</sys:String>
+    <sys:String x:Key="EntraNotConfigured">Microsoft Entra IDが構成されていません。</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">Microsoft Entra IDの構成が不完全です。</sys:String>
 
 
 </ResourceDictionary>

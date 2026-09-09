@@ -375,5 +375,21 @@
     <sys:String x:Key="PermissionManageEntra">إدارة Microsoft Entra ID</sys:String>
     <sys:String x:Key="PermissionManageUpdates">إدارة تحديثات التطبيق</sys:String>
 
+    <!-- Groups -->
+
+    <sys:String x:Key="SyncEntraGroups">المزامنة مع Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraGroups">مجموعات Microsoft Entra</sys:String>
+    <sys:String x:Key="GroupName">اسم المجموعة</sys:String>
+    <sys:String x:Key="VisibleInCalendar">ظاهرة في التقويم</sys:String>
+    <sys:String x:Key="EntraObjectId">معرّف كائن Entra</sys:String>
+    <sys:String x:Key="NeverSynced">لم تتم المزامنة بعد.</sys:String>
+    <sys:String x:Key="LastSync">آخر مزامنة</sys:String>
+    <sys:String x:Key="EntraGroupsSynced">المجموعات المتزامنة:</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">تعذرت مزامنة مجموعات Microsoft Entra.</sys:String>
+    <sys:String x:Key="GroupsSaved">تم حفظ إعدادات المجموعات.</sys:String>
+    <sys:String x:Key="EntraNotConfigured">لم يتم تكوين Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">تكوين Microsoft Entra ID غير مكتمل.</sys:String>
+
+
 
 </ResourceDictionary>

@@ -803,4 +803,21 @@
     <sys:String x:Key="PermissionManageEntra">Manage Microsoft Entra ID</sys:String>
     <sys:String x:Key="PermissionManageUpdates">Manage application updates</sys:String>
 
+    <!-- Groups -->
+    <sys:String x:Key="SyncEntraGroups">Sync with Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraGroups">Microsoft Entra groups</sys:String>
+    <sys:String x:Key="GroupName">Group name</sys:String>
+    <sys:String x:Key="VisibleInCalendar">Visible in calendar</sys:String>
+    <sys:String x:Key="EntraObjectId">Entra Object ID</sys:String>
+
+    <sys:String x:Key="NeverSynced">Not synchronized yet.</sys:String>
+    <sys:String x:Key="LastSync">Last synchronization</sys:String>
+
+    <sys:String x:Key="EntraGroupsSynced">Groups synchronized:</sys:String>
+    <sys:String x:Key="EntraGroupSyncFailed">Unable to synchronize Microsoft Entra groups.</sys:String>
+    <sys:String x:Key="GroupsSaved">Group settings have been saved.</sys:String>
+
+    <sys:String x:Key="EntraNotConfigured">Microsoft Entra ID is not configured.</sys:String>
+    <sys:String x:Key="EntraConfigurationIncomplete">The Microsoft Entra ID configuration is incomplete.</sys:String>
+
 </ResourceDictionary>

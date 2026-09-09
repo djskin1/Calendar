@@ -4,6 +4,7 @@ using Calendar.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Calendar.Migrations
 {
     [DbContext(typeof(CentralCalendarDbContext))]
-    partial class CentralCalendarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260909084107_AddEntraGroups")]
+    partial class AddEntraGroups
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,54 +106,6 @@ namespace Calendar.Migrations
                     b.ToTable("CalendarEntries");
                 });
 
-            modelBuilder.Entity("Calendar.Models.CalendarGroup", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EntraObjectId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsMicrosoft365Group")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsSecurityGroup")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsVisibleInCalendar")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("LastSyncedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EntraObjectId")
-                        .IsUnique();
-
-                    b.ToTable("calendarGroups");
-                });
-
             modelBuilder.Entity("Calendar.Models.CompanyEvent", b =>
                 {
                     b.Property<int>("Id")
@@ -175,46 +130,6 @@ namespace Calendar.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CompanyEvents");
-                });
-
-            modelBuilder.Entity("Calendar.Models.EntraConfiguration", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ClientId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("LastGroupSyncAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TenantId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("entraConfigurations");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = "",
-                            IsEnabled = false,
-                            ModifiedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            TenantId = ""
-                        });
                 });
 
             modelBuilder.Entity("Calendar.Models.LocalAdministrator", b =>
