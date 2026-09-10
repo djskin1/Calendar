@@ -405,6 +405,29 @@
     <sys:String x:Key="InvalidStatusColor">1つ以上のステータス色が無効です。</sys:String>
     <sys:String x:Key="InvalidSortOrder">有効な並べ替え順を入力してください。</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">1回のみ</sys:String>
+    <sys:String x:Key="Daily">毎日</sys:String>
+    <sys:String x:Key="Weekly">毎週</sys:String>
+    <sys:String x:Key="Every2Weeks">2週間ごと</sys:String>
+    <sys:String x:Key="Every3Weeks">3週間ごと</sys:String>
+    <sys:String x:Key="Every4Weeks">4週間ごと</sys:String>
+    <sys:String x:Key="StatusOffice">オフィス</sys:String>
+    <sys:String x:Key="StatusHome">在宅</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">在宅 / 欠勤</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">オフィス / 欠勤</sys:String>
+    <sys:String x:Key="StatusHomeOffice">在宅 / オフィス</sys:String>
+    <sys:String x:Key="StatusCongress">学会</sys:String>
+    <sys:String x:Key="StatusMeeting">会議</sys:String>
+    <sys:String x:Key="StatusLeave">休暇</sys:String>
+    <sys:String x:Key="StatusOptional">任意</sys:String>
+    <sys:String x:Key="StatusAbsent">欠勤</sys:String>
+    <sys:String x:Key="StatusWeekend">週末</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">祝日</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">医療 / 家族</sys:String>
+
+
 
 
 </ResourceDictionary>

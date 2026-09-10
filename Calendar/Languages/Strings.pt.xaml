@@ -409,5 +409,28 @@
     <sys:String x:Key="InvalidStatusColor">Uma ou mais cores do estado são inválidas.</sys:String>
     <sys:String x:Key="InvalidSortOrder">Introduza uma ordem de ordenação válida.</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">Uma vez</sys:String>
+    <sys:String x:Key="Daily">Diariamente</sys:String>
+    <sys:String x:Key="Weekly">Todas as semanas</sys:String>
+    <sys:String x:Key="Every2Weeks">A cada 2 semanas</sys:String>
+    <sys:String x:Key="Every3Weeks">A cada 3 semanas</sys:String>
+    <sys:String x:Key="Every4Weeks">A cada 4 semanas</sys:String>
+    <sys:String x:Key="StatusOffice">Escritório</sys:String>
+    <sys:String x:Key="StatusHome">Casa</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">Casa / Ausente</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">Escritório / Ausente</sys:String>
+    <sys:String x:Key="StatusHomeOffice">Casa / Escritório</sys:String>
+    <sys:String x:Key="StatusCongress">Congresso</sys:String>
+    <sys:String x:Key="StatusMeeting">Reunião</sys:String>
+    <sys:String x:Key="StatusLeave">Licença</sys:String>
+    <sys:String x:Key="StatusOptional">Opcional</sys:String>
+    <sys:String x:Key="StatusAbsent">Ausente</sys:String>
+    <sys:String x:Key="StatusWeekend">Fim de semana</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">Feriado</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">Motivos médicos / Família</sys:String>
+
+
 
 </ResourceDictionary>

@@ -404,5 +404,28 @@
     <sys:String x:Key="InvalidStatusColor">لون واحد أو أكثر من ألوان الحالة غير صالح.</sys:String>
     <sys:String x:Key="InvalidSortOrder">أدخل ترتيب فرز صالحًا.</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">مرة واحدة</sys:String>
+    <sys:String x:Key="Daily">يوميًا</sys:String>
+    <sys:String x:Key="Weekly">كل أسبوع</sys:String>
+    <sys:String x:Key="Every2Weeks">كل أسبوعين</sys:String>
+    <sys:String x:Key="Every3Weeks">كل 3 أسابيع</sys:String>
+    <sys:String x:Key="Every4Weeks">كل 4 أسابيع</sys:String>
+    <sys:String x:Key="StatusOffice">المكتب</sys:String>
+    <sys:String x:Key="StatusHome">المنزل</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">المنزل / غائب</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">المكتب / غائب</sys:String>
+    <sys:String x:Key="StatusHomeOffice">المنزل / المكتب</sys:String>
+    <sys:String x:Key="StatusCongress">مؤتمر</sys:String>
+    <sys:String x:Key="StatusMeeting">اجتماع</sys:String>
+    <sys:String x:Key="StatusLeave">إجازة</sys:String>
+    <sys:String x:Key="StatusOptional">اختياري</sys:String>
+    <sys:String x:Key="StatusAbsent">غائب</sys:String>
+    <sys:String x:Key="StatusWeekend">عطلة نهاية الأسبوع</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">عطلة رسمية</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">طبي / عائلي</sys:String>
+
+
 
 </ResourceDictionary>

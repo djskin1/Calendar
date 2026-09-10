@@ -404,5 +404,27 @@
     <sys:String x:Key="InvalidStatusColor">स्थिति के एक या अधिक रंग अमान्य हैं।</sys:String>
     <sys:String x:Key="InvalidSortOrder">मान्य सॉर्ट क्रम दर्ज करें।</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">एक बार</sys:String>
+    <sys:String x:Key="Daily">प्रतिदिन</sys:String>
+    <sys:String x:Key="Weekly">हर सप्ताह</sys:String>
+    <sys:String x:Key="Every2Weeks">हर 2 सप्ताह</sys:String>
+    <sys:String x:Key="Every3Weeks">हर 3 सप्ताह</sys:String>
+    <sys:String x:Key="Every4Weeks">हर 4 सप्ताह</sys:String>
+    <sys:String x:Key="StatusOffice">कार्यालय</sys:String>
+    <sys:String x:Key="StatusHome">घर</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">घर / अनुपस्थित</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">कार्यालय / अनुपस्थित</sys:String>
+    <sys:String x:Key="StatusHomeOffice">घर / कार्यालय</sys:String>
+    <sys:String x:Key="StatusCongress">सम्मेलन</sys:String>
+    <sys:String x:Key="StatusMeeting">बैठक</sys:String>
+    <sys:String x:Key="StatusLeave">अवकाश</sys:String>
+    <sys:String x:Key="StatusOptional">वैकल्पिक</sys:String>
+    <sys:String x:Key="StatusAbsent">अनुपस्थित</sys:String>
+    <sys:String x:Key="StatusWeekend">सप्ताहांत</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">सार्वजनिक अवकाश</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">चिकित्सा / परिवार</sys:String>
+
 
 </ResourceDictionary>

@@ -417,5 +417,27 @@
     <sys:String x:Key="InvalidStatusColor">Ien of mear statuskleuren binne ûnjildich.</sys:String>
     <sys:String x:Key="InvalidSortOrder">Fier in jildige sortearfolchoarder yn.</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">Ien kear</sys:String>
+    <sys:String x:Key="Daily">Deistich</sys:String>
+    <sys:String x:Key="Weekly">Alle wiken</sys:String>
+    <sys:String x:Key="Every2Weeks">Om de 2 wiken</sys:String>
+    <sys:String x:Key="Every3Weeks">Om de 3 wiken</sys:String>
+    <sys:String x:Key="Every4Weeks">Om de 4 wiken</sys:String>
+    <sys:String x:Key="StatusOffice">Kantoar</sys:String>
+    <sys:String x:Key="StatusHome">Thús</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">Thús / Ôfwêzich</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">Kantoar / Ôfwêzich</sys:String>
+    <sys:String x:Key="StatusHomeOffice">Thús / Kantoar</sys:String>
+    <sys:String x:Key="StatusCongress">Kongres</sys:String>
+    <sys:String x:Key="StatusMeeting">Gearkomste</sys:String>
+    <sys:String x:Key="StatusLeave">Ferlöf</sys:String>
+    <sys:String x:Key="StatusOptional">Opsjoneel</sys:String>
+    <sys:String x:Key="StatusAbsent">Ôfwêzich</sys:String>
+    <sys:String x:Key="StatusWeekend">Wykein</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">Feestdei</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">Medysk / Famylje</sys:String>
+
 
 </ResourceDictionary>

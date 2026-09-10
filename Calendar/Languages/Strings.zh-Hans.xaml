@@ -405,6 +405,27 @@
     <sys:String x:Key="InvalidStatusColor">一个或多个状态颜色无效。</sys:String>
     <sys:String x:Key="InvalidSortOrder">请输入有效的排序顺序。</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">一次</sys:String>
+    <sys:String x:Key="Daily">每天</sys:String>
+    <sys:String x:Key="Weekly">每周</sys:String>
+    <sys:String x:Key="Every2Weeks">每2周</sys:String>
+    <sys:String x:Key="Every3Weeks">每3周</sys:String>
+    <sys:String x:Key="Every4Weeks">每4周</sys:String>
+    <sys:String x:Key="StatusOffice">办公室</sys:String>
+    <sys:String x:Key="StatusHome">居家</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">居家 / 缺勤</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">办公室 / 缺勤</sys:String>
+    <sys:String x:Key="StatusHomeOffice">居家 / 办公室</sys:String>
+    <sys:String x:Key="StatusCongress">大会</sys:String>
+    <sys:String x:Key="StatusMeeting">会议</sys:String>
+    <sys:String x:Key="StatusLeave">休假</sys:String>
+    <sys:String x:Key="StatusOptional">可选</sys:String>
+    <sys:String x:Key="StatusAbsent">缺勤</sys:String>
+    <sys:String x:Key="StatusWeekend">周末</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">节假日</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">医疗 / 家庭</sys:String>
 
 
 </ResourceDictionary>

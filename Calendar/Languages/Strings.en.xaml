@@ -470,7 +470,27 @@
     <sys:String x:Key="Notes">
         Notes
     </sys:String>
-    
+
+    <sys:String x:Key="Once">Once</sys:String>
+    <sys:String x:Key="Daily">Daily</sys:String>
+    <sys:String x:Key="Weekly">Every week</sys:String>
+    <sys:String x:Key="Every2Weeks">Every 2 weeks</sys:String>
+    <sys:String x:Key="Every3Weeks">Every 3 weeks</sys:String>
+    <sys:String x:Key="Every4Weeks">Every 4 weeks</sys:String>
+    <sys:String x:Key="StatusOffice">Office</sys:String>
+    <sys:String x:Key="StatusHome">Home</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">Home / Absent</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">Office / Absent</sys:String>
+    <sys:String x:Key="StatusHomeOffice">Home / Office</sys:String>
+    <sys:String x:Key="StatusCongress">Congress</sys:String>
+    <sys:String x:Key="StatusMeeting">Meeting</sys:String>
+    <sys:String x:Key="StatusLeave">Leave</sys:String>
+    <sys:String x:Key="StatusOptional">Optional</sys:String>
+    <sys:String x:Key="StatusAbsent">Absent</sys:String>
+    <sys:String x:Key="StatusWeekend">Weekend</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">Public holiday</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">Medical / Family</sys:String>
+
     <!-- Login -->
     <sys:String x:Key="LoginLoc">
         Administrator sign in

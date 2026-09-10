@@ -410,6 +410,29 @@
     <sys:String x:Key="InvalidStatusColor">Een of meer statuskleure zijn ongeldig.</sys:String>
     <sys:String x:Key="InvalidSortOrder">Vul 'n geldige sorteervolgorde in.</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">Ene keer</sys:String>
+    <sys:String x:Key="Daily">Dagelijks</sys:String>
+    <sys:String x:Key="Weekly">Iedere week</sys:String>
+    <sys:String x:Key="Every2Weeks">Iedere 2 weken</sys:String>
+    <sys:String x:Key="Every3Weeks">Iedere 3 weken</sys:String>
+    <sys:String x:Key="Every4Weeks">Iedere 4 weken</sys:String>
+    <sys:String x:Key="StatusOffice">Kantoor</sys:String>
+    <sys:String x:Key="StatusHome">Thuis</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">Thuis / Afwezig</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">Kantoor / Afwezig</sys:String>
+    <sys:String x:Key="StatusHomeOffice">Thuis / Kantoor</sys:String>
+    <sys:String x:Key="StatusCongress">Congres</sys:String>
+    <sys:String x:Key="StatusMeeting">Vergadering</sys:String>
+    <sys:String x:Key="StatusLeave">Verlof</sys:String>
+    <sys:String x:Key="StatusOptional">Optioneel</sys:String>
+    <sys:String x:Key="StatusAbsent">Afwezig</sys:String>
+    <sys:String x:Key="StatusWeekend">Wèèkend</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">Feestdag</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">Medisch / Familie</sys:String>
+
+
 
 
 

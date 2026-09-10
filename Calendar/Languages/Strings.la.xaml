@@ -405,5 +405,28 @@
     <sys:String x:Key="InvalidStatusColor">Unus vel plures colores status invalidi sunt.</sys:String>
     <sys:String x:Key="InvalidSortOrder">Ordinem dispositionis validum insere.</sys:String>
 
+    <!-- Recurrence and statuses -->
+
+    <sys:String x:Key="Once">Semel</sys:String>
+    <sys:String x:Key="Daily">Cotidie</sys:String>
+    <sys:String x:Key="Weekly">Singulis hebdomadibus</sys:String>
+    <sys:String x:Key="Every2Weeks">Quisque 2 hebdomades</sys:String>
+    <sys:String x:Key="Every3Weeks">Quisque 3 hebdomades</sys:String>
+    <sys:String x:Key="Every4Weeks">Quisque 4 hebdomades</sys:String>
+    <sys:String x:Key="StatusOffice">Officium</sys:String>
+    <sys:String x:Key="StatusHome">Domus</sys:String>
+    <sys:String x:Key="StatusHomeAbsent">Domus / Absens</sys:String>
+    <sys:String x:Key="StatusOfficeAbsent">Officium / Absens</sys:String>
+    <sys:String x:Key="StatusHomeOffice">Domus / Officium</sys:String>
+    <sys:String x:Key="StatusCongress">Congressus</sys:String>
+    <sys:String x:Key="StatusMeeting">Conventus</sys:String>
+    <sys:String x:Key="StatusLeave">Commeatus</sys:String>
+    <sys:String x:Key="StatusOptional">Ad libitum</sys:String>
+    <sys:String x:Key="StatusAbsent">Absens</sys:String>
+    <sys:String x:Key="StatusWeekend">Finis hebdomadis</sys:String>
+    <sys:String x:Key="StatusPublicHoliday">Dies festus</sys:String>
+    <sys:String x:Key="StatusMedicalFamily">Medicina / Familia</sys:String>
+
+
 
 </ResourceDictionary>

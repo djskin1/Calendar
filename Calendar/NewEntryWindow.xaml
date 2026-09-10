@@ -4,7 +4,7 @@
         Title="{DynamicResource NewTitle}"
         Icon="/Images/Icon.png"
         Width="480"
-        Height="650"
+        Height="700"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
         Background="{DynamicResource AppBackgroundBrush}">
@@ -15,10 +15,11 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="20"/>
 			<RowDefinition Height="*"/>
-			<RowDefinition Height="Auto"/>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<StackPanel>
+		<StackPanel Grid.Row="0">
 
 			<TextBlock Text="{DynamicResource NewTitle}"
                        Foreground="{DynamicResource PrimaryTextBrush}"
@@ -44,7 +45,8 @@
 
 				<ComboBox x:Name="EmployeeComboBox"
                           Height="36"
-                          Margin="0,5,0,18"/>
+                          Margin="0,5,0,18"
+                          DisplayMemberPath="DisplayName"/>
 
 				<TextBlock Text="{DynamicResource Date}"
                            Foreground="{DynamicResource PrimaryTextBrush}"
@@ -62,11 +64,16 @@
                           Height="36"
                           Margin="0,5,0,18">
 
-					<ComboBoxItem Content="Office"/>
-					<ComboBoxItem Content="Absent"/>
-					<ComboBoxItem Content="Half Day Office / Half Day Absent"/>
-					<ComboBoxItem Content="Half Day Absent / Half Day Office"/>
-					<ComboBoxItem Content="Holiday"/>
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Code}"
+                                           FontWeight="SemiBold"
+                                           Width="75"/>
+                                <TextBlock Text="{Binding DisplayName}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
 
 				</ComboBox>
 
@@ -74,16 +81,23 @@
                            Foreground="{DynamicResource PrimaryTextBrush}"
                            FontWeight="SemiBold"/>
 
-				<ComboBox x:Name="RecurrenceComboBox"
+                <ComboBox x:Name="RecurrenceComboBox"
                           Height="36"
-                          Margin="0,5,0,18">
+                          Margin="0,5,0,18"
+                          SelectedIndex="0">
 
-					<ComboBoxItem Content="Once"/>
-					<ComboBoxItem Content="Daily"/>
-					<ComboBoxItem Content="Every week"/>
-					<ComboBoxItem Content="Every 2 weeks"/>
-					<ComboBoxItem Content="Every 3 weeks"/>
-					<ComboBoxItem Content="Every 4 weeks"/>
+					<ComboBoxItem Tag="Once"
+                                  Content="{DynamicResource Once}"/>
+					<ComboBoxItem Tag="Daily"
+                                  Content="{DynamicResource Daily}"/>
+					<ComboBoxItem Tag="Weekly"
+                                  Content="{DynamicResource Weekly}"/>
+					<ComboBoxItem Tag="Every2Weeks"
+                                  Content="{DynamicResource Every2Weeks}"/>
+					<ComboBoxItem Tag="Every3Weeks"
+                                  Content="{DynamicResource Every3Weeks}"/>
+					<ComboBoxItem Tag="Every4Weeks"
+                                  Content="{DynamicResource Every4Weeks}"/>
 
 				</ComboBox>
 
@@ -101,7 +115,7 @@
 
 		</Border>
 
-		<StackPanel Grid.Row="3"
+		<StackPanel Grid.Row="4"
                     Orientation="Horizontal"
                     HorizontalAlignment="Right"
                     Margin="0,20,0,0">

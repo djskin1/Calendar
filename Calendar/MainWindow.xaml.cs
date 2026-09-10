@@ -40,6 +40,7 @@ namespace CompanyCalendar
         private bool _updatingDatePicker;
 
         private const int DaysVisible = 17;
+        private const int CalendarDaysToShow = 14;
 
         private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
 
@@ -83,7 +84,7 @@ namespace CompanyCalendar
                     ? Visibility.Visible
                     : Visibility.Collapsed;
 
-            if(!_isAuthenticated)
+            if (!_isAuthenticated)
             {
                 LoggedInUserText.Text = LocalizationService.Get("NotLoggedIn");
 
@@ -98,7 +99,7 @@ namespace CompanyCalendar
 
             LoggedInUserText.Text = _currentUserName ?? "User";
 
-            if(_isLocalAdministrator)
+            if (_isLocalAdministrator)
             {
                 LoginTypeText.Text = LocalizationService.Get("localAdmin");
             }
@@ -181,13 +182,14 @@ namespace CompanyCalendar
                     _brandingLogoFileName ?? "Default Logo";
 
                 if (branding.LogoData != null &&
-                    branding.LogoData.Length >0)
+                    branding.LogoData.Length > 0)
                 {
                     BrandingLogoPreview.Source =
                         CreateLogoImageSource(
                             branding.LogoData,
                             branding.LogoContentType);
-                } else
+                }
+                else
                 {
                     BrandingLogoPreview.Source =
                         CreateDefaultLogoImageSource();
@@ -294,7 +296,7 @@ namespace CompanyCalendar
             string name =
                 NewRoleNameTextBox.Text.Trim();
 
-            if(string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(name))
             {
                 MessageBox.Show(
                     LocalizationService.Get(
@@ -522,7 +524,7 @@ namespace CompanyCalendar
             // Start at the Monday of the current week.
             _startDate = StartOfWeek(DateTime.Today);
 
-            CreateTestUsers();
+            // CreateTestUsers();
 
             SearchResultsList.ItemsSource =
                 _searchResults;
@@ -535,7 +537,7 @@ namespace CompanyCalendar
 
             AppearanceComboBox.SelectedIndex = 0;
 
-            LoadCalendar();
+            // LoadCalendar();
 
         }
 
@@ -1013,13 +1015,14 @@ namespace CompanyCalendar
                 BrandingLogoFileNameText.Text =
                     fileName;
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(
                     LocalizationService.Get("LogoLoadError") + "\n\n" + ex.Message,
                     "Central calendar",
                     MessageBoxButton.OK,
-                    MessageBoxImage.Error                    );
+                    MessageBoxImage.Error);
             }
         }
 
@@ -1670,25 +1673,25 @@ namespace CompanyCalendar
         // NAVIGATION
         // ============================================================
 
-        private void PreviousButton_Click(
+        private async void PreviousButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            _startDate = _startDate.AddDays(-7);
+            _startDate = _startDate.AddDays(-CalendarDaysToShow);
 
-            LoadCalendar();
+            await LoadCalendarFromDatabaseAsync();
         }
 
-        private void NextButton_Click(
+        private async void NextButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            _startDate = _startDate.AddDays(7);
+            _startDate = _startDate.AddDays(CalendarDaysToShow);
 
-            LoadCalendar();
+            await LoadCalendarFromDatabaseAsync();
         }
 
-        private void TodayButton_Click(
+        private async void TodayButton_Click(
             object sender,
             RoutedEventArgs e)
         {
@@ -1698,14 +1701,14 @@ namespace CompanyCalendar
             GoToDatePicker.SelectedDate = today;
             _updatingDatePicker = false;
 
-            LoadCalendar();
+            await LoadCalendarFromDatabaseAsync();
         }
 
-        private void RefreshButton_Click(
+        private async void RefreshButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            LoadCalendar();
+            await LoadCalendarFromDatabaseAsync();
         }
 
         private static DateTime StartOfWeek(DateTime date)
@@ -1718,7 +1721,7 @@ namespace CompanyCalendar
             return date.AddDays(-difference).Date;
         }
 
-        private void GoToDatePicker_SelectedDateChanged(
+        private async void GoToDatePicker_SelectedDateChanged(
             object sender,
             SelectionChangedEventArgs e)
         {
@@ -1730,7 +1733,7 @@ namespace CompanyCalendar
             {
                 DateTime selectedDate = GoToDatePicker.SelectedDate.Value;
                 _startDate = StartOfWeek(selectedDate);
-                LoadCalendar();
+                await LoadCalendarFromDatabaseAsync();
             }
         }
 
@@ -2266,106 +2269,577 @@ namespace CompanyCalendar
                 });
         }
 
-        #if DEBUG
-            private async void Mainwindow_Loaded(
-                object sender,
-                RoutedEventArgs e)
-            {
-                try
-                {
-                    await DevelopmentAdminSeeder.EnsureTestAdminAsync();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        $"Unable to create the development administrator.\n\n{ex.Message}",
-                        "Central calendar",
-                         MessageBoxButton.OK,
-                        MessageBoxImage.Error);
-                }
-            }
-        #endif
-    }
-
-    // ================================================================
-    // CALENDAR ROW
-    // ================================================================
-
-    public class EmployeeCalendarRow
-    {
-        public string DisplayName { get; set; } = "";
-
-        public string Department { get; set; } = "";
-
-        public ObservableCollection<CalendarDay> Days { get; }
-            = new();
-    }
-
-    // ================================================================
-    // CALENDAR DAY
-    // ================================================================
-
-    public class CalendarDay : INotifyPropertyChanged
-    {
-        private string _status = "";
-
-        public DateTime Date { get; set; }
-
-        public bool IsWeekend { get; set; }
-
-        public string Status
+#if DEBUG
+        private async void Mainwindow_Loaded(
+            object sender,
+            RoutedEventArgs e)
         {
-            get => _status;
-
-            set
+            try
             {
-                _status = value;
-
-                OnPropertyChanged(nameof(Status));
-                OnPropertyChanged(nameof(Background));
+                await DevelopmentAdminSeeder.EnsureTestAdminAsync();
+                await LoadCalendarFromDatabaseAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Unable to create the development administrator.\n\n{ex.Message}",
+                    "Central calendar",
+                     MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
+#endif
 
-        public Brush Background
+
+
+        private async Task LoadCalendarFromDatabaseAsync()
         {
-            get
+            DateTime endDate =
+                _startDate.AddDays(CalendarDaysToShow);
+
+
+            using CentralCalendarDbContext database = new();
+
+
+            // =====================================================
+            // USERS
+            // =====================================================
+
+            List<User> users =
+                await database.Users
+                    .AsNoTracking()
+                    .Where(user => user.IsActive)
+                    .OrderBy(user => user.DisplayName)
+                    .ToListAsync();
+
+
+            // =====================================================
+            // CALENDAR ENTRIES
+            // =====================================================
+
+            List<CalendarEntry> entries =
+                await database.CalendarEntries
+                    .AsNoTracking()
+                    .Where(entry =>
+                        entry.Date >= _startDate &&
+                        entry.Date < endDate)
+                    .ToListAsync();
+
+
+            // =====================================================
+            // STATUSES
+            //
+            // Ook inactive statussen laden.
+            // Oude entries moeten namelijk zichtbaar blijven.
+            // =====================================================
+
+            List<CalendarStatus> statuses =
+                await database.CalendarStatuses
+                    .AsNoTracking()
+                    .ToListAsync();
+
+
+            Dictionary<string, CalendarStatus> statusByCode =
+                statuses.ToDictionary(
+                    status => status.Code,
+                    StringComparer.OrdinalIgnoreCase);
+
+
+            // =====================================================
+            // PUBLIC HOLIDAYS
+            // =====================================================
+
+            List<PublicHoliday> publicHolidays =
+                await database.PublicHolidays
+                    .AsNoTracking()
+                    .Where(holiday =>
+                        holiday.IsActive &&
+                        holiday.Date >= _startDate &&
+                        holiday.Date < endDate)
+                    .ToListAsync();
+
+
+            Dictionary<DateTime, PublicHoliday> holidayByDate =
+                publicHolidays
+                    .GroupBy(holiday => holiday.Date.Date)
+                    .ToDictionary(
+                        group => group.Key,
+                        group => group.First());
+
+
+            // =====================================================
+            // ENTRY LOOKUP
+            // =====================================================
+
+            Dictionary<(int UserId, DateTime Date), CalendarEntry>
+                entryByUserAndDate =
+                    entries
+                        .GroupBy(entry =>
+                            (
+                                entry.UserId,
+                                entry.Date.Date
+                            ))
+                        .ToDictionary(
+                            group => group.Key,
+                            group => group
+                                .OrderByDescending(
+                                    entry => entry.ModifiedAt ??
+                                             entry.CreatedAt)
+                                .First());
+
+
+            // =====================================================
+            // BUILD ROWS
+            // =====================================================
+
+            List<CalendarEmployeeRowViewModel> rows =
+                new();
+
+
+            foreach (User user in users)
             {
-                if (IsWeekend)
+                CalendarEmployeeRowViewModel row =
+                    new()
+                    {
+                        UserID = user.Id,
+                        DisplayName = user.DisplayName,
+
+                        // Totdat Entra group-membership aan Users
+                        // is gekoppeld staat iedereen onder All.
+                        GroupName =
+                            LocalizationService.Get("All")
+                    };
+
+
+                for (int dayIndex = 0;
+                     dayIndex < CalendarDaysToShow;
+                     dayIndex++)
                 {
-                    return new SolidColorBrush(
-                        Color.FromRgb(210, 210, 210));
+                    DateTime date =
+                        _startDate
+                            .AddDays(dayIndex)
+                            .Date;
+
+
+                    CalendarDayCellViewModel cell =
+                        CreateCalendarCell(
+                            user.Id,
+                            date,
+                            entryByUserAndDate,
+                            statusByCode,
+                            holidayByDate);
+
+
+                    row.Days.Add(cell);
                 }
 
-                return Status switch
+
+                rows.Add(row);
+            }
+
+
+            // =====================================================
+            // DYNAMIC DATE COLUMNS
+            // =====================================================
+
+            BuildCalendarDateColumns();
+
+
+            // =====================================================
+            // GROUPING
+            // =====================================================
+
+            ICollectionView view =
+                CollectionViewSource.GetDefaultView(rows);
+
+            view.GroupDescriptions.Clear();
+
+            view.GroupDescriptions.Add(
+                new PropertyGroupDescription(
+                    nameof(
+                        CalendarEmployeeRowViewModel.GroupName)));
+
+
+            CalendarGrid.ItemsSource =
+                view;
+
+
+            // =====================================================
+            // PERIOD
+            // =====================================================
+
+            DateTime lastDate =
+                _startDate
+                    .AddDays(CalendarDaysToShow - 1);
+
+
+            PeriodText.Text =
+                $"{_startDate.ToString(
+                    "dd MMM yyyy",
+                    CultureInfo.CurrentCulture)} - " +
+                $"{lastDate.ToString(
+                    "dd MMM yyyy",
+                    CultureInfo.CurrentCulture)}";
+        }
+
+        private CalendarDayCellViewModel CreateCalendarCell(
+    int userId,
+    DateTime date,
+    Dictionary<(int UserId, DateTime Date), CalendarEntry>
+        entries,
+    Dictionary<string, CalendarStatus> statuses,
+    Dictionary<DateTime, PublicHoliday> publicHolidays)
+        {
+            CalendarDayCellViewModel cell =
+                new()
                 {
-                    "OFFICE" =>
-                        new SolidColorBrush(
-                            Color.FromRgb(219, 234, 254)),
-
-                    "HOME" =>
-                        new SolidColorBrush(
-                            Color.FromRgb(187, 247, 208)),
-
-                    "ABSENT" =>
-                        new SolidColorBrush(
-                            Color.FromRgb(254, 202, 202)),
-
-                    "HOLIDAY" =>
-                        new SolidColorBrush(
-                            Color.FromRgb(254, 240, 138)),
-
-                    _ => Brushes.White
+                    Date = date
                 };
+
+
+            // =====================================================
+            // PUBLIC HOLIDAY
+            // =====================================================
+
+            if (publicHolidays.TryGetValue(
+                date,
+                out PublicHoliday? holiday))
+            {
+                cell.IsPublicHoliday = true;
+
+                cell.Text = "PUB";
+                cell.ToolTip = holiday.Name;
+
+                ApplyCalendarStatusToCell(
+                    cell,
+                    "PUB",
+                    statuses);
+
+                return cell;
+            }
+
+
+            // =====================================================
+            // WEEKEND
+            // =====================================================
+
+            if (date.DayOfWeek == DayOfWeek.Saturday ||
+                date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                cell.IsWeekend = true;
+
+                cell.Text = "Weekend";
+
+                ApplyCalendarStatusToCell(
+                    cell,
+                    "Weekend",
+                    statuses);
+
+                return cell;
+            }
+
+
+            // =====================================================
+            // NORMAL CALENDAR ENTRY
+            // =====================================================
+
+            if (!entries.TryGetValue(
+                (userId, date),
+                out CalendarEntry? entry))
+            {
+                return cell;
+            }
+
+
+            cell.CalendarEntryId =
+                entry.Id;
+
+            cell.Text =
+                entry.StatusCode;
+
+            cell.ToolTip =
+                string.IsNullOrWhiteSpace(entry.Notes)
+                    ? entry.StatusCode
+                    : $"{entry.StatusCode}\n{entry.Notes}";
+
+
+            ApplyCalendarStatusToCell(
+                cell,
+                entry.StatusCode,
+                statuses);
+
+
+            return cell;
+        }
+
+        private void ApplyCalendarStatusToCell(
+    CalendarDayCellViewModel cell,
+    string statusCode,
+    Dictionary<string, CalendarStatus> statuses)
+        {
+            if (!statuses.TryGetValue(
+                statusCode,
+                out CalendarStatus? status))
+            {
+                return;
+            }
+
+
+            if (TryParseColor(
+                status.BackgroundColor,
+                out Color backgroundColor))
+            {
+                cell.Background =
+                    new SolidColorBrush(
+                        backgroundColor);
+            }
+
+
+            if (TryParseColor(
+                status.ForegroundColor,
+                out Color foregroundColor))
+            {
+                cell.Foreground =
+                    new SolidColorBrush(
+                        foregroundColor);
+            }
+
+
+            if (string.IsNullOrWhiteSpace(cell.ToolTip))
+            {
+                cell.ToolTip =
+                    status.DisplayName;
             }
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
+        private void BuildCalendarDateColumns()
         {
-            PropertyChanged?.Invoke(
-                this,
-                new PropertyChangedEventArgs(propertyName));
+            while (CalendarGrid.Columns.Count > 1)
+            {
+                CalendarGrid.Columns.RemoveAt(
+                    CalendarGrid.Columns.Count - 1);
+            }
+
+
+            for (int index = 0;
+                 index < CalendarDaysToShow;
+                 index++)
+            {
+                DateTime date =
+                    _startDate.AddDays(index);
+
+                CalendarGrid.Columns.Add(
+                    CreateCalendarDateColumn(
+                        date,
+                        index));
+            }
+        }
+
+        private DataGridTemplateColumn CreateCalendarDateColumn(
+    DateTime date,
+    int dayIndex)
+        {
+            DataGridTemplateColumn column =
+                new()
+                {
+                    Width = new DataGridLength(85),
+
+                    Header =
+                        CreateCalendarDateHeader(date)
+                };
+
+
+            DataTemplate template =
+                new();
+
+
+            FrameworkElementFactory border =
+                new(typeof(Border));
+
+
+            border.SetBinding(
+                Border.BackgroundProperty,
+                new Binding(
+                    $"Days[{dayIndex}].Background"));
+
+
+            border.SetValue(
+                Border.PaddingProperty,
+                new Thickness(4));
+
+
+            FrameworkElementFactory text =
+                new(typeof(TextBlock));
+
+
+            text.SetBinding(
+                TextBlock.TextProperty,
+                new Binding(
+                    $"Days[{dayIndex}].Text"));
+
+
+            text.SetBinding(
+                TextBlock.ForegroundProperty,
+                new Binding(
+                    $"Days[{dayIndex}].Foreground"));
+
+
+            text.SetBinding(
+                TextBlock.ToolTipProperty,
+                new Binding(
+                    $"Days[{dayIndex}].ToolTip"));
+
+
+            text.SetValue(
+                TextBlock.HorizontalAlignmentProperty,
+                HorizontalAlignment.Center);
+
+
+            text.SetValue(
+                TextBlock.VerticalAlignmentProperty,
+                VerticalAlignment.Center);
+
+
+            text.SetValue(
+                TextBlock.FontWeightProperty,
+                FontWeights.SemiBold);
+
+
+            border.AppendChild(text);
+
+            template.VisualTree =
+                border;
+
+            column.CellTemplate =
+                template;
+
+
+            return column;
+        }
+
+        private object CreateCalendarDateHeader(
+    DateTime date)
+        {
+            StackPanel panel =
+                new()
+                {
+                    HorizontalAlignment =
+                        HorizontalAlignment.Center
+                };
+
+
+            panel.Children.Add(
+                new TextBlock
+                {
+                    Text =
+                        date.ToString(
+                            "ddd",
+                            CultureInfo.CurrentCulture),
+
+                    HorizontalAlignment =
+                        HorizontalAlignment.Center,
+
+                    FontWeight =
+                        FontWeights.SemiBold
+                });
+
+
+            panel.Children.Add(
+                new TextBlock
+                {
+                    Text =
+                        date.ToString(
+                            "dd MMM",
+                            CultureInfo.CurrentCulture),
+
+                    HorizontalAlignment =
+                        HorizontalAlignment.Center
+                });
+
+
+            return panel;
+        }
+
+        // ================================================================
+        // CALENDAR ROW
+        // ================================================================
+
+        public class EmployeeCalendarRow
+        {
+            public string DisplayName { get; set; } = "";
+
+            public string Department { get; set; } = "";
+
+            public ObservableCollection<CalendarDay> Days { get; }
+                = new();
+        }
+
+        // ================================================================
+        // CALENDAR DAY
+        // ================================================================
+
+        public class CalendarDay : INotifyPropertyChanged
+        {
+            private string _status = "";
+
+            public DateTime Date { get; set; }
+
+            public bool IsWeekend { get; set; }
+
+            public string Status
+            {
+                get => _status;
+
+                set
+                {
+                    _status = value;
+
+                    OnPropertyChanged(nameof(Status));
+                    OnPropertyChanged(nameof(Background));
+                }
+            }
+
+            public Brush Background
+            {
+                get
+                {
+                    if (IsWeekend)
+                    {
+                        return new SolidColorBrush(
+                            Color.FromRgb(210, 210, 210));
+                    }
+
+                    return Status switch
+                    {
+                        "OFFICE" =>
+                            new SolidColorBrush(
+                                Color.FromRgb(219, 234, 254)),
+
+                        "HOME" =>
+                            new SolidColorBrush(
+                                Color.FromRgb(187, 247, 208)),
+
+                        "ABSENT" =>
+                            new SolidColorBrush(
+                                Color.FromRgb(254, 202, 202)),
+
+                        "HOLIDAY" =>
+                            new SolidColorBrush(
+                                Color.FromRgb(254, 240, 138)),
+
+                        _ => Brushes.White
+                    };
+                }
+            }
+
+            public event PropertyChangedEventHandler? PropertyChanged;
+
+            private void OnPropertyChanged(string propertyName)
+            {
+                PropertyChanged?.Invoke(
+                    this,
+                    new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
