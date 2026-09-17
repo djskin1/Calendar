@@ -881,6 +881,20 @@
     <sys:String x:Key="PublicHolidaySyncComplete">Public holidays synchronized:</sys:String>
     <sys:String x:Key="PublicHolidaySyncError">Unable to synchronize public holidays.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Public holiday data is not available for country:</sys:String>
+    
+    
+   <!-- Company events -->
+    <sys:String x:Key="CompanyEvents">Company events</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Manage company events shown in Central Calendar.</sys:String>
+
+    <sys:String x:Key="AddEvent">Add event</sys:String>
+    <sys:String x:Key="EventDetails">Event details</sys:String>
+
+    <sys:String x:Key="Title">Title</sys:String>
+
+    <sys:String x:Key="CompanyEventTitleRequired">Enter a title for the company event.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Select a date for the company event.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Unable to save the company event.</sys:String>
 
 
 </ResourceDictionary>

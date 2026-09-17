@@ -445,5 +445,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Impossible de synchroniser les jours fériés.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Les données relatives aux jours fériés ne sont pas disponibles pour le pays :</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">Événements d’entreprise</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Gérez les événements d’entreprise affichés dans Central Calendar.</sys:String>
+    <sys:String x:Key="AddEvent">Ajouter un événement</sys:String>
+    <sys:String x:Key="EventDetails">Détails de l’événement</sys:String>
+    <sys:String x:Key="Title">Titre</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Saisissez un titre pour l’événement d’entreprise.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Sélectionnez une date pour l’événement d’entreprise.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Impossible d’enregistrer l’événement d’entreprise.</sys:String>
 
 </ResourceDictionary>

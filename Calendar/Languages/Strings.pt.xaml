@@ -450,5 +450,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Não foi possível sincronizar os feriados.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Não existem dados de feriados disponíveis para o país:</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">Eventos da empresa</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Gira os eventos da empresa apresentados no Central Calendar.</sys:String>
+    <sys:String x:Key="AddEvent">Adicionar evento</sys:String>
+    <sys:String x:Key="EventDetails">Detalhes do evento</sys:String>
+    <sys:String x:Key="Title">Título</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Introduza um título para o evento da empresa.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Selecione uma data para o evento da empresa.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Não foi possível guardar o evento da empresa.</sys:String>
 
 </ResourceDictionary>

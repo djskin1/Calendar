@@ -860,4 +860,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Kan feestdagen niet synchroniseren.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Er zijn geen feestdaggegevens beschikbaar voor land:</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">Bedrijfsevenementen</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Beheer bedrijfsevenementen die in Central Calendar worden weergegeven.</sys:String>
+    <sys:String x:Key="AddEvent">Evenement toevoegen</sys:String>
+    <sys:String x:Key="EventDetails">Evenementdetails</sys:String>
+    <sys:String x:Key="Title">Titel</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Voer een titel voor het bedrijfsevenement in.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Selecteer een datum voor het bedrijfsevenement.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Kan het bedrijfsevenement niet opslaan.</sys:String>
+
 </ResourceDictionary>

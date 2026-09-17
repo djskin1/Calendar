@@ -446,4 +446,15 @@
     <sys:String x:Key="PublicHolidaySyncError">無法同步公眾假日。</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">以下國家/地區沒有可用的公眾假日資料：</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">公司活動</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">管理 Central Calendar 中顯示的公司活動。</sys:String>
+    <sys:String x:Key="AddEvent">新增活動</sys:String>
+    <sys:String x:Key="EventDetails">活動詳細資料</sys:String>
+    <sys:String x:Key="Title">標題</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">請輸入公司活動的標題。</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">請選擇公司活動的日期。</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">無法儲存公司活動。</sys:String>
+
 </ResourceDictionary>

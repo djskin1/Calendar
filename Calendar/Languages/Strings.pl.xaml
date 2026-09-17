@@ -446,6 +446,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Nie można zsynchronizować dni ustawowo wolnych.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Dane o dniach ustawowo wolnych nie są dostępne dla kraju:</sys:String>
 
+    <!-- Company events -->
 
+    <sys:String x:Key="CompanyEvents">Wydarzenia firmowe</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Zarządzaj wydarzeniami firmowymi wyświetlanymi w Central Calendar.</sys:String>
+    <sys:String x:Key="AddEvent">Dodaj wydarzenie</sys:String>
+    <sys:String x:Key="EventDetails">Szczegóły wydarzenia</sys:String>
+    <sys:String x:Key="Title">Tytuł</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Wprowadź tytuł wydarzenia firmowego.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Wybierz datę wydarzenia firmowego.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Nie można zapisać wydarzenia firmowego.</sys:String>
 
 </ResourceDictionary>

@@ -446,4 +446,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Dies festi congrui non possunt.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Data dierum festorum non praesto sunt pro regione:</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">Eventus societatis</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Eventus societatis in Central Calendar monstratos administra.</sys:String>
+    <sys:String x:Key="AddEvent">Eventum addere</sys:String>
+    <sys:String x:Key="EventDetails">Particularia eventus</sys:String>
+    <sys:String x:Key="Title">Titulus</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Titulum eventus societatis insere.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Diem eventus societatis elige.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Eventus societatis servari non potest.</sys:String>
+
 </ResourceDictionary>

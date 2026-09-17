@@ -446,5 +446,15 @@
     <sys:String x:Key="PublicHolidaySyncError">祝日を同期できません。</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">次の国では祝日データを利用できません：</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">社内イベント</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Central Calendarに表示される社内イベントを管理します。</sys:String>
+    <sys:String x:Key="AddEvent">イベントを追加</sys:String>
+    <sys:String x:Key="EventDetails">イベントの詳細</sys:String>
+    <sys:String x:Key="Title">タイトル</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">社内イベントのタイトルを入力してください。</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">社内イベントの日付を選択してください。</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">社内イベントを保存できません。</sys:String>
 
 </ResourceDictionary>

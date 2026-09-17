@@ -445,4 +445,15 @@
     <sys:String x:Key="PublicHolidaySyncError">تعذرت مزامنة العطلات الرسمية.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">بيانات العطلات الرسمية غير متاحة للدولة:</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">فعاليات الشركة</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">إدارة فعاليات الشركة المعروضة في Central Calendar.</sys:String>
+    <sys:String x:Key="AddEvent">إضافة فعالية</sys:String>
+    <sys:String x:Key="EventDetails">تفاصيل الفعالية</sys:String>
+    <sys:String x:Key="Title">العنوان</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">أدخل عنوانًا لفعالية الشركة.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">حدد تاريخًا لفعالية الشركة.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">تعذر حفظ فعالية الشركة.</sys:String>
+
 </ResourceDictionary>

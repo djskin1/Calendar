@@ -451,6 +451,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Feestdaoge kunne nie gesynchroniseerd worre.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">D'r zijn gin feestdaggegevens beschikbaar vur land:</sys:String>
 
+    <!-- Company events -->
 
+    <sys:String x:Key="CompanyEvents">Bedrijfsevenemente</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Beheer bedrijfsevenemente die in Central Calendar getoond worre.</sys:String>
+    <sys:String x:Key="AddEvent">Evenement toevoege</sys:String>
+    <sys:String x:Key="EventDetails">Evenementdetails</sys:String>
+    <sys:String x:Key="Title">Titel</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Vul 'n titel vur 't bedrijfsevenement in.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Kies 'n datum vur 't bedrijfsevenement.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">'t Bedrijfsevenement kan nie opgeslage worre.</sys:String>
 
 </ResourceDictionary>

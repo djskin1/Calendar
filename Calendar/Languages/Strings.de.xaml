@@ -446,4 +446,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Feiertage konnten nicht synchronisiert werden.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Für das folgende Land sind keine Feiertagsdaten verfügbar:</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">Firmenveranstaltungen</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Verwalten Sie Firmenveranstaltungen, die in Central Calendar angezeigt werden.</sys:String>
+    <sys:String x:Key="AddEvent">Veranstaltung hinzufügen</sys:String>
+    <sys:String x:Key="EventDetails">Veranstaltungsdetails</sys:String>
+    <sys:String x:Key="Title">Titel</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Geben Sie einen Titel für die Firmenveranstaltung ein.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Wählen Sie ein Datum für die Firmenveranstaltung aus.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Die Firmenveranstaltung konnte nicht gespeichert werden.</sys:String>
+
 </ResourceDictionary>

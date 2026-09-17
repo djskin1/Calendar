@@ -2786,25 +2786,140 @@ namespace CompanyCalendar
 
 
             // =====================================================
-            // PUBLIC HOLIDAYS
+            // PUBLIC HOLIDAY COUNTRIES
+            //
+            // Meerdere landen mogen zichtbaar zijn.
+            // Slechts één land mag blocking zijn.
             // =====================================================
 
-            List<PublicHoliday> publicHolidays =
-                await database.PublicHolidays
+            List<PublicHolidayCountry> selectedHolidayCountries =
+                await database.PublicHolidayCountries
                     .AsNoTracking()
-                    .Where(holiday =>
-                        holiday.IsActive &&
-                        holiday.Date >= _startDate &&
-                        holiday.Date < endDate)
+                    .Where(country =>
+                        country.IsSelected)
+                    .OrderBy(country =>
+                        country.CountryName)
                     .ToListAsync();
 
 
-            Dictionary<DateTime, PublicHoliday> holidayByDate =
+            List<string> selectedCountryCodes =
+                selectedHolidayCountries
+                    .Select(country =>
+                        country.CountryCode)
+                    .ToList();
+
+
+            string? blockingCountryCode =
+                selectedHolidayCountries
+                    .Where(country =>
+                        country.IsBlockingCountry)
+                    .Select(country =>
+                        country.CountryCode)
+                    .FirstOrDefault();
+
+
+            // =====================================================
+            // PUBLIC HOLIDAYS
+            //
+            // Alleen geselecteerde landen worden weergegeven.
+            // =====================================================
+
+            List<PublicHoliday> publicHolidays =
+                new();
+
+
+            if (selectedCountryCodes.Count > 0)
+            {
+                publicHolidays =
+                    await database.PublicHolidays
+                        .AsNoTracking()
+                        .Where(holiday =>
+                            holiday.IsActive &&
+                            holiday.Date >= _startDate &&
+                            holiday.Date < endDate &&
+                            selectedCountryCodes.Contains(
+                                holiday.CountryCode))
+                        .OrderBy(holiday =>
+                            holiday.Date)
+                        .ThenBy(holiday =>
+                            holiday.CountryCode)
+                        .ThenBy(holiday =>
+                            holiday.Name)
+                        .ToListAsync();
+            }
+
+
+            // =====================================================
+            // ALL HOLIDAYS BY DATE
+            //
+            // Deze worden gebruikt voor de Public Holidays-rij.
+            // =====================================================
+
+            Dictionary<DateTime, List<PublicHoliday>> holidaysByDate =
                 publicHolidays
-                    .GroupBy(holiday => holiday.Date.Date)
+                    .GroupBy(holiday =>
+                        holiday.Date.Date)
                     .ToDictionary(
                         group => group.Key,
-                        group => group.First());
+                        group => group.ToList());
+
+
+            // =====================================================
+            // BLOCKING HOLIDAYS BY DATE
+            //
+            // Alleen officiële feestdagen van het blocking country
+            // worden aan employee-cellen als PUB doorgegeven.
+            // =====================================================
+
+            Dictionary<DateTime, PublicHoliday> holidayByDate =
+                new();
+
+
+            if (!string.IsNullOrWhiteSpace(
+                blockingCountryCode))
+            {
+                holidayByDate =
+                    publicHolidays
+                        .Where(holiday =>
+                            holiday.IsOfficialPublicHoliday &&
+                            holiday.CountryCode.Equals(
+                                blockingCountryCode,
+                                StringComparison.OrdinalIgnoreCase))
+                        .GroupBy(holiday =>
+                            holiday.Date.Date)
+                        .ToDictionary(
+                            group => group.Key,
+                            group => group.First());
+            }
+
+
+            // =====================================================
+            // COMPANY EVENTS
+            //
+            // Deze staan los van personeel.
+            // =====================================================
+
+            List<CompanyEvent> companyEvents =
+                await database.CompanyEvents
+                    .AsNoTracking()
+                    .Where(companyEvent =>
+                        companyEvent.IsActive &&
+                        companyEvent.Date >= _startDate &&
+                        companyEvent.Date < endDate)
+                    .OrderBy(companyEvent =>
+                        companyEvent.Date)
+                    .ThenBy(companyEvent =>
+                        companyEvent.Title)
+                    .ToListAsync();
+
+
+            Dictionary<DateTime, List<CompanyEvent>> eventsByDate =
+                companyEvents
+                    .GroupBy(companyEvent =>
+                        companyEvent.Date.Date)
+                    .ToDictionary(
+                        group => group.Key,
+                        group => group.ToList());
 
 
             // =====================================================
@@ -2823,8 +2938,9 @@ namespace CompanyCalendar
                             group => group.Key,
                             group => group
                                 .OrderByDescending(
-                                    entry => entry.ModifiedAt ??
-                                             entry.CreatedAt)
+                                    entry =>
+                                        entry.ModifiedAt ??
+                                        entry.CreatedAt)
                                 .First());
 
 
@@ -2836,13 +2952,204 @@ namespace CompanyCalendar
                 new();
 
 
+            // =====================================================
+            // PUBLIC HOLIDAYS ROW
+            //
+            // Deze rij bestaat altijd, ook als er geen employees zijn.
+            // =====================================================
+
+            CalendarEmployeeRowViewModel publicHolidayRow =
+                new()
+                {
+                    UserID = 0,
+
+                    DisplayName =
+                        LocalizationService.Get(
+                            "PublicHolidays"),
+
+                    GroupName =
+                        LocalizationService.Get(
+                            "CalendarInformation")
+                };
+
+
+            for (int dayIndex = 0;
+                 dayIndex < CalendarDaysToShow;
+                 dayIndex++)
+            {
+                DateTime date =
+                    _startDate
+                        .AddDays(dayIndex)
+                        .Date;
+
+
+                CalendarDayCellViewModel cell =
+                    new()
+                    {
+                        Date = date
+                    };
+
+
+                if (holidaysByDate.TryGetValue(
+                    date,
+                    out List<PublicHoliday>? holidays))
+                {
+                    List<string> holidayNames =
+                        new();
+
+                    List<string> holidayToolTips =
+                        new();
+
+
+                    foreach (PublicHoliday holiday in holidays)
+                    {
+                        holidayNames.Add(
+                            $"{holiday.Name} ({holiday.CountryCode})");
+
+
+                        holidayToolTips.Add(
+                            $"{holiday.CountryCode} - {holiday.Name}");
+                    }
+
+
+                    cell.Text =
+                        string.Join(
+                            Environment.NewLine,
+                            holidayNames);
+
+
+                    cell.ToolTip =
+                        string.Join(
+                            Environment.NewLine,
+                            holidayToolTips);
+
+
+                    // PUB statuskleur gebruiken als die bestaat.
+                    if (statusByCode.TryGetValue(
+                        "PUB",
+                        out CalendarStatus? pubStatus))
+                    {
+                        if (TryParseColor(
+                            pubStatus.BackgroundColor,
+                            out System.Windows.Media.Color backgroundColor))
+                        {
+                            cell.Background =
+                                new System.Windows.Media.SolidColorBrush(
+                                    backgroundColor);
+                        }
+
+
+                        if (TryParseColor(
+                            pubStatus.ForegroundColor,
+                            out System.Windows.Media.Color foregroundColor))
+                        {
+                            cell.Foreground =
+                                new System.Windows.Media.SolidColorBrush(
+                                    foregroundColor);
+                        }
+                    }
+                }
+
+
+                publicHolidayRow.Days.Add(
+                    cell);
+            }
+
+
+            rows.Add(
+                publicHolidayRow);
+
+
+            // =====================================================
+            // COMPANY EVENTS ROW
+            //
+            // Ook deze rij bestaat altijd.
+            // =====================================================
+
+            CalendarEmployeeRowViewModel companyEventRow =
+                new()
+                {
+                    UserID = 0,
+
+                    DisplayName =
+                        LocalizationService.Get(
+                            "CompanyEvents"),
+
+                    GroupName =
+                        LocalizationService.Get(
+                            "CalendarInformation")
+                };
+
+
+            for (int dayIndex = 0;
+                 dayIndex < CalendarDaysToShow;
+                 dayIndex++)
+            {
+                DateTime date =
+                    _startDate
+                        .AddDays(dayIndex)
+                        .Date;
+
+
+                CalendarDayCellViewModel cell =
+                    new()
+                    {
+                        Date = date
+                    };
+
+
+                if (eventsByDate.TryGetValue(
+                    date,
+                    out List<CompanyEvent>? events))
+                {
+                    cell.Text =
+                        string.Join(
+                            Environment.NewLine,
+                            events.Select(
+                                companyEvent =>
+                                    companyEvent.Title));
+
+
+                    cell.ToolTip =
+                        string.Join(
+                            Environment.NewLine +
+                            Environment.NewLine,
+                            events.Select(
+                                companyEvent =>
+                                    string.IsNullOrWhiteSpace(
+                                        companyEvent.Description)
+
+                                        ? companyEvent.Title
+
+                                        : companyEvent.Title +
+                                          Environment.NewLine +
+                                          companyEvent.Description));
+                }
+
+
+                companyEventRow.Days.Add(
+                    cell);
+            }
+
+
+            rows.Add(
+                companyEventRow);
+
+
+            // =====================================================
+            // EMPLOYEE ROWS
+            // =====================================================
+
             foreach (User user in users)
             {
                 CalendarEmployeeRowViewModel row =
                     new()
                     {
-                        UserID = user.Id,
-                        DisplayName = user.DisplayName,
+                        UserID =
+                            user.Id,
+
+                        DisplayName =
+                            user.DisplayName,
 
                         // Totdat Entra group-membership aan Users
                         // is gekoppeld staat iedereen onder All.
@@ -2867,19 +3174,26 @@ namespace CompanyCalendar
                             date,
                             entryByUserAndDate,
                             statusByCode,
+
+                            // Alleen holidays van het blocking
+                            // country komen hier binnen.
                             holidayByDate);
 
 
-                    row.Days.Add(cell);
+                    row.Days.Add(
+                        cell);
                 }
 
 
-                rows.Add(row);
+                rows.Add(
+                    row);
             }
 
 
             // =====================================================
             // DYNAMIC DATE COLUMNS
+            //
+            // Jouw bestaande methode blijft intact.
             // =====================================================
 
             BuildCalendarDateColumns();
@@ -2887,12 +3201,24 @@ namespace CompanyCalendar
 
             // =====================================================
             // GROUPING
+            //
+            // Resultaat:
+            //
+            // Calendar information
+            //   Public holidays
+            //   Company events
+            //
+            // All
+            //   Employees...
             // =====================================================
 
             ICollectionView view =
-                CollectionViewSource.GetDefaultView(rows);
+                CollectionViewSource.GetDefaultView(
+                    rows);
+
 
             view.GroupDescriptions.Clear();
+
 
             view.GroupDescriptions.Add(
                 new PropertyGroupDescription(
@@ -2920,6 +3246,213 @@ namespace CompanyCalendar
                 $"{lastDate.ToString(
                     "dd MMM yyyy",
                     CultureInfo.CurrentCulture)}";
+        }
+
+        private void ApplyCalendarDateHeaders(
+    Dictionary<DateTime, List<PublicHoliday>> holidaysByDate,
+    Dictionary<DateTime, List<CompanyEvent>> eventsByDate,
+    string? blockingCountryCode)
+        {
+            for (int dayIndex = 0;
+                 dayIndex < CalendarDaysToShow;
+                 dayIndex++)
+            {
+                // Column 0 is Employee.
+                // Daarom begint de eerste datum op column 1.
+                int columnIndex =
+                    dayIndex + 1;
+
+
+                if (columnIndex >=
+                    CalendarGrid.Columns.Count)
+                {
+                    break;
+                }
+
+
+                DateTime date =
+                    _startDate
+                        .AddDays(dayIndex)
+                        .Date;
+
+
+                CalendarGrid.Columns[columnIndex].Header =
+                    CreateCalendarDateHeader(
+                        date,
+                        holidaysByDate,
+                        eventsByDate,
+                        blockingCountryCode);
+            }
+        }
+
+        private object CreateCalendarDateHeader(
+    DateTime date,
+    Dictionary<DateTime, List<PublicHoliday>> holidaysByDate,
+    Dictionary<DateTime, List<CompanyEvent>> eventsByDate,
+    string? blockingCountryCode)
+        {
+            StackPanel panel =
+                new()
+                {
+                    HorizontalAlignment =
+                        HorizontalAlignment.Center,
+
+                    Margin =
+                        new Thickness(4)
+                };
+
+
+            // =====================================================
+            // DAY
+            // =====================================================
+
+            TextBlock dayText =
+                new()
+                {
+                    Text =
+                        date.ToString(
+                            "ddd",
+                            CultureInfo.CurrentCulture),
+
+                    FontWeight =
+                        FontWeights.SemiBold,
+
+                    HorizontalAlignment =
+                        HorizontalAlignment.Center
+                };
+
+
+            panel.Children.Add(
+                dayText);
+
+
+            // =====================================================
+            // DATE
+            // =====================================================
+
+            TextBlock dateText =
+                new()
+                {
+                    Text =
+                        date.ToString(
+                            "dd MMM",
+                            CultureInfo.CurrentCulture),
+
+                    HorizontalAlignment =
+                        HorizontalAlignment.Center
+                };
+
+
+            panel.Children.Add(
+                dateText);
+
+
+            // =====================================================
+            // PUBLIC HOLIDAYS
+            // =====================================================
+
+            if (holidaysByDate.TryGetValue(
+                date.Date,
+                out List<PublicHoliday>? holidays))
+            {
+                foreach (PublicHoliday holiday in holidays)
+                {
+                    bool isBlocking =
+                        !string.IsNullOrWhiteSpace(
+                            blockingCountryCode) &&
+                        holiday.CountryCode.Equals(
+                            blockingCountryCode,
+                            StringComparison.OrdinalIgnoreCase);
+
+
+                    TextBlock holidayText =
+                        new()
+                        {
+                            Text =
+                                $"PUB {holiday.CountryCode}",
+
+                            FontSize =
+                                10,
+
+                            FontWeight =
+                                isBlocking
+                                    ? FontWeights.Bold
+                                    : FontWeights.Normal,
+
+                            HorizontalAlignment =
+                                HorizontalAlignment.Center,
+
+                            ToolTip =
+                                $"{holiday.CountryCode} - {holiday.Name}"
+                        };
+
+
+                    panel.Children.Add(
+                        holidayText);
+                }
+            }
+
+
+            // =====================================================
+            // COMPANY EVENTS
+            // =====================================================
+
+            if (eventsByDate.TryGetValue(
+                date.Date,
+                out List<CompanyEvent>? companyEvents))
+            {
+                foreach (CompanyEvent companyEvent
+                         in companyEvents)
+                {
+                    string tooltip =
+                        companyEvent.Title;
+
+
+                    if (!string.IsNullOrWhiteSpace(
+                        companyEvent.Description))
+                    {
+                        tooltip +=
+                            Environment.NewLine +
+                            companyEvent.Description;
+                    }
+
+
+                    TextBlock eventText =
+                        new()
+                        {
+                            Text =
+                                companyEvent.Title,
+
+                            FontSize =
+                                10,
+
+                            FontWeight =
+                                FontWeights.SemiBold,
+
+                            HorizontalAlignment =
+                                HorizontalAlignment.Center,
+
+                            TextAlignment =
+                                TextAlignment.Center,
+
+                            TextTrimming =
+                                TextTrimming.CharacterEllipsis,
+
+                            MaxWidth =
+                                120,
+
+                            ToolTip =
+                                tooltip
+                        };
+
+
+                    panel.Children.Add(
+                        eventText);
+                }
+            }
+
+
+            return panel;
         }
 
         private CalendarDayCellViewModel CreateCalendarCell(

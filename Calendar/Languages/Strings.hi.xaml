@@ -445,5 +445,15 @@
     <sys:String x:Key="PublicHolidaySyncError">सार्वजनिक अवकाश सिंक्रनाइज़ नहीं किए जा सके।</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">इस देश के लिए सार्वजनिक अवकाश डेटा उपलब्ध नहीं है:</sys:String>
 
+    <!-- Company events -->
 
+    <sys:String x:Key="CompanyEvents">कंपनी कार्यक्रम</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Central Calendar में दिखाए जाने वाले कंपनी कार्यक्रम प्रबंधित करें।</sys:String>
+    <sys:String x:Key="AddEvent">कार्यक्रम जोड़ें</sys:String>
+    <sys:String x:Key="EventDetails">कार्यक्रम विवरण</sys:String>
+    <sys:String x:Key="Title">शीर्षक</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">कंपनी कार्यक्रम के लिए शीर्षक दर्ज करें।</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">कंपनी कार्यक्रम के लिए तारीख़ चुनें।</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">कंपनी कार्यक्रम सहेजा नहीं जा सका।</sys:String>
+    
 </ResourceDictionary>

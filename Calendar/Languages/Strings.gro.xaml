@@ -451,5 +451,15 @@
     <sys:String x:Key="PublicHolidaySyncError">Kin feestdoagen nait synchroniseren.</sys:String>
     <sys:String x:Key="HolidayCountryNotSupported">Feestdaggegevens binnen nait beschikboar veur land:</sys:String>
 
+    <!-- Company events -->
+
+    <sys:String x:Key="CompanyEvents">Bedriefsevenementen</sys:String>
+    <sys:String x:Key="CompanyEventsDescription">Beheer bedriefsevenementen dij in Central Calendar weergeven worden.</sys:String>
+    <sys:String x:Key="AddEvent">Evenement touvogen</sys:String>
+    <sys:String x:Key="EventDetails">Evenementdetails</sys:String>
+    <sys:String x:Key="Title">Titel</sys:String>
+    <sys:String x:Key="CompanyEventTitleRequired">Veur n titel veur t bedriefsevenement in.</sys:String>
+    <sys:String x:Key="CompanyEventDateRequired">Kies n datum veur t bedriefsevenement.</sys:String>
+    <sys:String x:Key="CompanyEventSaveError">Kin t bedriefsevenement nait opsloan.</sys:String>
 
 </ResourceDictionary>
