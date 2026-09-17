@@ -427,6 +427,23 @@
     <sys:String x:Key="StatusPublicHoliday">Feiertag</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Medizinisch / Familie</sys:String>
 
+    <!-- Public holidays -->
 
+    <sys:String x:Key="PublicHolidays">Feiertage</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Konfigurieren Sie gesetzliche Feiertage nach Land.</sys:String>
+    <sys:String x:Key="HolidayCountries">Länder</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Wählen Sie alle Länder aus, deren Feiertage angezeigt werden sollen. Wählen Sie ein Sperrland aus, dessen gesetzliche Feiertage Kalendereinträge verhindern.</sys:String>
+    <sys:String x:Key="Selected">Ausgewählt</sys:String>
+    <sys:String x:Key="Country">Land</sys:String>
+    <sys:String x:Key="CountryCode">Code</sys:String>
+    <sys:String x:Key="BlockingCountry">Sperrland</sys:String>
+    <sys:String x:Key="LastSyncedYear">Synchronisiertes Jahr</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Gesetzliche Feiertage</sys:String>
+    <sys:String x:Key="Holiday">Feiertag</sys:String>
+    <sys:String x:Key="SyncHolidays">Feiertage synchronisieren</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">Das Sperrland muss ebenfalls ausgewählt sein.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Synchronisierte Feiertage:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Feiertage konnten nicht synchronisiert werden.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Für das folgende Land sind keine Feiertagsdaten verfügbar:</sys:String>
 
 </ResourceDictionary>

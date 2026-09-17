@@ -427,7 +427,24 @@
     <sys:String x:Key="StatusPublicHoliday">祝日</sys:String>
     <sys:String x:Key="StatusMedicalFamily">医療 / 家族</sys:String>
 
+    <!-- Public holidays -->
 
+    <sys:String x:Key="PublicHolidays">祝日</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">国ごとに公式の祝日を構成します。</sys:String>
+    <sys:String x:Key="HolidayCountries">国</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">祝日を表示するすべての国を選択します。公式の祝日にカレンダー項目の登録を禁止する国を1つ選択します。</sys:String>
+    <sys:String x:Key="Selected">選択済み</sys:String>
+    <sys:String x:Key="Country">国</sys:String>
+    <sys:String x:Key="CountryCode">コード</sys:String>
+    <sys:String x:Key="BlockingCountry">入力を制限する国</sys:String>
+    <sys:String x:Key="LastSyncedYear">同期済みの年</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">公式の祝日</sys:String>
+    <sys:String x:Key="Holiday">祝日</sys:String>
+    <sys:String x:Key="SyncHolidays">祝日を同期</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">入力を制限する国も選択する必要があります。</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">同期された祝日：</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">祝日を同期できません。</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">次の国では祝日データを利用できません：</sys:String>
 
 
 </ResourceDictionary>

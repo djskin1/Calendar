@@ -432,5 +432,24 @@
     <sys:String x:Key="StatusPublicHoliday">Feestdag</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Medisch / Femilie</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">Feestdoagen</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Stel officiële feestdoagen per land in.</sys:String>
+    <sys:String x:Key="HolidayCountries">Landen</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Kies alle landen woarvan feestdoagen weergeven worden mouten. Kies ain blokkerend land woarvan officiële feestdoagen kèlenderitems tegenholden.</sys:String>
+    <sys:String x:Key="Selected">Selecteerd</sys:String>
+    <sys:String x:Key="Country">Land</sys:String>
+    <sys:String x:Key="CountryCode">Code</sys:String>
+    <sys:String x:Key="BlockingCountry">Blokkerend land</sys:String>
+    <sys:String x:Key="LastSyncedYear">Synchroniseerd joar</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Officiële feestdoagen</sys:String>
+    <sys:String x:Key="Holiday">Feestdag</sys:String>
+    <sys:String x:Key="SyncHolidays">Feestdoagen synchroniseren</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">Blokkerend land mout ook selecteerd wezen.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Synchroniseerde feestdoagen:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Kin feestdoagen nait synchroniseren.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Feestdaggegevens binnen nait beschikboar veur land:</sys:String>
+
 
 </ResourceDictionary>

@@ -439,5 +439,23 @@
     <sys:String x:Key="StatusPublicHoliday">Feestdei</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Medysk / Famylje</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">Feestdagen</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Konfigurearje offisjele feestdagen per lân.</sys:String>
+    <sys:String x:Key="HolidayCountries">Lannen</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Selektearje alle lannen wêrfan de feestdagen werjûn wurde moatte. Kies ien blokkearjend lân wêrfan de offisjele feestdagen kalinderitems tsjinhâlde.</sys:String>
+    <sys:String x:Key="Selected">Selektearre</sys:String>
+    <sys:String x:Key="Country">Lân</sys:String>
+    <sys:String x:Key="CountryCode">Koade</sys:String>
+    <sys:String x:Key="BlockingCountry">Blokkearjend lân</sys:String>
+    <sys:String x:Key="LastSyncedYear">Syngronisearre jier</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Offisjele feestdagen</sys:String>
+    <sys:String x:Key="Holiday">Feestdei</sys:String>
+    <sys:String x:Key="SyncHolidays">Feestdagen syngronisearje</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">It blokkearjende lân moat ek selektearre wêze.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Syngronisearre feestdagen:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Kin feestdagen net syngronisearje.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Der binne gjin feestdeigegevens beskikber foar lân:</sys:String>
 
 </ResourceDictionary>

@@ -431,6 +431,24 @@
     <sys:String x:Key="StatusPublicHoliday">Feriado</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Motivos médicos / Família</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">Feriados</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Configure os feriados oficiais por país.</sys:String>
+    <sys:String x:Key="HolidayCountries">Países</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Selecione todos os países cujos feriados devem ser apresentados. Escolha um país de bloqueio cujos feriados oficiais impeçam a criação de entradas no calendário.</sys:String>
+    <sys:String x:Key="Selected">Selecionado</sys:String>
+    <sys:String x:Key="Country">País</sys:String>
+    <sys:String x:Key="CountryCode">Código</sys:String>
+    <sys:String x:Key="BlockingCountry">País de bloqueio</sys:String>
+    <sys:String x:Key="LastSyncedYear">Ano sincronizado</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Feriados oficiais</sys:String>
+    <sys:String x:Key="Holiday">Feriado</sys:String>
+    <sys:String x:Key="SyncHolidays">Sincronizar feriados</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">O país de bloqueio também tem de estar selecionado.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Feriados sincronizados:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Não foi possível sincronizar os feriados.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Não existem dados de feriados disponíveis para o país:</sys:String>
 
 
 </ResourceDictionary>

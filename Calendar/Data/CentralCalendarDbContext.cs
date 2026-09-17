@@ -41,6 +41,8 @@ namespace Calendar.Data
 
         public DbSet<CalendarStatus> CalendarStatuses => Set<CalendarStatus>();
 
+        public DbSet<PublicHolidayCountry> PublicHolidayCountries => Set<PublicHolidayCountry>();
+
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
         {
@@ -497,6 +499,24 @@ namespace Calendar.Data
                     CreatedAt = statusSeedDate
                 }
             );
+
+            modelBuilder.Entity<PublicHolidayCountry>()
+                .HasIndex(country => country.CountryCode)
+                .IsUnique();
+
+            modelBuilder.Entity<PublicHoliday>()
+                .HasIndex(holiday => new
+                {
+                    holiday.CountryCode,
+                    holiday.Date,
+                    holiday.Name
+                })
+                .IsUnique();
+
+            modelBuilder.Entity<PublicHolidayCountry>()
+                .HasIndex(country => country.IsBlockingCountry)
+                .IsUnique()
+                .HasFilter("[IsBlockingCountry] = 1");
 
         }
     }

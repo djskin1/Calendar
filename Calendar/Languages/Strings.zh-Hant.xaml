@@ -427,6 +427,23 @@
     <sys:String x:Key="StatusPublicHoliday">假日</sys:String>
     <sys:String x:Key="StatusMedicalFamily">醫療 / 家庭</sys:String>
 
+    <!-- Public holidays -->
 
+    <sys:String x:Key="PublicHolidays">公眾假日</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">依國家/地區設定官方公眾假日。</sys:String>
+    <sys:String x:Key="HolidayCountries">國家/地區</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">選取要顯示其公眾假日的所有國家/地區。選擇一個阻擋輸入的國家/地區，其官方公眾假日將禁止建立行事曆項目。</sys:String>
+    <sys:String x:Key="Selected">已選取</sys:String>
+    <sys:String x:Key="Country">國家/地區</sys:String>
+    <sys:String x:Key="CountryCode">代碼</sys:String>
+    <sys:String x:Key="BlockingCountry">阻擋輸入的國家/地區</sys:String>
+    <sys:String x:Key="LastSyncedYear">已同步年份</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">官方公眾假日</sys:String>
+    <sys:String x:Key="Holiday">假日</sys:String>
+    <sys:String x:Key="SyncHolidays">同步假日</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">也必須選取阻擋輸入的國家/地區。</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">已同步的公眾假日：</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">無法同步公眾假日。</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">以下國家/地區沒有可用的公眾假日資料：</sys:String>
 
 </ResourceDictionary>

@@ -3043,6 +3043,341 @@
             
         </Grid>
         
+        <!-- Public Holiday -->
+        <Grid x:Name="AdminPublicHolidayPage"
+              Grid.Column="1"
+              Visibility="Collapsed"
+              Background="{DynamicResource AppBackgroundBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Width="42"
+                            Height="42"
+                            Margin="0,0,15,0"
+                            Click="AdminPublicHolidaysBackButton_Click">
+                        <TextBlock Text="&#xE72B;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18"/>
+                    </Button>
+
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource Public holiday}"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+                        <TextBlock Text="{DynamicResource PublicHolidaysDescription}"
+                                   FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="2"
+                            Content="{DynamicResource SyncHolidays}"
+                            Width="150"
+                            Height="40"
+                            Click="SyncPublicHolidaysButton_Click"/>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Row="1"
+                          VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="25">
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="20"
+                            Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource HolidayCountries}"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBlock Text="{DynamicResource HolidayCountriesDescription}"
+                                       Margin="0,4,0,15"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       TextWrapping="Wrap"/>
+                            <DataGrid x:Name="HolidayCountriesDataGrid"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      CanUserDeleteRows="False"
+                                      MinHeight="220">
+
+                                <DataGrid.Columns>
+                                    <DataGridCheckBoxColumn Header="{DynamicResource Selected}"
+                                                            Binding="{Binding IsSelected}"
+                                                            Width="80"/>
+                                    <DataGridTextColumn Header="{DynamicResource Country}"
+                                                        Binding="{Binding CountryName}"
+                                                        IsReadOnly="True"
+                                                        Width="*"/>
+                                    <DataGridTextColumn Header="{DynamicResource CountryCode}"
+                                                        Binding="{Binding CountryCode}"
+                                                        IsReadOnly="True"
+                                                        Width="100"/>
+                                    <DataGridTextColumn Header="{DynamicResource LastSyncedYear}"
+                                                        Binding="{Binding LastSyncedYear}"
+                                                        IsReadOnly="True"
+                                                        Width="130"/>
+                                    <DataGridTextColumn Header="{DynamicResource LastSync}"
+                                                        Binding="{Binding LastSyncedAt}"
+                                                        IsReadOnly="True"
+                                                        Width="180"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <Grid Margin="0,15,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="130"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{DynamicResource BlockingCountry}"
+                                           VerticalAlignment="Center"
+                                           Margin="0,0,10,0"
+                                           FontWeight="SemiBold"
+                                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+                                <ComboBox x:Name="BlockingCountryComboBox"
+                                          Grid.Column="1"
+                                          Height="36"
+                                          DisplayMemberPath="CountryName"
+                                          SelectedValuePath="CountryCode"/>
+                                <Button Grid.Column="3"
+                                        Content="{DynamicResource Save}"
+                                        Height="36"
+                                        Click="SaveHolidayCountriesButton_Click"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="20">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource OfficialPublicHolidays}"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
+                                       Margin="0,0,0,15"/>
+                            <DataGrid x:Name="PublicHolidaysDataGrid"
+                                      AutoGenerateColumns="False"
+                                      IsReadOnly="True"
+                                      CanUserAddRows="False"
+                                      MinHeight="300">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="{DynamicResource Date}"
+                                                        Binding="{Binding Date, StringFormat=d}"
+                                                        Width="130"/>
+                                    <DataGridTextColumn Header="{DynamicResource CountryCode}"
+                                                        Binding="{Binding CountryCode}"
+                                                        Width="100"/>
+                                    <DataGridTextColumn Header="{DynamicResource Holiday}"
+                                                        Binding="{Binding Name}"
+                                                        Width="*"/>
+                                    <DataGridCheckBoxColumn Header="{DynamicResource Active}"
+                                                            Binding="{Binding IsActive}"
+                                                            Width="80"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                        
+                    </Border>
+                    
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+        
+        <!-- company events -->
+        <Grid x:Name="AdminCompanyEventsPage"
+      Grid.Column="1"
+      Visibility="Collapsed"
+      Background="{DynamicResource AppBackgroundBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- HEADER -->
+            <Border Grid.Row="0"
+            Background="{DynamicResource SurfaceBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Width="42"
+                    Height="42"
+                    Margin="0,0,15,0"
+                    Click="AdminCompanyEventsBackButton_Click">
+
+                        <TextBlock Text="&#xE72B;"
+                           FontFamily="Segoe MDL2 Assets"
+                           FontSize="18"/>
+
+                    </Button>
+
+                    <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center">
+
+                        <TextBlock Text="{DynamicResource CompanyEvents}"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <TextBlock Text="{DynamicResource CompanyEventsDescription}"
+                           FontSize="12"
+                           Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                    </StackPanel>
+
+                    <Button Grid.Column="2"
+                    Content="{DynamicResource AddEvent}"
+                    Width="130"
+                    Height="40"
+                    Click="AddCompanyEventButton_Click"/>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- CONTENT -->
+            <Grid Grid.Row="1"
+          Margin="25">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="380"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- EVENT LIST -->
+                <Border Grid.Column="0"
+                Background="{DynamicResource SurfaceBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10"
+                Padding="20">
+
+                    <DataGrid x:Name="CompanyEventsDataGrid"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      SelectionChanged="CompanyEventsDataGrid_SelectionChanged">
+
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="{DynamicResource Date}"
+                                        Binding="{Binding Date, StringFormat=d}"
+                                        Width="130"/>
+
+                            <DataGridTextColumn Header="{DynamicResource Title}"
+                                        Binding="{Binding Title}"
+                                        Width="*"/>
+
+                            <DataGridCheckBoxColumn Header="{DynamicResource Active}"
+                                            Binding="{Binding IsActive}"
+                                            Width="80"/>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Border>
+
+
+                <!-- EDITOR -->
+                <Border Grid.Column="2"
+                Background="{DynamicResource SurfaceBrush}"
+                BorderBrush="{DynamicResource BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10"
+                Padding="20">
+
+                    <StackPanel>
+
+                        <TextBlock Text="{DynamicResource EventDetails}"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"
+                           Margin="0,0,0,20"/>
+
+
+                        <TextBlock Text="{DynamicResource Title}"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <TextBox x:Name="CompanyEventTitleTextBox"
+                         Height="36"
+                         Margin="0,5,0,15"
+                         VerticalContentAlignment="Center"/>
+
+
+                        <TextBlock Text="{DynamicResource Date}"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <DatePicker x:Name="CompanyEventDatePicker"
+                            Height="36"
+                            Margin="0,5,0,15"/>
+
+
+                        <TextBlock Text="{DynamicResource Description}"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <TextBox x:Name="CompanyEventDescriptionTextBox"
+                         Height="100"
+                         Margin="0,5,0,15"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"/>
+
+
+                        <CheckBox x:Name="CompanyEventActiveCheckBox"
+                          Content="{DynamicResource Active}"
+                          IsChecked="True"
+                          Margin="0,0,0,20"/>
+
+
+                        <Button Content="{DynamicResource Save}"
+                        Height="40"
+                        Background="{DynamicResource SidebarBrush}"
+                        Click="SaveCompanyEventButton_Click"/>
+
+                    </StackPanel>
+
+                </Border>
+            </Grid>
+        </Grid>
+
         <!-- next -->
 
     </Grid>

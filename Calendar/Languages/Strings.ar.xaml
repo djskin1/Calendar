@@ -426,6 +426,23 @@
     <sys:String x:Key="StatusPublicHoliday">عطلة رسمية</sys:String>
     <sys:String x:Key="StatusMedicalFamily">طبي / عائلي</sys:String>
 
+    <!-- Public holidays -->
 
+    <sys:String x:Key="PublicHolidays">العطلات الرسمية</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">تكوين العطلات الرسمية حسب الدولة.</sys:String>
+    <sys:String x:Key="HolidayCountries">الدول</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">حدد جميع الدول التي يجب عرض عطلاتها الرسمية. اختر دولة مانعة واحدة تمنع عطلاتها الرسمية إنشاء إدخالات في التقويم.</sys:String>
+    <sys:String x:Key="Selected">محدد</sys:String>
+    <sys:String x:Key="Country">الدولة</sys:String>
+    <sys:String x:Key="CountryCode">الرمز</sys:String>
+    <sys:String x:Key="BlockingCountry">الدولة المانعة</sys:String>
+    <sys:String x:Key="LastSyncedYear">السنة المتزامنة</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">العطلات الرسمية المعتمدة</sys:String>
+    <sys:String x:Key="Holiday">العطلة</sys:String>
+    <sys:String x:Key="SyncHolidays">مزامنة العطلات</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">يجب تحديد الدولة المانعة أيضًا.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">العطلات الرسمية المتزامنة:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">تعذرت مزامنة العطلات الرسمية.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">بيانات العطلات الرسمية غير متاحة للدولة:</sys:String>
 
 </ResourceDictionary>

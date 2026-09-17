@@ -427,5 +427,23 @@
     <sys:String x:Key="StatusPublicHoliday">节假日</sys:String>
     <sys:String x:Key="StatusMedicalFamily">医疗 / 家庭</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">公共假日</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">按国家/地区配置官方公共假日。</sys:String>
+    <sys:String x:Key="HolidayCountries">国家/地区</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">选择要显示其公共假日的所有国家/地区。选择一个阻止录入的国家/地区，其官方公共假日将禁止创建日历条目。</sys:String>
+    <sys:String x:Key="Selected">已选择</sys:String>
+    <sys:String x:Key="Country">国家/地区</sys:String>
+    <sys:String x:Key="CountryCode">代码</sys:String>
+    <sys:String x:Key="BlockingCountry">阻止录入的国家/地区</sys:String>
+    <sys:String x:Key="LastSyncedYear">已同步年份</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">官方公共假日</sys:String>
+    <sys:String x:Key="Holiday">假日</sys:String>
+    <sys:String x:Key="SyncHolidays">同步假日</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">还必须选择阻止录入的国家/地区。</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">已同步的公共假日：</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">无法同步公共假日。</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">以下国家/地区没有可用的公共假日数据：</sys:String>
 
 </ResourceDictionary>

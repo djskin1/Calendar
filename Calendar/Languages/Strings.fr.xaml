@@ -426,7 +426,24 @@
     <sys:String x:Key="StatusPublicHoliday">Jour férié</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Médical / Famille</sys:String>
 
+    <!-- Public holidays -->
 
+    <sys:String x:Key="PublicHolidays">Jours fériés</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Configurez les jours fériés officiels par pays.</sys:String>
+    <sys:String x:Key="HolidayCountries">Pays</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Sélectionnez tous les pays dont les jours fériés doivent être affichés. Choisissez un pays bloquant dont les jours fériés officiels empêchent la création d’entrées de calendrier.</sys:String>
+    <sys:String x:Key="Selected">Sélectionné</sys:String>
+    <sys:String x:Key="Country">Pays</sys:String>
+    <sys:String x:Key="CountryCode">Code</sys:String>
+    <sys:String x:Key="BlockingCountry">Pays bloquant</sys:String>
+    <sys:String x:Key="LastSyncedYear">Année synchronisée</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Jours fériés officiels</sys:String>
+    <sys:String x:Key="Holiday">Jour férié</sys:String>
+    <sys:String x:Key="SyncHolidays">Synchroniser les jours fériés</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">Le pays bloquant doit également être sélectionné.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Jours fériés synchronisés :</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Impossible de synchroniser les jours fériés.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Les données relatives aux jours fériés ne sont pas disponibles pour le pays :</sys:String>
 
 
 </ResourceDictionary>

@@ -431,6 +431,24 @@
     <sys:String x:Key="StatusPublicHoliday">Festività</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Motivi medici / Famiglia</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">Festività</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Configura le festività ufficiali per paese.</sys:String>
+    <sys:String x:Key="HolidayCountries">Paesi</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Seleziona tutti i paesi di cui devono essere visualizzate le festività. Scegli un paese bloccante le cui festività ufficiali impediscano l'inserimento di voci nel calendario.</sys:String>
+    <sys:String x:Key="Selected">Selezionato</sys:String>
+    <sys:String x:Key="Country">Paese</sys:String>
+    <sys:String x:Key="CountryCode">Codice</sys:String>
+    <sys:String x:Key="BlockingCountry">Paese bloccante</sys:String>
+    <sys:String x:Key="LastSyncedYear">Anno sincronizzato</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Festività ufficiali</sys:String>
+    <sys:String x:Key="Holiday">Festività</sys:String>
+    <sys:String x:Key="SyncHolidays">Sincronizza festività</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">Deve essere selezionato anche il paese bloccante.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Festività sincronizzate:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Impossibile sincronizzare le festività.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">I dati sulle festività non sono disponibili per il paese:</sys:String>
 
 
 </ResourceDictionary>

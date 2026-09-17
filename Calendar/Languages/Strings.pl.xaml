@@ -427,6 +427,24 @@
     <sys:String x:Key="StatusPublicHoliday">Dzień ustawowo wolny</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Medyczne / Rodzinne</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">Dni ustawowo wolne</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Skonfiguruj oficjalne dni ustawowo wolne według kraju.</sys:String>
+    <sys:String x:Key="HolidayCountries">Kraje</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Wybierz wszystkie kraje, których dni ustawowo wolne mają być wyświetlane. Wybierz jeden kraj blokujący, którego oficjalne dni wolne uniemożliwiają tworzenie wpisów w kalendarzu.</sys:String>
+    <sys:String x:Key="Selected">Wybrano</sys:String>
+    <sys:String x:Key="Country">Kraj</sys:String>
+    <sys:String x:Key="CountryCode">Kod</sys:String>
+    <sys:String x:Key="BlockingCountry">Kraj blokujący</sys:String>
+    <sys:String x:Key="LastSyncedYear">Zsynchronizowany rok</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Oficjalne dni ustawowo wolne</sys:String>
+    <sys:String x:Key="Holiday">Dzień wolny</sys:String>
+    <sys:String x:Key="SyncHolidays">Synchronizuj dni wolne</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">Kraj blokujący również musi być wybrany.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Zsynchronizowane dni ustawowo wolne:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Nie można zsynchronizować dni ustawowo wolnych.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Dane o dniach ustawowo wolnych nie są dostępne dla kraju:</sys:String>
 
 
 

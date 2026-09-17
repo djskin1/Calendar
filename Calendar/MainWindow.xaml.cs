@@ -42,10 +42,15 @@ namespace CompanyCalendar
         private const int DaysVisible = 17;
         private const int CalendarDaysToShow = 14;
 
+        private int? _selectedCompanyEventId;
+        private bool _isCreatingCompanyEvent;
+
         private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
 
         private readonly ObservableCollection<SearchResultItem>
             _searchResults = new();
+
+
 
         private readonly DispatcherTimer _searchTimer =
             new DispatcherTimer();
@@ -1521,25 +1526,460 @@ namespace CompanyCalendar
             await LoadCalendarStatusesAsync();
         }
 
-        private void AdminHolidaysButton_Click(
+        // Public Holiday
+
+        private async void AdminHolidaysButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminHolidays",
-                "AdminHolidaysDescription",
-                "\uE787");
+            try
+            {
+                await LoadPublicHolidayAdminPageAsync();
+                AdminPage.Visibility = Visibility.Collapsed;
+                AdminPublicHolidayPage.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
 
-        private void AdminEventsButton_Click(
+        private async Task LoadPublicHolidayAdminPageAsync()
+        {
+            await PublicHolidaySyncService
+                .EnsureCountriesAsync();
+
+            using CentralCalendarDbContext database = new();
+
+            List<PublicHolidayCountry> countries =
+                await database.PublicHolidayCountries
+                .AsNoTracking()
+                .OrderBy(country => country.CountryName)
+                .ToListAsync();
+
+            HolidayCountriesDataGrid.ItemsSource = countries;
+            BlockingCountryComboBox.ItemsSource = countries;
+
+            PublicHolidayCountry? blockingCountry =
+                countries.FirstOrDefault(country => country.IsBlockingCountry);
+
+            if (blockingCountry != null)
+            {
+                BlockingCountryComboBox.SelectedValue =
+                    blockingCountry.CountryCode;
+            }
+
+            int year =
+                DateTime.Today.Year;
+
+            PublicHolidaysDataGrid.ItemsSource =
+                await database.PublicHolidays
+                .AsNoTracking()
+                .Where(holiday =>
+                    holiday.Date.Year == year)
+                .OrderBy(holiday => holiday.Date)
+                .ThenBy(holiday => holiday.CountryCode)
+                .ThenBy(holiday => holiday.Name)
+                .ToListAsync();
+        }
+
+        private void AdminPublicHolidaysBackButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            AdminPublicHolidayPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async void SaveHolidayCountriesButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            HolidayCountriesDataGrid.CommitEdit(DataGridEditingUnit.Cell,
+                true);
+
+            HolidayCountriesDataGrid.CommitEdit(DataGridEditingUnit.Row,
+                true);
+
+            if (HolidayCountriesDataGrid.ItemsSource
+                is not IEnumerable<PublicHolidayCountry> rows)
+            {
+                return;
+            }
+
+            string? blockingCountryCode =
+                BlockingCountryComboBox.SelectedValue
+                ?.ToString();
+
+            List<PublicHolidayCountry> rowList = rows.ToList();
+
+            if (!string.IsNullOrWhiteSpace(blockingCountryCode))
+            {
+                PublicHolidayCountry? blocking =
+                    rowList.FirstOrDefault(country =>
+                        country.CountryCode ==
+                        blockingCountryCode);
+
+
+                if (blocking == null ||
+                    !blocking.IsSelected)
+                {
+                    MessageBox.Show(
+                        LocalizationService.Get(
+                            "BlockingCountryMustBeSelected"),
+                        LocalizationService.Get("AppName"),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                    return;
+                }
+            }
+
+
+            try
+            {
+                using CentralCalendarDbContext database = new();
+
+                List<PublicHolidayCountry> databaseCountries =
+                    await database.PublicHolidayCountries
+                        .ToListAsync();
+
+
+                // Eerst overal blocking uitzetten.
+                foreach (PublicHolidayCountry country
+                         in databaseCountries)
+                {
+                    country.IsBlockingCountry = false;
+                }
+
+                await database.SaveChangesAsync();
+
+
+                // Daarna selectie + één blocking country opslaan.
+                foreach (PublicHolidayCountry country
+                         in databaseCountries)
+                {
+                    PublicHolidayCountry? row =
+                        rowList.FirstOrDefault(item =>
+                            item.Id == country.Id);
+
+                    if (row == null)
+                    {
+                        continue;
+                    }
+
+
+                    country.IsSelected =
+                        row.IsSelected;
+
+                    country.IsBlockingCountry =
+                        row.IsSelected &&
+                        country.CountryCode ==
+                        blockingCountryCode;
+                }
+
+
+                await database.SaveChangesAsync();
+
+
+                await LoadPublicHolidayAdminPageAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+            private async void SyncPublicHolidaysButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminEvents",
-                "AdminEventsDescription",
-                "\uECA5");
+            try
+            {
+                Mouse.OverrideCursor =
+                    Cursors.Wait;
+
+
+                // Eerst de huidige checkbox-selecties opslaan.
+                HolidayCountriesDataGrid.CommitEdit(
+                    DataGridEditingUnit.Cell,
+                    true);
+
+                HolidayCountriesDataGrid.CommitEdit(
+                    DataGridEditingUnit.Row,
+                    true);
+
+
+                int count =
+                    await PublicHolidaySyncService
+                        .SyncSelectedCountriesAsync(
+                            DateTime.Today.Year);
+
+
+                await LoadPublicHolidayAdminPageAsync();
+
+
+                MessageBox.Show(
+                    $"{LocalizationService.Get("PublicHolidaySyncComplete")} {count}",
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{LocalizationService.Get("PublicHolidaySyncError")}\n\n" +
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            finally
+            {
+                Mouse.OverrideCursor = null;
+            }
+
         }
+
+
+        // Events 
+        private async void AdminEventsButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            try
+            {
+                await LoadCompanyEventsAsync();
+
+                AdminPage.Visibility = Visibility.Collapsed;
+                AdminCompanyEventsPage.Visibility = Visibility.Visible;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                    );
+            }
+        }
+
+        private void AdminCompanyEventsBackButton_Click(Object sender, RoutedEventArgs e)
+        {
+            AdminCompanyEventsPage.Visibility = Visibility.Collapsed;
+
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async Task LoadCompanyEventsAsync()
+        {
+            using CentralCalendarDbContext database = new();
+
+            CompanyEventsDataGrid.ItemsSource =
+                await database.CompanyEvents
+                .AsNoTracking()
+                .OrderByDescending(item => item.IsActive)
+                .ThenBy(item => item.Date)
+                .ThenBy(item => item.Title)
+                .ToListAsync();
+        }
+
+        private void CompanyEventsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CompanyEventsDataGrid.SelectedItem is not CompanyEvent companyEvent)
+            {
+                return;
+            }
+
+            _selectedCompanyEventId = companyEvent.Id;
+
+            _isCreatingCompanyEvent = false;
+
+            CompanyEventTitleTextBox.Text = companyEvent.Title;
+
+            CompanyEventDatePicker.SelectedDate = companyEvent.Date;
+
+            CompanyEventDescriptionTextBox.Text = companyEvent.Description ?? "";
+
+            CompanyEventActiveCheckBox.IsChecked = companyEvent.IsActive;
+
+        }
+
+        private void AddCompanyEventButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            CompanyEventsDataGrid.SelectedItem =
+                null;
+
+            _selectedCompanyEventId =
+                null;
+
+            _isCreatingCompanyEvent =
+                true;
+
+            CompanyEventTitleTextBox.Clear();
+
+            CompanyEventDescriptionTextBox.Clear();
+
+            CompanyEventDatePicker.SelectedDate =
+                DateTime.Today;
+
+            CompanyEventActiveCheckBox.IsChecked =
+                true;
+
+            CompanyEventTitleTextBox.Focus();
+        }
+
+        private async void SaveCompanyEventButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            string title =
+                CompanyEventTitleTextBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "CompanyEventTitleRequired"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            if (CompanyEventDatePicker.SelectedDate
+                is not DateTime eventDate)
+            {
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "CompanyEventDateRequired"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+
+            try
+            {
+                using CentralCalendarDbContext database = new();
+
+
+                if (_isCreatingCompanyEvent ||
+                    _selectedCompanyEventId == null)
+                {
+                    CompanyEvent companyEvent =
+                        new()
+                        {
+                            Title =
+                                title,
+
+                            Description =
+                                string.IsNullOrWhiteSpace(
+                                    CompanyEventDescriptionTextBox.Text)
+                                    ? null
+                                    : CompanyEventDescriptionTextBox.Text.Trim(),
+
+                            Date =
+                                eventDate.Date,
+
+                            IsActive =
+                                CompanyEventActiveCheckBox.IsChecked == true
+                        };
+
+
+                    database.CompanyEvents.Add(
+                        companyEvent);
+                }
+                else
+                {
+                    CompanyEvent? companyEvent =
+                        await database.CompanyEvents
+                            .FirstOrDefaultAsync(item =>
+                                item.Id ==
+                                _selectedCompanyEventId.Value);
+
+
+                    if (companyEvent == null)
+                    {
+                        return;
+                    }
+
+
+                    companyEvent.Title =
+                        title;
+
+                    companyEvent.Description =
+                        string.IsNullOrWhiteSpace(
+                            CompanyEventDescriptionTextBox.Text)
+                            ? null
+                            : CompanyEventDescriptionTextBox.Text.Trim();
+
+                    companyEvent.Date =
+                        eventDate.Date;
+
+                    companyEvent.IsActive =
+                        CompanyEventActiveCheckBox.IsChecked == true;
+                }
+
+
+                await database.SaveChangesAsync();
+
+
+                _selectedCompanyEventId =
+                    null;
+
+                _isCreatingCompanyEvent =
+                    false;
+
+
+                await LoadCompanyEventsAsync();
+
+
+                ClearCompanyEventEditor();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{LocalizationService.Get("CompanyEventSaveError")}\n\n" +
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private void ClearCompanyEventEditor()
+        {
+            CompanyEventTitleTextBox.Clear();
+
+            CompanyEventDescriptionTextBox.Clear();
+
+            CompanyEventDatePicker.SelectedDate =
+                null;
+
+            CompanyEventActiveCheckBox.IsChecked =
+                true;
+
+            CompanyEventsDataGrid.SelectedItem =
+                null;
+        }
+
+        //entra
 
         private void AdminEntraButton_Click(
     object sender,

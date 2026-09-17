@@ -427,6 +427,23 @@
     <sys:String x:Key="StatusPublicHoliday">Dies festus</sys:String>
     <sys:String x:Key="StatusMedicalFamily">Medicina / Familia</sys:String>
 
+    <!-- Public holidays -->
 
+    <sys:String x:Key="PublicHolidays">Dies festi</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Dies festos publicos secundum regionem configura.</sys:String>
+    <sys:String x:Key="HolidayCountries">Regiones</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Omnes regiones elige quarum dies festi monstrandi sunt. Unam regionem impedientem elige, cuius dies festi publici res calendarii prohibent.</sys:String>
+    <sys:String x:Key="Selected">Selectum</sys:String>
+    <sys:String x:Key="Country">Regio</sys:String>
+    <sys:String x:Key="CountryCode">Codex</sys:String>
+    <sys:String x:Key="BlockingCountry">Regio impediens</sys:String>
+    <sys:String x:Key="LastSyncedYear">Annus congruens</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">Dies festi publici</sys:String>
+    <sys:String x:Key="Holiday">Dies festus</sys:String>
+    <sys:String x:Key="SyncHolidays">Dies festos congruere</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">Regio impediens etiam eligenda est.</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">Dies festi congruentes:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Dies festi congrui non possunt.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Data dierum festorum non praesto sunt pro regione:</sys:String>
 
 </ResourceDictionary>

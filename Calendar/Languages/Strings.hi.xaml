@@ -426,5 +426,24 @@
     <sys:String x:Key="StatusPublicHoliday">सार्वजनिक अवकाश</sys:String>
     <sys:String x:Key="StatusMedicalFamily">चिकित्सा / परिवार</sys:String>
 
+    <!-- Public holidays -->
+
+    <sys:String x:Key="PublicHolidays">सार्वजनिक अवकाश</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">देश के अनुसार आधिकारिक सार्वजनिक अवकाश कॉन्फ़िगर करें।</sys:String>
+    <sys:String x:Key="HolidayCountries">देश</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">उन सभी देशों को चुनें जिनके सार्वजनिक अवकाश दिखाए जाने चाहिए। एक अवरुद्ध करने वाला देश चुनें, जिसके आधिकारिक अवकाश कैलेंडर प्रविष्टियाँ बनाने से रोकते हैं।</sys:String>
+    <sys:String x:Key="Selected">चयनित</sys:String>
+    <sys:String x:Key="Country">देश</sys:String>
+    <sys:String x:Key="CountryCode">कोड</sys:String>
+    <sys:String x:Key="BlockingCountry">अवरुद्ध करने वाला देश</sys:String>
+    <sys:String x:Key="LastSyncedYear">सिंक्रनाइज़ किया गया वर्ष</sys:String>
+    <sys:String x:Key="OfficialPublicHolidays">आधिकारिक सार्वजनिक अवकाश</sys:String>
+    <sys:String x:Key="Holiday">अवकाश</sys:String>
+    <sys:String x:Key="SyncHolidays">अवकाश सिंक्रनाइज़ करें</sys:String>
+    <sys:String x:Key="BlockingCountryMustBeSelected">अवरुद्ध करने वाला देश भी चयनित होना चाहिए।</sys:String>
+    <sys:String x:Key="PublicHolidaySyncComplete">सिंक्रनाइज़ किए गए सार्वजनिक अवकाश:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">सार्वजनिक अवकाश सिंक्रनाइज़ नहीं किए जा सके।</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">इस देश के लिए सार्वजनिक अवकाश डेटा उपलब्ध नहीं है:</sys:String>
+
 
 </ResourceDictionary>

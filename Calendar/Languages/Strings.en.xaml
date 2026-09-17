@@ -856,6 +856,31 @@
     <sys:String x:Key="StatusCodeAndNameRequired">A status code and name are required.</sys:String>
     <sys:String x:Key="InvalidStatusColor">One or more status colors are invalid.</sys:String>
     <sys:String x:Key="InvalidSortOrder">Enter a valid sort order.</sys:String>
+    
+    <!-- Public holidays -->
+    <sys:String x:Key="PublicHolidays">Public holidays</sys:String>
+    <sys:String x:Key="PublicHolidaysDescription">Configure official public holidays by country.</sys:String>
+
+    <sys:String x:Key="HolidayCountries">Countries</sys:String>
+    <sys:String x:Key="HolidayCountriesDescription">Select all countries whose public holidays should be shown. Choose one blocking country whose official holidays prevent calendar entries.</sys:String>
+
+    <sys:String x:Key="Selected">Selected</sys:String>
+    <sys:String x:Key="Country">Country</sys:String>
+    <sys:String x:Key="CountryCode">Code</sys:String>
+    <sys:String x:Key="BlockingCountry">Blocking country</sys:String>
+
+    <sys:String x:Key="LastSyncedYear">Synced year</sys:String>
+
+    <sys:String x:Key="OfficialPublicHolidays">Official public holidays</sys:String>
+    <sys:String x:Key="Holiday">Holiday</sys:String>
+
+    <sys:String x:Key="SyncHolidays">Sync holidays</sys:String>
+
+    <sys:String x:Key="BlockingCountryMustBeSelected">The blocking country must also be selected.</sys:String>
+
+    <sys:String x:Key="PublicHolidaySyncComplete">Public holidays synchronized:</sys:String>
+    <sys:String x:Key="PublicHolidaySyncError">Unable to synchronize public holidays.</sys:String>
+    <sys:String x:Key="HolidayCountryNotSupported">Public holiday data is not available for country:</sys:String>
 
 
 </ResourceDictionary>
