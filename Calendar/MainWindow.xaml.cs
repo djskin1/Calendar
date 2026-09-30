@@ -23,6 +23,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Linq.Expressions;
 
 namespace CompanyCalendar
@@ -1981,14 +1982,215 @@ namespace CompanyCalendar
 
         //entra
 
-        private void AdminEntraButton_Click(
+        private async void AdminEntraButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminEntra",
-                "AdminEntraDescription",
-                "\uE77B");
+            try
+            {
+                await LoadEntraConfigurationAsync();
+                AdminPage.Visibility = Visibility.Collapsed;
+                AdminEntraIdPage.Visibility = Visibility.Visible;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private void AdminEntraIdBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminEntraIdPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async Task LoadEntraConfigurationAsync()
+        {
+            using CentralCalendarDbContext database = new();
+
+            EntraConfiguration? configuration = await database.entraConfigurations
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+
+            if (configuration == null)
+            {
+                EntraEnabledCheckBox.IsChecked = false;
+                EntraTenantIdTextBox.Text = "";
+                EntraClientIdTextBox.Text = "";
+                EntraLastGroupSyncText.Text = "";
+
+                return;
+            }
+
+            EntraEnabledCheckBox.IsChecked = configuration.IsEnabled;
+            EntraTenantIdTextBox.Text = configuration.TenantId;
+            EntraClientIdTextBox.Text = configuration.ClientId;
+            EntraLastGroupSyncText.Text =
+                configuration.LastGroupSyncAt.HasValue
+
+                    ? $"{LocalizationService.Get("LastGroupSync")}: " +
+                      configuration.LastGroupSyncAt.Value
+                        .ToLocalTime()
+                        .ToString("g", CultureInfo.CurrentCulture)
+
+                      : LocalizationService.Get("NeverSynchronized");
+        }
+
+        private async void SaveEntraConfigurationButton_Click(object sender, RoutedEventArgs e)
+        {
+            string tenantId = EntraTenantIdTextBox.Text.Trim();
+            string clientId = EntraClientIdTextBox.Text.Trim();
+
+            if(!Guid.TryParse(tenantId, out _))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("InvalidTenantId"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            if(!Guid.TryParse(clientId, out _))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("InvalidCleintId"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            using CentralCalendarDbContext database = new();
+
+            EntraConfiguration? configuration = await database.entraConfigurations
+                .FirstOrDefaultAsync();
+
+            if(configuration == null)
+            {
+                configuration = new EntraConfiguration();
+
+                database.entraConfigurations.Add(configuration);
+            }
+
+            configuration.IsEnabled = EntraEnabledCheckBox.IsChecked == true;
+            configuration.TenantId = tenantId;
+            configuration.ClientId = clientId;
+            configuration.ModifiedAt = DateTime.UtcNow;
+
+            await database.SaveChangesAsync();
+
+            MessageBox.Show(
+                LocalizationService.Get("EntraConfigurationSaved"),
+                LocalizationService.Get("AppName"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+
+        private async void TestEntraConnectionButton_Click(object sender, RoutedEventArgs e)
+        {
+            string tenantId = EntraTenantIdTextBox.Text.Trim();
+            string cleintId = EntraClientIdTextBox.Text.Trim();
+
+            if (!Guid.TryParse(tenantId, out _) || !Guid.TryParse(cleintId, out _))
+            {
+                MessageBox.Show(
+                    LocalizationService.Get("InvalidEntraConnfiguration"),
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                return;
+            }
+
+            try
+            {
+                Mouse.OverrideCursor = Cursors.Wait;
+                EntraConfiguration configuration =
+                    new()
+                    {
+                        IsEnabled = true,
+                        TenantId = tenantId,
+                        ClientId = cleintId
+                    };
+
+                IntPtr windowHandle = new WindowInteropHelper(this).Handle;
+
+                EntraGraphService entraService = new(configuration, windowHandle);
+
+                EntraUserProfile profile = await entraService.TestConnectionAsync();
+
+                EntraConnectionStatusText.Text =
+                    $"{LocalizationService.Get("ConnectedAs")}: " +
+                    $"{profile.DisplayName} " +
+                    $"({profile.UserPrincipalName})";
+                 
+            } catch (Exception ex)
+            {
+                EntraConnectionStatusText.Text = LocalizationService.Get("EntraConnectionFaild");
+
+                MessageBox.Show(
+                    $"{LocalizationService.Get("ConnectedAs")}: " +
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            } finally
+            {
+                Mouse.OverrideCursor = null;
+            }
+        }
+
+        private async void SyncEntraGroupsButton_Click(object sneder, RoutedEventArgs e)
+        {
+            try
+            {
+                using CentralCalendarDbContext database = new();
+
+                EntraConfiguration? configuration =
+                    await database.entraConfigurations
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync();
+
+                if (configuration == null || !configuration.IsEnabled)
+                {
+                    MessageBox.Show(
+                        LocalizationService.Get("EntraNotEnabled"),
+                        LocalizationService.Get("AppName"),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+                Mouse.OverrideCursor = Cursors.Wait;
+                IntPtr windowHandle = new WindowInteropHelper(this).Handle;
+                EntraGraphService entraService = new(configuration, windowHandle);
+                int GroupCount = await entraService.SyncGroupsAsync();
+
+                MessageBox.Show(
+                    $"{LocalizationService.Get("GroupSyncComplete")} " +
+                    $"{GroupCount}",
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{LocalizationService.Get("GroupSyncFailed")}\n\n" +
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }finally
+            {
+                Mouse.OverrideCursor = null;
+            }
         }
 
         private void AdminBackupButton_Click(

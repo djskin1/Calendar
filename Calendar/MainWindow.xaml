@@ -3378,6 +3378,114 @@
             </Grid>
         </Grid>
 
+        <!-- Enta ID -->
+        <Grid x:Name="AdminEntraIdPage"
+              Grid.Column="1"
+              Visibility="Collapsed"
+              Background="{DynamicResource AppBackgroundBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Width="42"
+                            Height="42" 
+                            Margin="0,0,15,0"
+                            Click="AdminEntraIdBackButton_Click">
+                        <TextBlock Text="&#xE72B;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18"/>
+                    </Button>
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource EntraId}"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+                        <TextBlock Text="{DynamicResource EntraIdDescription}"
+                                   FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Row="1"
+                          VerticalScrollBarVisibility="Auto">
+                <StackPanel Width="700"
+                            HorizontalAlignment="Left"
+                            Margin="25">
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="20">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource EntraConfiguration}"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"
+                                       Margin="0,0,0,20"/>
+                            <CheckBox x:Name="EntraEnabledCheckBox"
+                                      Content="{DynamicResource EnableEntraId}"
+                                      Margin="0,0,0,20"/>
+                            <TextBlock Text="{DynamicResource TenantId}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBox x:Name="EntraTenantIdTextBox"
+                                     Height="26"
+                                     Margin="0,5,0,20"
+                                     VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource ClientId}"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBox x:Name="EntraClientIdTextBox"
+                                     Height="36"
+                                     Margin="0,5,0,20"
+                                     VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource EntraNoClientSecret}"
+                                       TextWrapping="Wrap"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       Margin="0,0,0,20"/>
+                            <TextBlock x:Name="EntraConnectionStatusText"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"
+                                       Margin="0,0,0,20"/>
+                            <WrapPanel>
+                                <Button Content="{DynamicResource Save}"
+                                        Width="120"
+                                        Height="40"
+                                        Margin="0,0,10,0"
+                                        Click="SaveEntraConfigurationButton_Click"/>
+                                <Button Content="{DynamicResource TestConnection}"
+                                        Width="150"
+                                        Height="40"
+                                        Margin="0,0,10,0"
+                                        Click="TestEntraConnectionButton_Click"/>
+                                <Button Content="{DynamicResource SyncGroups}"
+                                        Width="140"
+                                        Height="40"
+                                        Click="SyncEntraGroupsButton_Click"/>
+                            </WrapPanel>
+                            <TextBlock x:Name="EntraLastGroupSyncText"
+                                       Margin="0,20,0,0"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+            
+        </Grid>
+        
         <!-- next -->
 
     </Grid>
