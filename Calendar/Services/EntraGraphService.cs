@@ -50,7 +50,7 @@ namespace Calendar.Services
         public async Task<EntraUserProfile>
             TestConnectionAsync()
         {
-            AuthenticationResult authentication =
+            string accessToken =
                 await GetAuthenticationAsync();
 
 
@@ -61,7 +61,7 @@ namespace Calendar.Services
 
             return await GetAsync<EntraUserProfile>(
                 url,
-                authentication.AccessToken);
+                accessToken);
         }
 
 
@@ -72,13 +72,13 @@ namespace Calendar.Services
         public async Task<int>
             SyncGroupsAsync()
         {
-            AuthenticationResult authentication =
+           string accessToken =
                 await GetAuthenticationAsync();
 
 
             List<EntraGraphGroup> entraGroups =
                 await LoadAllGroupsAsync(
-                    authentication.AccessToken);
+                    accessToken);
 
 
             DateTime syncTime =
@@ -291,16 +291,10 @@ namespace Calendar.Services
         // AUTHENTICATION
         // =================================================
 
-        private async Task<AuthenticationResult>
+        private async Task<string>
             GetAuthenticationAsync()
         {
-            EntraAuthenticationService authenticationService =
-                new(
-                    _configuration);
-
-
-            return await authenticationService
-                .AcquireTokenAsync(
+            return await EntraAuthenticationService.GetGraphAccessTokenAsync(
                     _parentWindowHandle);
         }
 

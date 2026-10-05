@@ -455,5 +455,31 @@
     <sys:String x:Key="CompanyEventTitleRequired">कंपनी कार्यक्रम के लिए शीर्षक दर्ज करें।</sys:String>
     <sys:String x:Key="CompanyEventDateRequired">कंपनी कार्यक्रम के लिए तारीख़ चुनें।</sys:String>
     <sys:String x:Key="CompanyEventSaveError">कंपनी कार्यक्रम सहेजा नहीं जा सका।</sys:String>
-    
+
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">Microsoft Entra ID एकीकरण कॉन्फ़िगर करें।</sys:String>
+    <sys:String x:Key="EntraConfiguration">Entra ID कॉन्फ़िगरेशन</sys:String>
+    <sys:String x:Key="EnableEntraId">Microsoft Entra ID एकीकरण सक्षम करें</sys:String>
+    <sys:String x:Key="TenantId">डायरेक्टरी (टेनेंट) ID</sys:String>
+    <sys:String x:Key="ClientId">एप्लिकेशन (क्लाइंट) ID</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendar प्रत्यायोजित Windows प्रमाणीकरण का उपयोग करता है। एप्लिकेशन में कोई क्लाइंट सीक्रेट संग्रहीत नहीं किया जाता।</sys:String>
+    <sys:String x:Key="TestConnection">कनेक्शन जाँचें</sys:String>
+    <sys:String x:Key="SyncGroups">समूह सिंक्रनाइज़ करें</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">टेनेंट ID आवश्यक है।</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">क्लाइंट ID आवश्यक है।</sys:String>
+    <sys:String x:Key="InvalidTenantId">मान्य टेनेंट ID दर्ज करें।</sys:String>
+    <sys:String x:Key="InvalidClientId">मान्य क्लाइंट ID दर्ज करें।</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">मान्य टेनेंट ID और क्लाइंट ID दर्ज करें।</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">Entra ID कॉन्फ़िगरेशन सहेजा गया।</sys:String>
+    <sys:String x:Key="ConnectedAs">इस रूप में कनेक्टेड</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">Microsoft Entra ID से कनेक्ट नहीं किया जा सका।</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graph ने अमान्य प्रतिक्रिया लौटाई।</sys:String>
+    <sys:String x:Key="EntraNotEnabled">Microsoft Entra ID एकीकरण सक्षम नहीं है।</sys:String>
+    <sys:String x:Key="GroupSyncComplete">सिंक्रनाइज़ किए गए समूह:</sys:String>
+    <sys:String x:Key="GroupSyncFailed">Entra ID समूहों को सिंक्रनाइज़ नहीं किया जा सका।</sys:String>
+    <sys:String x:Key="LastGroupSync">अंतिम समूह सिंक्रनाइज़ेशन</sys:String>
+    <sys:String x:Key="NeverSynchronized">कभी सिंक्रनाइज़ नहीं किया गया</sys:String>
+
 </ResourceDictionary>

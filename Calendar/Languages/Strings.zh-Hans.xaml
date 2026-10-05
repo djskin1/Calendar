@@ -457,4 +457,30 @@
     <sys:String x:Key="CompanyEventDateRequired">请选择公司活动的日期。</sys:String>
     <sys:String x:Key="CompanyEventSaveError">无法保存公司活动。</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">配置 Microsoft Entra ID 集成。</sys:String>
+    <sys:String x:Key="EntraConfiguration">Entra ID 配置</sys:String>
+    <sys:String x:Key="EnableEntraId">启用 Microsoft Entra ID 集成</sys:String>
+    <sys:String x:Key="TenantId">目录（租户）ID</sys:String>
+    <sys:String x:Key="ClientId">应用程序（客户端）ID</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendar 使用委托的 Windows 身份验证。应用程序中不会存储客户端密码。</sys:String>
+    <sys:String x:Key="TestConnection">测试连接</sys:String>
+    <sys:String x:Key="SyncGroups">同步组</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">租户 ID 为必填项。</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">客户端 ID 为必填项。</sys:String>
+    <sys:String x:Key="InvalidTenantId">请输入有效的租户 ID。</sys:String>
+    <sys:String x:Key="InvalidClientId">请输入有效的客户端 ID。</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">请输入有效的租户 ID 和客户端 ID。</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">Entra ID 配置已保存。</sys:String>
+    <sys:String x:Key="ConnectedAs">连接身份</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">无法连接到 Microsoft Entra ID。</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graph 返回了无效响应。</sys:String>
+    <sys:String x:Key="EntraNotEnabled">未启用 Microsoft Entra ID 集成。</sys:String>
+    <sys:String x:Key="GroupSyncComplete">已同步的组：</sys:String>
+    <sys:String x:Key="GroupSyncFailed">无法同步 Entra ID 组。</sys:String>
+    <sys:String x:Key="LastGroupSync">上次组同步</sys:String>
+    <sys:String x:Key="NeverSynchronized">从未同步</sys:String>
+
 </ResourceDictionary>

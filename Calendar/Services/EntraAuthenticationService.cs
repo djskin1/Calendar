@@ -139,6 +139,24 @@ namespace Calendar.Services
             return result.AccessToken;
         }
 
+        public static async Task<string> GetGraphAccessTokenAsync()
+        {
+            IntPtr parentWindowHandle =
+                IntPtr.Zero;
+
+            if (System.Windows.Application.Current?.MainWindow
+                is System.Windows.Window mainWindow)
+            {
+                parentWindowHandle =
+                    new System.Windows.Interop.WindowInteropHelper(
+                        mainWindow)
+                    .Handle;
+            }
+
+            return await GetGraphAccessTokenAsync(
+                parentWindowHandle);
+        }
+
 
         // =====================================================
         // APPLICATION CONFIGURATION

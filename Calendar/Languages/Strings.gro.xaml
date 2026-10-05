@@ -462,4 +462,30 @@
     <sys:String x:Key="CompanyEventDateRequired">Kies n datum veur t bedriefsevenement.</sys:String>
     <sys:String x:Key="CompanyEventSaveError">Kin t bedriefsevenement nait opsloan.</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">Stel integratie mit Microsoft Entra ID in.</sys:String>
+    <sys:String x:Key="EntraConfiguration">Entra ID-instellens</sys:String>
+    <sys:String x:Key="EnableEntraId">Integratie mit Microsoft Entra ID inschakelen</sys:String>
+    <sys:String x:Key="TenantId">Directory-id (tenant-id)</sys:String>
+    <sys:String x:Key="ClientId">Toepassings-id (client-id)</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendar bruukt delegeerde Windows-verificatie. Der wordt gain clientgehaim in toepassing opsloagen.</sys:String>
+    <sys:String x:Key="TestConnection">Verbinden testen</sys:String>
+    <sys:String x:Key="SyncGroups">Gruppen synchroniseren</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">N tenant-id is verplicht.</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">N client-id is verplicht.</sys:String>
+    <sys:String x:Key="InvalidTenantId">Veur n geldeg tenant-id in.</sys:String>
+    <sys:String x:Key="InvalidClientId">Veur n geldeg client-id in.</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">Veur n geldeg tenant-id en client-id in.</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">Entra ID-instellens binnen opsloagen.</sys:String>
+    <sys:String x:Key="ConnectedAs">Verbonden as</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">Kin gain verbinden moaken mit Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graph het n ongeldeg antwoord weeromgeven.</sys:String>
+    <sys:String x:Key="EntraNotEnabled">Integratie mit Microsoft Entra ID is nait inschakeld.</sys:String>
+    <sys:String x:Key="GroupSyncComplete">Synchroniseerde gruppen:</sys:String>
+    <sys:String x:Key="GroupSyncFailed">Kin Entra ID-gruppen nait synchroniseren.</sys:String>
+    <sys:String x:Key="LastGroupSync">Leste groepssynchronisatie</sys:String>
+    <sys:String x:Key="NeverSynchronized">Nooit synchroniseerd</sys:String>
+
 </ResourceDictionary>

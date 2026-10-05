@@ -457,4 +457,30 @@
     <sys:String x:Key="CompanyEventDateRequired">Diem eventus societatis elige.</sys:String>
     <sys:String x:Key="CompanyEventSaveError">Eventus societatis servari non potest.</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">Integrationem Microsoft Entra ID configura.</sys:String>
+    <sys:String x:Key="EntraConfiguration">Configuratio Entra ID</sys:String>
+    <sys:String x:Key="EnableEntraId">Integrationem Microsoft Entra ID activare</sys:String>
+    <sys:String x:Key="TenantId">ID directorii (tenantis)</sys:String>
+    <sys:String x:Key="ClientId">ID applicationis (clientis)</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendar authentificatione Windows delegata utitur. Nullum secretum clientis in applicatione servatur.</sys:String>
+    <sys:String x:Key="TestConnection">Conexum probare</sys:String>
+    <sys:String x:Key="SyncGroups">Greges congruere</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">ID tenantis requiritur.</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">ID clientis requiritur.</sys:String>
+    <sys:String x:Key="InvalidTenantId">ID tenantis validum insere.</sys:String>
+    <sys:String x:Key="InvalidClientId">ID clientis validum insere.</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">ID tenantis et ID clientis valida insere.</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">Configuratio Entra ID servata est.</sys:String>
+    <sys:String x:Key="ConnectedAs">Conexus ut</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">Cum Microsoft Entra ID conecti non potest.</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graph responsum invalidum reddidit.</sys:String>
+    <sys:String x:Key="EntraNotEnabled">Integratio Microsoft Entra ID activata non est.</sys:String>
+    <sys:String x:Key="GroupSyncComplete">Greges congruentes:</sys:String>
+    <sys:String x:Key="GroupSyncFailed">Greges Entra ID congrui non possunt.</sys:String>
+    <sys:String x:Key="LastGroupSync">Novissima congruentia gregum</sys:String>
+    <sys:String x:Key="NeverSynchronized">Numquam congruit</sys:String>
+
 </ResourceDictionary>

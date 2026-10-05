@@ -457,4 +457,30 @@
     <sys:String x:Key="CompanyEventDateRequired">社内イベントの日付を選択してください。</sys:String>
     <sys:String x:Key="CompanyEventSaveError">社内イベントを保存できません。</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">Microsoft Entra ID連携を構成します。</sys:String>
+    <sys:String x:Key="EntraConfiguration">Entra IDの構成</sys:String>
+    <sys:String x:Key="EnableEntraId">Microsoft Entra ID連携を有効にする</sys:String>
+    <sys:String x:Key="TenantId">ディレクトリ（テナント）ID</sys:String>
+    <sys:String x:Key="ClientId">アプリケーション（クライアント）ID</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendarは委任されたWindows認証を使用します。クライアントシークレットはアプリケーションに保存されません。</sys:String>
+    <sys:String x:Key="TestConnection">接続をテスト</sys:String>
+    <sys:String x:Key="SyncGroups">グループを同期</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">テナントIDは必須です。</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">クライアントIDは必須です。</sys:String>
+    <sys:String x:Key="InvalidTenantId">有効なテナントIDを入力してください。</sys:String>
+    <sys:String x:Key="InvalidClientId">有効なクライアントIDを入力してください。</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">有効なテナントIDとクライアントIDを入力してください。</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">Entra IDの構成を保存しました。</sys:String>
+    <sys:String x:Key="ConnectedAs">接続ユーザー</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">Microsoft Entra IDに接続できません。</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graphから無効な応答が返されました。</sys:String>
+    <sys:String x:Key="EntraNotEnabled">Microsoft Entra ID連携が有効になっていません。</sys:String>
+    <sys:String x:Key="GroupSyncComplete">同期されたグループ：</sys:String>
+    <sys:String x:Key="GroupSyncFailed">Entra IDグループを同期できません。</sys:String>
+    <sys:String x:Key="LastGroupSync">最終グループ同期</sys:String>
+    <sys:String x:Key="NeverSynchronized">同期履歴なし</sys:String>
+
 </ResourceDictionary>

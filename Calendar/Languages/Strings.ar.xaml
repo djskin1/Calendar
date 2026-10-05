@@ -456,4 +456,32 @@
     <sys:String x:Key="CompanyEventDateRequired">حدد تاريخًا لفعالية الشركة.</sys:String>
     <sys:String x:Key="CompanyEventSaveError">تعذر حفظ فعالية الشركة.</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">تكوين التكامل مع Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraConfiguration">تكوين Entra ID</sys:String>
+    <sys:String x:Key="EnableEntraId">تمكين التكامل مع Microsoft Entra ID</sys:String>
+    <sys:String x:Key="TenantId">معرّف الدليل (المستأجر)</sys:String>
+    <sys:String x:Key="ClientId">معرّف التطبيق (العميل)</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">يستخدم Central Calendar مصادقة Windows المفوضة. لا يتم تخزين أي سر للعميل في التطبيق.</sys:String>
+    <sys:String x:Key="TestConnection">اختبار الاتصال</sys:String>
+    <sys:String x:Key="SyncGroups">مزامنة المجموعات</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">معرّف المستأجر مطلوب.</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">معرّف العميل مطلوب.</sys:String>
+    <sys:String x:Key="InvalidTenantId">أدخل معرّف مستأجر صالحًا.</sys:String>
+    <sys:String x:Key="InvalidClientId">أدخل معرّف عميل صالحًا.</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">أدخل معرّف مستأجر ومعرّف عميل صالحين.</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">تم حفظ تكوين Entra ID.</sys:String>
+    <sys:String x:Key="ConnectedAs">متصل باسم</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">تعذر الاتصال بـ Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">أرجع Microsoft Graph استجابة غير صالحة.</sys:String>
+    <sys:String x:Key="EntraNotEnabled">التكامل مع Microsoft Entra ID غير ممكّن.</sys:String>
+    <sys:String x:Key="GroupSyncComplete">المجموعات المتزامنة:</sys:String>
+    <sys:String x:Key="GroupSyncFailed">تعذرت مزامنة مجموعات Entra ID.</sys:String>
+    <sys:String x:Key="LastGroupSync">آخر مزامنة للمجموعات</sys:String>
+    <sys:String x:Key="NeverSynchronized">لم تتم المزامنة مطلقًا</sys:String>
+
+
+
 </ResourceDictionary>

@@ -461,4 +461,31 @@
     <sys:String x:Key="CompanyEventDateRequired">Seleziona una data per l'evento aziendale.</sys:String>
     <sys:String x:Key="CompanyEventSaveError">Impossibile salvare l'evento aziendale.</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">Configura l'integrazione con Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraConfiguration">Configurazione di Entra ID</sys:String>
+    <sys:String x:Key="EnableEntraId">Abilita l'integrazione con Microsoft Entra ID</sys:String>
+    <sys:String x:Key="TenantId">ID directory (tenant)</sys:String>
+    <sys:String x:Key="ClientId">ID applicazione (client)</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendar utilizza l'autenticazione Windows delegata. Nell'applicazione non viene archiviato alcun segreto client.</sys:String>
+    <sys:String x:Key="TestConnection">Verifica connessione</sys:String>
+    <sys:String x:Key="SyncGroups">Sincronizza gruppi</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">È richiesto un ID tenant.</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">È richiesto un ID client.</sys:String>
+    <sys:String x:Key="InvalidTenantId">Inserisci un ID tenant valido.</sys:String>
+    <sys:String x:Key="InvalidClientId">Inserisci un ID client valido.</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">Inserisci un ID tenant e un ID client validi.</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">La configurazione di Entra ID è stata salvata.</sys:String>
+    <sys:String x:Key="ConnectedAs">Connesso come</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">Impossibile connettersi a Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graph ha restituito una risposta non valida.</sys:String>
+    <sys:String x:Key="EntraNotEnabled">L'integrazione con Microsoft Entra ID non è abilitata.</sys:String>
+    <sys:String x:Key="GroupSyncComplete">Gruppi sincronizzati:</sys:String>
+    <sys:String x:Key="GroupSyncFailed">Impossibile sincronizzare i gruppi di Entra ID.</sys:String>
+    <sys:String x:Key="LastGroupSync">Ultima sincronizzazione dei gruppi</sys:String>
+    <sys:String x:Key="NeverSynchronized">Mai sincronizzato</sys:String>
+
+
 </ResourceDictionary>

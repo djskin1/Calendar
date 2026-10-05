@@ -460,4 +460,31 @@
     <sys:String x:Key="CompanyEventDateRequired">Seleccione una fecha para el evento de empresa.</sys:String>
     <sys:String x:Key="CompanyEventSaveError">No se puede guardar el evento de empresa.</sys:String>
 
+    <!-- Microsoft Entra ID -->
+
+    <sys:String x:Key="EntraId">Microsoft Entra ID</sys:String>
+    <sys:String x:Key="EntraIdDescription">Configure la integración con Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraConfiguration">Configuración de Entra ID</sys:String>
+    <sys:String x:Key="EnableEntraId">Habilitar la integración con Microsoft Entra ID</sys:String>
+    <sys:String x:Key="TenantId">Id. de directorio (inquilino)</sys:String>
+    <sys:String x:Key="ClientId">Id. de aplicación (cliente)</sys:String>
+    <sys:String x:Key="EntraNoClientSecret">Central Calendar utiliza la autenticación delegada de Windows. No se almacena ningún secreto de cliente en la aplicación.</sys:String>
+    <sys:String x:Key="TestConnection">Probar conexión</sys:String>
+    <sys:String x:Key="SyncGroups">Sincronizar grupos</sys:String>
+    <sys:String x:Key="EntraTenantIdRequired">Se requiere un id. de inquilino.</sys:String>
+    <sys:String x:Key="EntraClientIdRequired">Se requiere un id. de cliente.</sys:String>
+    <sys:String x:Key="InvalidTenantId">Introduzca un id. de inquilino válido.</sys:String>
+    <sys:String x:Key="InvalidClientId">Introduzca un id. de cliente válido.</sys:String>
+    <sys:String x:Key="InvalidEntraConfiguration">Introduzca un id. de inquilino y un id. de cliente válidos.</sys:String>
+    <sys:String x:Key="EntraConfigurationSaved">La configuración de Entra ID se ha guardado.</sys:String>
+    <sys:String x:Key="ConnectedAs">Conectado como</sys:String>
+    <sys:String x:Key="EntraConnectionFailed">No se puede conectar con Microsoft Entra ID.</sys:String>
+    <sys:String x:Key="EntraInvalidGraphResponse">Microsoft Graph ha devuelto una respuesta no válida.</sys:String>
+    <sys:String x:Key="EntraNotEnabled">La integración con Microsoft Entra ID no está habilitada.</sys:String>
+    <sys:String x:Key="GroupSyncComplete">Grupos sincronizados:</sys:String>
+    <sys:String x:Key="GroupSyncFailed">No se pueden sincronizar los grupos de Entra ID.</sys:String>
+    <sys:String x:Key="LastGroupSync">Última sincronización de grupos</sys:String>
+    <sys:String x:Key="NeverSynchronized">Nunca sincronizado</sys:String>
+
+
 </ResourceDictionary>
