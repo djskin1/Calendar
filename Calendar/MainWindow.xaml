@@ -3486,7 +3486,138 @@
             
         </Grid>
         
-        <!-- next -->
+        <!-- Backup and Restore -->
+        <Grid x:Name="AdminBackupRestorePage"
+              Grid.Column="1"
+              Visibility="Collapsed"
+              Background="{DynamicResource AppBackgroundBrush}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Width="42"
+                            Height="42"
+                            Margin="0,0,15,0"
+                            Click="AdminBackupRestoreBackButton_Click">
+
+                        <TextBlock Text="&#xE72B;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="18"/>
+                    </Button>
+
+                    <StackPanel Grid.Column="1"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource BackupRestore}"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+                        <TextBlock Text="{DynamicResource BackupRestoreDescription}"
+                                   FontSize="12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <ScrollViewer Grid.Row="1"
+                          VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="25"
+                            MaxWidth="850"
+                            HorizontalAlignment="Left">
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="25"
+                            Margin="0,0,0,20">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource CreateBackup}"
+                                           FontSize="18"
+                                           FontWeight="SemiBold"
+                                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+                                <TextBlock Text="{DynamicResource CreateBackupDescription}"
+                                           FontSize="12"
+                                           Margin="0,7,20,0"
+                                           TextWrapping="Wrap"
+                                           Foreground="{DynamicResource SecondaryTextBrush}"/>
+                            </StackPanel>
+                            <Button Grid.Column="1"
+                                    Width="150"
+                                    Height="40"
+                                    Content="{DynamicResource CreateBackup}"
+                                    Click="CreateBackupButton_Click"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Padding="25">
+
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource RestoreBackup}"
+                                       FontSize="18"
+                                       FontWeight="SemiBold"
+                                       Foreground="{DynamicResource PrimaryTextBrush}"/>
+                            <TextBlock Text="{DynamicResource RestoreBackupDescription}"
+                                       FontSize="12"
+                                       Margin="0,7,20,0"
+                                       TextWrapping="Wrap"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"/>
+                            <Border Background="{DynamicResource AppBackgroundBrush}"
+                                    BorderBrush="{DynamicResource BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="6"
+                                    Padding="12"
+                                    Margin="0,0,0,15">
+                                <TextBlock x:Name="SelectedBackupFileText"
+                                           Text="{DynamicResource NoBackupSelected}"
+                                           TextWrapping="Wrap"
+                                           Foreground="{DynamicResource SecondaryTextBrush}"/>
+                            </Border>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Width="150"
+                                        Height="40"
+                                        Margin="0,0,10,0"
+                                        Content="{DynamicResource SelectBackup}"
+                                        Click="SelectBackupButton_Click"/>
+                                <Button x:Name="RestoreBackupButton"
+                                        Width="150"
+                                        Height="40"
+                                        IsEnabled="False"
+                                        Content="{DynamicResource RestoreBackup}"
+                                        Click="RestoreBackupButton_Click"/>
+                            </StackPanel>
+                            <TextBlock x:Name="BackupInformationText"
+                                       Margin="0,20,0,0"
+                                       TextWrapping="Wrap"
+                                       Foreground="{DynamicResource SecondaryTextBrush}"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+        
+        <!-- update -->
 
     </Grid>
 </Window>

@@ -483,4 +483,24 @@
     <sys:String x:Key="LastGroupSync">Ostatnia synchronizacja grup</sys:String>
     <sys:String x:Key="NeverSynchronized">Nigdy nie synchronizowano</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Kopia zapasowa i przywracanie</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Twórz i przywracaj pełne kopie zapasowe bazy danych Central Calendar.</sys:String>
+    <sys:String x:Key="CreateBackup">Utwórz kopię zapasową</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Utwórz pełną kopię zapasową użytkowników, danych kalendarza, ustawień, dni wolnych, wydarzeń, ról, grup i identyfikacji wizualnej.</sys:String>
+    <sys:String x:Key="RestoreBackup">Przywróć kopię zapasową</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Przywróć Central Calendar z wcześniejszej kopii zapasowej bazy danych. Bieżąca baza danych zostanie zastąpiona.</sys:String>
+    <sys:String x:Key="SelectBackup">Wybierz kopię zapasową</sys:String>
+    <sys:String x:Key="NoBackupSelected">Nie wybrano kopii zapasowej.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">Kopia zapasowa została pomyślnie utworzona i zweryfikowana.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">Nie można utworzyć kopii zapasowej bazy danych.</sys:String>
+    <sys:String x:Key="BackupReadFailed">Nie można odczytać wybranej kopii zapasowej.</sys:String>
+    <sys:String x:Key="Database">Baza danych</sys:String>
+    <sys:String x:Key="BackupDate">Data kopii zapasowej</sys:String>
+    <sys:String x:Key="BackupSize">Rozmiar kopii zapasowej</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Spowoduje to zastąpienie bieżącej bazy danych Central Calendar wybraną kopią zapasową. Wszystkie zmiany wprowadzone po utworzeniu tej kopii zostaną utracone. Kontynuować?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">Baza danych została pomyślnie przywrócona. Central Calendar zostanie teraz zamknięty. Uruchom aplikację ponownie, aby wczytać przywrócone dane.</sys:String>
+    <sys:String x:Key="RestoreFailed">Nie można przywrócić kopii zapasowej bazy danych.</sys:String>
+
 </ResourceDictionary>

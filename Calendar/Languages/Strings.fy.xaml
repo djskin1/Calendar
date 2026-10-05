@@ -495,4 +495,24 @@
     <sys:String x:Key="LastGroupSync">Lêste groepssyngronisaasje</sys:String>
     <sys:String x:Key="NeverSynchronized">Nea syngronisearre</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Reservekopy &amp; weromsette</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Meitsje en set folsleine reservekopyen fan de Central Calendar-databank werom.</sys:String>
+    <sys:String x:Key="CreateBackup">Reservekopy meitsje</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Meitsje in folsleine reservekopy fan brûkers, kalindergegevens, ynstellingen, feestdagen, eveneminten, rollen, groepen en hûsstyl.</sys:String>
+    <sys:String x:Key="RestoreBackup">Reservekopy weromsette</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Set Central Calendar werom út in eardere databankreservekopy. De hjoeddeiske databank wurdt ferfongen.</sys:String>
+    <sys:String x:Key="SelectBackup">Reservekopy selektearje</sys:String>
+    <sys:String x:Key="NoBackupSelected">Gjin reservekopy selektearre.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">De reservekopy is makke en mei súkses kontrolearre.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">Kin de databankreservekopy net meitsje.</sys:String>
+    <sys:String x:Key="BackupReadFailed">Kin de selektearre reservekopy net lêze.</sys:String>
+    <sys:String x:Key="Database">Databank</sys:String>
+    <sys:String x:Key="BackupDate">Datum fan reservekopy</sys:String>
+    <sys:String x:Key="BackupSize">Grutte fan reservekopy</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Dit ferfangt de hjoeddeiske Central Calendar-databank troch de selektearre reservekopy. Alle wizigingen dy't nei dy reservekopy makke binne, geane ferlern. Trochgean?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">De databank is mei súkses weromset. Central Calendar wurdt no ôfsletten. Start de applikaasje opnij om de weromsette gegevens te laden.</sys:String>
+    <sys:String x:Key="RestoreFailed">Kin de databankreservekopy net weromsette.</sys:String>
+
 </ResourceDictionary>

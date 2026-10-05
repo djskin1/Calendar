@@ -483,4 +483,24 @@
     <sys:String x:Key="LastGroupSync">上次群組同步</sys:String>
     <sys:String x:Key="NeverSynchronized">從未同步</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">備份與還原</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">建立及還原完整的 Central Calendar 資料庫備份。</sys:String>
+    <sys:String x:Key="CreateBackup">建立備份</sys:String>
+    <sys:String x:Key="CreateBackupDescription">建立包含使用者、行事曆資料、設定、假日、活動、角色、群組與品牌識別的完整備份。</sys:String>
+    <sys:String x:Key="RestoreBackup">還原備份</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">從先前的資料庫備份還原 Central Calendar。目前的資料庫將被取代。</sys:String>
+    <sys:String x:Key="SelectBackup">選擇備份</sys:String>
+    <sys:String x:Key="NoBackupSelected">尚未選擇備份。</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">備份已成功建立並通過驗證。</sys:String>
+    <sys:String x:Key="BackupCreateFailed">無法建立資料庫備份。</sys:String>
+    <sys:String x:Key="BackupReadFailed">無法讀取所選的備份。</sys:String>
+    <sys:String x:Key="Database">資料庫</sys:String>
+    <sys:String x:Key="BackupDate">備份日期</sys:String>
+    <sys:String x:Key="BackupSize">備份大小</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">這將使用所選備份取代目前的 Central Calendar 資料庫。該備份之後所做的所有變更都將遺失。是否繼續？</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">資料庫已成功還原。Central Calendar 現在將關閉。請重新啟動應用程式以載入還原的資料。</sys:String>
+    <sys:String x:Key="RestoreFailed">無法還原資料庫備份。</sys:String>
+
 </ResourceDictionary>

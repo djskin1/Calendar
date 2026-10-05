@@ -483,4 +483,24 @@
     <sys:String x:Key="LastGroupSync">最終グループ同期</sys:String>
     <sys:String x:Key="NeverSynchronized">同期履歴なし</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">バックアップと復元</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Central Calendarデータベース全体のバックアップを作成および復元します。</sys:String>
+    <sys:String x:Key="CreateBackup">バックアップを作成</sys:String>
+    <sys:String x:Key="CreateBackupDescription">ユーザー、カレンダーデータ、設定、祝日、イベント、ロール、グループ、ブランド設定を含む完全なバックアップを作成します。</sys:String>
+    <sys:String x:Key="RestoreBackup">バックアップを復元</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">以前のデータベースバックアップからCentral Calendarを復元します。現在のデータベースは置き換えられます。</sys:String>
+    <sys:String x:Key="SelectBackup">バックアップを選択</sys:String>
+    <sys:String x:Key="NoBackupSelected">バックアップが選択されていません。</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">バックアップは正常に作成され、検証されました。</sys:String>
+    <sys:String x:Key="BackupCreateFailed">データベースのバックアップを作成できません。</sys:String>
+    <sys:String x:Key="BackupReadFailed">選択したバックアップを読み取れません。</sys:String>
+    <sys:String x:Key="Database">データベース</sys:String>
+    <sys:String x:Key="BackupDate">バックアップ日時</sys:String>
+    <sys:String x:Key="BackupSize">バックアップサイズ</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">現在のCentral Calendarデータベースは、選択したバックアップで置き換えられます。そのバックアップ後に行われたすべての変更は失われます。続行しますか？</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">データベースは正常に復元されました。Central Calendarを終了します。復元したデータを読み込むには、アプリケーションを再度起動してください。</sys:String>
+    <sys:String x:Key="RestoreFailed">データベースのバックアップを復元できません。</sys:String>
+
 </ResourceDictionary>

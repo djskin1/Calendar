@@ -37,6 +37,7 @@ namespace CompanyCalendar
         private string? _brandingLogoFileName;
         private string? _brandingLogoContentType;
         private string? _currentUserName;
+        private string? _selectedBackupFile;
         private DateTime _startDate;
         private bool _updatingDatePicker;
 
@@ -2193,15 +2194,284 @@ namespace CompanyCalendar
             }
         }
 
+        // backup
+
         private void AdminBackupButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminBackup",
-                "AdminBackupDescription",
-                "\uE74E");
+            AdminPage.Visibility = Visibility.Collapsed;
+            AdminBackupRestorePage.Visibility = Visibility.Visible;
         }
+
+        private void AdminBackupRestoreBackButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            AdminBackupRestorePage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async void CreateBackupButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dialog =
+                new()
+                {
+                    Title =
+                        LocalizationService.Get(
+                            "CreateBackup"),
+
+                    Filter =
+                        "SQL Server backup (*.bak)|*.bak",
+
+                    DefaultExt =
+                        ".bak",
+
+                    AddExtension =
+                        true,
+
+                    FileName =
+                        $"CentralCalendar_" +
+                        $"{DateTime.Now:yyyyMMdd_HHmmss}.bak"
+                };
+
+
+            bool? result =
+                dialog.ShowDialog(this);
+
+
+            if (result != true)
+            {
+                return;
+            }
+
+
+            try
+            {
+                Mouse.OverrideCursor =
+                    Cursors.Wait;
+
+
+                await DatabaseBackupRestoreService
+                    .CreateBackupAsync(
+                        dialog.FileName);
+
+
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "BackupCreatedSuccessfully"),
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{LocalizationService.Get("BackupCreateFailed")}" +
+                    $"{Environment.NewLine}{Environment.NewLine}" +
+                    $"{ex.Message}",
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            finally
+            {
+                Mouse.OverrideCursor =
+                    null;
+            }
+        }
+
+        private async void SelectBackupButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialog =
+                new()
+                {
+                    Title =
+                        LocalizationService.Get(
+                            "SelectBackup"),
+
+                    Filter =
+                        "SQL Server backup (*.bak)|*.bak",
+
+                    DefaultExt =
+                        ".bak",
+
+                    CheckFileExists =
+                        true,
+
+                    Multiselect =
+                        false
+                };
+
+
+            bool? result =
+                dialog.ShowDialog(this);
+
+
+            if (result != true)
+            {
+                return;
+            }
+
+
+            try
+            {
+                Mouse.OverrideCursor =
+                    Cursors.Wait;
+
+
+                DatabaseBackupInfo backupInfo =
+                    await DatabaseBackupRestoreService
+                        .GetBackupInfoAsync(
+                            dialog.FileName);
+
+
+                _selectedBackupFile =
+                    dialog.FileName;
+
+
+                SelectedBackupFileText.Text =
+                    dialog.FileName;
+
+
+                string backupDate =
+                    backupInfo.BackupFinishDate
+                        ?.ToLocalTime()
+                        .ToString(
+                            "g",
+                            CultureInfo.CurrentCulture)
+                    ??
+                    "-";
+
+
+                BackupInformationText.Text =
+                    $"{LocalizationService.Get("Database")}: " +
+                    $"{backupInfo.DatabaseName}" +
+                    Environment.NewLine +
+                    $"{LocalizationService.Get("BackupDate")}: " +
+                    $"{backupDate}" +
+                    Environment.NewLine +
+                    $"{LocalizationService.Get("BackupSize")}: " +
+                    $"{backupInfo.CompressedSizeMegabytes:N2} MB";
+
+
+                RestoreBackupButton.IsEnabled =
+                    backupInfo.DatabaseName.Equals(
+                        "CentralCalendar",
+                        StringComparison.OrdinalIgnoreCase);
+            }
+            catch (Exception ex)
+            {
+                _selectedBackupFile =
+                    null;
+
+
+                RestoreBackupButton.IsEnabled =
+                    false;
+
+
+                BackupInformationText.Text =
+                    "";
+
+
+                MessageBox.Show(
+                    $"{LocalizationService.Get("BackupReadFailed")}" +
+                    $"{Environment.NewLine}{Environment.NewLine}" +
+                    $"{ex.Message}",
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            finally
+            {
+                Mouse.OverrideCursor =
+                    null;
+            }
+        }
+
+        private async void RestoreBackupButton_Click(
+    object sender,
+    RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(
+                _selectedBackupFile))
+            {
+                return;
+            }
+
+
+            MessageBoxResult confirmation =
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "RestoreBackupConfirmation"),
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning,
+                    MessageBoxResult.No);
+
+
+            if (confirmation !=
+                MessageBoxResult.Yes)
+            {
+                return;
+            }
+
+
+            try
+            {
+                Mouse.OverrideCursor =
+                    Cursors.Wait;
+
+
+                await DatabaseBackupRestoreService
+                    .RestoreBackupAsync(
+                        _selectedBackupFile);
+
+
+                Mouse.OverrideCursor =
+                    null;
+
+
+                MessageBox.Show(
+                    LocalizationService.Get(
+                        "RestoreCompletedRestartRequired"),
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+
+
+                // Na restore niet verder werken met oude
+                // in-memory/database state.
+                Application.Current.Shutdown();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"{LocalizationService.Get("RestoreFailed")}" +
+                    $"{Environment.NewLine}{Environment.NewLine}" +
+                    $"{ex.Message}",
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            finally
+            {
+                Mouse.OverrideCursor =
+                    null;
+            }
+        }
+
+        //update
 
         private void AdminUpdatesButton_Click(
     object sender,

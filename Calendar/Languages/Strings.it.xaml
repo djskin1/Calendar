@@ -487,5 +487,25 @@
     <sys:String x:Key="LastGroupSync">Ultima sincronizzazione dei gruppi</sys:String>
     <sys:String x:Key="NeverSynchronized">Mai sincronizzato</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Backup e ripristino</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Crea e ripristina backup completi del database di Central Calendar.</sys:String>
+    <sys:String x:Key="CreateBackup">Crea backup</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Crea un backup completo di utenti, dati del calendario, impostazioni, festività, eventi, ruoli, gruppi e identità aziendale.</sys:String>
+    <sys:String x:Key="RestoreBackup">Ripristina backup</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Ripristina Central Calendar da un precedente backup del database. Il database corrente verrà sostituito.</sys:String>
+    <sys:String x:Key="SelectBackup">Seleziona backup</sys:String>
+    <sys:String x:Key="NoBackupSelected">Nessun backup selezionato.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">Il backup è stato creato e verificato correttamente.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">Impossibile creare il backup del database.</sys:String>
+    <sys:String x:Key="BackupReadFailed">Impossibile leggere il backup selezionato.</sys:String>
+    <sys:String x:Key="Database">Database</sys:String>
+    <sys:String x:Key="BackupDate">Data del backup</sys:String>
+    <sys:String x:Key="BackupSize">Dimensione del backup</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Il database corrente di Central Calendar verrà sostituito con il backup selezionato. Tutte le modifiche effettuate dopo tale backup andranno perse. Continuare?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">Il database è stato ripristinato correttamente. Central Calendar verrà ora chiuso. Avvia nuovamente l'applicazione per caricare i dati ripristinati.</sys:String>
+    <sys:String x:Key="RestoreFailed">Impossibile ripristinare il backup del database.</sys:String>
+
 
 </ResourceDictionary>

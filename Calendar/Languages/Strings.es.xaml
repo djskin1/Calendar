@@ -486,5 +486,24 @@
     <sys:String x:Key="LastGroupSync">Última sincronización de grupos</sys:String>
     <sys:String x:Key="NeverSynchronized">Nunca sincronizado</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Copia de seguridad y restauración</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Cree y restaure copias de seguridad completas de la base de datos de Central Calendar.</sys:String>
+    <sys:String x:Key="CreateBackup">Crear copia de seguridad</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Cree una copia de seguridad completa de usuarios, datos del calendario, configuración, días festivos, eventos, roles, grupos e identidad corporativa.</sys:String>
+    <sys:String x:Key="RestoreBackup">Restaurar copia de seguridad</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Restaure Central Calendar desde una copia de seguridad anterior de la base de datos. Se sustituirá la base de datos actual.</sys:String>
+    <sys:String x:Key="SelectBackup">Seleccionar copia de seguridad</sys:String>
+    <sys:String x:Key="NoBackupSelected">No se ha seleccionado ninguna copia de seguridad.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">La copia de seguridad se ha creado y verificado correctamente.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">No se puede crear la copia de seguridad de la base de datos.</sys:String>
+    <sys:String x:Key="BackupReadFailed">No se puede leer la copia de seguridad seleccionada.</sys:String>
+    <sys:String x:Key="Database">Base de datos</sys:String>
+    <sys:String x:Key="BackupDate">Fecha de la copia de seguridad</sys:String>
+    <sys:String x:Key="BackupSize">Tamaño de la copia de seguridad</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Esto sustituirá la base de datos actual de Central Calendar por la copia de seguridad seleccionada. Se perderán todos los cambios realizados después de esa copia. ¿Desea continuar?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">La base de datos se ha restaurado correctamente. Central Calendar se cerrará ahora. Inicie de nuevo la aplicación para cargar los datos restaurados.</sys:String>
+    <sys:String x:Key="RestoreFailed">No se puede restaurar la copia de seguridad de la base de datos.</sys:String>
 
 </ResourceDictionary>

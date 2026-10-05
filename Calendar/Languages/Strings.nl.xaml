@@ -897,4 +897,24 @@
     <sys:String x:Key="LastGroupSync">Laatste groepssynchronisatie</sys:String>
     <sys:String x:Key="NeverSynchronized">Nooit gesynchroniseerd</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Back-up &amp; herstel</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Maak en herstel volledige back-ups van de Central Calendar-database.</sys:String>
+    <sys:String x:Key="CreateBackup">Back-up maken</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Maak een volledige back-up van gebruikers, kalendergegevens, instellingen, feestdagen, evenementen, rollen, groepen en huisstijl.</sys:String>
+    <sys:String x:Key="RestoreBackup">Back-up herstellen</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Herstel Central Calendar vanuit een eerdere databaseback-up. De huidige database wordt vervangen.</sys:String>
+    <sys:String x:Key="SelectBackup">Back-up selecteren</sys:String>
+    <sys:String x:Key="NoBackupSelected">Geen back-up geselecteerd.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">De back-up is gemaakt en met succes gecontroleerd.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">Kan de databaseback-up niet maken.</sys:String>
+    <sys:String x:Key="BackupReadFailed">Kan de geselecteerde back-up niet lezen.</sys:String>
+    <sys:String x:Key="Database">Database</sys:String>
+    <sys:String x:Key="BackupDate">Back-updatum</sys:String>
+    <sys:String x:Key="BackupSize">Back-upgrootte</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Hiermee wordt de huidige Central Calendar-database vervangen door de geselecteerde back-up. Alle wijzigingen die na deze back-up zijn aangebracht, gaan verloren. Doorgaan?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">De database is met succes hersteld. Central Calendar wordt nu afgesloten. Start de applicatie opnieuw om de herstelde gegevens te laden.</sys:String>
+    <sys:String x:Key="RestoreFailed">Kan de databaseback-up niet herstellen.</sys:String>
+
 </ResourceDictionary>

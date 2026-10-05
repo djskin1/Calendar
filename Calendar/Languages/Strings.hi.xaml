@@ -482,4 +482,24 @@
     <sys:String x:Key="LastGroupSync">अंतिम समूह सिंक्रनाइज़ेशन</sys:String>
     <sys:String x:Key="NeverSynchronized">कभी सिंक्रनाइज़ नहीं किया गया</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">बैकअप और पुनर्स्थापना</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Central Calendar डेटाबेस के पूर्ण बैकअप बनाएँ और पुनर्स्थापित करें।</sys:String>
+    <sys:String x:Key="CreateBackup">बैकअप बनाएँ</sys:String>
+    <sys:String x:Key="CreateBackupDescription">उपयोगकर्ताओं, कैलेंडर डेटा, सेटिंग्स, सार्वजनिक अवकाश, कार्यक्रमों, भूमिकाओं, समूहों और ब्रांड पहचान का पूर्ण बैकअप बनाएँ।</sys:String>
+    <sys:String x:Key="RestoreBackup">बैकअप पुनर्स्थापित करें</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">पिछले डेटाबेस बैकअप से Central Calendar पुनर्स्थापित करें। वर्तमान डेटाबेस बदल दिया जाएगा।</sys:String>
+    <sys:String x:Key="SelectBackup">बैकअप चुनें</sys:String>
+    <sys:String x:Key="NoBackupSelected">कोई बैकअप चयनित नहीं है।</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">बैकअप सफलतापूर्वक बनाया और सत्यापित किया गया।</sys:String>
+    <sys:String x:Key="BackupCreateFailed">डेटाबेस बैकअप नहीं बनाया जा सका।</sys:String>
+    <sys:String x:Key="BackupReadFailed">चयनित बैकअप पढ़ा नहीं जा सका।</sys:String>
+    <sys:String x:Key="Database">डेटाबेस</sys:String>
+    <sys:String x:Key="BackupDate">बैकअप की तारीख़</sys:String>
+    <sys:String x:Key="BackupSize">बैकअप का आकार</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">यह वर्तमान Central Calendar डेटाबेस को चयनित बैकअप से बदल देगा। उस बैकअप के बाद किए गए सभी बदलाव खो जाएँगे। जारी रखें?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">डेटाबेस सफलतापूर्वक पुनर्स्थापित हो गया। Central Calendar अब बंद होगा। पुनर्स्थापित डेटा लोड करने के लिए एप्लिकेशन फिर से शुरू करें।</sys:String>
+    <sys:String x:Key="RestoreFailed">डेटाबेस बैकअप पुनर्स्थापित नहीं किया जा सका।</sys:String>
+
 </ResourceDictionary>

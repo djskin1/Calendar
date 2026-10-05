@@ -481,7 +481,26 @@
     <sys:String x:Key="GroupSyncFailed">تعذرت مزامنة مجموعات Entra ID.</sys:String>
     <sys:String x:Key="LastGroupSync">آخر مزامنة للمجموعات</sys:String>
     <sys:String x:Key="NeverSynchronized">لم تتم المزامنة مطلقًا</sys:String>
+    
+    <!-- Backup and restore -->
 
+    <sys:String x:Key="BackupRestore">النسخ الاحتياطي والاستعادة</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">إنشاء نسخ احتياطية كاملة لقاعدة بيانات Central Calendar واستعادتها.</sys:String>
+    <sys:String x:Key="CreateBackup">إنشاء نسخة احتياطية</sys:String>
+    <sys:String x:Key="CreateBackupDescription">إنشاء نسخة احتياطية كاملة للمستخدمين وبيانات التقويم والإعدادات والعطلات والفعاليات والأدوار والمجموعات والهوية البصرية.</sys:String>
+    <sys:String x:Key="RestoreBackup">استعادة نسخة احتياطية</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">استعادة Central Calendar من نسخة احتياطية سابقة لقاعدة البيانات. سيتم استبدال قاعدة البيانات الحالية.</sys:String>
+    <sys:String x:Key="SelectBackup">تحديد نسخة احتياطية</sys:String>
+    <sys:String x:Key="NoBackupSelected">لم يتم تحديد نسخة احتياطية.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">تم إنشاء النسخة الاحتياطية والتحقق منها بنجاح.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">تعذر إنشاء النسخة الاحتياطية لقاعدة البيانات.</sys:String>
+    <sys:String x:Key="BackupReadFailed">تعذرت قراءة النسخة الاحتياطية المحددة.</sys:String>
+    <sys:String x:Key="Database">قاعدة البيانات</sys:String>
+    <sys:String x:Key="BackupDate">تاريخ النسخة الاحتياطية</sys:String>
+    <sys:String x:Key="BackupSize">حجم النسخة الاحتياطية</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">سيؤدي هذا إلى استبدال قاعدة بيانات Central Calendar الحالية بالنسخة الاحتياطية المحددة. ستُفقد جميع التغييرات التي أُجريت بعد تلك النسخة. هل تريد المتابعة؟</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">تمت استعادة قاعدة البيانات بنجاح. سيتم الآن إغلاق Central Calendar. شغّل التطبيق مرة أخرى لتحميل البيانات المستعادة.</sys:String>
+    <sys:String x:Key="RestoreFailed">تعذرت استعادة النسخة الاحتياطية لقاعدة البيانات.</sys:String>
 
 
 </ResourceDictionary>

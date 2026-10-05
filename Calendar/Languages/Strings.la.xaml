@@ -483,4 +483,24 @@
     <sys:String x:Key="LastGroupSync">Novissima congruentia gregum</sys:String>
     <sys:String x:Key="NeverSynchronized">Numquam congruit</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Exemplar subsidiarium &amp; restitutio</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Exemplaria subsidiaria integra basis datorum Central Calendar crea et restitue.</sys:String>
+    <sys:String x:Key="CreateBackup">Exemplar subsidiarium creare</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Exemplar subsidiarium integrum usorum, datorum calendarii, configurationum, dierum festorum, eventuum, munerum, gregum et identitatis visualis crea.</sys:String>
+    <sys:String x:Key="RestoreBackup">Exemplar subsidiarium restituere</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Central Calendar ex priore exemplari subsidiario basis datorum restitue. Basis datorum praesens substituetur.</sys:String>
+    <sys:String x:Key="SelectBackup">Exemplar subsidiarium eligere</sys:String>
+    <sys:String x:Key="NoBackupSelected">Nullum exemplar subsidiarium electum est.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">Exemplar subsidiarium feliciter creatum et verificatum est.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">Exemplar subsidiarium basis datorum creari non potest.</sys:String>
+    <sys:String x:Key="BackupReadFailed">Exemplar subsidiarium electum legi non potest.</sys:String>
+    <sys:String x:Key="Database">Basis datorum</sys:String>
+    <sys:String x:Key="BackupDate">Dies exemplaris subsidiarii</sys:String>
+    <sys:String x:Key="BackupSize">Magnitudo exemplaris subsidiarii</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Hoc basim datorum praesentem Central Calendar exemplari subsidiario electo substituet. Omnes mutationes post illud exemplar factae peribunt. Pergere?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">Basis datorum feliciter restituta est. Central Calendar nunc claudetur. Applicationem iterum incipe ut data restituta onerentur.</sys:String>
+    <sys:String x:Key="RestoreFailed">Exemplar subsidiarium basis datorum restitui non potest.</sys:String>
+
 </ResourceDictionary>

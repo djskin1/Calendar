@@ -483,5 +483,26 @@
     <sys:String x:Key="LastGroupSync">Letzte Gruppensynchronisierung</sys:String>
     <sys:String x:Key="NeverSynchronized">Nie synchronisiert</sys:String>
 
+    <!-- Backup and restore -->
+
+    <sys:String x:Key="BackupRestore">Sicherung &amp; Wiederherstellung</sys:String>
+    <sys:String x:Key="BackupRestoreDescription">Erstellen Sie vollständige Sicherungen der Central Calendar-Datenbank und stellen Sie sie wieder her.</sys:String>
+    <sys:String x:Key="CreateBackup">Sicherung erstellen</sys:String>
+    <sys:String x:Key="CreateBackupDescription">Erstellen Sie eine vollständige Sicherung von Benutzern, Kalenderdaten, Einstellungen, Feiertagen, Veranstaltungen, Rollen, Gruppen und Unternehmensdesign.</sys:String>
+    <sys:String x:Key="RestoreBackup">Sicherung wiederherstellen</sys:String>
+    <sys:String x:Key="RestoreBackupDescription">Stellen Sie Central Calendar aus einer früheren Datenbanksicherung wieder her. Die aktuelle Datenbank wird ersetzt.</sys:String>
+    <sys:String x:Key="SelectBackup">Sicherung auswählen</sys:String>
+    <sys:String x:Key="NoBackupSelected">Keine Sicherung ausgewählt.</sys:String>
+    <sys:String x:Key="BackupCreatedSuccessfully">Die Sicherung wurde erfolgreich erstellt und überprüft.</sys:String>
+    <sys:String x:Key="BackupCreateFailed">Die Datenbanksicherung konnte nicht erstellt werden.</sys:String>
+    <sys:String x:Key="BackupReadFailed">Die ausgewählte Sicherung konnte nicht gelesen werden.</sys:String>
+    <sys:String x:Key="Database">Datenbank</sys:String>
+    <sys:String x:Key="BackupDate">Sicherungsdatum</sys:String>
+    <sys:String x:Key="BackupSize">Sicherungsgröße</sys:String>
+    <sys:String x:Key="RestoreBackupConfirmation">Dadurch wird die aktuelle Central Calendar-Datenbank durch die ausgewählte Sicherung ersetzt. Alle nach dieser Sicherung vorgenommenen Änderungen gehen verloren. Fortfahren?</sys:String>
+    <sys:String x:Key="RestoreCompletedRestartRequired">Die Datenbank wurde erfolgreich wiederhergestellt. Central Calendar wird jetzt geschlossen. Starten Sie die Anwendung erneut, um die wiederhergestellten Daten zu laden.</sys:String>
+    <sys:String x:Key="RestoreFailed">Die Datenbanksicherung konnte nicht wiederhergestellt werden.</sys:String>
+
+
 
 </ResourceDictionary>
