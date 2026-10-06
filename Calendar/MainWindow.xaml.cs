@@ -3422,28 +3422,27 @@ namespace CompanyCalendar
                     Department = "Finance"
                 });
         }
-
-#if DEBUG
         private async void Mainwindow_Loaded(
             object sender,
             RoutedEventArgs e)
         {
             try
             {
+#if DEBUG
                 await DevelopmentAdminSeeder.EnsureTestAdminAsync();
+#endif
                 await LoadCalendarFromDatabaseAsync();
                 await CheckClientVersionOnStartupAsync();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Unable to create the development administrator.\n\n{ex.Message}",
-                    "Central calendar",
-                     MessageBoxButton.OK,
-                    MessageBoxImage.Error);
+                    ex.Message,
+                LocalizationService.Get("AppName"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
             }
         }
-#endif
 
 
 
