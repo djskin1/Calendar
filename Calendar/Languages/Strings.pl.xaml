@@ -503,4 +503,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">Baza danych została pomyślnie przywrócona. Central Calendar zostanie teraz zamknięty. Uruchom aplikację ponownie, aby wczytać przywrócone dane.</sys:String>
     <sys:String x:Key="RestoreFailed">Nie można przywrócić kopii zapasowej bazy danych.</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">Aktualizacje</sys:String>
+    <sys:String x:Key="UpdatesDescription">Zarządzaj wersjami klienta Central Calendar i wymaganiami dotyczącymi aktualizacji.</sys:String>
+    <sys:String x:Key="CurrentClient">Bieżący klient</sys:String>
+    <sys:String x:Key="InstalledVersion">Zainstalowana wersja</sys:String>
+    <sys:String x:Key="UpdateStatus">Stan aktualizacji</sys:String>
+    <sys:String x:Key="UpdatePolicy">Zasady aktualizacji</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">Skonfiguruj najnowszą dostępną wersję klienta i minimalną obsługiwaną wersję.</sys:String>
+    <sys:String x:Key="LatestClientVersion">Najnowsza wersja klienta</sys:String>
+    <sys:String x:Key="MinimumClientVersion">Minimalna wersja klienta</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">Klienci ze starszą wersją wymagają aktualizacji.</sys:String>
+    <sys:String x:Key="CheckForUpdates">Sprawdź aktualizacje</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar jest aktualny.</sys:String>
+    <sys:String x:Key="UpdateAvailable">Dostępna jest aktualizacja.</sys:String>
+    <sys:String x:Key="UpdateRequired">Aktualizacja jest wymagana.</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">Stan aktualizacji jest nieznany.</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">Wprowadź prawidłową najnowszą wersję klienta.</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">Wprowadź prawidłową minimalną wersję klienta.</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">Minimalna wersja klienta nie może być wyższa niż najnowsza wersja.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">Ustawienia aktualizacji zostały zapisane.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">Nie można zapisać ustawień aktualizacji.</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">Informacje o aktualizacji są niedostępne.</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">Nie można sprawdzić aktualizacji.</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">Dostępna jest nowsza wersja Central Calendar.</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">Ta wersja Central Calendar jest starsza niż minimalna obsługiwana wersja i musi zostać zaktualizowana.</sys:String>
+
 </ResourceDictionary>

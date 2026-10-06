@@ -502,5 +502,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">تمت استعادة قاعدة البيانات بنجاح. سيتم الآن إغلاق Central Calendar. شغّل التطبيق مرة أخرى لتحميل البيانات المستعادة.</sys:String>
     <sys:String x:Key="RestoreFailed">تعذرت استعادة النسخة الاحتياطية لقاعدة البيانات.</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">التحديثات</sys:String>
+    <sys:String x:Key="UpdatesDescription">إدارة إصدارات عميل Central Calendar ومتطلبات التحديث.</sys:String>
+    <sys:String x:Key="CurrentClient">العميل الحالي</sys:String>
+    <sys:String x:Key="InstalledVersion">الإصدار المثبت</sys:String>
+    <sys:String x:Key="UpdateStatus">حالة التحديث</sys:String>
+    <sys:String x:Key="UpdatePolicy">سياسة التحديث</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">تكوين أحدث إصدار متاح للعميل والحد الأدنى للإصدار المدعوم.</sys:String>
+    <sys:String x:Key="LatestClientVersion">أحدث إصدار للعميل</sys:String>
+    <sys:String x:Key="MinimumClientVersion">الحد الأدنى لإصدار العميل</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">يجب تحديث العملاء الذين يستخدمون إصدارًا أقدم من هذا.</sys:String>
+    <sys:String x:Key="CheckForUpdates">التحقق من وجود تحديثات</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar محدّث.</sys:String>
+    <sys:String x:Key="UpdateAvailable">يتوفر تحديث.</sys:String>
+    <sys:String x:Key="UpdateRequired">يلزم إجراء تحديث.</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">حالة التحديث غير معروفة.</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">أدخل أحدث إصدار صالح للعميل.</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">أدخل حدًا أدنى صالحًا لإصدار العميل.</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">لا يمكن أن يكون الحد الأدنى لإصدار العميل أعلى من أحدث إصدار.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">تم حفظ إعدادات التحديث.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">تعذر حفظ إعدادات التحديث.</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">معلومات التحديث غير متاحة.</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">تعذر التحقق من وجود تحديثات.</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">يتوفر إصدار أحدث من Central Calendar.</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">إصدار Central Calendar هذا أقدم من الحد الأدنى للإصدار المدعوم ويجب تحديثه.</sys:String>
 
 </ResourceDictionary>

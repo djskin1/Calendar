@@ -503,5 +503,32 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">数据库已成功还原。Central Calendar 现在将关闭。请重新启动应用程序以加载还原的数据。</sys:String>
     <sys:String x:Key="RestoreFailed">无法还原数据库备份。</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">更新</sys:String>
+    <sys:String x:Key="UpdatesDescription">管理 Central Calendar 客户端版本和更新要求。</sys:String>
+    <sys:String x:Key="CurrentClient">当前客户端</sys:String>
+    <sys:String x:Key="InstalledVersion">已安装版本</sys:String>
+    <sys:String x:Key="UpdateStatus">更新状态</sys:String>
+    <sys:String x:Key="UpdatePolicy">更新策略</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">配置最新可用的客户端版本和最低支持版本。</sys:String>
+    <sys:String x:Key="LatestClientVersion">最新客户端版本</sys:String>
+    <sys:String x:Key="MinimumClientVersion">最低客户端版本</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">低于此版本的客户端必须更新。</sys:String>
+    <sys:String x:Key="CheckForUpdates">检查更新</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar 已是最新版本。</sys:String>
+    <sys:String x:Key="UpdateAvailable">有可用更新。</sys:String>
+    <sys:String x:Key="UpdateRequired">必须更新。</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">更新状态未知。</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">请输入有效的最新客户端版本。</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">请输入有效的最低客户端版本。</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">最低客户端版本不能高于最新客户端版本。</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">更新设置已保存。</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">无法保存更新设置。</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">更新信息不可用。</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">无法检查更新。</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">有较新版本的 Central Calendar 可用。</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">此 Central Calendar 版本低于最低支持版本，必须更新。</sys:String>
+
 
 </ResourceDictionary>

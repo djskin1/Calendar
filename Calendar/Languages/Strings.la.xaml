@@ -503,4 +503,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">Basis datorum feliciter restituta est. Central Calendar nunc claudetur. Applicationem iterum incipe ut data restituta onerentur.</sys:String>
     <sys:String x:Key="RestoreFailed">Exemplar subsidiarium basis datorum restitui non potest.</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">Renovationes</sys:String>
+    <sys:String x:Key="UpdatesDescription">Versiones clientis Central Calendar et requisita renovationis administra.</sys:String>
+    <sys:String x:Key="CurrentClient">Cliens praesens</sys:String>
+    <sys:String x:Key="InstalledVersion">Versio instituta</sys:String>
+    <sys:String x:Key="UpdateStatus">Status renovationis</sys:String>
+    <sys:String x:Key="UpdatePolicy">Consilium renovationis</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">Versionem clientis novissimam praesto et versionem minimam sustentatam configura.</sys:String>
+    <sys:String x:Key="LatestClientVersion">Versio clientis novissima</sys:String>
+    <sys:String x:Key="MinimumClientVersion">Versio clientis minima</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">Clientes infra hanc versionem renovari debent.</sys:String>
+    <sys:String x:Key="CheckForUpdates">Renovationes quaerere</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar renovatum est.</sys:String>
+    <sys:String x:Key="UpdateAvailable">Renovatio praesto est.</sys:String>
+    <sys:String x:Key="UpdateRequired">Renovatio requiritur.</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">Status renovationis ignotus est.</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">Versionem clientis novissimam validam insere.</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">Versionem clientis minimam validam insere.</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">Versio clientis minima altior quam versio novissima esse non potest.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">Configurationes renovationis servatae sunt.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">Configurationes renovationis servari non possunt.</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">Informatio renovationis praesto non est.</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">Renovationes explorari non possunt.</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">Versio recentior Central Calendar praesto est.</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">Haec versio Central Calendar infra versionem minimam sustentatam est atque renovari debet.</sys:String>
+
 </ResourceDictionary>

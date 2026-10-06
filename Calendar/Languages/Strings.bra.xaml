@@ -508,4 +508,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">De database is mee succes hersteld. Central Calendar wordt nou afgeslote. Start de applicatie opnieuw om de herstelde gegevens te laoje.</sys:String>
     <sys:String x:Key="RestoreFailed">De databaseback-up kan nie hersteld worre.</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">Updates</sys:String>
+    <sys:String x:Key="UpdatesDescription">Beheer Central Calendar-clientversies en update-eise.</sys:String>
+    <sys:String x:Key="CurrentClient">Huidige client</sys:String>
+    <sys:String x:Key="InstalledVersion">Geïnstalleerde versie</sys:String>
+    <sys:String x:Key="UpdateStatus">Updatestatus</sys:String>
+    <sys:String x:Key="UpdatePolicy">Updatebeleid</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">Stel de nieuwste beschikbare clientversie en de minimaal ondersteunde versie in.</sys:String>
+    <sys:String x:Key="LatestClientVersion">Nieuwste clientversie</sys:String>
+    <sys:String x:Key="MinimumClientVersion">Minimale clientversie</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">Clients mee 'n lagere versie moete bijgewerkt worre.</sys:String>
+    <sys:String x:Key="CheckForUpdates">Controlere op updates</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar is bijgewerkt.</sys:String>
+    <sys:String x:Key="UpdateAvailable">D'r is 'n update beschikbaar.</sys:String>
+    <sys:String x:Key="UpdateRequired">D'r is 'n update verplicht.</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">Updatestatus onbekend.</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">Vul 'n geldige nieuwste clientversie in.</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">Vul 'n geldige minimale clientversie in.</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">De minimale clientversie mag nie hoger zijn dan de nieuwste clientversie.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">De update-instèllinge zijn opgeslage.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">De update-instèllinge kunne nie opgeslage worre.</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">Update-informatie is nie beschikbaar.</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">Er kan nie op updates gecontroleerd worre.</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">D'r is 'n nieuwere versie van Central Calendar beschikbaar.</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">Deze versie van Central Calendar is lager dan de minimaal ondersteunde versie en moet bijgewerkt worre.</sys:String>
+
 </ResourceDictionary>

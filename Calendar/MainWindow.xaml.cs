@@ -47,6 +47,8 @@ namespace CompanyCalendar
         private int? _selectedCompanyEventId;
         private bool _isCreatingCompanyEvent;
 
+        private static readonly Version CurrentClientVersion = new(2, 0, 0);
+
         private readonly ObservableCollection<EmployeeCalendarRow> _employees = new();
 
         private readonly ObservableCollection<SearchResultItem>
@@ -2471,16 +2473,256 @@ namespace CompanyCalendar
             }
         }
 
-        //update
+        //AdminUpdate
 
-        private void AdminUpdatesButton_Click(
+        private async void AdminUpdatesButton_Click(
     object sender,
     RoutedEventArgs e)
         {
-            ShowAdminDetail(
-                "AdminUpdates",
-                "AdminUpdatesDescription",
-                "\uE895");
+            try
+            {
+                await LoadUpdateSettingsAsync();
+
+                AdminPage.Visibility = Visibility.Collapsed;
+                AdminUpdatesPage.Visibility = Visibility.Visible;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    LocalizationService.Get("AppName"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
+        private void AdminUpdatesBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminUpdatesPage.Visibility = Visibility.Collapsed;
+            AdminPage.Visibility = Visibility.Visible;
+        }
+
+        private async Task LoadUpdateSettingsAsync()
+        {
+            using CentralCalendarDbContext database = new();
+
+            Calendar.Models.SystemInformation? systemInformation =
+                await database.SystemInformation
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+
+            if (systemInformation == null)
+            {
+                InstalledVersionText.Text =
+                    CurrentClientVersion.ToString();
+                LatestClientVersionTextBox.Text =
+                    CurrentClientVersion.ToString();
+                MinimumClientVersionTextBox.Text =
+                    CurrentClientVersion.ToString();
+                UpdateStatusText.Text =
+                    LocalizationService.Get("UpdateStatusUnknown");
+
+                return;
+            }
+            InstalledVersionText.Text =
+                CurrentClientVersion.ToString();
+            LatestClientVersionTextBox.Text =
+                systemInformation.LatestClientVersion;
+            MinimumClientVersionTextBox.Text =
+                systemInformation.MinimumClientVersion;
+            UpdateStatusText.Text =
+                GetUpdateStatusText(systemInformation);
+        }
+
+        private string GetUpdateStatusText(Calendar.Models.SystemInformation systemInformation)
+        {
+            if (!Version.TryParse(systemInformation.LatestClientVersion, out Version? latestVersion))
+            {
+                return LocalizationService.Get("UpdateStatusUnknown");
+            }
+
+            if (!Version.TryParse(
+        systemInformation.MinimumClientVersion,
+        out Version? minimumVersion))
+            {
+                return LocalizationService.Get(
+                    "UpdateStatusUnknown");
+            }
+
+
+            if (CurrentClientVersion <
+                minimumVersion)
+            {
+                return LocalizationService.Get(
+                    "UpdateRequired");
+            }
+
+
+            if (CurrentClientVersion <
+                latestVersion)
+            {
+                return LocalizationService.Get(
+                    "UpdateAvailable");
+            }
+
+
+            return LocalizationService.Get(
+                "UpToDate");
+        }
+
+        private async void SaveUpdateSettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            string latestVersionText =
+                LatestClientVersionTextBox.Text.Trim();
+            string minimumVersionText =
+                MinimumClientVersionTextBox.Text.Trim();
+
+            if(!Version.TryParse(latestVersionText, out Version? latestVersion))
+            {
+                MessageBox.Show(
+            LocalizationService.Get(
+                "InvalidLatestVersion"),
+            LocalizationService.Get(
+                "AppName"),
+            MessageBoxButton.OK,
+            MessageBoxImage.Warning);
+
+                return;
+            }
+        }
+
+        private async void CheckForUpdatesButton_Click( object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using CentralCalendarDbContext database = new();
+                Calendar.Models.SystemInformation? systemInformation =
+                    await database.SystemInformation
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync();
+
+                if (systemInformation == null)
+                {
+                    MessageBox.Show(
+                LocalizationService.Get(
+                    "UpdateInformationUnavailable"),
+                LocalizationService.Get(
+                    "AppName"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+
+                    return;
+                }
+
+                string status =
+    GetUpdateStatusText(
+        systemInformation);
+
+
+                UpdateStatusText.Text =
+                    status;
+
+
+                MessageBoxImage icon =
+                    status ==
+                    LocalizationService.Get(
+                        "UpToDate")
+
+                        ? MessageBoxImage.Information
+
+                        : MessageBoxImage.Warning;
+
+
+                MessageBox.Show(
+                    status,
+                    LocalizationService.Get(
+                        "AppName"),
+                    MessageBoxButton.OK,
+                    icon);
+            } catch (Exception ex)
+            {
+                MessageBox.Show(
+            $"{LocalizationService.Get("UpdateCheckFailed")}" +
+            $"{Environment.NewLine}{Environment.NewLine}" +
+            ex.Message,
+            LocalizationService.Get(
+                "AppName"),
+            MessageBoxButton.OK,
+            MessageBoxImage.Error);
+            }
+        }
+
+        private async Task CheckClientVersionOnStartupAsync()
+        {
+            try
+            {
+                using CentralCalendarDbContext database =
+                    new();
+
+
+                Calendar.Models.SystemInformation? systemInformation =
+                    await database.SystemInformation
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync();
+
+
+                if (systemInformation == null)
+                {
+                    return;
+                }
+
+
+                if (!Version.TryParse(
+                        systemInformation.LatestClientVersion,
+                        out Version? latestVersion) ||
+                    !Version.TryParse(
+                        systemInformation.MinimumClientVersion,
+                        out Version? minimumVersion))
+                {
+                    return;
+                }
+
+
+                // =====================================================
+                // REQUIRED UPDATE
+                // =====================================================
+
+                if (CurrentClientVersion <
+                    minimumVersion)
+                {
+                    MessageBox.Show(
+                        LocalizationService.Get(
+                            "UpdateRequiredMessage"),
+                        LocalizationService.Get(
+                            "AppName"),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+
+                    return;
+                }
+
+
+                // =====================================================
+                // OPTIONAL UPDATE
+                // =====================================================
+
+                if (CurrentClientVersion <
+                    latestVersion)
+                {
+                    MessageBox.Show(
+                        LocalizationService.Get(
+                            "UpdateAvailableMessage"),
+                        LocalizationService.Get(
+                            "AppName"),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+            }
+            catch
+            {
+                // Een updatecheck mag de applicatie niet laten crashen
+                // wanneer SQL tijdelijk niet bereikbaar is.
+            }
         }
 
         // ============================================================
@@ -3190,6 +3432,7 @@ namespace CompanyCalendar
             {
                 await DevelopmentAdminSeeder.EnsureTestAdminAsync();
                 await LoadCalendarFromDatabaseAsync();
+                await CheckClientVersionOnStartupAsync();
             }
             catch (Exception ex)
             {

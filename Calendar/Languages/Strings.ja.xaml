@@ -503,4 +503,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">データベースは正常に復元されました。Central Calendarを終了します。復元したデータを読み込むには、アプリケーションを再度起動してください。</sys:String>
     <sys:String x:Key="RestoreFailed">データベースのバックアップを復元できません。</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">更新</sys:String>
+    <sys:String x:Key="UpdatesDescription">Central Calendarクライアントのバージョンと更新要件を管理します。</sys:String>
+    <sys:String x:Key="CurrentClient">現在のクライアント</sys:String>
+    <sys:String x:Key="InstalledVersion">インストール済みバージョン</sys:String>
+    <sys:String x:Key="UpdateStatus">更新状態</sys:String>
+    <sys:String x:Key="UpdatePolicy">更新ポリシー</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">利用可能な最新のクライアントバージョンとサポートされる最小バージョンを構成します。</sys:String>
+    <sys:String x:Key="LatestClientVersion">最新のクライアントバージョン</sys:String>
+    <sys:String x:Key="MinimumClientVersion">最小クライアントバージョン</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">このバージョン未満のクライアントは更新が必要です。</sys:String>
+    <sys:String x:Key="CheckForUpdates">更新を確認</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendarは最新です。</sys:String>
+    <sys:String x:Key="UpdateAvailable">更新プログラムを利用できます。</sys:String>
+    <sys:String x:Key="UpdateRequired">更新が必要です。</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">更新状態が不明です。</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">有効な最新クライアントバージョンを入力してください。</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">有効な最小クライアントバージョンを入力してください。</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">最小クライアントバージョンを最新バージョンより高くすることはできません。</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">更新設定を保存しました。</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">更新設定を保存できません。</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">更新情報を利用できません。</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">更新を確認できません。</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">新しいバージョンのCentral Calendarを利用できます。</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">このCentral Calendarのバージョンはサポートされる最小バージョン未満のため、更新する必要があります。</sys:String>
+
 </ResourceDictionary>

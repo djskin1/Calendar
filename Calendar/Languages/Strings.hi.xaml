@@ -502,4 +502,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">डेटाबेस सफलतापूर्वक पुनर्स्थापित हो गया। Central Calendar अब बंद होगा। पुनर्स्थापित डेटा लोड करने के लिए एप्लिकेशन फिर से शुरू करें।</sys:String>
     <sys:String x:Key="RestoreFailed">डेटाबेस बैकअप पुनर्स्थापित नहीं किया जा सका।</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">अपडेट</sys:String>
+    <sys:String x:Key="UpdatesDescription">Central Calendar क्लाइंट संस्करण और अपडेट आवश्यकताएँ प्रबंधित करें।</sys:String>
+    <sys:String x:Key="CurrentClient">वर्तमान क्लाइंट</sys:String>
+    <sys:String x:Key="InstalledVersion">स्थापित संस्करण</sys:String>
+    <sys:String x:Key="UpdateStatus">अपडेट स्थिति</sys:String>
+    <sys:String x:Key="UpdatePolicy">अपडेट नीति</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">नवीनतम उपलब्ध क्लाइंट संस्करण और न्यूनतम समर्थित संस्करण कॉन्फ़िगर करें।</sys:String>
+    <sys:String x:Key="LatestClientVersion">नवीनतम क्लाइंट संस्करण</sys:String>
+    <sys:String x:Key="MinimumClientVersion">न्यूनतम क्लाइंट संस्करण</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">इससे नीचे के संस्करण वाले क्लाइंट को अपडेट करना आवश्यक है।</sys:String>
+    <sys:String x:Key="CheckForUpdates">अपडेट जाँचें</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar अद्यतित है।</sys:String>
+    <sys:String x:Key="UpdateAvailable">एक अपडेट उपलब्ध है।</sys:String>
+    <sys:String x:Key="UpdateRequired">अपडेट आवश्यक है।</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">अपडेट स्थिति अज्ञात है।</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">मान्य नवीनतम क्लाइंट संस्करण दर्ज करें।</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">मान्य न्यूनतम क्लाइंट संस्करण दर्ज करें।</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">न्यूनतम क्लाइंट संस्करण नवीनतम क्लाइंट संस्करण से अधिक नहीं हो सकता।</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">अपडेट सेटिंग्स सहेज दी गई हैं।</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">अपडेट सेटिंग्स सहेजी नहीं जा सकीं।</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">अपडेट जानकारी उपलब्ध नहीं है।</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">अपडेट की जाँच नहीं की जा सकी।</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">Central Calendar का नया संस्करण उपलब्ध है।</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">Central Calendar का यह संस्करण न्यूनतम समर्थित संस्करण से नीचे है और इसे अपडेट करना आवश्यक है।</sys:String>
+
 </ResourceDictionary>

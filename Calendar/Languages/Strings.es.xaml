@@ -506,4 +506,31 @@
     <sys:String x:Key="RestoreCompletedRestartRequired">La base de datos se ha restaurado correctamente. Central Calendar se cerrará ahora. Inicie de nuevo la aplicación para cargar los datos restaurados.</sys:String>
     <sys:String x:Key="RestoreFailed">No se puede restaurar la copia de seguridad de la base de datos.</sys:String>
 
+    <!-- Update check -->
+
+    <sys:String x:Key="Updates">Actualizaciones</sys:String>
+    <sys:String x:Key="UpdatesDescription">Administre las versiones del cliente de Central Calendar y los requisitos de actualización.</sys:String>
+    <sys:String x:Key="CurrentClient">Cliente actual</sys:String>
+    <sys:String x:Key="InstalledVersion">Versión instalada</sys:String>
+    <sys:String x:Key="UpdateStatus">Estado de actualización</sys:String>
+    <sys:String x:Key="UpdatePolicy">Directiva de actualización</sys:String>
+    <sys:String x:Key="UpdatePolicyDescription">Configure la última versión disponible del cliente y la versión mínima compatible.</sys:String>
+    <sys:String x:Key="LatestClientVersion">Última versión del cliente</sys:String>
+    <sys:String x:Key="MinimumClientVersion">Versión mínima del cliente</sys:String>
+    <sys:String x:Key="MinimumClientVersionDescription">Los clientes con una versión inferior deben actualizarse.</sys:String>
+    <sys:String x:Key="CheckForUpdates">Buscar actualizaciones</sys:String>
+    <sys:String x:Key="UpToDate">Central Calendar está actualizado.</sys:String>
+    <sys:String x:Key="UpdateAvailable">Hay una actualización disponible.</sys:String>
+    <sys:String x:Key="UpdateRequired">Se requiere una actualización.</sys:String>
+    <sys:String x:Key="UpdateStatusUnknown">Estado de actualización desconocido.</sys:String>
+    <sys:String x:Key="InvalidLatestVersion">Introduzca una última versión válida del cliente.</sys:String>
+    <sys:String x:Key="InvalidMinimumVersion">Introduzca una versión mínima válida del cliente.</sys:String>
+    <sys:String x:Key="MinimumVersionCannotExceedLatest">La versión mínima del cliente no puede ser superior a la última versión.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaved">La configuración de actualización se ha guardado.</sys:String>
+    <sys:String x:Key="UpdateSettingsSaveFailed">No se puede guardar la configuración de actualización.</sys:String>
+    <sys:String x:Key="UpdateInformationUnavailable">La información de actualización no está disponible.</sys:String>
+    <sys:String x:Key="UpdateCheckFailed">No se puede buscar actualizaciones.</sys:String>
+    <sys:String x:Key="UpdateAvailableMessage">Hay disponible una versión más reciente de Central Calendar.</sys:String>
+    <sys:String x:Key="UpdateRequiredMessage">Esta versión de Central Calendar es inferior a la versión mínima compatible y debe actualizarse.</sys:String>
+
 </ResourceDictionary>

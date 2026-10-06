@@ -3618,6 +3618,201 @@
         </Grid>
         
         <!-- update -->
+        <Grid x:Name="AdminUpdatesPage"
+      Grid.Column="1"
+      Visibility="Collapsed"
+      Background="{DynamicResource AppBackgroundBrush}">
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <!-- HEADER -->
+            <Border Grid.Row="0"
+            Background="{DynamicResource SurfaceBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="0,0,0,1">
+
+                <Grid Margin="25,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button Width="42"
+                    Height="42"
+                    Margin="0,0,15,0"
+                    Click="AdminUpdatesBackButton_Click">
+
+                        <TextBlock Text="&#xE72B;"
+                           FontFamily="Segoe MDL2 Assets"
+                           FontSize="18"/>
+
+                    </Button>
+
+
+                    <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center">
+
+                        <TextBlock Text="{DynamicResource Updates}"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                        <TextBlock Text="{DynamicResource UpdatesDescription}"
+                           FontSize="12"
+                           Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- CONTENT -->
+            <ScrollViewer Grid.Row="1"
+                  VerticalScrollBarVisibility="Auto">
+
+                <StackPanel Width="700"
+                    HorizontalAlignment="Left"
+                    Margin="25">
+
+
+                    <!-- CURRENT CLIENT -->
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Padding="25"
+                    Margin="0,0,0,20">
+
+                        <StackPanel>
+
+                            <TextBlock Text="{DynamicResource CurrentClient}"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource PrimaryTextBrush}"
+                               Margin="0,0,0,20"/>
+
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+
+                                <TextBlock Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="{DynamicResource InstalledVersion}"
+                                   Margin="0,0,0,12"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                                <TextBlock x:Name="InstalledVersionText"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   Margin="0,0,0,12"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+
+                                <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Text="{DynamicResource UpdateStatus}"
+                                   Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+                                <TextBlock x:Name="UpdateStatusText"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            </Grid>
+
+                        </StackPanel>
+
+                    </Border>
+
+
+                    <!-- VERSION POLICY -->
+                    <Border Background="{DynamicResource SurfaceBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Padding="25">
+
+                        <StackPanel>
+
+                            <TextBlock Text="{DynamicResource UpdatePolicy}"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <TextBlock Text="{DynamicResource UpdatePolicyDescription}"
+                               Margin="0,6,0,20"
+                               TextWrapping="Wrap"
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+
+                            <TextBlock Text="{DynamicResource LatestClientVersion}"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <TextBox x:Name="LatestClientVersionTextBox"
+                             Height="36"
+                             Margin="0,5,0,15"
+                             VerticalContentAlignment="Center"/>
+
+
+                            <TextBlock Text="{DynamicResource MinimumClientVersion}"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource PrimaryTextBrush}"/>
+
+                            <TextBox x:Name="MinimumClientVersionTextBox"
+                             Height="36"
+                             Margin="0,5,0,8"
+                             VerticalContentAlignment="Center"/>
+
+                            <TextBlock Text="{DynamicResource MinimumClientVersionDescription}"
+                               Margin="0,0,0,20"
+                               TextWrapping="Wrap"
+                               Foreground="{DynamicResource SecondaryTextBrush}"/>
+
+
+                            <StackPanel Orientation="Horizontal">
+
+                                <Button Content="{DynamicResource Save}"
+                                Width="120"
+                                Height="40"
+                                Margin="0,0,10,0"
+                                Click="SaveUpdateSettingsButton_Click"/>
+
+                                <Button Content="{DynamicResource CheckForUpdates}"
+                                Width="160"
+                                Height="40"
+                                Click="CheckForUpdatesButton_Click"/>
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Grid>
     </Grid>
 </Window>
